@@ -15,6 +15,9 @@ document.addEventListener('DOMContentLoaded', () => {
   initFaqAccordion();
   initScrollReveal();
   initStrategyCallModal();
+  initIndustryExplorer();
+  initTechStackExplorer();
+  initWorkflowSimulation();
 });
 
 /**
@@ -754,4 +757,437 @@ function initStrategyCallModal() {
     });
   }
 }
+
+/**
+ * 15. Interactive Industry Explorer Controller
+ */
+function initIndustryExplorer() {
+  const navBtns = document.querySelectorAll('.industry-nav-btn');
+  const displayPanel = document.getElementById('industry-panel-mount');
+  if (!navBtns.length || !displayPanel) return;
+
+  const industryData = {
+    'healthcare': {
+      title: 'NexAgent HMS — Hospital Management System',
+      badge: '● PRIMARY FOCUS · ACTIVE DEVELOPMENT',
+      badgeClass: 'hms-status-pill',
+      subtitle: 'Comprehensive clinical operations and patient queue orchestration inspired by modern hospital platforms (adrine.in). Built to eliminate waiting bottlenecks across outpatient (OPD) and inpatient (IPD) workflows.',
+      isHms: true
+    },
+    'hospitality': {
+      title: 'Hospitality & Guest Operations',
+      badge: '⚡ AUTOMATION CONCEPTS · IN DEVELOPMENT',
+      badgeClass: 'hms-status-pill concept',
+      subtitle: 'Synchronizing Property Management Systems (PMS) with housekeeping and concierge dispatch for immediate guest request fulfillment.',
+      problem: 'Fragmented guest requests across WhatsApp, phone, and front desk lead to slow room turnover and delayed concierge responses.',
+      approach: 'Direct PMS event triggers route cleaning priorities to housekeeping tablets and dispatch guest amenities with acknowledgement tracking.',
+      modules: [
+        { title: 'PMS Event Sync', desc: 'Real-time check-in and check-out event routing to operations.' },
+        { title: 'Butler Dispatch', desc: 'Automated guest amenity routing with mandatory staff sign-off.' },
+        { title: 'Turnover Prioritization', desc: 'Dynamic room cleaning queues based on incoming VIP arrivals.' }
+      ]
+    },
+    'b2b': {
+      title: 'B2B & Enterprise Services',
+      badge: '⚡ AUTOMATION CONCEPTS · IN DEVELOPMENT',
+      badgeClass: 'hms-status-pill concept',
+      subtitle: 'Eliminating repetitive manual data transfers between CRM, ticketing systems, and internal communication channels.',
+      problem: 'Enterprise teams waste hours copying ticket information into Salesforce/HubSpot, tracking manual SLA countdowns, and routing escalations.',
+      approach: 'Ingestion layer normalizes incoming customer requests, evaluates SLA urgency, updates CRM records, and enforces approval gates for high-stakes actions.',
+      modules: [
+        { title: 'CRM Two-Way Sync', desc: 'Keeps customer accounts, deals, and notes updated without manual re-entry.' },
+        { title: 'SLA Escalation Gate', desc: 'Automatically flags urgent accounts and notifies tier-2 engineers.' },
+        { title: 'Approval Guardrails', desc: 'Human sign-off required for contract adjustments or record deletions.' }
+      ]
+    },
+    'retail': {
+      title: 'Retail & Commerce Operations',
+      badge: '⚡ AUTOMATION CONCEPTS · IN DEVELOPMENT',
+      badgeClass: 'hms-status-pill concept',
+      subtitle: 'Streamlining return merchandise authorizations (RMA), inventory discrepancies, and high-volume order inquiries.',
+      problem: 'Post-purchase support friction leads to return backlogs, inventory mismatches in ERP, and customer dissatisfaction.',
+      approach: 'Automates customer return validation against return policies, triggers carrier labels, and syncs warehouse receipt data.',
+      modules: [
+        { title: 'Policy Return Check', desc: 'Validates order date and return window eligibility automatically.' },
+        { title: 'ERP Inventory Alert', desc: 'Notifies fulfillment centers of returned or damaged goods.' },
+        { title: 'Carrier Label Dispatch', desc: 'Generates shipping return barcodes and notifies customer.' }
+      ]
+    },
+    'services': {
+      title: 'Professional & Legal Services',
+      badge: '⚡ AUTOMATION CONCEPTS · IN DEVELOPMENT',
+      badgeClass: 'hms-status-pill concept',
+      subtitle: 'Automating client intake, engagement letters, NDA tracking, and compliance documentation collection.',
+      problem: 'High-value partners and attorneys spend billable hours chasing routine onboarding documents and verifying engagement conflicts.',
+      approach: 'Structured client intake pipelines extract document metadata, verify conflict databases, and draft matter profiles for review.',
+      modules: [
+        { title: 'Intake Document Parsing', desc: 'Extracts entities from uploaded contracts and client forms.' },
+        { title: 'Conflict Queue Triage', desc: 'Flags potential matter conflicts for partner review.' },
+        { title: 'Matter Provisioning', desc: 'Creates client directory and billing records upon approval.' }
+      ]
+    },
+    'fintech': {
+      title: 'Financial Technology & Operations',
+      badge: '⚡ AUTOMATION CONCEPTS · IN DEVELOPMENT',
+      badgeClass: 'hms-status-pill concept',
+      subtitle: 'Orchestrating dispute gathering, chargeback documentation, and KYC/AML compliance review queues.',
+      problem: 'Financial operations face strict statutory deadlines to respond to chargebacks and regulatory reviews with complete audit trails.',
+      approach: 'Aggregates transaction logs, compares claims against card network rules, and prepares evidence dossiers for investigator sign-off.',
+      modules: [
+        { title: 'Dispute Packet Assembly', desc: 'Collates receipt, delivery, and user logs into dispute packages.' },
+        { title: 'Rule-Based Risk Filter', desc: 'Prioritizes high-value chargebacks approaching network deadlines.' },
+        { title: 'Investigator Sign-off', desc: 'Full immutable audit trail with dual-operator verification.' }
+      ]
+    }
+  };
+
+  const renderIndustry = (key) => {
+    const data = industryData[key];
+    if (!data) return;
+
+    if (data.isHms) {
+      displayPanel.innerHTML = `
+        <div class="hms-hero-card">
+          <div class="hms-tag-row">
+            <span class="${data.badgeClass}">${data.badge}</span>
+            <span style="font-family: var(--font-mono); font-size: 0.7rem; color: #64748b;">INCL. OPD/IPD QUEUES · BED MANAGEMENT · EMR SYNC</span>
+          </div>
+          <h3 class="hms-title">${data.title}</h3>
+          <p class="hms-subtitle">${data.subtitle}</p>
+        </div>
+
+        <div class="hms-subtabs-nav">
+          <button class="hms-subtab-btn active" data-hms-tab="overview">Overview</button>
+          <button class="hms-subtab-btn" data-hms-tab="modules">Operational Areas</button>
+          <button class="hms-subtab-btn" data-hms-tab="workflow">Workflow Architecture</button>
+          <button class="hms-subtab-btn" data-hms-tab="capabilities">Key Capabilities</button>
+          <button class="hms-subtab-btn" data-hms-tab="status">Development Status</button>
+        </div>
+
+        <div class="hms-tab-content-area" id="hms-subtab-content">
+          <!-- Default Overview -->
+          <p style="font-size: 0.9rem; line-height: 1.65; color: #334155; margin-bottom: 14px;">
+            NexAgent HMS addresses the severe operational bottlenecks in modern hospital environments: crowded outpatient waiting halls, delayed inpatient bed allocation, manual insurance pre-authorizations, and fragmented department handoffs between doctors, nursing staff, pharmacy, and diagnostic labs.
+          </p>
+          <div class="hms-modules-grid">
+            <div class="hms-module-item">
+              <h4>OPD &amp; IPD Queue Engine</h4>
+              <p>Dynamic patient queue prioritization based on specialty availability, triage severity, and appointment status.</p>
+            </div>
+            <div class="hms-module-item">
+              <h4>Bed Capacity &amp; Ward Turnover</h4>
+              <p>Real-time visual bed availability tracking with automated housekeeping notifications upon patient discharge.</p>
+            </div>
+            <div class="hms-module-item">
+              <h4>Insurance Pre-Auth (TPA)</h4>
+              <p>Validates treatment package estimates against policy guidelines before submitting to TPA portals with doctor approval.</p>
+            </div>
+          </div>
+        </div>
+
+        <div style="margin-top: 24px; padding-top: 18px; border-top: 1px solid rgba(10,20,30,0.08); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px;">
+          <span style="font-family: var(--font-mono); font-size: 0.75rem; color: #047857; font-weight: 600;">✓ In Active Development · Private Hospital Pilot Program</span>
+          <button class="btn-product-action open-strategy-btn" style="font-size: 0.8rem; background: #152e3a; color: #ffffff; padding: 8px 16px; border-radius: 6px;">REQUEST HMS DEMO &amp; STRATEGY CALL →</button>
+        </div>
+      `;
+      initHmsSubtabs();
+    } else {
+      let modulesHtml = '';
+      if (data.modules) {
+        modulesHtml = data.modules.map(m => `
+          <div class="hms-module-item">
+            <h4>${m.title}</h4>
+            <p>${m.desc}</p>
+          </div>
+        `).join('');
+      }
+
+      displayPanel.innerHTML = `
+        <div class="hms-hero-card" style="border-left-color: #f59e0b;">
+          <div class="hms-tag-row">
+            <span class="${data.badgeClass}">${data.badge}</span>
+            <span style="font-family: var(--font-mono); font-size: 0.7rem; color: #64748b;">FUTURE AUTOMATION BLUEPRINT</span>
+          </div>
+          <h3 class="hms-title">${data.title}</h3>
+          <p class="hms-subtitle">${data.subtitle}</p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 20px;">
+          <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 6px; padding: 18px;">
+            <span style="font-family: var(--font-mono); font-size: 0.72rem; font-weight: 700; color: #b45309; text-transform: uppercase;">The Operational Problem</span>
+            <p style="font-size: 0.88rem; color: #334155; line-height: 1.55; margin-top: 8px;">${data.problem}</p>
+          </div>
+          <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 6px; padding: 18px;">
+            <span style="font-family: var(--font-mono); font-size: 0.72rem; font-weight: 700; color: #047857; text-transform: uppercase;">NexAgent Automation Approach</span>
+            <p style="font-size: 0.88rem; color: #334155; line-height: 1.55; margin-top: 8px;">${data.approach}</p>
+          </div>
+        </div>
+
+        <span style="font-family: var(--font-mono); font-size: 0.72rem; font-weight: 700; color: #64748b; text-transform: uppercase; display: block; margin-bottom: 8px;">Planned Workflow Capabilities</span>
+        <div class="hms-modules-grid">
+          ${modulesHtml}
+        </div>
+
+        <div style="margin-top: 24px; padding-top: 18px; border-top: 1px solid rgba(10,20,30,0.08); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px;">
+          <span style="font-family: var(--font-mono); font-size: 0.74rem; color: #64748b;">Interested in co-designing automated workflows for this vertical?</span>
+          <button class="btn-product-action open-strategy-btn" style="font-size: 0.8rem; background: #152e3a; color: #ffffff; padding: 8px 16px; border-radius: 6px;">DISCUSS OPERATIONAL WORKFLOWS →</button>
+        </div>
+      `;
+    }
+
+    // Rebind modal trigger on new buttons
+    const newButtons = displayPanel.querySelectorAll('.open-strategy-btn');
+    newButtons.forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        const modal = document.getElementById('strategy-modal');
+        if (modal) {
+          modal.classList.add('open');
+          document.body.style.overflow = 'hidden';
+        }
+      });
+    });
+  };
+
+  const initHmsSubtabs = () => {
+    const subtabs = displayPanel.querySelectorAll('.hms-subtab-btn');
+    const contentBox = document.getElementById('hms-subtab-content');
+    if (!subtabs.length || !contentBox) return;
+
+    const subContent = {
+      'overview': `
+        <p style="font-size: 0.9rem; line-height: 1.65; color: #334155; margin-bottom: 14px;">
+          NexAgent HMS addresses the severe operational bottlenecks in modern hospital environments: crowded outpatient waiting halls, delayed inpatient bed allocation, manual insurance pre-authorizations, and fragmented department handoffs between doctors, nursing staff, pharmacy, and diagnostic labs.
+        </p>
+        <div class="hms-modules-grid">
+          <div class="hms-module-item">
+            <h4>OPD &amp; IPD Queue Engine</h4>
+            <p>Dynamic patient queue prioritization based on specialty availability, triage severity, and appointment status.</p>
+          </div>
+          <div class="hms-module-item">
+            <h4>Bed Capacity &amp; Ward Turnover</h4>
+            <p>Real-time visual bed availability tracking with automated housekeeping notifications upon patient discharge.</p>
+          </div>
+          <div class="hms-module-item">
+            <h4>Insurance Pre-Auth (TPA)</h4>
+            <p>Validates treatment package estimates against policy guidelines before submitting to TPA portals with doctor approval.</p>
+          </div>
+        </div>
+      `,
+      'modules': `
+        <div class="hms-modules-grid">
+          <div class="hms-module-item">
+            <h4>1. OPD Clinical Queue</h4>
+            <p>Manages doctor consultations, dynamic token generation, and wait-time estimations on patient displays.</p>
+          </div>
+          <div class="hms-module-item">
+            <h4>2. IPD Bed Allocation</h4>
+            <p>Manages ward types (General, Semi-Private, ICU, HDU) and tracks occupancy, sanitation, and readiness.</p>
+          </div>
+          <div class="hms-module-item">
+            <h4>3. Diagnostic &amp; Lab Sync</h4>
+            <p>Orders lab tests automatically from doctor notes and routes certified pathology results to patient records.</p>
+          </div>
+          <div class="hms-module-item">
+            <h4>4. Pharmacy Dispensary</h4>
+            <p>Prescription verification, stock decrement alerts, and outpatient medicine dispatch tracking.</p>
+          </div>
+          <div class="hms-module-item">
+            <h4>5. TPA Pre-Authorization</h4>
+            <p>Assists hospital billing desks in assembling diagnostic proof, initial cost estimates, and insurance query responses.</p>
+          </div>
+          <div class="hms-module-item">
+            <h4>6. Discharge Reconciliation</h4>
+            <p>Ensures all pharmacy returns, lab clearances, and doctor summaries are validated before final bill generation.</p>
+          </div>
+        </div>
+      `,
+      'workflow': `
+        <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 6px; padding: 18px; font-family: var(--font-mono); font-size: 0.78rem; line-height: 1.7; color: #1e293b;">
+          <div><strong style="color: #3fa8b8;">[STEP 01] Patient Ingestion:</strong> Patient checks in via desk or kiosk → System identifies specialist availability and assigns priority token.</div>
+          <div><strong style="color: #3fa8b8;">[STEP 02] Dynamic Triage:</strong> Triage metrics route critical vitals to emergency queue; routine checks queued by appointment window.</div>
+          <div><strong style="color: #3fa8b8;">[STEP 03] Clinical Order Entry:</strong> Physician enters prescription or admission request → System initiates pre-auth check if inpatient.</div>
+          <div><strong style="color: #3fa8b8;">[STEP 04] Ward &amp; Bed Assignment:</strong> Bed management module checks vacant sanitized beds → reserves slot → alerts nursing station.</div>
+          <div><strong style="color: #3fa8b8;">[STEP 05] EMR Integration:</strong> Bi-directional HL7/FHIR sync records diagnosis, medication schedule, and treatment milestone.</div>
+        </div>
+      `,
+      'capabilities': `
+        <ul style="list-style: none; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+          <li style="background: #f8fafc; padding: 12px 16px; border-radius: 6px; border: 1px solid #e2e8f0; font-size: 0.85rem; color: #334155;">
+            <strong style="color: #047857;">✓ Multi-Department Token Engine:</strong> Reduces average patient OPD waiting idle time.
+          </li>
+          <li style="background: #f8fafc; padding: 12px 16px; border-radius: 6px; border: 1px solid #e2e8f0; font-size: 0.85rem; color: #334155;">
+            <strong style="color: #047857;">✓ Role-Based Clinical Security:</strong> Doctors, nurses, billing, and pharmacy access only authorized scopes.
+          </li>
+          <li style="background: #f8fafc; padding: 12px 16px; border-radius: 6px; border: 1px solid #e2e8f0; font-size: 0.85rem; color: #334155;">
+            <strong style="color: #047857;">✓ Doctor-in-the-Loop Sign-off:</strong> High-risk medical orders require explicit confirmation.
+          </li>
+          <li style="background: #f8fafc; padding: 12px 16px; border-radius: 6px; border: 1px solid #e2e8f0; font-size: 0.85rem; color: #334155;">
+            <strong style="color: #047857;">✓ Cloud or Hybrid Deployment:</strong> Flexible deployment for hospital local server constraints or cloud infra.
+          </li>
+        </ul>
+      `,
+      'status': `
+        <div style="background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 6px; padding: 18px; color: #166534; font-size: 0.88rem; line-height: 1.6;">
+          <strong>Current Lifecycle: Active Product Development &amp; Pilot Deployment (2026)</strong>
+          <p style="margin-top: 6px; color: #15803d; font-size: 0.84rem;">
+            NexAgent HMS is currently in active core development with healthcare operators in India. We are refining queue orchestration algorithms and bed management interfaces in pilot environments. We welcome partner hospitals to participate in early deployment reviews.
+          </p>
+        </div>
+      `
+    };
+
+    subtabs.forEach(btn => {
+      btn.addEventListener('click', () => {
+        subtabs.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const tabKey = btn.getAttribute('data-hms-tab');
+        if (subContent[tabKey]) {
+          contentBox.innerHTML = subContent[tabKey];
+        }
+      });
+    });
+  };
+
+  navBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      navBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const indKey = btn.getAttribute('data-industry');
+      renderIndustry(indKey);
+    });
+  });
+
+  // Initial render: Healthcare
+  renderIndustry('healthcare');
+}
+
+/**
+ * 16. Interactive Technology Stack Explorer
+ */
+function initTechStackExplorer() {
+  const layerItems = document.querySelectorAll('.tech-layer-item');
+  const detailBadge = document.querySelector('.tech-detail-badge');
+  const detailTitle = document.querySelector('.tech-detail-title');
+  const detailDesc = document.querySelector('.tech-detail-desc');
+  const detailCode = document.querySelector('.tech-detail-code-block');
+
+  if (!layerItems.length || !detailTitle) return;
+
+  const stackData = {
+    'data': {
+      badge: 'LAYER 01 / INGESTION',
+      title: 'Business Data & Signals',
+      desc: 'Connects directly to your existing systems of record—EMRs, CRM software, ticketing platforms, emails, and database webhooks. Normalizes disparate operational data into uniform event streams without disrupting your existing tools.',
+      code: 'nexagent ingest --sources "emr,crm,helpdesk" --format "unified-event-stream"'
+    },
+    'context': {
+      badge: 'LAYER 02 / CONTEXT',
+      title: 'Context Synthesis Layer',
+      desc: 'Correlates the incoming event against historical customer interactions, clinical guidelines, active account status, and business policies. Reconstructs situational context in milliseconds so automated decisions are grounded in verified truth.',
+      code: 'nexagent context assemble --entity "patient:P-98124" --depth "longitudinal" --verify true'
+    },
+    'ai': {
+      badge: 'LAYER 03 / INTELLIGENCE',
+      title: 'AI Intelligence & Reasoning',
+      desc: 'Extracts exact operational intent, classifies priority, and structures free-form requests. Constrained strictly to understanding rather than unmonitored database writes.',
+      code: 'nexagent intent extract --input "$signal.body" --classify "triage_admission" --confidence 0.96'
+    },
+    'rules': {
+      badge: 'LAYER 04 / GOVERNANCE',
+      title: 'Deterministic Rules & Policies',
+      desc: 'The non-negotiable safety governor. All actions must satisfy hardcoded business rules, financial spending caps, clinical thresholds, and role-based permissions before execution is permitted.',
+      code: 'nexagent policy check --rule "bed_allocation_icu" --require-signoff "chief_medical_officer"'
+    },
+    'engine': {
+      badge: 'LAYER 05 / WORKFLOW',
+      title: 'Workflow Execution Engine',
+      desc: 'Orchestrates multi-step sequences across different tools and databases. Manages step dependencies, retries, fallbacks, and transactional state consistency.',
+      code: 'nexagent workflow step-sequence --steps "verify_auth,assign_bed,update_emr,notify_ward"'
+    },
+    'exec': {
+      badge: 'LAYER 06 / EXECUTION',
+      title: 'Action Execution Layer',
+      desc: 'Performs verified mutations: writing records to CRMs, updating bed availability in hospital databases, creating tasks, and sending confirmations with zero hallucination.',
+      code: 'nexagent exec commit --target "hospital_his" --endpoint "beds/ICU-04/occupy" --status "success"'
+    },
+    'audit': {
+      badge: 'LAYER 07 / AUDIT',
+      title: 'Audit & Governance Trail',
+      desc: 'Maintains an immutable, timestamped record of every decision, data lookup, approval sign-off, and executed action for regulatory oversight, quality control, and compliance inspection.',
+      code: 'nexagent audit log --event "ID-7812" --verified-by "operator_signoff" --immutable true'
+    }
+  };
+
+  layerItems.forEach(item => {
+    const activate = () => {
+      layerItems.forEach(l => l.classList.remove('active'));
+      item.classList.add('active');
+      const key = item.getAttribute('data-tech-layer');
+      const d = stackData[key];
+      if (!d) return;
+
+      if (detailBadge) detailBadge.textContent = d.badge;
+      if (detailTitle) detailTitle.textContent = d.title;
+      if (detailDesc) detailDesc.textContent = d.desc;
+      if (detailCode) detailCode.textContent = d.code;
+    };
+
+    item.addEventListener('click', activate);
+    item.addEventListener('mouseenter', activate);
+  });
+}
+
+/**
+ * 17. Illustrative Workflow Simulation Controller
+ */
+function initWorkflowSimulation() {
+  const stepNodes = document.querySelectorAll('.sim-step-node');
+  const advanceBtn = document.getElementById('advance-sim-btn');
+  const resetBtn = document.getElementById('reset-sim-btn');
+  const statusMsg = document.getElementById('sim-status-message');
+
+  if (!stepNodes.length) return;
+
+  let currentStep = 0;
+  const messages = [
+    'Step 1: Patient arrival recorded at emergency triage desk. Ingesting vitals and insurance details...',
+    'Step 2: Policy Governor evaluates insurance pre-authorization rules against treatment estimate...',
+    'Step 3: Approval Gate triggered: Physician sign-off required for ICU admission...',
+    'Step 4: Bed Management Module reserves ICU Bed #04 and dispatches preparation notice to ward nursing...',
+    'Step 5: Transaction complete: EMR updated via HL7/FHIR endpoint with verified audit timestamp.'
+  ];
+
+  const updateSim = (idx) => {
+    currentStep = idx;
+    stepNodes.forEach((node, i) => {
+      if (i <= currentStep) {
+        node.classList.add('active');
+      } else {
+        node.classList.remove('active');
+      }
+    });
+    if (statusMsg && messages[currentStep]) {
+      statusMsg.textContent = messages[currentStep];
+    }
+  };
+
+  stepNodes.forEach((node, idx) => {
+    node.addEventListener('click', () => updateSim(idx));
+  });
+
+  if (advanceBtn) {
+    advanceBtn.addEventListener('click', () => {
+      const next = (currentStep + 1) % stepNodes.length;
+      updateSim(next);
+    });
+  }
+
+  if (resetBtn) {
+    resetBtn.addEventListener('click', () => {
+      updateSim(0);
+    });
+  }
+}
+
 
