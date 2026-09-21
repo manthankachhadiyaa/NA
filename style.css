@@ -368,16 +368,24 @@ body {
   min-width: 0;
 }
 
-/* Master Header */
+/* Master Header (Sticky Top Bar) */
 .master-header {
+  position: sticky;
+  top: 0;
   height: var(--header-h);
   border-bottom: 1px solid var(--border-line);
   display: grid;
   grid-template-columns: 1.05fr 1fr;
-  background: rgba(246, 243, 238, 0.88);
+  background: rgba(246, 243, 238, 0.92);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  z-index: 40;
+  z-index: 48;
+  transition: background-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.master-header.scrolled {
+  background: rgba(246, 243, 238, 0.97);
+  box-shadow: 0 4px 20px rgba(14, 24, 34, 0.07);
 }
 
 .header-left-slot {

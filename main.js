@@ -55,6 +55,16 @@ function initScrollSpy() {
         link.classList.remove('active');
       }
     });
+
+    // Sticky Top Bar Scrolled State
+    const header = document.querySelector('.master-header');
+    if (header) {
+      if (scrollY > 15) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+    }
   };
 
   window.addEventListener('scroll', updateActiveSection, { passive: true });
