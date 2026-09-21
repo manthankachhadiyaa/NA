@@ -2377,6 +2377,22 @@ input:checked + .slider-ui:before { transform: translateX(18px); }
   }
 }
 
+/* ================= 10. FOUNDERS SPOTLIGHT (DUAL FOUNDER LAYOUT) ================= */
+.founders-spotlight-card {
+  display: grid;
+  grid-template-columns: minmax(260px, 320px) 1fr minmax(260px, 320px);
+  gap: 0;
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.85);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.05);
+  position: relative;
+  min-height: 520px;
+}
+
 /* Left & Right Founder Portrait Columns */
 .founder-image-col {
   position: relative;

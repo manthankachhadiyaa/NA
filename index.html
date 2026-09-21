@@ -1298,79 +1298,98 @@
               <div class="status-badge-pill dark-variant">
                 <div class="badge-content">
                   <span class="pulse-dot dark-dot"></span>
-                  <span class="badge-label dark-label">Company Leadership</span>
+                  <span class="badge-label dark-label">Founders</span>
                 </div>
                 <div class="badge-hatch-pattern dark-hatch"></div>
               </div>
             </div>
 
             <div class="card-split-title">
-              <h2 class="card-main-title">Built by two founders.<br>One vision.</h2>
+              <h2 class="card-main-title">Leadership &amp; Vision<br>behind NexAgent</h2>
               <p class="card-side-desc">
-                NexAgent is built by two equal co-founders combining technology, AI engineering, product strategy, and operational scale to build intelligent systems for modern businesses.
+                Building an autonomous AI operations system with precision, transparency, and enterprise-grade execution.
               </p>
             </div>
           </div>
 
-          <!-- Two Equal Founder Cards Side-by-Side (Equal Prominence, Equal Size, Equal Authority) -->
-          <div class="founders-equal-grid">
-            <!-- Founder 1: Manthan Kachhadiya -->
-            <div class="founder-equal-card framer-reveal-scale framer-delay-1" data-founder="manthan">
-              <div class="founder-equal-header">
-                <div class="founder-avatar-box">
-                  <img src="./assets/founder_manthan.jpg" alt="Manthan Kachhadiya, Co-Founder">
-                </div>
-                <div class="founder-header-info">
-                  <span class="founder-title-badge">CO-FOUNDER</span>
-                  <h3 class="founder-equal-name">MANTHAN KACHHADIYA</h3>
-                  <span class="founder-domain-tag">Technology · AI · Engineering</span>
-                </div>
+          <!-- Dual Founder Layout: Left Image | Center Divided (Top: Left Person, Bottom: Right Person) | Right Image -->
+          <div class="founders-spotlight-card">
+            <!-- Left Column: Image 1 - Manthan Kachhadiya -->
+            <div class="founder-image-col founder-left" data-founder="manthan">
+              <span class="corner-crosshair top-left">┌</span>
+              <span class="corner-crosshair top-right">┐</span>
+              <span class="corner-crosshair bottom-left">└</span>
+              <span class="corner-crosshair bottom-right">┘</span>
+              <div class="founder-image-wrap">
+                <img src="./assets/founder_manthan.jpg" alt="Manthan Kachhadiya, Founder" class="founder-portrait-img">
               </div>
-
-              <blockquote class="founder-quote-body">
-                “Focused on building the technology, architecture, and intelligence systems that turn operational needs into reliable, working software.”
-              </blockquote>
-
-              <div class="founder-footer-bar">
-                <span class="founder-badge-pill-equal">
-                  <span class="pulse-dot-cyan"></span> Systems &amp; Engineering Node
-                </span>
-                <span style="font-family: var(--font-mono); color: #3fa8b8; font-weight: 600;">CO-FOUNDER</span>
+              <div class="founder-image-overlay">
+                <span class="founder-overlay-tag">01 / ARCHITECTURE</span>
               </div>
             </div>
 
-            <!-- Founder 2: Savani Vraj -->
-            <div class="founder-equal-card framer-reveal-scale framer-delay-2" data-founder="vraj">
-              <div class="founder-equal-header">
-                <div class="founder-avatar-box">
-                  <img src="./assets/founder_vraj.jpg" alt="Savani Vraj, Co-Founder">
+            <!-- In-Between Column: Divided into Top Part (Left Person) and Bottom Part (Right Person) -->
+            <div class="founders-center-col">
+              <!-- Top Part: For Left Side Person (Manthan Kachhadiya) -->
+              <div class="founder-story-block founder-block-top" data-founder="manthan">
+                <div class="founder-meta-header">
+                  <div class="founder-status-indicator">
+                    <span class="pulse-dot-cyan"></span>
+                    <span class="founder-tag">SYSTEMS &amp; ARCHITECTURE</span>
+                  </div>
+                  <span class="founder-index-num">01</span>
                 </div>
-                <div class="founder-header-info">
-                  <span class="founder-title-badge">CO-FOUNDER</span>
-                  <h3 class="founder-equal-name">SAVANI VRAJ</h3>
-                  <span class="founder-domain-tag">Product · Business Strategy · Operations</span>
+
+                <blockquote class="founder-quote">
+                  “We started NexAgent with a singular conviction: support teams shouldn't drown in repetitive tickets. True automation isn't about replacing humans — it's about giving them intelligent systems that execute with precision, confidence, and total control.”
+                </blockquote>
+
+                <div class="founder-identity-bar">
+                  <div class="identity-info">
+                    <h3 class="founder-name">MANTHAN KACHHADIYA</h3>
+                    <span class="founder-title">FOUNDER</span>
+                  </div>
                 </div>
               </div>
 
-              <blockquote class="founder-quote-body">
-                “Focused on understanding business problems and turning them into useful products, scalable operations, and lasting customer impact.”
-              </blockquote>
+              <div class="founder-divider-line"></div>
 
-              <div class="founder-footer-bar">
-                <span class="founder-badge-pill-equal">
-                  <span class="pulse-dot-cyan"></span> Strategy &amp; Operations Node
-                </span>
-                <span style="font-family: var(--font-mono); color: #3fa8b8; font-weight: 600;">CO-FOUNDER</span>
+              <!-- Bottom Part: For Right Side Person (Savani Vraj) -->
+              <div class="founder-story-block founder-block-bottom" data-founder="vraj">
+                <div class="founder-meta-header">
+                  <div class="founder-status-indicator">
+                    <span class="pulse-dot-cyan"></span>
+                    <span class="founder-tag">OPERATIONS &amp; SCALE</span>
+                  </div>
+                  <span class="founder-index-num">02</span>
+                </div>
+
+                <blockquote class="founder-quote">
+                  “Building an autonomous operations layer means reliability is non-negotiable. Every workflow, every API call, and every decision NexAgent makes is designed for enterprise grade predictability and real-time execution.”
+                </blockquote>
+
+                <div class="founder-identity-bar">
+                  <div class="identity-info">
+                    <h3 class="founder-name">SAVANI VRAJ</h3>
+                    <span class="founder-title">FOUNDER</span>
+                  </div>
+                </div>
               </div>
             </div>
-          </div>
 
-          <!-- Subtle Company Page Route Link -->
-          <div style="margin-top: 24px; text-align: center;">
-            <a href="about.html" class="btn-product-action" style="font-size: 0.85rem; padding: 10px 18px; background: rgba(10, 20, 30, 0.04); border-radius: 6px; border: 1px solid rgba(10, 20, 30, 0.08); display: inline-flex; align-items: center; gap: 8px;">
-              <span>Read our full operating philosophy on the Company page</span>
-              <span>→</span>
-            </a>
+            <!-- Right Column: Image 2 - Savani Vraj -->
+            <div class="founder-image-col founder-right" data-founder="vraj">
+              <span class="corner-crosshair top-left">┌</span>
+              <span class="corner-crosshair top-right">┐</span>
+              <span class="corner-crosshair bottom-left">└</span>
+              <span class="corner-crosshair bottom-right">┘</span>
+              <div class="founder-image-wrap">
+                <img src="./assets/founder_vraj.jpg" alt="Savani Vraj, Founder" class="founder-portrait-img">
+              </div>
+              <div class="founder-image-overlay">
+                <span class="founder-overlay-tag">02 / OPERATIONS</span>
+              </div>
+            </div>
           </div>
         </div>
       </section>
