@@ -459,64 +459,44 @@ function initIntegrationFilter() {
 }
 
 /**
- * 10. Testimonial Slider Controls with Fluid Cross-Slide Motion
+ * 10. Founders Synchronized Interactive Hover State
  */
 function initTestimonialSlider() {
-  const testimonials = [
-    {
-      quote: "“NexAgent transformed how our team operates — turning scattered processes into a unified AI workflow that saves us hours every single day.”",
-      author: "HELENA FLOWS",
-      role: "Founder, Altura AI"
-    },
-    {
-      quote: "“The confidence thresholds and human approvals gave our leadership the confidence to automate 70% of standard ticket resolutions on day one.”",
-      author: "MARCUS CHEN",
-      role: "VP Support, PulseStack"
-    },
-    {
-      quote: "“Customer satisfaction scores increased by 22% within 3 weeks of deploying NexAgent across our Zendesk and Salesforce channels.”",
-      author: "SARAH JENNINGS",
-      role: "Head of Operations, Orbitly"
-    }
-  ];
+  const manthanImage = document.querySelector('.founder-image-col[data-founder="manthan"]');
+  const manthanStory = document.querySelector('.founder-story-block[data-founder="manthan"]');
+  const vrajImage = document.querySelector('.founder-image-col[data-founder="vraj"]');
+  const vrajStory = document.querySelector('.founder-story-block[data-founder="vraj"]');
 
-  let currentIndex = 0;
-  const quoteEl = document.querySelector('.testimonial-quote');
-  const nameEl = document.querySelector('.author-name');
-  const roleEl = document.querySelector('.author-role');
-  const btnPrev = document.getElementById('prev-quote');
-  const btnNext = document.getElementById('next-quote');
+  if (manthanImage && manthanStory) {
+    const activateManthan = () => {
+      manthanStory.classList.add('active');
+      manthanImage.classList.add('active');
+    };
+    const deactivateManthan = () => {
+      manthanStory.classList.remove('active');
+      manthanImage.classList.remove('active');
+    };
 
-  function updateQuote(idx) {
-    if (!quoteEl || !nameEl || !roleEl) return;
-    
-    quoteEl.classList.add('sliding-out');
-    
-    setTimeout(() => {
-      quoteEl.textContent = testimonials[idx].quote;
-      nameEl.textContent = testimonials[idx].author;
-      roleEl.textContent = testimonials[idx].role;
-      quoteEl.classList.remove('sliding-out');
-      quoteEl.classList.add('sliding-in');
-
-      setTimeout(() => {
-        quoteEl.classList.remove('sliding-in');
-      }, 320);
-    }, 220);
+    manthanImage.addEventListener('mouseenter', activateManthan);
+    manthanImage.addEventListener('mouseleave', deactivateManthan);
+    manthanStory.addEventListener('mouseenter', activateManthan);
+    manthanStory.addEventListener('mouseleave', deactivateManthan);
   }
 
-  if (btnNext) {
-    btnNext.addEventListener('click', () => {
-      currentIndex = (currentIndex + 1) % testimonials.length;
-      updateQuote(currentIndex);
-    });
-  }
+  if (vrajImage && vrajStory) {
+    const activateVraj = () => {
+      vrajStory.classList.add('active');
+      vrajImage.classList.add('active');
+    };
+    const deactivateVraj = () => {
+      vrajStory.classList.remove('active');
+      vrajImage.classList.remove('active');
+    };
 
-  if (btnPrev) {
-    btnPrev.addEventListener('click', () => {
-      currentIndex = (currentIndex - 1 + testimonials.length) % testimonials.length;
-      updateQuote(currentIndex);
-    });
+    vrajImage.addEventListener('mouseenter', activateVraj);
+    vrajImage.addEventListener('mouseleave', deactivateVraj);
+    vrajStory.addEventListener('mouseenter', activateVraj);
+    vrajStory.addEventListener('mouseleave', deactivateVraj);
   }
 }
 
