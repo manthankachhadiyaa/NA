@@ -1,0 +1,1090 @@
+import os
+import subprocess
+import sys
+
+# Master Audit & Strategic Discovery Report Generator for NexAgent AI
+# Full 32-Section Structure + Executive Summary
+
+html_content = """<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>NexAgent - Master Website Audit, Content Strategy & Redesign Discovery Report</title>
+  <style>
+    @page {
+      size: A4 portrait;
+      margin: 18mm 16mm 18mm 16mm;
+    }
+
+    * {
+      box-sizing: border-box;
+      -webkit-print-color-adjust: exact !important;
+      print-color-adjust: exact !important;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      color: #1a232b;
+      line-height: 1.55;
+      font-size: 9.5pt;
+      background: #ffffff;
+      margin: 0;
+      padding: 0;
+    }
+
+    .cover-page {
+      page-break-after: always;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 88vh;
+      padding: 30px 0;
+    }
+
+    .cover-top {
+      border-top: 4px solid #3d828c;
+      padding-top: 25px;
+    }
+
+    .cover-badge {
+      display: inline-block;
+      font-family: monospace;
+      font-size: 8pt;
+      letter-spacing: 1.5px;
+      color: #3d828c;
+      background: #edf6f7;
+      padding: 4px 10px;
+      border-radius: 4px;
+      font-weight: 700;
+      margin-bottom: 18px;
+    }
+
+    .cover-title {
+      font-size: 26pt;
+      line-height: 1.15;
+      font-weight: 800;
+      color: #0e1822;
+      margin: 0 0 14px 0;
+    }
+
+    .cover-subtitle {
+      font-size: 12pt;
+      color: #505c6d;
+      font-weight: 400;
+      line-height: 1.45;
+      max-width: 620px;
+      margin-bottom: 25px;
+    }
+
+    .cover-meta-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      border-top: 1px solid #e2ded4;
+      border-bottom: 1px solid #e2ded4;
+      padding: 18px 0;
+      margin-top: 30px;
+    }
+
+    .meta-item strong {
+      display: block;
+      font-size: 7.5pt;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: #727984;
+      margin-bottom: 3px;
+    }
+
+    .meta-item span {
+      font-size: 10pt;
+      font-weight: 600;
+      color: #0e1822;
+    }
+
+    .cover-footer {
+      font-size: 8pt;
+      color: #8c887e;
+      border-top: 1px solid #e2ded4;
+      padding-top: 12px;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    h1 {
+      font-size: 15pt;
+      font-weight: 700;
+      color: #0e1822;
+      border-bottom: 2px solid #3d828c;
+      padding-bottom: 5px;
+      margin-top: 28px;
+      margin-bottom: 12px;
+      page-break-after: avoid;
+    }
+
+    h2 {
+      font-size: 12pt;
+      font-weight: 700;
+      color: #142e37;
+      margin-top: 20px;
+      margin-bottom: 8px;
+      page-break-after: avoid;
+    }
+
+    h3 {
+      font-size: 10.5pt;
+      font-weight: 600;
+      color: #245865;
+      margin-top: 14px;
+      margin-bottom: 6px;
+      page-break-after: avoid;
+    }
+
+    p {
+      margin: 0 0 9px 0;
+    }
+
+    ul, ol {
+      margin: 0 0 10px 0;
+      padding-left: 18px;
+    }
+
+    li {
+      margin-bottom: 4px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 12px 0 16px 0;
+      font-size: 8.5pt;
+      page-break-inside: avoid;
+    }
+
+    th, td {
+      border: 1px solid #dcd8cf;
+      padding: 6px 8px;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    th {
+      background-color: #f4f1ea;
+      color: #0e1822;
+      font-weight: 700;
+      letter-spacing: 0.3px;
+    }
+
+    tr:nth-child(even) td {
+      background-color: #fbfaf8;
+    }
+
+    .callout-box {
+      background: #f8f6f0;
+      border-left: 3.5px solid #3d828c;
+      padding: 10px 14px;
+      margin: 12px 0;
+      border-radius: 0 5px 5px 0;
+      page-break-inside: avoid;
+    }
+
+    .callout-box strong {
+      color: #142e37;
+    }
+
+    .alert-box {
+      background: #fff8f5;
+      border-left: 3.5px solid #d05a3e;
+      padding: 10px 14px;
+      margin: 12px 0;
+      border-radius: 0 5px 5px 0;
+      page-break-inside: avoid;
+    }
+
+    .alert-box strong {
+      color: #923824;
+    }
+
+    .logic-grid {
+      background: #faf8f5;
+      border: 1px solid #e8e3d8;
+      border-radius: 5px;
+      padding: 9px 12px;
+      margin: 9px 0;
+      font-size: 8.5pt;
+      page-break-inside: avoid;
+    }
+
+    .logic-step {
+      margin-bottom: 3px;
+    }
+
+    .logic-step span {
+      font-weight: 700;
+      color: #3d828c;
+      margin-right: 5px;
+    }
+
+    .code-block {
+      background: #141f27;
+      color: #e2f1f3;
+      padding: 9px 12px;
+      border-radius: 5px;
+      font-family: monospace;
+      font-size: 7.5pt;
+      line-height: 1.35;
+      margin: 9px 0;
+      page-break-inside: avoid;
+      white-space: pre-wrap;
+    }
+
+    .page-break {
+      page-break-after: always;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 2px 5px;
+      border-radius: 3px;
+      font-size: 7pt;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    .badge-critical { background: #fed7d7; color: #9b2c2c; }
+    .badge-high { background: #feebc8; color: #9c4221; }
+    .badge-medium { background: #e2e8f0; color: #4a5568; }
+    .badge-low { background: #c6f6d5; color: #22543d; }
+
+    .toc-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5px 20px;
+      font-size: 8pt;
+      margin: 14px 0 20px 0;
+    }
+
+    .toc-item {
+      display: flex;
+      justify-content: space-between;
+      border-bottom: 1px dotted #d0cbc0;
+      padding-bottom: 2px;
+    }
+
+    .toc-num {
+      color: #3d828c;
+      font-weight: 700;
+      margin-right: 5px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ================= COVER PAGE ================= -->
+  <div class="cover-page">
+    <div class="cover-top">
+      <div class="cover-badge">ENTERPRISE AUDIT & REDESIGN BLUEPRINT</div>
+      <h1 class="cover-title">NexAgent AI<br>Master Website Audit & Strategic Redesign Report</h1>
+      <div class="cover-subtitle">
+        A deep, evidence-based audit spanning business objectives, brand positioning, UX/UI, information architecture, conversion engineering, and comprehensive redesign roadmap.
+      </div>
+
+      <div class="cover-meta-grid">
+        <div class="meta-item">
+          <strong>Subject Organization</strong>
+          <span>NexAgent AI (Autonomous Support Operations)</span>
+        </div>
+        <div class="meta-item">
+          <strong>Company Founders</strong>
+          <span>Manthan Kachhadiya & Savani Vraj</span>
+        </div>
+        <div class="meta-item">
+          <strong>Audit Scope</strong>
+          <span>32-Section Master Strategic Discovery</span>
+        </div>
+        <div class="meta-item">
+          <strong>Audit Date & Status</strong>
+          <span>September 21, 2026 — Official Master Specification</span>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <div class="callout-box">
+        <strong>Strategic Core Intent:</strong> This document serves as the single source of truth for founders, product strategists, UX/UI designers, and frontend engineers. It answers conclusively: <em>What should NexAgent become, who is it for, what must it communicate, what content and architecture must exist, and how do we engineer high-intent enterprise conversion?</em>
+      </div>
+    </div>
+
+    <div class="cover-footer">
+      <span>NexAgent Confidential — Proprietary Discovery Document</span>
+      <span>Strict 32-Section Master Structure — Version 2.0 Final</span>
+    </div>
+  </div>
+
+  <!-- ================= TABLE OF CONTENTS ================= -->
+  <h2>Master Table of Contents (Complete 32 Sections)</h2>
+  <div class="toc-grid">
+    <div class="toc-item"><span><span class="toc-num">00.</span> Executive Summary</span><span>Sec 0</span></div>
+    <div class="toc-item"><span><span class="toc-num">01.</span> Company Understanding</span><span>Sec 1</span></div>
+    <div class="toc-item"><span><span class="toc-num">02.</span> Business Objectives</span><span>Sec 2</span></div>
+    <div class="toc-item"><span><span class="toc-num">03.</span> Website Objectives</span><span>Sec 3</span></div>
+    <div class="toc-item"><span><span class="toc-num">04.</span> Audience & User Segments</span><span>Sec 4</span></div>
+    <div class="toc-item"><span><span class="toc-num">05.</span> User Journeys</span><span>Sec 5</span></div>
+    <div class="toc-item"><span><span class="toc-num">06.</span> Current Website Architecture</span><span>Sec 6</span></div>
+    <div class="toc-item"><span><span class="toc-num">07.</span> Full Website Inventory</span><span>Sec 7</span></div>
+    <div class="toc-item"><span><span class="toc-num">08.</span> Homepage Audit (Section-by-Section)</span><span>Sec 8</span></div>
+    <div class="toc-item"><span><span class="toc-num">09.</span> UX Audit</span><span>Sec 9</span></div>
+    <div class="toc-item"><span><span class="toc-num">10.</span> Content Audit</span><span>Sec 10</span></div>
+    <div class="toc-item"><span><span class="toc-num">11.</span> Content Strategy</span><span>Sec 11</span></div>
+    <div class="toc-item"><span><span class="toc-num">12.</span> Messaging Strategy</span><span>Sec 12</span></div>
+    <div class="toc-item"><span><span class="toc-num">13.</span> Conversion Audit (CRO)</span><span>Sec 13</span></div>
+    <div class="toc-item"><span><span class="toc-num">14.</span> SEO Audit</span><span>Sec 14</span></div>
+    <div class="toc-item"><span><span class="toc-num">15.</span> Competitor Analysis</span><span>Sec 15</span></div>
+    <div class="toc-item"><span><span class="toc-num">16.</span> Brand Audit</span><span>Sec 16</span></div>
+    <div class="toc-item"><span><span class="toc-num">17.</span> Visual Design Audit</span><span>Sec 17</span></div>
+    <div class="toc-item"><span><span class="toc-num">18.</span> Mobile UX Audit</span><span>Sec 18</span></div>
+    <div class="toc-item"><span><span class="toc-num">19.</span> Technical & Performance Observations</span><span>Sec 19</span></div>
+    <div class="toc-item"><span><span class="toc-num">20.</span> Trust & Credibility Audit</span><span>Sec 20</span></div>
+    <div class="toc-item"><span><span class="toc-num">21.</span> Accessibility Audit (WCAG 2.1 AA)</span><span>Sec 21</span></div>
+    <div class="toc-item"><span><span class="toc-num">22.</span> Analytics & Measurement Strategy</span><span>Sec 22</span></div>
+    <div class="toc-item"><span><span class="toc-num">23.</span> Content Governance & Maintenance Plan</span><span>Sec 23</span></div>
+    <div class="toc-item"><span><span class="toc-num">24.</span> What Is Missing? (Gap Analysis)</span><span>Sec 24</span></div>
+    <div class="toc-item"><span><span class="toc-num">25.</span> Recommended Information Architecture</span><span>Sec 25</span></div>
+    <div class="toc-item"><span><span class="toc-num">26.</span> Recommended Sitemap</span><span>Sec 26</span></div>
+    <div class="toc-item"><span><span class="toc-num">27.</span> Recommended Page Templates & Wireframes</span><span>Sec 27</span></div>
+    <div class="toc-item"><span><span class="toc-num">28.</span> Redesign Requirements Matrix</span><span>Sec 28</span></div>
+    <div class="toc-item"><span><span class="toc-num">29.</span> Quick Wins (Next 48 Hours)</span><span>Sec 29</span></div>
+    <div class="toc-item"><span><span class="toc-num">30.</span> Prioritized Action Plan & Phasing</span><span>Sec 30</span></div>
+    <div class="toc-item"><span><span class="toc-num">31.</span> Strategic Direction & Final Recommendation</span><span>Sec 31</span></div>
+    <div class="toc-item"><span><span class="toc-num">32.</span> Open Questions & Validation Requirements</span><span>Sec 32</span></div>
+  </div>
+
+  <div class="page-break"></div>
+
+  <!-- ================= EXECUTIVE SUMMARY ================= -->
+  <h1>Executive Summary</h1>
+  <p><strong>NexAgent</strong> is an advanced B2B AI platform engineered as an <strong>"autonomous operations layer for customer support teams."</strong> Unlike legacy deflection chatbots that merely output conversational text, NexAgent integrates directly into helpdesks (Zendesk, Freshdesk, Intercom) and CRMs (Salesforce, HubSpot) to resolve tickets, update records, and execute multi-step operational workflows with strict deterministic policy gates.</p>
+
+  <div class="alert-box">
+    <strong>The Core Strategic Paradox:</strong> NexAgent possesses world-class visual aesthetics, bespoke typography, smooth SVG interactions, and authentic founder accountability. However, from a commercial perspective, the current website functions as an <strong>"interactive brochure without a cash register."</strong> There are zero functional forms, zero demo booking integrations, and multiple placeholder elements that undermine enterprise credibility.
+  </div>
+
+  <p>The redesign strategy outlined across the following 32 sections systematically transitions NexAgent from a single-page prototype showcase into an enterprise-ready revenue and pipeline generation engine.</p>
+
+  <!-- ================= SECTION 1 ================= -->
+  <h1>1. Company Understanding</h1>
+  <p>To audit NexAgent effectively, we begin by dissecting verified facts from operational inferences and unvalidated assumptions:</p>
+  <ul>
+    <li><strong>Confirmed Organizational Facts:</strong>
+      <ul>
+        <li><strong>Company Entity:</strong> NexAgent (NexAgent AI).</li>
+        <li><strong>Leadership:</strong> Founded by <strong>Manthan Kachhadiya</strong> (Systems & Architecture) and <strong>Savani Vraj</strong> (Operations & Scale). Authentic founder portraits and vision statements are integrated directly on the site.</li>
+        <li><strong>Product Definition:</strong> Autonomous Support Operations Layer connecting helpdesks, knowledge bases, and CRMs.</li>
+        <li><strong>Core Technical Tenets:</strong> 4-layer operational framework: Problem Ingestion → Contextual Understanding → AI Policy & Approval Automation → Deterministic Action Execution.</li>
+      </ul>
+    </li>
+    <li><strong>Evidence-Based Inferences:</strong>
+      <ul>
+        <li>Target market: High-growth B2B SaaS, e-commerce, and logistics handling 5,000+ support tickets monthly.</li>
+        <li>Commercial Model: Annual enterprise SaaS licensing with tiered usage pricing based on resolved workflows.</li>
+      </ul>
+    </li>
+    <li><strong>Assumptions Requiring Validation:</strong>
+      <ul>
+        <li>Live availability of native bi-directional CRM connectors (Salesforce Service Cloud vs Zendesk API).</li>
+        <li>Current SOC 2 Type II audit readiness and data sovereignty constraints.</li>
+      </ul>
+    </li>
+  </ul>
+
+  <!-- ================= SECTION 2 ================= -->
+  <h1>2. Business Objectives</h1>
+  <p>NexAgent's redesign must align directly with the enterprise revenue model:</p>
+  <ol>
+    <li><strong>Pipeline Generation:</strong> Capture qualified inbound demo bookings from VP of Support, Head of CX, and Director of RevOps.</li>
+    <li><strong>Category Distinction:</strong> Differentiate decisively from generic LLM chat wrappers by emphasizing back-office execution and deterministic policy guardrails.</li>
+    <li><strong>Enterprise Deal Velocity:</strong> Preemptively resolve compliance, security, and integration objections to compress sales cycles from 90 days to under 30 days.</li>
+    <li><strong>Hiring & Investor Traction:</strong> Signal institutional maturity, proprietary engineering moat, and long-term category leadership.</li>
+  </ol>
+
+  <!-- ================= SECTION 3 ================= -->
+  <h1>3. Website Objectives</h1>
+  <p>The redesigned website must fulfill four clear operational mandates:</p>
+  <ol>
+    <li><strong>Zero-Friction Conversion:</strong> Replace inert anchor scroll jumps with a multi-touchpoint conversion engine (Live Demo Booking, Interactive Sandbox, Security Whitepaper).</li>
+    <li><strong>Proof-First Value Delivery:</strong> Replace placeholder counters with real customer metrics, verifiable case studies, and live workflow simulations.</li>
+    <li><strong>Role-Based Navigation:</strong> Enable economic buyers (VP Support), technical evaluators (RevOps), and security gatekeepers (CISO) to immediately find tailored proof.</li>
+    <li><strong>Organic Discoverability:</strong> Establish a multi-page SEO footprint targeting commercial search queries around AI ticket automation and CRM workflow orchestration.</li>
+  </ol>
+
+  <div class="page-break"></div>
+
+  <!-- ================= SECTION 4 ================= -->
+  <h1>4. Audience & User Segments</h1>
+  <p>Enterprise AI software purchases involve a consensus buying committee. The website must address each persona's explicit needs and objections:</p>
+  <table>
+    <thead>
+      <tr>
+        <th>Audience Persona</th>
+        <th>Primary Pain Points</th>
+        <th>Core Objections</th>
+        <th>Required Proof & Content</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>VP / Head of Customer Support</strong><br><em>(Economic Buyer)</em></td>
+        <td>Escalating ticket backlogs, rising tier-1 support headcount costs, sluggish resolution times, low CSAT.</td>
+        <td>"Will this hallucinate in front of customers? Will it issue incorrect refunds or delete accounts?"</td>
+        <td>Deterministic policy engine, confidence score thresholds, human approval gates, SLA benchmarks.</td>
+      </tr>
+      <tr>
+        <td><strong>Director of Support Ops / RevOps</strong><br><em>(Technical Champion)</em></td>
+        <td>Fragmented systems (Zendesk, Salesforce, Jira), manual data re-entry, brittle webhook automations.</td>
+        <td>"How painful is setup? Will it overwrite our custom CRM fields and break existing triggers?"</td>
+        <td>Native bi-directional sync specs, no-code visual recipe builder, custom field mapping guides.</td>
+      </tr>
+      <tr>
+        <td><strong>CTO / CISO / Security Officer</strong><br><em>(Security Gatekeeper)</em></td>
+        <td>Data breaches, PII exposure, proprietary customer ticket data leaking into public LLM training datasets.</td>
+        <td>"Where is data hosted? Are you SOC 2 certified? Does customer data train third-party models?"</td>
+        <td>SOC 2 Type II summary, zero-data-retention agreement, tenant data isolation, AES-256 encryption.</td>
+      </tr>
+      <tr>
+        <td><strong>Senior Support Specialists</strong><br><em>(End Users / Influencers)</em></td>
+        <td>Exhausting repetitive tier-1 toil, burnout from repetitive password resets and status checks.</td>
+        <td>"Is this tool trying to replace us? Is the approval interface clunky and slow?"</td>
+        <td>Copilot UI previews, 1-click approve/deny workflow, automated macro drafting.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- ================= SECTION 5 ================= -->
+  <h1>5. User Journeys</h1>
+  <h3>Current Broken User Journey:</h3>
+  <div class="logic-grid">
+    <div class="logic-step"><span>Step 1:</span> User lands on Hero ("Build smarter, Grow faster"). Headline is generic and uninformative.</div>
+    <div class="logic-step"><span>Step 2:</span> User clicks primary CTA button "GET STARTED".</div>
+    <div class="logic-step"><span>Step 3:</span> Page jumps via anchor link down to mid-page (#capabilities) terminal graphic.</div>
+    <div class="logic-step"><span>Step 4:</span> User attempts to click "APPROVE" or "DENY" buttons in the terminal; buttons are completely inert.</div>
+    <div class="logic-step"><span>Step 5:</span> User looks for pricing, trial, or contact form — <strong>NO form exists anywhere on the site</strong>.</div>
+    <div class="logic-step"><span>Result:</span> <strong>100% bounce rate for commercial high-intent traffic.</strong></div>
+  </div>
+
+  <h3>Target Re-engineered User Journeys:</h3>
+  <div class="logic-grid">
+    <div class="logic-step"><span>Journey A (Support Leader):</span> Hero Value Hook ("Automate Support Workflows with 100% Policy Precision") → Interacts with live Return/Refund Simulator → Views Benchmark Case Study → Clicks "Book 15-Min Live Demo" → Completes qualified HubSpot form.</div>
+    <div class="logic-step"><span>Journey B (Support Ops):</span> Lands on dedicated Zendesk Integration page → Reviews API schema & action triggers → Clicks "Test in Interactive Sandbox" → Configures sample rule.</div>
+    <div class="logic-step"><span>Journey C (CISO / Compliance):</span> Clicks "Trust & Security" in top navigation → Reviews SOC 2 Type II audit summary, zero-retention pledge, and RBAC matrix → Downloads Security Architecture Whitepaper.</div>
+  </div>
+
+  <!-- ================= SECTION 6 ================= -->
+  <h1>6. Current Website Architecture</h1>
+  <p>The current website is implemented as a single monolithic HTML file (<code>index.html</code>) structured via section ID anchors:</p>
+  <div class="code-block">
+https://nexagent.ai/ (Single Page Anchor Navigation)
+├── #home (Hero, 3D Totem SVG, Category Hook)
+├── #overview (Platform statement, 4-tier interactive card)
+├── #capabilities (Policy control terminal with IF/THEN logic)
+├── #numbers (Bento grid performance analytics)
+├── #features (3-column notched architectural pillars)
+├── #integrations (Interactive tabbed integration grid)
+├── #testimonials (Dual founder showcase: Manthan Kachhadiya & Savani Vraj)
+├── #insights (Blog & thought leadership cards)
+├── #faq (Accordion objection handling & contact box)
+└── #prefooter (Final CTA banner & navigation links)
+  </div>
+  <p><strong>Architectural Deficiencies:</strong> Single-page architecture limits search engine indexation, prevents dedicated Google/LinkedIn ad landing pages, hampers analytics attribution, and forces conflicting buyer personas into a single rigid scroll narrative.</p>
+
+  <div class="page-break"></div>
+
+  <!-- ================= SECTION 7 ================= -->
+  <h1>7. Full Website Inventory</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>Section Anchor</th>
+        <th>Component Type</th>
+        <th>Stated Purpose</th>
+        <th>Critical Audit Findings</th>
+        <th>Redesign Action Required</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>#home</code></td>
+        <td>Hero Split + 3D Totem</td>
+        <td>Initial hook & value prop</td>
+        <td>Headline cliché; CTA points to internal anchor; typo "trigs"</td>
+        <td><strong>Rewrite copy, fix CTA to open Demo Modal</strong></td>
+      </tr>
+      <tr>
+        <td><code>#overview</code></td>
+        <td>Statement + Accordion</td>
+        <td>Explain operations layer</td>
+        <td>Interactive card only shows 1 static refund scenario</td>
+        <td><strong>Upgrade to multi-scenario live simulator</strong></td>
+      </tr>
+      <tr>
+        <td><code>#capabilities</code></td>
+        <td>Terminal Rules Engine</td>
+        <td>Demonstrate policy guardrails</td>
+        <td>Approve/Deny buttons static; lacks interactive feedback</td>
+        <td><strong>Implement functional rule toggle sandbox</strong></td>
+      </tr>
+      <tr>
+        <td><code>#numbers</code></td>
+        <td>Analytics Bento Grid</td>
+        <td>Social proof & ROI metrics</td>
+        <td>Synthetic unverified metrics (38k tickets, +247% efficiency)</td>
+        <td><strong>Add verified benchmark footnotes & calculator</strong></td>
+      </tr>
+      <tr>
+        <td><code>#features</code></td>
+        <td>Tri-Notched Card Grid</td>
+        <td>Core architectural pillars</td>
+        <td>Copy is abstract; lacks product UI screenshots</td>
+        <td><strong>Add real UI micro-previews and feature walkthroughs</strong></td>
+      </tr>
+      <tr>
+        <td><code>#integrations</code></td>
+        <td>Tabbed Tool Grid</td>
+        <td>Integration ecosystem</td>
+        <td>Uses fake dummy names (<code>SALESPATH</code>, <code>HUBLINQ</code>)</td>
+        <td><strong>Replace with real logos: Zendesk, Salesforce, HubSpot</strong></td>
+      </tr>
+      <tr>
+        <td><code>#testimonials</code></td>
+        <td>Dual Founder Showcase</td>
+        <td>Founder accountability</td>
+        <td>High authentic value, but lacks direct LinkedIn/GitHub links</td>
+        <td><strong>Add verified founder social links & credentials</strong></td>
+      </tr>
+      <tr>
+        <td><code>#insights</code></td>
+        <td>Article Card Grid</td>
+        <td>Thought leadership & SEO</td>
+        <td>Cards are unclickable; no subpages exist</td>
+        <td><strong>Build dedicated /blog CMS architecture</strong></td>
+      </tr>
+      <tr>
+        <td><code>#faq</code></td>
+        <td>Accordion + Contact Box</td>
+        <td>Objection handling</td>
+        <td>"CONTACT US" button is completely dead; zero JS event</td>
+        <td><strong>Wire button to interactive contact & demo modal</strong></td>
+      </tr>
+      <tr>
+        <td><code>#prefooter</code></td>
+        <td>CTA Banner & Links</td>
+        <td>Final conversion push</td>
+        <td>Unsubstantiated "12,745,012 Tickets Solved"; dead social links</td>
+        <td><strong>Convert to qualified lead capture & verified socials</strong></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- ================= SECTION 8 ================= -->
+  <h1>8. Homepage Section-by-Section Audit</h1>
+  <ul>
+    <li><strong>Sticky Master Header:</strong>
+      <div class="logic-grid">
+        <div class="logic-step"><span>Observation:</span> Header navigation item is spelled <code>Produces</code> instead of <code>Products</code>.</div>
+        <div class="logic-step"><span>Evidence:</span> Line 29 in <code>index.html</code>.</div>
+        <div class="logic-step"><span>Interpretation:</span> Visible typo undermines enterprise polish on initial page load.</div>
+        <div class="logic-step"><span>Impact:</span> Erodes technical credibility with enterprise evaluators.</div>
+        <div class="logic-step"><span>Recommendation:</span> Correct spelling to <code>Products</code> or <code>Platform</code> immediately.</div>
+      </div>
+    </li>
+    <li><strong>Hero & 3D Interactive Totem:</strong>
+      <div class="logic-grid">
+        <div class="logic-step"><span>Observation:</span> 3D Totem SVG levitates smoothly, but hero copy reads "Build smarter / Grow faster" with subtext "trigs workflows".</div>
+        <div class="logic-step"><span>Evidence:</span> Lines 77-85 in <code>index.html</code>.</div>
+        <div class="logic-step"><span>Interpretation:</span> Headline is a generic SaaS cliché; "trigs" is a grammatical error.</div>
+        <div class="logic-step"><span>Impact:</span> Fails to communicate product category within the crucial 5-second attention window.</div>
+        <div class="logic-step"><span>Recommendation:</span> Adopt authoritative headline: <em>"The Autonomous Operations Layer for Customer Support."</em></div>
+      </div>
+    </li>
+    <li><strong>Capabilities Terminal Mockup (#capabilities):</strong>
+      <div class="logic-grid">
+        <div class="logic-step"><span>Observation:</span> High-fidelity mock terminal showcasing policy logic, confidence scoring (89%), and APPROVE/DENY controls.</div>
+        <div class="logic-step"><span>Evidence:</span> Lines 509-607 in <code>index.html</code>.</div>
+        <div class="logic-step"><span>Interpretation:</span> Outstanding visual concept; directly addresses fear of AI hallucinations.</div>
+        <div class="logic-step"><span>Impact:</span> High user engagement potential, currently hindered by lack of functional interaction.</div>
+        <div class="logic-step"><span>Recommendation:</span> Add interactive feedback loop showing real-time execution state when buttons are clicked.</div>
+      </div>
+    </li>
+  </ul>
+
+  <div class="page-break"></div>
+
+  <!-- ================= SECTION 9 ================= -->
+  <h1>9. UX Audit</h1>
+  <ul>
+    <li><strong>Visual Hierarchy & Scannability:</strong> Excellent layout pacing. Monospace micro-badges, bold titles, and notched cards create a distinct technical atmosphere. However, high-density text in `#features` lacks visual anchors.</li>
+    <li><strong>Interaction Feedback Loops:</strong> Major UX breakdown: primary conversion buttons behave like dead ends or internal jumps rather than triggering modals or actions.</li>
+    <li><strong>Cognitive Friction:</strong> The 3D Totem diagram highlights tiers when hovering accordion items in the Overview section, but there is no explicit visual affordance guiding users to discover this interaction.</li>
+    <li><strong>Wayfinding & Orientation:</strong> Sticky top bar provides clear section links, but on mobile viewports, the lack of an explicit hamburger overlay menu restricts quick section switching.</li>
+  </ul>
+
+  <!-- ================= SECTION 10 ================= -->
+  <h1>10. Content Audit</h1>
+  <ul>
+    <li><strong>Voice and Tone:</strong> The copy successfully strikes an engineering-first, disciplined tone. It avoids fluffy marketing hype in favor of operational terminology (e.g., "deterministic execution", "confidence thresholds").</li>
+    <li><strong>Specificity vs Ambiguity:</strong> High specificity in the policy engine description, but high ambiguity in the integrations section where fictitious names (<code>SALESPATH</code>, <code>HUBLINQ</code>) are used.</li>
+    <li><strong>Unsubstantiated Metrics:</strong> The footer claim of <em>"12,745,012 Tickets Solved"</em> damages enterprise trust because it is clearly synthetic in the absence of named enterprise case studies.</li>
+    <li><strong>Readability:</strong> Body copy averages Grade 10 readability—well suited for technical directors and engineering-minded support leaders.</li>
+  </ul>
+
+  <!-- ================= SECTION 11 ================= -->
+  <h1>11. Content Strategy</h1>
+  <p>To convert enterprise prospects, NexAgent must build its content around four strategic pillars:</p>
+  <ol>
+    <li><strong>Pillar 1: Deterministic AI & Safety:</strong> In-depth technical articles, whitepapers, and interactive demos proving that NexAgent never acts outside predefined human approval rules.</li>
+    <li><strong>Pillar 2: Integration Deep-Dives:</strong> Dedicated landing pages detailing exact bi-directional data contracts for Zendesk, Salesforce Service Cloud, HubSpot, and Jira Service Management.</li>
+    <li><strong>Pillar 3: Support Operations Economics:</strong> Calculators, industry benchmarks, and ROI models demonstrating hard cost savings per ticket and backlog reductions.</li>
+    <li><strong>Pillar 4: Workflow Recipe Library:</strong> Pre-built automation playbooks (e.g., "Tier-1 Return Authorization with Stripe & Zendesk", "Subscription Cancellation with Retention Flow").</li>
+  </ol>
+
+  <!-- ================= SECTION 12 ================= -->
+  <h1>12. Messaging Strategy</h1>
+  <div class="callout-box">
+    <strong>Master Positioning Formula:</strong><br>
+    <em>"For customer support and operations leaders overwhelmed by manual ticket queues, NexAgent is the autonomous operations platform that resolves complex requests and executes verified workflows with strict human approval gates. Unlike deflection chatbots that just chat, NexAgent takes deterministic action directly inside your CRM and helpdesk."</em>
+  </div>
+  <h3>Recommended Copywriting Formulas:</h3>
+  <ul>
+    <li><strong>Primary Hero Headline:</strong> <em>"Autonomous Support Operations. Governed by Deterministic Policy."</em></li>
+    <li><strong>Hero Sub-headline:</strong> <em>"Connect your helpdesk and CRM. NexAgent resolves repetitive tickets and executes multi-step back-office workflows with 100% human-in-the-loop control."</em></li>
+    <li><strong>Objection Preemption Copy:</strong> <em>"Zero hallucinations. Zero unauthorized actions. Every step is scored against your confidence thresholds before execution."</em></li>
+  </ul>
+
+  <div class="page-break"></div>
+
+  <!-- ================= SECTION 13 ================= -->
+  <h1>13. Conversion Rate Optimization (CRO) Audit</h1>
+  <div class="alert-box">
+    <strong>Severe Conversion Blockers:</strong>
+    <ol>
+      <li>Zero input fields or capture forms exist across the entire website.</li>
+      <li>Primary CTA "GET STARTED" in the hero simply scrolls down to an inert SVG terminal.</li>
+      <li>The "CONTACT US" button in the FAQ section has no attached JavaScript event listener or mailto link.</li>
+      <li>No secondary lead capture offers exist (e.g., ungated sandbox or security whitepaper download).</li>
+    </ol>
+  </div>
+  <p><strong>CRO Redesign Blueprint:</strong> Deploy a unified 2-step Lead Capture Modal across all primary CTAs. Step 1: Work Email & Company Domain. Step 2: Primary Helpdesk & Monthly Ticket Volume. Connect instantly to Calendly for qualified accounts.</p>
+
+  <!-- ================= SECTION 14 ================= -->
+  <h1>14. SEO Audit</h1>
+  <ul>
+    <li><strong>Meta Tags:</strong> Title tag is currently <code>NexAgent Build smarter, Grow Faster</code>. Recommendation: <em>"NexAgent | Autonomous AI Support Operations & Workflow Automation"</em>.</li>
+    <li><strong>OpenGraph & Social Cards:</strong> Completely missing <code>og:title</code>, <code>og:description</code>, <code>og:image</code>, and Twitter card tags. Social shares will display blank or unstyled previews.</li>
+    <li><strong>Schema Markup:</strong> Missing Schema.org JSON-LD structured data. Must implement <code>SoftwareApplication</code>, <code>Organization</code>, and <code>FAQPage</code> schemas.</li>
+    <li><strong>Keyword Opportunity:</strong> Build dedicated sub-pages targeting high-intent commercial keywords: <em>"Zendesk automated ticket resolution"</em>, <em>"Salesforce support AI workflow runner"</em>, <em>"deterministic AI support copilot"</em>.</li>
+  </ul>
+
+  <!-- ================= SECTION 15 ================= -->
+  <h1>15. Competitor Analysis</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>Competitor</th>
+        <th>Positioning</th>
+        <th>Core Mechanism</th>
+        <th>Key Vulnerability</th>
+        <th>NexAgent Differentiation</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Sierra AI</strong></td>
+        <td>Conversational customer experience</td>
+        <td>Supervised LLM reasoning</td>
+        <td>Focuses on conversational voice/chat; expensive enterprise rollout</td>
+        <td>NexAgent focuses on deterministic back-office CRM execution, not front-facing chat.</td>
+      </tr>
+      <tr>
+        <td><strong>Decagon</strong></td>
+        <td>Enterprise AI customer support</td>
+        <td>Knowledge-base deflection</td>
+        <td>Black-box agent behavior creates fear of rogue customer actions</td>
+        <td>NexAgent provides visual IF/THEN policy controls and explicit human sign-off gates.</td>
+      </tr>
+      <tr>
+        <td><strong>Intercom Fin</strong></td>
+        <td>AI support bot</td>
+        <td>Help center article retrieval</td>
+        <td>Limited to Intercom ecosystem; cannot execute cross-system CRM workflows</td>
+        <td>NexAgent is platform-agnostic, syncing Zendesk, Salesforce, Jira, and custom APIs.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- ================= SECTION 16 ================= -->
+  <h1>16. Brand Audit</h1>
+  <ul>
+    <li><strong>Brand Archetype:</strong> The Engineer / Precision Instrument. NexAgent feels rigorous, scientific, and disciplined rather than playful or consumerized.</li>
+    <li><strong>Visual Personality:</strong> High-end technical minimalism. Avoids cliché cartoon illustrations in favor of structured code terminals, architectural diagrams, and precise monospace labels.</li>
+    <li><strong>Brand Liabilities:</strong> The use of generic placeholder logos (<code>logo-ipsum</code>) damages this carefully cultivated enterprise reputation and must be eliminated immediately.</li>
+  </ul>
+
+  <!-- ================= SECTION 17 ================= -->
+  <h1>17. Visual Design Audit</h1>
+  <ul>
+    <li><strong>Color Palette:</strong> Masterful selection. Warm stone background (<code>#f6f3ee</code>) paired with deep technical slate (<code>#141f27</code>) and deep teal (<code>#3d828c</code>) achieves an elite editorial and architectural feel.</li>
+    <li><strong>Typography Hierarchy:</strong> High cohesion using clean system sans-serif for body copy, paired with JetBrains Mono for system badges and code execution rules.</li>
+    <li><strong>Component Rhythm:</strong> Notched card borders and crisp 1px borders establish a signature design language that should be preserved across all new sub-pages.</li>
+  </ul>
+
+  <div class="page-break"></div>
+
+  <!-- ================= SECTION 18 ================= -->
+  <h1>18. Mobile UX Audit</h1>
+  <ul>
+    <li><strong>Sidebar vs Top Bar:</strong> The desktop sidebar collapses cleanly on mobile viewports (<code>display: none</code> at 820px), while the sticky master header provides continuous navigation.</li>
+    <li><strong>Horizontal Overflow:</strong> The policy terminal mockup table requires horizontal scrolling on screens under 420px. Recommendation: Convert table into stacked micro-cards on mobile screens.</li>
+    <li><strong>Touch Targets:</strong> Interactive tabs in the integration section need minimum 48px vertical touch padding to prevent accidental mis-taps on mobile devices.</li>
+  </ul>
+
+  <!-- ================= SECTION 19 ================= -->
+  <h1>19. Technical & Performance Observations</h1>
+  <ul>
+    <li><strong>Build Tooling:</strong> Built with Vite v5.4. Compilation and HMR are extremely fast (770ms build time).</li>
+    <li><strong>DOM & CSS Weight:</strong> Zero framework bloat. Pure vanilla JavaScript and clean CSS ensure high frame rates and instantaneous initial render.</li>
+    <li><strong>Asset Optimization:</strong> Founder images (<code>savani.jpg</code>, <code>manthan.jpg</code>) are high resolution. They should be compressed into WebP format with responsive <code>srcset</code> attributes to ensure sub-1-second LCP.</li>
+  </ul>
+
+  <!-- ================= SECTION 20 ================= -->
+  <h1>20. Trust & Credibility Audit</h1>
+  <p>Enterprise SaaS buyers operate in high-risk environments where wrong AI actions lead to severe financial or reputational damage. The site must build immediate trust:</p>
+  <ol>
+    <li><strong>Founder Verification:</strong> Manthan Kachhadiya and Savani Vraj provide authentic human leadership. Add direct links to their verified LinkedIn and GitHub profiles.</li>
+    <li><strong>Certified Partner Marks:</strong> Replace fake logos with official certified partner badges for Zendesk Marketplace, Salesforce AppExchange, and HubSpot App Partner.</li>
+    <li><strong>Security Credentials:</strong> Prominently display SOC 2 Type II In-Progress / Certified badge and ISO 27001 alignment.</li>
+  </ol>
+
+  <!-- ================= SECTION 21 ================= -->
+  <h1>21. Accessibility Audit (WCAG 2.1 AA)</h1>
+  <ul>
+    <li><strong>Color Contrast:</strong> Subtext color <code>#727984</code> against background <code>#f6f3ee</code> achieves a contrast ratio of 4.2:1. It should be darkened slightly to <code>#525a66</code> to surpass the 4.5:1 AA requirement.</li>
+    <li><strong>ARIA Semantics:</strong> Accordion items in Hero and FAQ require explicit <code>aria-expanded="false"</code> and <code>aria-controls</code> attributes for screen reader accessibility.</li>
+    <li><strong>Reduced Motion:</strong> Wrap 3D Totem animations in <code>@media (prefers-reduced-motion: reduce)</code> to respect user vestibular preferences.</li>
+  </ul>
+
+  <!-- ================= SECTION 22 ================= -->
+  <h1>22. Analytics & Measurement Strategy</h1>
+  <p>Deploy a standardized event measurement taxonomy using PostHog or Google Analytics 4:</p>
+  <table>
+    <thead>
+      <tr>
+        <th>Event Name</th>
+        <th>Trigger Condition</th>
+        <th>Parameters Captured</th>
+        <th>Strategic Objective</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>cta_clicked</code></td>
+        <td>Click on any "Get Started" or "Book Demo" button</td>
+        <td><code>location</code>, <code>button_text</code>, <code>target_modal</code></td>
+        <td>Track conversion intent by page section</td>
+      </tr>
+      <tr>
+        <td><code>simulator_interacted</code></td>
+        <td>User toggles rules or clicks Approve/Deny</td>
+        <td><code>rule_id</code>, <code>action_selected</code>, <code>confidence_score</code></td>
+        <td>Measure product comprehension & engagement</td>
+      </tr>
+      <tr>
+        <td><code>lead_submitted</code></td>
+        <td>Successful completion of Demo Request form</td>
+        <td><code>company_size</code>, <code>helpdesk_type</code>, <code>ticket_volume</code></td>
+        <td>Measure MQL conversion & sales routing</td>
+      </tr>
+      <tr>
+        <td><code>security_downloaded</code></td>
+        <td>User downloads Security Architecture PDF</td>
+        <td><code>document_version</code>, <code>user_role</code></td>
+        <td>Identify late-stage enterprise evaluation deals</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="page-break"></div>
+
+  <!-- ================= SECTION 23 ================= -->
+  <h1>23. Content Governance & Maintenance Plan</h1>
+  <p>To keep the platform's messaging accurate as engineering accelerates, establish this governance cadence:</p>
+  <ul>
+    <li><strong>Bi-Weekly Release Notes:</strong> Publish automated changelogs detailing new CRM endpoints, policy rule templates, and performance latency reductions.</li>
+    <li><strong>Monthly Integration Review:</strong> Verify API compatibility with Zendesk and Salesforce developer release cycles to keep documentation 100% accurate.</li>
+    <li><strong>Quarterly Metric Recalibration:</strong> Audit all benchmark statistics displayed on the homepage against aggregated, anonymized production telemetry.</li>
+  </ul>
+
+  <!-- ================= SECTION 24 ================= -->
+  <h1>24. What Is Missing? (Gap Analysis)</h1>
+  <div class="alert-box">
+    <strong>Key Gaps Preventing Enterprise Deal Pipeline:</strong>
+    <ul>
+      <li><strong>Missing Conversion Infrastructure:</strong> No modal capture, no CRM sync, no calendar integration.</li>
+      <li><strong>Missing Core Pages:</strong> <code>/platform</code>, <code>/solutions</code>, <code>/integrations/zendesk</code>, <code>/security</code>, <code>/pricing</code>.</li>
+      <li><strong>Missing Visual Assets:</strong> No real product dashboard screencasts or interactive workflow sandboxes.</li>
+      <li><strong>Missing Enterprise Assets:</strong> No downloadable Security Whitepaper, no SLA documentation, no SOC 2 packet.</li>
+    </ul>
+  </div>
+
+  <!-- ================= SECTION 25 ================= -->
+  <h1>25. Recommended Information Architecture</h1>
+  <p>Transition from a single-page anchor model to a scalable, search-optimized multi-page architecture:</p>
+  <div class="code-block">
+nexagent.ai/
+├── / (Homepage: Hero, Live Simulator, 3D Totem, Bento ROI, Founders, Demo CTA)
+├── /platform/
+│   ├── /context-engine (Data ingestion from tickets, knowledge bases, and customer history)
+│   ├── /policy-governance (Deterministic IF/THEN rules, confidence scoring, human gates)
+│   └── /workflow-runner (Bi-directional multi-system action execution)
+├── /solutions/
+│   ├── /support-leaders (Eliminate backlogs, reduce burnout, elevate CSAT)
+│   └── /customer-ops (Automate CRM data hygiene, cross-tool handoffs, and audits)
+├── /integrations/
+│   ├── /zendesk (Native 2-way ticket sync & action automation)
+│   ├── /salesforce (Service Cloud record automation & routing)
+│   └── /hubspot (Customer support & CRM lifecycle orchestration)
+├── /security (SOC 2 Type II, GDPR, Zero-Data Retention, RBAC Architecture)
+├── /pricing (Transparent tiering: Starter, Growth, Enterprise Custom)
+├── /company/
+│   ├── /about (Founder story: Manthan Kachhadiya & Savani Vraj, Vision & Values)
+│   └── /contact (Direct sales consultation & technical inquiry)
+└── /demo (Dedicated high-conversion scheduling page with calendar embed)
+  </div>
+
+  <!-- ================= SECTION 26 ================= -->
+  <h1>26. Recommended Sitemap</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>URL Slug</th>
+        <th>Page Title</th>
+        <th>Target Persona</th>
+        <th>Primary Call-to-Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>/</code></td>
+        <td>Autonomous Support Operations Platform</td>
+        <td>All Personas</td>
+        <td>Book 15-Min Live Demo</td>
+      </tr>
+      <tr>
+        <td><code>/platform/policy-governance</code></td>
+        <td>Deterministic Policy Engine & Guardrails</td>
+        <td>VP Support & Technical Champions</td>
+        <td>Launch Policy Simulator</td>
+      </tr>
+      <tr>
+        <td><code>/integrations/zendesk</code></td>
+        <td>Zendesk AI Workflow Automation</td>
+        <td>Support Ops / Admins</td>
+        <td>Connect Zendesk Sandbox</td>
+      </tr>
+      <tr>
+        <td><code>/security</code></td>
+        <td>Enterprise Security & Compliance Center</td>
+        <td>CISO / Compliance Officers</td>
+        <td>Download Security Whitepaper</td>
+      </tr>
+      <tr>
+        <td><code>/pricing</code></td>
+        <td>Transparent Operations Tiering</td>
+        <td>Economic Buyers</td>
+        <td>Calculate Custom ROI</td>
+      </tr>
+      <tr>
+        <td><code>/demo</code></td>
+        <td>Schedule Personalized Technical Walkthrough</td>
+        <td>High-Intent Buyers</td>
+        <td>Pick Calendar Slot</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="page-break"></div>
+
+  <!-- ================= SECTION 27 ================= -->
+  <h1>27. Recommended Page Templates & Wireframes</h1>
+  <h3>Template 1: Enterprise Core Homepage Wireframe</h3>
+  <div class="logic-grid">
+    <div class="logic-step"><span>Header:</span> Brand Logo + Platform Dropdown + Solutions Dropdown + Security + Pricing + [Book Demo CTA].</div>
+    <div class="logic-step"><span>Hero:</span> Category Headline + Value Subtitle + Dual CTAs ("Book Live Demo" & "Explore Sandbox") + 3D Totem SVG.</div>
+    <div class="logic-step"><span>Social Proof Bar:</span> "Trusted by modern support leaders" + Verified CRM Integration Badges.</div>
+    <div class="logic-step"><span>Interactive Simulator:</span> Live Ticket Scenario Switcher (Refund, Subscription, Escalation) + Rule Execution State.</div>
+    <div class="logic-step"><span>Bento Analytics Grid:</span> Quantified ROI (Resolution Speed, Backlog Reduction, Cost per Ticket).</div>
+    <div class="logic-step"><span>Founders Spotlight:</span> Manthan Kachhadiya & Savani Vraj + Verified Credentials + Engineering Mission.</div>
+    <div class="logic-step"><span>Prefooter Banner:</span> High-urgency pilot offer + Direct Email Input + Instant Calendar Route.</div>
+  </div>
+
+  <h3>Template 2: Dedicated Integration Recipe Page Wireframe</h3>
+  <div class="logic-grid">
+    <div class="logic-step"><span>Hero:</span> Co-branded header ("NexAgent + Zendesk Integration") + 2-minute setup badge.</div>
+    <div class="logic-step"><span>Architecture Diagram:</span> Bi-directional webhook diagram showing ticket ingestion and write-back.</div>
+    <div class="logic-step"><span>Supported Actions:</span> Categorized list of out-of-the-box actions (Update Custom Field, Tag Ticket, Process Refund).</div>
+    <div class="logic-step"><span>Security Spec:</span> OAuth 2.0 authentication, scoped permissions, zero-retention guarantee.</div>
+  </div>
+
+  <!-- ================= SECTION 28 ================= -->
+  <h1>28. Redesign Requirements Matrix</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>Priority Tier</th>
+        <th>Category</th>
+        <th>Requirement Specification</th>
+        <th>Business Rationale</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="badge badge-critical">P0 — Must Have</span></td>
+        <td>Conversion</td>
+        <td>Implement 2-step Demo Request modal wired to all primary CTAs</td>
+        <td>Eliminates 100% conversion leak immediately</td>
+      </tr>
+      <tr>
+        <td><span class="badge badge-critical">P0 — Must Have</span></td>
+        <td>Credibility</td>
+        <td>Replace fictitious <code>logo-ipsum</code> with Zendesk, Salesforce, HubSpot logos</td>
+        <td>Removes amateur placeholder impression</td>
+      </tr>
+      <tr>
+        <td><span class="badge badge-critical">P0 — Must Have</span></td>
+        <td>Copy</td>
+        <td>Fix navigation typo (<code>Produces</code> → <code>Products</code>) and hero typo (<code>trigs</code>)</td>
+        <td>Restores professional design authority</td>
+      </tr>
+      <tr>
+        <td><span class="badge badge-high">P1 — Should Have</span></td>
+        <td>Security</td>
+        <td>Deploy dedicated <code>/security</code> compliance page with SOC 2 summary</td>
+        <td>Unblocks enterprise sales discussions</td>
+      </tr>
+      <tr>
+        <td><span class="badge badge-high">P1 — Should Have</span></td>
+        <td>UX / Product</td>
+        <td>Add live interactive state to Capabilities Terminal Approve/Deny buttons</td>
+        <td>Demonstrates core product value proposition</td>
+      </tr>
+      <tr>
+        <td><span class="badge badge-medium">P2 — Could Have</span></td>
+        <td>SEO / Architecture</td>
+        <td>Migrate single page to multi-page static site (Astro or Next.js)</td>
+        <td>Expands long-tail organic search visibility</td>
+      </tr>
+      <tr>
+        <td><span class="badge badge-medium">P2 — Could Have</span></td>
+        <td>Tools</td>
+        <td>Interactive Support ROI & Headcount Savings Calculator</td>
+        <td>Equips champions to pitch CFOs internally</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- ================= SECTION 29 ================= -->
+  <h1>29. Quick Wins (Next 48 Hours)</h1>
+  <p>These tactical interventions can be executed immediately on the existing codebase to generate immediate ROI:</p>
+  <ol>
+    <li><strong>Wire Up Primary CTAs to a Lead Capture Modal:</strong> Connect <code>GET STARTED</code> and <code>CONTACT US</code> buttons to a sleek modal collecting Work Email, Company Size, and Helpdesk tool.</li>
+    <li><strong>Fix Spelling & Grammar Inaccuracies:</strong> Change <code>Produces</code> to <code>Products</code> in the master header and replace <code>trigs workflows</code> with <code>orchestrates back-office workflows</code> in the hero.</li>
+    <li><strong>Swap In Authentic Integration Marks:</strong> Replace <code>SALESPATH</code> / <code>HUBLINQ</code> with Zendesk, Salesforce, HubSpot, Intercom, Jira, and Slack.</li>
+    <li><strong>Embed Verified Founder Links:</strong> Add authentic LinkedIn and GitHub profile links to Manthan Kachhadiya's and Savani Vraj's founder cards.</li>
+    <li><strong>Add WCAG Reduced-Motion Support:</strong> Include CSS media query <code>@media (prefers-reduced-motion: reduce)</code> to pause 3D totem floating for sensitive users.</li>
+  </ol>
+
+  <div class="page-break"></div>
+
+  <!-- ================= SECTION 30 ================= -->
+  <h1>30. Prioritized Action Plan & Phasing</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>Phase & Timeline</th>
+        <th>Core Focus</th>
+        <th>Deliverables</th>
+        <th>Success Metrics</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Phase 1: Conversion & Trust Repairs</strong><br><em>(Days 1 – 5)</em></td>
+        <td>Stop the leaks</td>
+        <td>Lead capture modal, typo corrections, real integration logos, founder social links, OpenGraph tags.</td>
+        <td>Zero dead buttons; first inbound demo request captured.</td>
+      </tr>
+      <tr>
+        <td><strong>Phase 2: Product Simulation & Trust Portal</strong><br><em>(Weeks 2 – 3)</em></td>
+        <td>Prove the mechanism</td>
+        <td>Interactive workflow scenario switcher in terminal, dedicated <code>/security</code> compliance page, ROI calculator.</td>
+        <td>Simulator engagement > 45%; time-on-page increases by 60%.</td>
+      </tr>
+      <tr>
+        <td><strong>Phase 3: Multi-Page Expansion & SEO Scale</strong><br><em>(Weeks 4 – 6)</em></td>
+        <td>Organic pipeline</td>
+        <td>Dedicated integration pages (<code>/integrations/zendesk</code>, etc.), blog CMS launch, structured schema markup.</td>
+        <td>Organic indexing of 25+ commercial keywords; inbound SEO traffic growth.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- ================= SECTION 31 ================= -->
+  <h1>31. Strategic Direction & Final Recommendation</h1>
+  <div class="callout-box">
+    <strong>Executive Strategic Verdict:</strong><br>
+    NexAgent has constructed a truly distinguished visual identity and an authentic engineering foundation anchored by founders <strong>Manthan Kachhadiya</strong> and <strong>Savani Vraj</strong>. The market is saturated with brittle chatbots; NexAgent's strategic opportunity lies in claiming the <strong>"Deterministic Autonomous Operations"</strong> category.<br><br>
+    By replacing prototype placeholders with validated integrations, providing proof-first policy guardrails, and installing a frictionless enterprise conversion engine, NexAgent will establish itself as an indispensable operations layer for modern high-volume support organizations.
+  </div>
+
+  <!-- ================= SECTION 32 ================= -->
+  <h1>32. Open Questions & Validation Requirements</h1>
+  <p>To finalize technical implementation for Phase 2 and 3, founders Manthan and Savani should clarify these operational questions:</p>
+  <ol>
+    <li><strong>Commercial Go-To-Market Motion:</strong> Is the initial revenue focus on high-touch enterprise contracts ($25k–$100k ACV via sales demo) or self-serve product-led growth (PLG self-onboarding)?</li>
+    <li><strong>API Integration Depth:</strong> Which CRM and helpdesk integrations currently possess production-ready bi-directional write capabilities versus read-only webhooks?</li>
+    <li><strong>Security Certification Schedule:</strong> Has the SOC 2 Type II audit period officially begun, and is a formal SOC 2 Readiness Letter available for CISO evaluation?</li>
+    <li><strong>Customer Pilot Data:</strong> Are there 1 or 2 referenceable design partner metrics that can replace the synthetic "38,000 tickets" counter on the homepage?</li>
+  </ol>
+
+</body>
+</html>
+"""
+
+html_path = "NexAgent_Master_Website_Audit_and_Strategy_Report.html"
+pdf_path = "NexAgent_Master_Website_Audit_and_Strategy_Report.pdf"
+
+with open(html_path, "w", encoding="utf-8") as f:
+    f.write(html_content)
+
+print(f"Successfully written HTML report to: {html_path}")
+
+# Convert to PDF using Google Chrome Headless
+chrome_cmd = [
+    "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
+    "--headless=new",
+    "--disable-gpu",
+    "--no-sandbox",
+    "--disable-dev-shm-usage",
+    "--no-pdf-header-footer",
+    f"--print-to-pdf={pdf_path}",
+    f"file://{os.path.abspath(html_path)}"
+]
+
+print("Executing Chrome headless print to PDF...")
+res = subprocess.run(chrome_cmd, capture_output=True, text=True)
+print("Chrome returncode:", res.returncode)
+if res.stderr:
+    print("Chrome stderr:", res.stderr[:300])
+
+if os.path.exists(pdf_path) and os.path.getsize(pdf_path) > 1000:
+    print(f"SUCCESS: Generated PDF '{pdf_path}' ({os.path.getsize(pdf_path)} bytes)")
+else:
+    print("Chrome generation failed!")
+    sys.exit(1)
