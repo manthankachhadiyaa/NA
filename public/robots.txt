@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://nawebsite-seven.vercel.app/sitemap.xml

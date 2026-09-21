@@ -8,11 +8,13 @@ document.addEventListener('DOMContentLoaded', () => {
   initOverviewPipeline();
   initHeatmapGrid();
   initPolicyControls();
+  initScenarioSwitcher();
   initNumbersBentoAnimations();
   initIntegrationFilter();
   initTestimonialSlider();
   initFaqAccordion();
   initScrollReveal();
+  initStrategyCallModal();
 });
 
 /**
@@ -21,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
 function initScrollSpy() {
   const tocContainer = document.getElementById('sidebar-toc');
   const tocLinks = document.querySelectorAll('.toc-link');
-  const capSection = document.getElementById('capabilities');
+  const capSection = document.getElementById('solutions') || document.getElementById('capabilities');
   const sections = document.querySelectorAll('section[id]');
   if (!tocLinks.length || !sections.length) return;
 
@@ -545,3 +547,211 @@ function initScrollReveal() {
 
   elements.forEach(el => observer.observe(el));
 }
+
+/**
+ * 13. Interactive Policy Terminal Scenario Switcher
+ */
+function initScenarioSwitcher() {
+  const scenarioBtns = document.querySelectorAll('.scenario-tab-btn');
+  const catLabel = document.querySelector('.term-select-cat strong');
+  const rulesTableBody = document.querySelector('.rules-data-table tbody');
+  const caseName = document.querySelector('.case-name');
+  const caseStat = document.querySelector('.case-stat-row .stat-v');
+  const codeBox = document.querySelector('.code-terminal-snippet .code-lines');
+
+  if (!scenarioBtns.length) return;
+
+  const scenarios = {
+    'healthcare': {
+      category: 'Hospital Admission & Pre-Auth',
+      caseText: 'Patient: Cardiac Ward Admission',
+      statVal: '$3,850',
+      tag: 'HMS Clinical',
+      rulesHtml: `
+        <tr>
+          <td><code>Pre-auth estimate &gt; $2,500</code></td>
+          <td><span class="action-chip approval">Require Chief Medical Sign-off</span></td>
+          <td class="action-btns"><button>✏️</button><button>🗑️</button></td>
+        </tr>
+        <tr>
+          <td><code>Bed Type = ICU / HDU</code></td>
+          <td><span class="action-chip escalate">Escalate to Charge Nurse</span></td>
+          <td class="action-btns"><button>✏️</button><button>🗑️</button></td>
+        </tr>
+        <tr>
+          <td><code>Insurance Payer = In-Network</code></td>
+          <td><span class="action-chip credit">Auto-verify E-TPA Portal</span></td>
+          <td class="action-btns"><button>✏️</button><button>🗑️</button></td>
+        </tr>
+        <tr>
+          <td><code>EMR Match Confidence &gt; 0.98</code></td>
+          <td><span class="action-chip csm">Bi-directional FHIR Sync</span></td>
+          <td class="action-btns"><button>✏️</button><button>🗑️</button></td>
+        </tr>
+      `,
+      code: `<code><span class="code-kw">export const</span> hmsPolicy = {</code>
+<code>&nbsp;&nbsp;<span class="code-str">'nexagent hms admission --patient "P-98124" --bed "ICU-04" --preauth "$3850"'</span>,</code>
+<code>&nbsp;&nbsp;<span class="code-str">'nexagent fhir sync --endpoint "hl7/v4" --audit mandatory'</span>,</code>
+<code>};</code>`
+    },
+    'b2b': {
+      category: 'Refunds & SLA Workflows',
+      caseText: 'Case: Late delivery refund',
+      statVal: '$240',
+      tag: 'Event',
+      rulesHtml: `
+        <tr>
+          <td><code>Refund amount &gt; $200</code></td>
+          <td><span class="action-chip approval">Require approval</span></td>
+          <td class="action-btns"><button>✏️</button><button>🗑️</button></td>
+        </tr>
+        <tr>
+          <td><code>Confidence &lt; 0.78</code></td>
+          <td><span class="action-chip escalate">Escalate to human</span></td>
+          <td class="action-btns"><button>✏️</button><button>🗑️</button></td>
+        </tr>
+        <tr>
+          <td><code>Plan = Enterprise</code></td>
+          <td><span class="action-chip csm">Route to CSM</span></td>
+          <td class="action-btns"><button>✏️</button><button>🗑️</button></td>
+        </tr>
+        <tr>
+          <td><code>Reason = Late delivery</code></td>
+          <td><span class="action-chip credit">Offer credit first</span></td>
+          <td class="action-btns"><button>✏️</button><button>🗑️</button></td>
+        </tr>
+      `,
+      code: `<code><span class="code-kw">export const</span> controlCode = {</code>
+<code>&nbsp;&nbsp;<span class="code-str">'nexagent policy set refunds --require-approval "amount>200" --escalate "confidence<0.78"'</span>,</code>
+<code>&nbsp;&nbsp;<span class="code-str">'nexagent rbac enforce --rules "support,ops,cs" --audit on'</span>,</code>
+<code>};</code>`
+    },
+    'hospitality': {
+      category: 'VIP Concierge & PMS Dispatch',
+      caseText: 'Guest: Penthouse Suite #1204',
+      statVal: 'VIP Diamond',
+      tag: 'PMS Live',
+      rulesHtml: `
+        <tr>
+          <td><code>Guest Tier = Ultra VIP</code></td>
+          <td><span class="action-chip approval">Notify General Manager</span></td>
+          <td class="action-btns"><button>✏️</button><button>🗑️</button></td>
+        </tr>
+        <tr>
+          <td><code>Room Status != Clean/Inspected</code></td>
+          <td><span class="action-chip escalate">Priority Housekeeping Dispatch</span></td>
+          <td class="action-btns"><button>✏️</button><button>🗑️</button></td>
+        </tr>
+        <tr>
+          <td><code>Special Request = Champagne / Amenity</code></td>
+          <td><span class="action-chip credit">Route to F&B Butler Service</span></td>
+          <td class="action-btns"><button>✏️</button><button>🗑️</button></td>
+        </tr>
+        <tr>
+          <td><code>PMS Lock System Sync</code></td>
+          <td><span class="action-chip csm">Generate Mobile Digital Key</span></td>
+          <td class="action-btns"><button>✏️</button><button>🗑️</button></td>
+        </tr>
+      `,
+      code: `<code><span class="code-kw">export const</span> hospitalityPolicy = {</code>
+<code>&nbsp;&nbsp;<span class="code-str">'nexagent pms dispatch --guest "G-4402" --suite "1204" --tier "Diamond"'</span>,</code>
+<code>&nbsp;&nbsp;<span class="code-str">'nexagent butler notify --amenity "Welcome Hamper" --ack required'</span>,</code>
+<code>};</code>`
+    }
+  };
+
+  scenarioBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      scenarioBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      const scenarioKey = btn.getAttribute('data-scenario');
+      const data = scenarios[scenarioKey];
+      if (!data) return;
+
+      if (catLabel) catLabel.textContent = data.category;
+      if (caseName) caseName.textContent = data.caseText;
+      if (caseStat) caseStat.textContent = data.statVal;
+      if (rulesTableBody) rulesTableBody.innerHTML = data.rulesHtml;
+      if (codeBox) codeBox.innerHTML = data.code;
+    });
+  });
+}
+
+/**
+ * 14. High-Conversion Strategy Consultation Modal
+ */
+function initStrategyCallModal() {
+  const openButtons = document.querySelectorAll('.open-strategy-btn');
+  const modalBackdrop = document.getElementById('strategy-modal');
+  const closeBtn = document.getElementById('close-strategy-modal');
+  const form = document.getElementById('strategy-consultation-form');
+  const formCard = document.getElementById('modal-form-view');
+  const successCard = document.getElementById('modal-success-view');
+
+  if (!modalBackdrop) return;
+
+  const openModal = () => {
+    modalBackdrop.classList.add('open');
+    document.body.style.overflow = 'hidden';
+    const firstInput = modalBackdrop.querySelector('input');
+    if (firstInput) setTimeout(() => firstInput.focus(), 150);
+  };
+
+  const closeModal = () => {
+    modalBackdrop.classList.remove('open');
+    document.body.style.overflow = '';
+  };
+
+  openButtons.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      openModal();
+    });
+  });
+
+  if (closeBtn) {
+    closeBtn.addEventListener('click', closeModal);
+  }
+
+  modalBackdrop.addEventListener('click', (e) => {
+    if (e.target === modalBackdrop) {
+      closeModal();
+    }
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && modalBackdrop.classList.contains('open')) {
+      closeModal();
+    }
+  });
+
+  if (form) {
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const submitBtn = form.querySelector('.modal-submit-btn');
+      const nameInput = document.getElementById('strat-name');
+      const emailInput = document.getElementById('strat-email');
+      const orgInput = document.getElementById('strat-org');
+      const industryInput = document.getElementById('strat-industry');
+
+      if (submitBtn) {
+        submitBtn.textContent = 'SCHEDULING STRATEGY CALL...';
+        submitBtn.style.opacity = '0.7';
+        submitBtn.disabled = true;
+      }
+
+      setTimeout(() => {
+        if (formCard) formCard.style.display = 'none';
+        if (successCard) {
+          successCard.style.display = 'block';
+          const confirmName = document.getElementById('confirm-attendee-name');
+          const confirmOrg = document.getElementById('confirm-org-name');
+          if (confirmName && nameInput) confirmName.textContent = nameInput.value || 'Partner';
+          if (confirmOrg && orgInput) confirmOrg.textContent = orgInput.value || 'your organization';
+        }
+      }, 700);
+    });
+  }
+}
+

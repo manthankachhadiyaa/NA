@@ -3,13 +3,167 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>NexAgent Build smarter, Grow Faster</title>
-  <meta name="description" content="NexAgent is an AI-powered operations layer for support teams. Connect your helpdesk, knowledge base, and CRM to resolve tickets, run approved workflows, and keep records accurate.">
+  <title>NexAgent | Autonomous AI Operations &amp; Healthcare HMS Platform</title>
+  <meta name="description" content="NexAgent is an enterprise AI operations layer and healthcare management platform. Unify customer support, CRM workflows, and hospital management queues with deterministic policy governance and human-in-the-loop oversight.">
+  <link rel="canonical" href="https://nawebsite-seven.vercel.app/">
+
+  <!-- OpenGraph / Social Sharing -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://nawebsite-seven.vercel.app/">
+  <meta property="og:title" content="NexAgent | Autonomous AI Operations &amp; Healthcare HMS Platform">
+  <meta property="og:description" content="Unify enterprise helpdesks, CRM pipelines, and hospital management systems into a deterministic autonomous execution layer.">
+  <meta property="og:image" content="./assets/nexagent_logo.png">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://nawebsite-seven.vercel.app/">
+  <meta name="twitter:title" content="NexAgent | Autonomous AI Operations &amp; Healthcare HMS Platform">
+  <meta name="twitter:description" content="Deterministic AI operations, zero backlog, and clinical queue orchestration. Built for mission-critical enterprise and healthcare systems.">
+  <meta name="twitter:image" content="./assets/nexagent_logo.png">
+
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700;800&family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600&family=Playfair+Display:ital,wght@0,500;0,700;0,900;1,600&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" href="./assets/nexagent_logo.png">
   <link rel="stylesheet" href="./style.css">
+
+  <!-- Schema.org JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://nawebsite-seven.vercel.app/#organization",
+        "name": "NexAgent",
+        "url": "https://nawebsite-seven.vercel.app/",
+        "logo": "https://nawebsite-seven.vercel.app/assets/nexagent_logo.png",
+        "description": "NexAgent is an enterprise AI operations layer and hospital management system (HMS) provider delivering deterministic workflows, clinical queue orchestration, and CRM automation.",
+        "founders": [
+          {
+            "@type": "Person",
+            "name": "Manthan Kachhadiya",
+            "jobTitle": "Co-Founder, Systems & Architecture"
+          },
+          {
+            "@type": "Person",
+            "name": "Savani Vraj",
+            "jobTitle": "Co-Founder, Operations & Scale"
+          }
+        ],
+        "address": {
+          "@type": "PostalAddress",
+          "addressCountry": "IN"
+        },
+        "sameAs": [
+          "https://github.com/manthankachhadiyaa/NA"
+        ]
+      },
+      {
+        "@type": "SoftwareApplication",
+        "@id": "https://nawebsite-seven.vercel.app/#operations-layer",
+        "name": "NexAgent Operations Layer",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "Cloud / Web",
+        "description": "Autonomous AI operations layer resolving support tickets, executing multi-step CRM workflows, and enforcing policy guardrails with human-in-the-loop certainty.",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD",
+          "availability": "https://schema.org/OnlineOnly"
+        }
+      },
+      {
+        "@type": "SoftwareApplication",
+        "@id": "https://nawebsite-seven.vercel.app/#healthcare-hms",
+        "name": "NexAgent Healthcare & HMS",
+        "applicationCategory": "HealthApplication",
+        "operatingSystem": "Cloud / Web / Hybrid",
+        "description": "Autonomous hospital management system orchestrating clinical queues, OPD/IPD workflows, bed allocations, insurance pre-authorizations, and HL7/FHIR record synchronization.",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        }
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://nawebsite-seven.vercel.app/#faqpage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "How does NexAgent ensure accuracy in clinical and enterprise workflows?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "NexAgent operates through deterministic policy governor rules and human-in-the-loop approvals. Any action falling below strict confidence thresholds or exceeding defined operational risk parameters is immediately routed for human sign-off before execution."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does NexAgent integrate with existing Hospital Information Systems (HIS) and EMRs?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, NexAgent natively synchronizes via bidirectional HL7 and FHIR API endpoints, connecting with leading EMR systems, diagnostic labs, and insurance TPA portals."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Where is NexAgent data processed and stored?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "NexAgent supports enterprise data sovereignty with localized cloud regions in India and global territories. All data is encrypted in transit (TLS 1.3) and at rest (AES-256), compliant with HIPAA, ISO 27001, SOC 2 Type II, and GDPR."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is the development timeline for Plexus / Imuna AI?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Plexus / Imuna AI is our next-generation clinical context engine, currently under active development with private enterprise beta scheduled for Q4 2026."
+            }
+          }
+        ]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://nawebsite-seven.vercel.app/#breadcrumbs",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://nawebsite-seven.vercel.app/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Solutions",
+            "item": "https://nawebsite-seven.vercel.app/#solutions"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Products",
+            "item": "https://nawebsite-seven.vercel.app/#products"
+          },
+          {
+            "@type": "ListItem",
+            "position": 4,
+            "name": "Industries",
+            "item": "https://nawebsite-seven.vercel.app/#industries"
+          },
+          {
+            "@type": "ListItem",
+            "position": 5,
+            "name": "Technology",
+            "item": "https://nawebsite-seven.vercel.app/#technology"
+          }
+        ]
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
   <div class="site-container">
@@ -20,20 +174,21 @@
       <!-- Top Brand Block with Transparent NA Logo -->
       <a href="#home" class="sidebar-top-brand" title="NexAgent Home">
         <div class="brand-notch-container">
-          <img src="./assets/nexagent_logo.png" alt="NexAgent" class="sidebar-na-logo">
+          <img src="./assets/nexagent_logo.png" alt="NexAgent Logo" class="sidebar-na-logo">
         </div>
       </a>
 
       <!-- Permanent Sidebar Navigation (Table of Contents) -->
       <div class="sidebar-body-content">
         <nav class="sidebar-toc" id="sidebar-toc" aria-label="Page Sections">
-          <a href="#capabilities" class="toc-link" data-section="capabilities"><span class="toc-num">01</span> Capabilities</a>
-          <a href="#numbers" class="toc-link" data-section="numbers"><span class="toc-num">02</span> Numbers</a>
-          <a href="#features" class="toc-link" data-section="features"><span class="toc-num">03</span> Features</a>
-          <a href="#integrations" class="toc-link" data-section="integrations"><span class="toc-num">04</span> Integrations</a>
-          <a href="#testimonials" class="toc-link" data-section="testimonials"><span class="toc-num">05</span> Founders</a>
-          <a href="#insights" class="toc-link" data-section="insights"><span class="toc-num">06</span> Insights</a>
-          <a href="#faq" class="toc-link" data-section="faq"><span class="toc-num">07</span> FAQ</a>
+          <a href="#solutions" class="toc-link" data-section="solutions"><span class="toc-num">01</span> Solutions</a>
+          <a href="#products" class="toc-link" data-section="products"><span class="toc-num">02</span> Products</a>
+          <a href="#industries" class="toc-link" data-section="industries"><span class="toc-num">03</span> Industries</a>
+          <a href="#technology" class="toc-link" data-section="technology"><span class="toc-num">04</span> Technology</a>
+          <a href="#numbers" class="toc-link" data-section="numbers"><span class="toc-num">05</span> Performance</a>
+          <a href="#integrations" class="toc-link" data-section="integrations"><span class="toc-num">06</span> Integrations</a>
+          <a href="#founders" class="toc-link" data-section="founders"><span class="toc-num">07</span> Founders</a>
+          <a href="#faq" class="toc-link" data-section="faq"><span class="toc-num">08</span> FAQ</a>
         </nav>
       </div>
     </aside>
@@ -42,21 +197,25 @@
          MAIN WEBSITE CONTENT FLOW
          ========================================================================== -->
     <main class="main-flow-content">
-      <!-- Continuous Grid Header -->
+      <!-- Sticky Master Header -->
       <header class="master-header">
         <div class="header-left-slot">
           <div class="header-brand-mark">
+            <span class="header-status-indicator"><span class="pulse-dot"></span> OPERATIONAL</span>
           </div>
         </div>
         <div class="header-right-slot">
-          <nav class="nav-links-menu">
+          <nav class="nav-links-menu" aria-label="Main Navigation">
             <a href="#home" class="nav-link-item active">Home</a>
-            <a href="#overview" class="nav-link-item">Produces</a>
-            <a href="#insights" class="nav-link-item">Solutions</a>
-            <a href="#insights" class="nav-link-item">About</a>
-            <a href="#insights" class="nav-link-item">Blog</a>
+            <a href="#solutions" class="nav-link-item">Solutions</a>
+            <a href="#products" class="nav-link-item">Products</a>
+            <a href="#industries" class="nav-link-item">Industries</a>
+            <a href="#technology" class="nav-link-item">Technology</a>
+            <a href="#numbers" class="nav-link-item">Performance</a>
+            <a href="#founders" class="nav-link-item">Founders</a>
+            <a href="#faq" class="nav-link-item">FAQ</a>
           </nav>
-          <a href="#capabilities" class="btn-top-get-started">GET STARTED</a>
+          <button class="btn-top-get-started open-strategy-btn">BOOK A STRATEGY CALL</button>
         </div>
       </header>
 
@@ -68,35 +227,39 @@
             <div class="status-badge-pill">
               <div class="badge-content">
                 <span class="pulse-dot"></span>
-                <span class="badge-label">AI Support, automated</span>
+                <span class="badge-label">Autonomous AI Operations &amp; Healthcare Systems</span>
               </div>
               <div class="badge-hatch-pattern"></div>
             </div>
           </div>
 
           <h1 class="main-headline">
-            Build smarter<br>
-            Grow faster<br>
+            Deterministic AI Operations.<br>
+            Zero Backlog.<br>
+            Total Certainty.
           </h1>
 
           <p class="main-subtext">
-            Connect your help center, knowledge base, and CRM software. NexAgent resolves tickets, updates records, and trigs workflows
+            NexAgent bridges enterprise helpdesks, CRM pipelines, and hospital management systems (HMS) into a unified execution layer. Resolve clinical queues and enterprise workflows autonomously with strict policy governance, full auditability, and human-in-the-loop oversight.
           </p>
 
-          <div class="hero-cta-area">
-            <a href="#capabilities" class="btn-hero-stone">
-              <span>GET STARTED</span>
+          <div class="hero-cta-area" style="display: flex; gap: 14px; align-items: center; flex-wrap: wrap;">
+            <button class="btn-hero-stone open-strategy-btn">
+              <span>BOOK A STRATEGY CALL</span>
+            </button>
+            <a href="#products" class="btn-hero-stone" style="background: transparent; color: #152e3a; border: 1px solid rgba(21, 46, 58, 0.25);">
+              <span>EXPLORE ARCHITECTURE ↓</span>
             </a>
           </div>
 
-          <!-- Accordion Layers (01 - 04) -->
+          <!-- Accordion Layers (01 - 04) Synchronized to 3D Totem -->
           <div class="accordion-layers" id="accordion-group">
-            <!-- 01 Problem Layer -->
+            <!-- 01 Ingestion Layer -->
             <div class="accordion-row active" data-layer="connect">
               <div class="accordion-row-header" role="button" tabindex="0">
                 <div class="row-left-meta">
                   <span class="row-idx">01</span>
-                  <span class="row-name">Problem</span>
+                  <span class="row-name">Ingestion Layer</span>
                 </div>
                 <span class="chevron-toggle">
                   <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
@@ -106,19 +269,19 @@
               </div>
               <div class="accordion-row-body">
                 <ul class="layer-feature-list">
-                  <li><span class="plus-sign">+</span><span>Repetitive tickets overwhelm support teams daily</span></li>
-                  <li><span class="plus-sign">+</span><span>Customer data is scattered across disconnected tools</span></li>
-                  <li><span class="plus-sign">+</span><span>Slow resolution times lead to backlogs and low CSAT</span></li>
+                  <li><span class="plus-sign">+</span><span>Normalizes multi-source tickets, emails, and HL7/FHIR streams</span></li>
+                  <li><span class="plus-sign">+</span><span>Eliminates data silos across CRM, EMR, and support databases</span></li>
+                  <li><span class="plus-sign">+</span><span>Real-time ingestion queue with sub-second event parsing</span></li>
                 </ul>
               </div>
             </div>
 
-            <!-- 02 Understand Layer -->
+            <!-- 02 Context Layer -->
             <div class="accordion-row" data-layer="action">
               <div class="accordion-row-header" role="button" tabindex="0">
                 <div class="row-left-meta">
                   <span class="row-idx">02</span>
-                  <span class="row-name">Understand</span>
+                  <span class="row-name">Context Synthesis</span>
                 </div>
                 <span class="chevron-toggle">
                   <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
@@ -128,19 +291,19 @@
               </div>
               <div class="accordion-row-body">
                 <ul class="layer-feature-list">
-                  <li><span class="plus-sign">+</span><span>Ingests customer context from CRM, helpdesk & chat</span></li>
-                  <li><span class="plus-sign">+</span><span>Extracts exact customer intent and sentiment in real time</span></li>
-                  <li><span class="plus-sign">+</span><span>Cross-references policies and knowledge base articles</span></li>
+                  <li><span class="plus-sign">+</span><span>Extracts exact clinical and operational intent with zero hallucination</span></li>
+                  <li><span class="plus-sign">+</span><span>Synthesizes historical customer logs, policies, and patient context</span></li>
+                  <li><span class="plus-sign">+</span><span>Confidence-weighted entity extraction and sentiment verification</span></li>
                 </ul>
               </div>
             </div>
 
-            <!-- 03 AI Automation Layer -->
+            <!-- 03 Policy & Execution Layer -->
             <div class="accordion-row" data-layer="control">
               <div class="accordion-row-header" role="button" tabindex="0">
                 <div class="row-left-meta">
                   <span class="row-idx">03</span>
-                  <span class="row-name">AI Automation</span>
+                  <span class="row-name">Policy &amp; Execution</span>
                 </div>
                 <span class="chevron-toggle">
                   <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
@@ -150,19 +313,19 @@
               </div>
               <div class="accordion-row-body">
                 <ul class="layer-feature-list">
-                  <li><span class="plus-sign">+</span><span>Resolves routine tickets autonomously end-to-end</span></li>
-                  <li><span class="plus-sign">+</span><span>Executes multi-step workflows across your connected tools</span></li>
-                  <li><span class="plus-sign">+</span><span>Human-in-the-loop approval triggers for sensitive actions</span></li>
+                  <li><span class="plus-sign">+</span><span>Enforces deterministic business rules and clinical safety limits</span></li>
+                  <li><span class="plus-sign">+</span><span>Executes approved multi-step API actions directly into your stack</span></li>
+                  <li><span class="plus-sign">+</span><span>Human-in-the-loop gating for sensitive refunds or triage decisions</span></li>
                 </ul>
               </div>
             </div>
 
-            <!-- 04 Result Layer -->
+            <!-- 04 Verified Outcomes Layer -->
             <div class="accordion-row" data-layer="context">
               <div class="accordion-row-header" role="button" tabindex="0">
                 <div class="row-left-meta">
                   <span class="row-idx">04</span>
-                  <span class="row-name">Result</span>
+                  <span class="row-name">Verified Outcomes</span>
                 </div>
                 <span class="chevron-toggle">
                   <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
@@ -172,22 +335,22 @@
               </div>
               <div class="accordion-row-body">
                 <ul class="layer-feature-list">
-                  <li><span class="plus-sign">+</span><span>70%+ of standard tickets resolved without human touch</span></li>
-                  <li><span class="plus-sign">+</span><span>24/7 instant response times with zero ticket backlog</span></li>
-                  <li><span class="plus-sign">+</span><span>Drastically lower support costs and higher customer CSAT</span></li>
+                  <li><span class="plus-sign">+</span><span>70%+ routine operational workflows resolved without human touch</span></li>
+                  <li><span class="plus-sign">+</span><span>Complete immutable audit trails for compliance (HIPAA, SOC 2)</span></li>
+                  <li><span class="plus-sign">+</span><span>Continuous self-calibrating accuracy based on supervisor approvals</span></li>
                 </ul>
               </div>
             </div>
           </div>
         </div>
 
-        <!-- Right Totem 3D Column -->
+        <!-- Right Totem 3D Column (Signature Isometric Wireframe Assembly) -->
         <div class="hero-right-panel" id="totem-scene">
           <div class="totem-matrix-dots"></div>
           <div class="totem-levitate">
             <svg class="totem-assembly-svg" viewBox="0 0 460 840" preserveAspectRatio="xMidYMid meet">
               <defs>
-                <!-- Frosted Champagne Glass Guide Plate -->
+                <!-- Frosted Glass Guide Plate -->
                 <linearGradient id="guidePlateGrad" x1="0" y1="0" x2="1" y2="1">
                   <stop offset="0%" stop-color="#ffffff" stop-opacity="0.9" />
                   <stop offset="50%" stop-color="#f8f4ec" stop-opacity="0.75" />
@@ -249,135 +412,83 @@
                   <stop offset="100%" stop-color="#0f222a" />
                 </linearGradient>
                 <linearGradient id="hexRightGrad" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="0%" stop-color="#112731" />
-                  <stop offset="100%" stop-color="#08141a" />
+                  <stop offset="0%" stop-color="#132a33" />
+                  <stop offset="100%" stop-color="#09181e" />
                 </linearGradient>
 
-                <!-- Tier 4: Plinth Gradients -->
-                <linearGradient id="plinthTop1" x1="0" y1="0" x2="1" y2="1">
-                  <stop offset="0%" stop-color="#438896" />
-                  <stop offset="100%" stop-color="#245864" />
+                <!-- Tier 4: Base Gradients -->
+                <linearGradient id="baseTopGrad" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0%" stop-color="#2b5e6b" />
+                  <stop offset="100%" stop-color="#1c414d" />
                 </linearGradient>
-                <linearGradient id="plinthLeft1" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="0%" stop-color="#1a3d49" />
-                  <stop offset="100%" stop-color="#10242c" />
+                <linearGradient id="baseLeftGrad" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stop-color="#152e3a" />
+                  <stop offset="100%" stop-color="#0b1b24" />
                 </linearGradient>
-                <linearGradient id="plinthRight1" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="0%" stop-color="#10252f" />
-                  <stop offset="100%" stop-color="#081318" />
+                <linearGradient id="baseRightGrad" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stop-color="#0f232c" />
+                  <stop offset="100%" stop-color="#071318" />
                 </linearGradient>
-                <linearGradient id="plinthTop2" x1="0" y1="0" x2="1" y2="1">
-                  <stop offset="0%" stop-color="#316a76" />
-                  <stop offset="100%" stop-color="#1d4752" />
-                </linearGradient>
-                <linearGradient id="plinthLeft2" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="0%" stop-color="#16333e" />
-                  <stop offset="100%" stop-color="#0e2028" />
-                </linearGradient>
-                <linearGradient id="plinthRight2" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="0%" stop-color="#0e2028" />
-                  <stop offset="100%" stop-color="#060f14" />
-                </linearGradient>
-
-                <!-- Neon Glow Filter for Pulse & Nodes -->
-                <filter id="cyanGlow" x="-50%" y="-50%" width="200%" height="200%">
-                  <feGaussianBlur in="SourceGraphic" stdDeviation="3.5" result="blur" />
-                  <feMerge>
-                    <feMergeNode in="blur" />
-                    <feMergeNode in="SourceGraphic" />
-                  </feMerge>
-                </filter>
               </defs>
 
-              <!-- Central Vertical Axis with Top/Bottom Anchors and Traveling Energy Beam -->
-              <line class="totem-axis-line" x1="200" y1="28" x2="200" y2="780" stroke="url(#totemAxisGrad)" stroke-width="1.3" />
-              <circle class="totem-axis-dot totem-axis-dot-top" cx="200" cy="28" r="3.5" fill="#3d828c" />
-              <circle class="totem-axis-pulse" cx="200" cy="28" r="4.5" fill="#5dc5d0" filter="url(#cyanGlow)" />
+              <!-- Central Vertical Optical Axis Line -->
+              <line class="totem-axis-line" x1="200" y1="40" x2="200" y2="780" stroke="url(#totemAxisGrad)" stroke-width="1.2" stroke-dasharray="3 4" opacity="0.8" />
+              <circle class="totem-axis-dot totem-axis-dot-top" cx="200" cy="40" r="3.5" fill="#3d828c" />
 
-              <!-- Guide Plane 1 -->
-              <g class="guide-plane-plate guide-plate-1" id="guide-plate-1">
-                <line x1="58" y1="215" x2="342" y2="215" stroke="rgba(160, 150, 138, 0.45)" stroke-width="0.8" stroke-dasharray="2,2" />
-                <line x1="200" y1="136" x2="200" y2="294" stroke="rgba(160, 150, 138, 0.45)" stroke-width="0.8" stroke-dasharray="2,2" />
-                <path d="M 210,142 L 332,209 Q 342,215 332,221 L 210,288 Q 200,294 190,288 L 68,221 Q 58,215 68,209 L 190,142 Q 200,136 210,142 Z" fill="url(#guidePlateGrad)" stroke="rgba(61, 130, 140, 0.35)" stroke-width="1" filter="url(#plateDropShadow)" />
+              <!-- TIER 1: Connect / Ingestion Apex (Pyramid) -->
+              <g class="tier-model-group active-tier" id="tier-connect" data-layer-id="connect">
+                <polygon class="tier-guide-plate" points="200,60 320,120 200,180 80,120" fill="url(#guidePlateGrad)" stroke="#eeddc8" stroke-width="1" filter="url(#plateDropShadow)" opacity="0.6" />
+                <polygon class="tier-solid-face" points="200,65 130,125 200,165" fill="url(#pyrLeftGrad)" stroke="#3a7885" stroke-width="1" />
+                <polygon class="tier-solid-face" points="200,65 270,125 200,165" fill="url(#pyrRightGrad)" stroke="#4a8b98" stroke-width="1" />
+                <polygon class="tier-solid-face" points="200,65 165,95 200,115 235,95" fill="url(#pyrTopGrad)" stroke="#5dc5d0" stroke-width="1" />
+                <line x1="200" y1="65" x2="200" y2="165" stroke="#68d5e0" stroke-width="1.5" stroke-linecap="round" />
+
+                <!-- Callout Label -->
+                <line class="tier-callout-line" x1="270" y1="125" x2="350" y2="105" stroke="#3d828c" stroke-width="1" stroke-dasharray="2 2" />
+                <circle class="tier-callout-node" cx="350" cy="105" r="3" fill="#3d828c" />
+                <text class="tier-callout-text" x="356" y="109">01 INGEST</text>
               </g>
 
-              <!-- Tier 1: Inverted Pyramid (PROBLEM) -->
-              <g class="tier-model-group tier-connect" id="tier-connect" data-layer-id="connect">
-                <g class="tier-3d-body tier-body-1">
-                  <polygon points="200,65 270,105 200,145 130,105" fill="url(#pyrTopGrad)" stroke="#4ea8b2" stroke-width="1.2" />
-                  <polygon points="130,105 200,145 200,215" fill="url(#pyrLeftGrad)" stroke="#3a7a85" stroke-width="1.2" />
-                  <polygon points="200,145 270,105 200,215" fill="url(#pyrRightGrad)" stroke="#2b606a" stroke-width="1.2" />
-                </g>
-                <circle class="tier-node-marker" cx="200" cy="145" r="3.5" fill="#162e3a" stroke="#4ea8b2" stroke-width="1.2" />
-                <line class="tier-pointer-line" x1="200" y1="145" x2="345" y2="145" stroke="#1b3d4a" stroke-width="1.2" />
-                <circle class="tier-callout-dot" cx="345" cy="145" r="3.5" fill="#162e3a" stroke="#4ea8b2" stroke-width="1.2" />
-                <text class="tier-callout-text" x="356" y="149">PROBLEM</text>
+              <!-- TIER 2: Context / Gyro-Sphere -->
+              <g class="tier-model-group" id="tier-resolve" data-layer-id="action">
+                <polygon class="tier-guide-plate" points="200,240 320,300 200,360 80,300" fill="url(#guidePlateGrad)" stroke="#eeddc8" stroke-width="1" filter="url(#plateDropShadow)" opacity="0.6" />
+                <circle class="tier-solid-face" cx="200" cy="285" r="54" fill="url(#sphBodyGrad)" stroke="#224e5b" stroke-width="1" />
+                <ellipse class="tier-solid-face" cx="200" cy="285" rx="54" ry="24" fill="url(#sphCavityGrad)" stroke="#4ea8b2" stroke-width="1.2" />
+                <ellipse class="tier-solid-face" cx="200" cy="285" rx="42" ry="17" fill="url(#sphRimGrad)" stroke="#68d5e0" stroke-width="1" stroke-dasharray="4 2" />
+                <circle class="tier-core-glow" cx="200" cy="285" r="14" fill="url(#sphCoreGrad)" stroke="#8aeaf2" stroke-width="1.5" />
+
+                <!-- Callout Label -->
+                <line class="tier-callout-line" x1="254" y1="285" x2="350" y2="275" stroke="#3d828c" stroke-width="1" stroke-dasharray="2 2" />
+                <circle class="tier-callout-node" cx="350" cy="275" r="3" fill="#3d828c" />
+                <text class="tier-callout-text" x="356" y="279">02 CONTEXT</text>
               </g>
 
-              <!-- Guide Plane 2 -->
-              <g class="guide-plane-plate guide-plate-2" id="guide-plate-2">
-                <line x1="58" y1="405" x2="342" y2="405" stroke="rgba(160, 150, 138, 0.45)" stroke-width="0.8" stroke-dasharray="2,2" />
-                <line x1="200" y1="326" x2="200" y2="484" stroke="rgba(160, 150, 138, 0.45)" stroke-width="0.8" stroke-dasharray="2,2" />
-                <path d="M 210,332 L 332,399 Q 342,405 332,411 L 210,478 Q 200,484 190,478 L 68,411 Q 58,405 68,399 L 190,332 Q 200,326 210,332 Z" fill="url(#guidePlateGrad)" stroke="rgba(61, 130, 140, 0.35)" stroke-width="1" filter="url(#plateDropShadow)" />
+              <!-- TIER 3: Policy Governor / Hexagonal Ring -->
+              <g class="tier-model-group" id="tier-control" data-layer-id="control">
+                <polygon class="tier-guide-plate" points="200,420 320,480 200,540 80,480" fill="url(#guidePlateGrad)" stroke="#eeddc8" stroke-width="1" filter="url(#plateDropShadow)" opacity="0.6" />
+                <polygon class="tier-solid-face" points="200,430 265,455 265,495 200,525 135,495 135,455" fill="url(#hexTopGrad)" stroke="#5299a5" stroke-width="1" />
+                <polygon class="tier-solid-face" points="135,455 200,485 200,525 135,495" fill="url(#hexLeftGrad)" stroke="#3a7885" stroke-width="1" />
+                <polygon class="tier-solid-face" points="200,485 265,455 265,495 200,525" fill="url(#hexRightGrad)" stroke="#224e5b" stroke-width="1" />
+                <ellipse cx="200" cy="475" rx="28" ry="12" fill="#09141a" stroke="#68d5e0" stroke-width="1.2" />
+
+                <!-- Callout Label -->
+                <line class="tier-callout-line" x1="265" y1="475" x2="350" y2="465" stroke="#3d828c" stroke-width="1" stroke-dasharray="2 2" />
+                <circle class="tier-callout-node" cx="350" cy="465" r="3" fill="#3d828c" />
+                <text class="tier-callout-text" x="356" y="469">03 POLICY</text>
               </g>
 
-              <!-- Tier 2: Cutaway Sphere (UNDERSTAND) -->
-              <g class="tier-model-group tier-resolve" id="tier-resolve" data-layer-id="action">
-                <g class="tier-3d-body tier-body-2">
-                  <ellipse cx="200" cy="295" rx="92" ry="38" fill="url(#sphRimGrad)" stroke="#4ea8b2" stroke-width="1.2" />
-                  <ellipse cx="200" cy="297" rx="76" ry="30" fill="url(#sphCavityGrad)" stroke="#1a3b46" stroke-width="1" />
-                  <path d="M 108,295 C 108,375 152,408 200,408 C 248,408 292,375 292,295" fill="url(#sphBodyGrad)" stroke="#3a7a85" stroke-width="1.2" />
-                  <ellipse class="tier-core-glow" cx="200" cy="310" rx="28" ry="12" fill="url(#sphCoreGrad)" stroke="#5dc5d0" stroke-width="1.1" />
-                </g>
-                <circle class="tier-node-marker" cx="200" cy="310" r="3.5" fill="#162e3a" stroke="#4ea8b2" stroke-width="1.2" />
-                <line class="tier-pointer-line" x1="200" y1="310" x2="345" y2="310" stroke="#1b3d4a" stroke-width="1.2" />
-                <circle class="tier-callout-dot" cx="345" cy="310" r="3.5" fill="#162e3a" stroke="#4ea8b2" stroke-width="1.2" />
-                <text class="tier-callout-text" x="356" y="314">UNDERSTAND</text>
-              </g>
+              <!-- TIER 4: Stepped Foundation Plinth (Execution Base) -->
+              <g class="tier-model-group" id="tier-analyze" data-layer-id="context">
+                <polygon class="tier-guide-plate" points="200,590 330,655 200,720 70,655" fill="url(#guidePlateGrad)" stroke="#eeddc8" stroke-width="1" filter="url(#plateDropShadow)" opacity="0.6" />
+                <polygon class="tier-solid-face" points="200,600 275,635 200,670 125,635" fill="url(#baseTopGrad)" stroke="#5299a5" stroke-width="1" />
+                <polygon class="tier-solid-face" points="125,635 200,670 200,705 125,670" fill="url(#baseLeftGrad)" stroke="#224e5b" stroke-width="1" />
+                <polygon class="tier-solid-face" points="200,670 275,635 275,670 200,705" fill="url(#baseRightGrad)" stroke="#153641" stroke-width="1" />
+                <line x1="200" y1="670" x2="200" y2="705" stroke="#68d5e0" stroke-width="1.5" />
 
-              <!-- Guide Plane 3 -->
-              <g class="guide-plane-plate guide-plate-3" id="guide-plate-3">
-                <line x1="58" y1="570" x2="342" y2="570" stroke="rgba(160, 150, 138, 0.45)" stroke-width="0.8" stroke-dasharray="2,2" />
-                <line x1="200" y1="491" x2="200" y2="649" stroke="rgba(160, 150, 138, 0.45)" stroke-width="0.8" stroke-dasharray="2,2" />
-                <path d="M 210,497 L 332,564 Q 342,570 332,576 L 210,643 Q 200,649 190,643 L 68,576 Q 58,570 68,564 L 190,497 Q 200,491 210,497 Z" fill="url(#guidePlateGrad)" stroke="rgba(61, 130, 140, 0.35)" stroke-width="1" filter="url(#plateDropShadow)" />
-              </g>
-
-              <!-- Tier 3: Hex Nut (AI AUTOMATION) -->
-              <g class="tier-model-group tier-control" id="tier-control" data-layer-id="control">
-                <g class="tier-3d-body tier-body-3">
-                  <polygon points="200,435 268,461 268,505 200,531 132,505 132,461" fill="url(#hexTopGrad)" stroke="#4ea8b2" stroke-width="1.2" />
-                  <polygon points="132,505 200,531 200,567 132,541" fill="url(#hexLeftGrad)" stroke="#3a7a85" stroke-width="1.2" />
-                  <polygon points="200,531 268,505 268,541 200,567" fill="url(#hexRightGrad)" stroke="#2b606a" stroke-width="1.2" />
-                  <ellipse cx="200" cy="483" rx="28" ry="13" fill="#0b171e" stroke="#1f4c58" stroke-width="1.1" />
-                  <path d="M 172,483 C 172,491 184,498 200,498 C 216,498 228,491 228,483" stroke="#25515c" stroke-width="0.9" fill="none" />
-                </g>
-                <circle class="tier-node-marker" cx="200" cy="483" r="3.5" fill="#162e3a" stroke="#4ea8b2" stroke-width="1.2" />
-                <line class="tier-pointer-line" x1="200" y1="483" x2="345" y2="483" stroke="#1b3d4a" stroke-width="1.2" />
-                <circle class="tier-callout-dot" cx="345" cy="483" r="3.5" fill="#162e3a" stroke="#4ea8b2" stroke-width="1.2" />
-                <text class="tier-callout-text" x="356" y="487">AI AUTOMATION</text>
-              </g>
-
-              <!-- Guide Plane 4 -->
-              <g class="guide-plane-plate guide-plate-4" id="guide-plate-4">
-                <line x1="58" y1="705" x2="342" y2="705" stroke="rgba(160, 150, 138, 0.45)" stroke-width="0.8" stroke-dasharray="2,2" />
-                <line x1="200" y1="626" x2="200" y2="784" stroke="rgba(160, 150, 138, 0.45)" stroke-width="0.8" stroke-dasharray="2,2" />
-                <path d="M 210,632 L 332,699 Q 342,705 332,711 L 210,778 Q 200,784 190,778 L 68,711 Q 58,705 68,699 L 190,632 Q 200,626 210,632 Z" fill="url(#guidePlateGrad)" stroke="rgba(61, 130, 140, 0.35)" stroke-width="1" filter="url(#plateDropShadow)" />
-              </g>
-
-              <!-- Tier 4: Stepped Plinth (RESULT) -->
-              <g class="tier-model-group tier-analyze" id="tier-analyze" data-layer-id="context">
-                <g class="tier-3d-body tier-body-4">
-                  <polygon points="200,595 250,617 200,639 150,617" fill="url(#plinthTop1)" stroke="#4ea8b2" stroke-width="1.2" />
-                  <polygon points="150,617 200,639 200,655 150,633" fill="url(#plinthLeft1)" stroke="#3a7a85" stroke-width="1.1" />
-                  <polygon points="200,639 250,617 250,633 200,655" fill="url(#plinthRight1)" stroke="#2b606a" stroke-width="1.1" />
-                  <polygon points="200,617 275,650 200,683 125,650" fill="url(#plinthTop2)" stroke="#3a7a85" stroke-width="1.1" />
-                  <polygon points="125,650 200,683 200,703 125,670" fill="url(#plinthLeft2)" stroke="#2b606a" stroke-width="1.1" />
-                  <polygon points="200,683 275,650 275,670 200,703" fill="url(#plinthRight2)" stroke="#1c4550" stroke-width="1.1" />
-                </g>
-                <circle class="tier-node-marker" cx="200" cy="639" r="3.5" fill="#162e3a" stroke="#4ea8b2" stroke-width="1.2" />
-                <line class="tier-pointer-line" x1="200" y1="639" x2="345" y2="639" stroke="#1b3d4a" stroke-width="1.2" />
-                <circle class="tier-callout-dot" cx="345" cy="639" r="3.5" fill="#162e3a" stroke="#4ea8b2" stroke-width="1.2" />
-                <text class="tier-callout-text" x="356" y="643">RESULT</text>
+                <!-- Callout Label -->
+                <line class="tier-callout-line" x1="275" y1="655" x2="350" y2="640" stroke="#3d828c" stroke-width="1" stroke-dasharray="2 2" />
+                <circle class="tier-callout-node" cx="350" cy="640" r="3" fill="#3d828c" />
+                <text class="tier-callout-text" x="356" y="643">04 EXECUTE</text>
               </g>
 
               <circle class="totem-axis-dot totem-axis-dot-bottom" cx="200" cy="780" r="3.5" fill="#3d828c" />
@@ -386,8 +497,106 @@
         </div>
       </section>
 
-      <!-- ================= 2. OVERVIEW SECTION ================= -->
-      <section class="overview-section" id="overview">
+      <!-- ================= ECOSYSTEM MARQUEE ================= -->
+      <section class="marquee-strip" aria-label="Ecosystem Integrations Marquee">
+        <div class="marquee-track">
+          <!-- Item Pill 1 -->
+          <div class="marquee-badge-pill">
+            <span class="marquee-dot"></span>
+            <span class="marquee-name">Epic Systems &amp; Cerner FHIR/HL7</span>
+          </div>
+          <!-- Item Pill 2 -->
+          <div class="marquee-badge-pill">
+            <span class="marquee-dot"></span>
+            <span class="marquee-name">Salesforce Service Cloud</span>
+          </div>
+          <!-- Item Pill 3 -->
+          <div class="marquee-badge-pill">
+            <span class="marquee-dot"></span>
+            <span class="marquee-name">Zendesk Enterprise</span>
+          </div>
+          <!-- Item Pill 4 -->
+          <div class="marquee-badge-pill">
+            <span class="marquee-dot"></span>
+            <span class="marquee-name">HubSpot CRM</span>
+          </div>
+          <!-- Item Pill 5 -->
+          <div class="marquee-badge-pill">
+            <span class="marquee-dot"></span>
+            <span class="marquee-name">PostgreSQL &amp; Vector DBs</span>
+          </div>
+          <!-- Item Pill 6 -->
+          <div class="marquee-badge-pill">
+            <span class="marquee-dot"></span>
+            <span class="marquee-name">Jira Service Management</span>
+          </div>
+          <!-- Item Pill 7 -->
+          <div class="marquee-badge-pill">
+            <span class="marquee-dot"></span>
+            <span class="marquee-name">AWS HealthLake &amp; Cloud</span>
+          </div>
+          <!-- Item Pill 8 -->
+          <div class="marquee-badge-pill">
+            <span class="marquee-dot"></span>
+            <span class="marquee-name">Stripe Payments &amp; Billing</span>
+          </div>
+          <!-- Item Pill 9 -->
+          <div class="marquee-badge-pill">
+            <span class="marquee-dot"></span>
+            <span class="marquee-name">Intercom Customer Ops</span>
+          </div>
+          <!-- Item Pill 10 -->
+          <div class="marquee-badge-pill">
+            <span class="marquee-dot"></span>
+            <span class="marquee-name">Slack Enterprise Grid</span>
+          </div>
+
+          <!-- Duplicate Set for Seamless Continuous Infinite Scrolling -->
+          <div class="marquee-badge-pill">
+            <span class="marquee-dot"></span>
+            <span class="marquee-name">Epic Systems &amp; Cerner FHIR/HL7</span>
+          </div>
+          <div class="marquee-badge-pill">
+            <span class="marquee-dot"></span>
+            <span class="marquee-name">Salesforce Service Cloud</span>
+          </div>
+          <div class="marquee-badge-pill">
+            <span class="marquee-dot"></span>
+            <span class="marquee-name">Zendesk Enterprise</span>
+          </div>
+          <div class="marquee-badge-pill">
+            <span class="marquee-dot"></span>
+            <span class="marquee-name">HubSpot CRM</span>
+          </div>
+          <div class="marquee-badge-pill">
+            <span class="marquee-dot"></span>
+            <span class="marquee-name">PostgreSQL &amp; Vector DBs</span>
+          </div>
+          <div class="marquee-badge-pill">
+            <span class="marquee-dot"></span>
+            <span class="marquee-name">Jira Service Management</span>
+          </div>
+          <div class="marquee-badge-pill">
+            <span class="marquee-dot"></span>
+            <span class="marquee-name">AWS HealthLake &amp; Cloud</span>
+          </div>
+          <div class="marquee-badge-pill">
+            <span class="marquee-dot"></span>
+            <span class="marquee-name">Stripe Payments &amp; Billing</span>
+          </div>
+          <div class="marquee-badge-pill">
+            <span class="marquee-dot"></span>
+            <span class="marquee-name">Intercom Customer Ops</span>
+          </div>
+          <div class="marquee-badge-pill">
+            <span class="marquee-dot"></span>
+            <span class="marquee-name">Slack Enterprise Grid</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= 2. SOLUTIONS / OVERVIEW SECTION ================= -->
+      <section class="overview-section" id="solutions">
         <div class="overview-grid framer-reveal">
           <!-- Left Statement -->
           <div class="overview-text-block">
@@ -395,17 +604,17 @@
               <div class="status-badge-pill">
                 <div class="badge-content">
                   <span class="pulse-dot"></span>
-                  <span class="badge-label">Overview</span>
+                  <span class="badge-label">Solutions Architecture</span>
                 </div>
                 <div class="badge-hatch-pattern"></div>
               </div>
             </div>
 
             <p class="overview-headline">
-              <strong>NexAgent is an AI-powered operations layer for support teams</strong> that turns customer requests into completed work.
+              <strong>NexAgent transforms operational friction into deterministic execution</strong> across high-stakes enterprise systems.
             </p>
             <p class="overview-subheadline">
-              It connects your <strong>helpdesk, knowledge base, and CRM</strong> to resolve tickets, run approved workflows, and keep records accurate so your team ships <strong>faster outcomes with full visibility and control</strong>.
+              Traditional software passively logs work; <strong>NexAgent completes it</strong>. By bridging disparate communication channels, CRM databases, and hospital queues with an autonomous execution engine, your team delivers <strong>instant outcomes with immutable auditability and zero hallucination risk</strong>.
             </p>
           </div>
 
@@ -417,16 +626,16 @@
             <span class="corner-crosshair bottom-right">┘</span>
 
             <div class="workflow-header-row">
-              <span class="wf-title">Refund request</span>
+              <span class="wf-title">Autonomous Action Pipeline</span>
               <span class="wf-rule-line"></span>
-              <span class="wf-type">Workflow example</span>
+              <span class="wf-type">Execution Lifecycle</span>
             </div>
 
             <div class="workflow-steps-vertical">
               <!-- Step 1 -->
               <div class="wf-step-pill">
                 <span class="wf-step-num">01</span>
-                <span class="wf-step-label">VERIFY POLICY</span>
+                <span class="wf-step-label">VERIFY ELIGIBILITY &amp; INGEST</span>
                 <span class="wf-step-icon">🔍</span>
               </div>
               <div class="wf-arrow-down">↓</div>
@@ -434,7 +643,7 @@
               <!-- Step 2 -->
               <div class="wf-step-pill">
                 <span class="wf-step-num">02</span>
-                <span class="wf-step-label">REQUIRE APPROVAL</span>
+                <span class="wf-step-label">POLICY GOVERNOR CHECK</span>
                 <span class="wf-step-icon">🛡️</span>
               </div>
               <div class="wf-arrow-down">↓</div>
@@ -442,75 +651,305 @@
               <!-- Step 3 -->
               <div class="wf-step-pill">
                 <span class="wf-step-num">03</span>
-                <span class="wf-step-label">UPDATE CRM</span>
-                <span class="wf-step-icon">☁️</span>
+                <span class="wf-step-label">REQUIRE APPROVAL GATE</span>
+                <span class="wf-step-icon">✍️</span>
               </div>
               <div class="wf-arrow-down">↓</div>
 
               <!-- Step 4 -->
               <div class="wf-step-pill">
                 <span class="wf-step-num">04</span>
-                <span class="wf-step-label">SEND CONFIRMATION</span>
+                <span class="wf-step-label">BI-DIRECTIONAL CRM / EHR SYNC</span>
+                <span class="wf-step-icon">☁️</span>
+              </div>
+              <div class="wf-arrow-down">↓</div>
+
+              <!-- Step 5 -->
+              <div class="wf-step-pill">
+                <span class="wf-step-num">05</span>
+                <span class="wf-step-label">DISPATCH CONFIRMED ACTION</span>
                 <span class="wf-step-icon">✉️</span>
               </div>
             </div>
           </div>
         </div>
 
-        <!-- 4 Pillars Underneath -->
+        <!-- 4 Architectural Pillars -->
         <div class="four-pillars-row framer-reveal">
           <div class="pillar-item framer-reveal-scale framer-delay-1">
             <span class="pillar-icon">🔌</span>
-            <h4 class="pillar-name">SOURCE CONNECT</h4>
-            <p class="pillar-desc">Connect helpdesk, CRM, and knowledge.</p>
+            <h4 class="pillar-name">SOURCE INGESTION</h4>
+            <p class="pillar-desc">Normalizes unstructured tickets, emails, and HL7/FHIR streams into uniform structured events.</p>
           </div>
           <div class="pillar-item framer-reveal-scale framer-delay-2">
             <span class="pillar-icon">⚡</span>
-            <h4 class="pillar-name">ACTION RUNNER</h4>
-            <p class="pillar-desc">Execute updates, tasks, and notifications.</p>
+            <h4 class="pillar-name">CONTEXT MATRIX</h4>
+            <p class="pillar-desc">Synthesizes historical logs, policy files, and customer/patient profiles in milliseconds.</p>
           </div>
           <div class="pillar-item framer-reveal-scale framer-delay-3">
             <span class="pillar-icon">🛡️</span>
-            <h4 class="pillar-name">APPROVAL GATE</h4>
-            <p class="pillar-desc">Require approval for sensitive actions.</p>
+            <h4 class="pillar-name">POLICY GOVERNOR</h4>
+            <p class="pillar-desc">Evaluates risk, enforces SLAs, and triggers human-in-the-loop sign-offs before mutations.</p>
           </div>
           <div class="pillar-item framer-reveal-scale framer-delay-4">
             <span class="pillar-icon">📈</span>
-            <h4 class="pillar-name">AUDIT + INSIGHTS</h4>
-            <p class="pillar-desc">Track every change and spot patterns.</p>
+            <h4 class="pillar-name">DETERMINISTIC RUNNER</h4>
+            <p class="pillar-desc">Directly updates CRMs, assigns hospital beds, and modifies records with zero hallucination.</p>
           </div>
         </div>
       </section>
 
-      <!-- ================= 3. CAPABILITIES SECTION ================= -->
-      <section class="section-card-wrapper" id="capabilities">
+      <!-- ================= 3. PRODUCTS SUITE & LIFECYCLE SECTION ================= -->
+      <section class="section-card-wrapper" id="products">
         <div class="light-stone-card framer-reveal">
-          <!-- Card Header -->
           <div class="card-intro-header">
             <div class="status-badge-container">
               <div class="status-badge-pill dark-variant">
                 <div class="badge-content">
                   <span class="pulse-dot dark-dot"></span>
-                  <span class="badge-label dark-label">Capabilities</span>
+                  <span class="badge-label dark-label">Product Suite &amp; Lifecycle</span>
                 </div>
                 <div class="badge-hatch-pattern dark-hatch"></div>
               </div>
             </div>
 
             <div class="card-split-title">
-              <h2 class="card-main-title">Four layers that connect,<br>decide, and execute.</h2>
+              <h2 class="card-main-title">Engineered for mission-critical<br>operations and scale</h2>
               <p class="card-side-desc">
-                NexAgent is built as a four-layer system that connects your stack, applies policies and approvals, and then executes real actions
+                NexAgent maintains rigorous lifecycle transparency, deploying production-proven execution layers today while advancing high-dimensional clinical intelligence for tomorrow.
               </p>
             </div>
           </div>
 
-          <!-- Interactive Policy Control Mockup Container -->
+          <!-- 3 Dedicated Products Grid -->
+          <div class="products-grid">
+            <!-- Product 1: NexAgent Operations Layer -->
+            <div class="product-card framer-reveal-scale framer-delay-1">
+              <div>
+                <span class="product-lifecycle-tag tag-current">● [CURRENT · PRODUCTION]</span>
+                <h3 class="product-title">NexAgent Operations Layer</h3>
+                <p class="product-desc">
+                  Autonomous enterprise support and CRM workflow engine. Ingests customer inquiries, correlates context across your database, executes multi-step actions, and updates records automatically.
+                </p>
+                <ul class="product-feature-list">
+                  <li>Zendesk, Salesforce &amp; HubSpot two-way sync</li>
+                  <li>Autonomous tier-1 and tier-2 ticket resolution</li>
+                  <li>Configurable refund and escalation approval gates</li>
+                  <li>Full immutable audit trail with SOC 2 compliance</li>
+                </ul>
+              </div>
+              <div class="product-card-footer">
+                <span style="font-family: var(--font-mono); font-size: 0.74rem; color: #047857; font-weight: 700;">70%+ DEFLECTION</span>
+                <button class="btn-product-action open-strategy-btn">Deploy Operations Layer →</button>
+              </div>
+            </div>
+
+            <!-- Product 2: NexAgent Healthcare & HMS -->
+            <div class="product-card featured-product framer-reveal-scale framer-delay-2">
+              <div>
+                <span class="product-lifecycle-tag tag-major">★ [CURRENT · MAJOR FOCUS]</span>
+                <h3 class="product-title">NexAgent Healthcare &amp; HMS</h3>
+                <p class="product-desc">
+                  Next-generation Hospital Management System and clinical queue orchestration. Streamlines outpatient triage, inpatient bed allocation, insurance pre-authorization validation, and EMR bi-directional sync.
+                </p>
+                <ul class="product-feature-list">
+                  <li>HL7 &amp; FHIR clinical interoperability standards</li>
+                  <li>Dynamic OPD &amp; IPD queue prioritization</li>
+                  <li>Automated insurance TPA pre-authorization validation</li>
+                  <li>Physician-in-the-loop sign-off on sensitive care steps</li>
+                </ul>
+              </div>
+              <div class="product-card-footer">
+                <span style="font-family: var(--font-mono); font-size: 0.74rem; color: #152e3a; font-weight: 700;">40% QUEUE REDUCTION</span>
+                <button class="btn-product-action open-strategy-btn">Schedule HMS Consultation →</button>
+              </div>
+            </div>
+
+            <!-- Product 3: Plexus / Imuna AI Context Engine -->
+            <div class="product-card framer-reveal-scale framer-delay-3">
+              <div>
+                <span class="product-lifecycle-tag tag-dev">⚡ [IN DEVELOPMENT · Q4 2026]</span>
+                <h3 class="product-title">Plexus / Imuna AI Context Engine</h3>
+                <p class="product-desc">
+                  High-dimensional clinical intelligence and contextual knowledge graph engine. Synthesizes longitudinal patient records, lab histories, and treatment protocols into unified contextual understanding.
+                </p>
+                <ul class="product-feature-list">
+                  <li>Longitudinal patient contextual graph synthesis</li>
+                  <li>Cross-specialty clinical protocol verification</li>
+                  <li>Multi-modal diagnostic correlation engine</li>
+                  <li>Private enterprise beta deploying in Q4 2026</li>
+                </ul>
+              </div>
+              <div class="product-card-footer">
+                <span style="font-family: var(--font-mono); font-size: 0.74rem; color: #b45309; font-weight: 700;">PRIVATE BETA Q4 2026</span>
+                <button class="btn-product-action open-strategy-btn">Request Beta Access →</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Strategic Roadmap Notice -->
+          <div style="margin-top: 24px; padding: 14px 20px; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 6px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px;">
+            <div style="display: flex; align-items: center; gap: 10px;">
+              <span class="product-lifecycle-tag tag-roadmap" style="margin-bottom: 0;">[STRATEGIC ROADMAP]</span>
+              <span style="font-size: 0.82rem; color: #475569;"><strong>Autonomous Multi-Agent Swarms:</strong> NexAgent Labs is researching cooperative multi-agent swarms for cross-departmental supply chain and hospital network orchestration.</span>
+            </div>
+            <button class="open-strategy-btn" style="background: none; border: none; font-family: var(--font-mono); font-size: 0.74rem; color: #3fa8b8; font-weight: 700; cursor: pointer;">INQUIRE WITH FOUNDERS →</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= 4. INDUSTRIES SECTION ================= -->
+      <section class="section-card-wrapper" id="industries">
+        <div class="light-stone-card framer-reveal">
+          <div class="card-intro-header">
+            <div class="status-badge-container">
+              <div class="status-badge-pill dark-variant">
+                <div class="badge-content">
+                  <span class="pulse-dot dark-dot"></span>
+                  <span class="badge-label dark-label">Industry Verticals</span>
+                </div>
+                <div class="badge-hatch-pattern dark-hatch"></div>
+              </div>
+            </div>
+
+            <div class="card-split-title">
+              <h2 class="card-main-title">Purpose-built automation for<br>high-stakes verticals</h2>
+              <p class="card-side-desc">
+                Every industry operates under distinct compliance rules, SLAs, and data architectures. NexAgent deploys with vertical-specific policy templates and guardrails.
+              </p>
+            </div>
+          </div>
+
+          <!-- 6 Core Industry Solutions Grid -->
+          <div class="industries-grid">
+            <!-- 1. Healthcare Technology -->
+            <div class="industry-card framer-reveal-scale framer-delay-1">
+              <div class="industry-card-top">
+                <div class="industry-icon-pill">🏥</div>
+                <span class="industry-num-label">01 / HEALTHCARE</span>
+              </div>
+              <h3 class="industry-name">Healthcare &amp; Hospital Management</h3>
+              <p class="industry-pain">Overwhelmed OPD/IPD desks, delayed bed turnover, and complex insurance TPA pre-authorization cycles.</p>
+              <p class="industry-solution-summary">Autonomous patient queue triage, bed allocation orchestration, EMR sync via FHIR/HL7, and automated insurance claim validation with doctor approval.</p>
+              <div class="industry-metric-badge">
+                <span>Result:</span>
+                <strong>40% Queue Reduction · HIPAA Ready</strong>
+              </div>
+            </div>
+
+            <!-- 2. Hospitality & Guest Operations -->
+            <div class="industry-card framer-reveal-scale framer-delay-2">
+              <div class="industry-card-top">
+                <div class="industry-icon-pill">🏨</div>
+                <span class="industry-num-label">02 / HOSPITALITY</span>
+              </div>
+              <h3 class="industry-name">Hospitality &amp; Guest Operations</h3>
+              <p class="industry-pain">Fragmented guest requests, delayed room turnover communication, and slow concierge dispatch.</p>
+              <p class="industry-solution-summary">Synchronizes Property Management Systems (PMS) with butler and housekeeping workflows, enabling instantaneous guest request fulfillment and mobile key sync.</p>
+              <div class="industry-metric-badge">
+                <span>Result:</span>
+                <strong>&lt; 90s Guest Response · +22% Upsell</strong>
+              </div>
+            </div>
+
+            <!-- 3. B2B & Enterprise Services -->
+            <div class="industry-card framer-reveal-scale framer-delay-3">
+              <div class="industry-card-top">
+                <div class="industry-icon-pill">💼</div>
+                <span class="industry-num-label">03 / ENTERPRISE</span>
+              </div>
+              <h3 class="industry-name">B2B &amp; Enterprise Services</h3>
+              <p class="industry-pain">SLA breaches, context switching between CRM and ticketing tools, and manual internal handoffs.</p>
+              <p class="industry-solution-summary">End-to-end ticket triage, automated CRM updates, SLA countdown monitors, and smart escalation routing to tier-2 engineers or account executives.</p>
+              <div class="industry-metric-badge">
+                <span>Result:</span>
+                <strong>68% First-Touch Resolution · 100% SLA</strong>
+              </div>
+            </div>
+
+            <!-- 4. Retail & Commerce Operations -->
+            <div class="industry-card framer-reveal-scale framer-delay-1">
+              <div class="industry-card-top">
+                <div class="industry-icon-pill">🛍️</div>
+                <span class="industry-num-label">04 / RETAIL</span>
+              </div>
+              <h3 class="industry-name">Retail &amp; Commerce Operations</h3>
+              <p class="industry-pain">High refund friction, return logistics overhead, and peak holiday order tracking bottlenecks.</p>
+              <p class="industry-solution-summary">Automates return authorizations, cross-checks fraud score before refund approvals, updates ERP inventory, and notifies customers across WhatsApp and email.</p>
+              <div class="industry-metric-badge">
+                <span>Result:</span>
+                <strong>75% Autonomous Returns · +18 CSAT</strong>
+              </div>
+            </div>
+
+            <!-- 5. Professional Services -->
+            <div class="industry-card framer-reveal-scale framer-delay-2">
+              <div class="industry-card-top">
+                <div class="industry-icon-pill">⚖️</div>
+                <span class="industry-num-label">05 / SERVICES</span>
+              </div>
+              <h3 class="industry-name">Professional &amp; Legal Services</h3>
+              <p class="industry-pain">Protracted client onboarding, scattered NDA and KYC paperwork, and manual engagement audits.</p>
+              <p class="industry-solution-summary">Orchestrates automated client intake, document verification, conflict checks, and project provisioning across billing systems and project tools.</p>
+              <div class="industry-metric-badge">
+                <span>Result:</span>
+                <strong>3x Faster Onboarding · Zero Omission</strong>
+              </div>
+            </div>
+
+            <!-- 6. Financial Technology & Operations -->
+            <div class="industry-card framer-reveal-scale framer-delay-3">
+              <div class="industry-card-top">
+                <div class="industry-icon-pill">💳</div>
+                <span class="industry-num-label">06 / FINTECH</span>
+              </div>
+              <h3 class="industry-name">Fintech &amp; Financial Operations</h3>
+              <p class="industry-pain">Heavy compliance verification backlogs, chargeback disputes, and stringent regulatory audit demands.</p>
+              <p class="industry-solution-summary">Gathers dispute evidence automatically, evaluates chargeback legitimacy against strict financial rules, and triggers investigator sign-offs with audit trails.</p>
+              <div class="industry-metric-badge">
+                <span>Result:</span>
+                <strong>92% Audit Readiness · SOC 2 &amp; ISO 27001</strong>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= 5. TECHNOLOGY & POLICY GOVERNOR ================= -->
+      <section class="section-card-wrapper" id="technology">
+        <div class="light-stone-card framer-reveal">
+          <div class="card-intro-header">
+            <div class="status-badge-container">
+              <div class="status-badge-pill dark-variant">
+                <div class="badge-content">
+                  <span class="pulse-dot dark-dot"></span>
+                  <span class="badge-label dark-label">Technology &amp; Policy Governor</span>
+                </div>
+                <div class="badge-hatch-pattern dark-hatch"></div>
+              </div>
+            </div>
+
+            <div class="card-split-title">
+              <h2 class="card-main-title">Deterministic policies with<br>human-in-the-loop control</h2>
+              <p class="card-side-desc">
+                NexAgent executes actions through a strict policy engine. Model outputs are constrained by configurable rules, role-based access, and mandatory human sign-offs.
+              </p>
+            </div>
+          </div>
+
+          <!-- Interactive Policy Control Mockup Container with Scenario Switcher -->
           <div class="policy-control-terminal">
+            <!-- Scenario Selector Tabs -->
+            <div class="scenario-tab-bar">
+              <button class="scenario-tab-btn active" data-scenario="healthcare">🏥 Healthcare (HMS Admission)</button>
+              <button class="scenario-tab-btn" data-scenario="b2b">💼 Enterprise (Refunds &amp; SLA)</button>
+              <button class="scenario-tab-btn" data-scenario="hospitality">🏨 Hospitality (VIP Concierge)</button>
+            </div>
+
             <div class="terminal-chrome-bar">
-              <span class="term-uri">nexagent://control</span>
+              <span class="term-uri">nexagent://policy-engine/rules.enforce</span>
               <div class="term-select-cat">
-                <span>Category: <strong>Refunds</strong></span>
+                <span>Category: <strong>Hospital Admission &amp; Pre-Auth</strong></span>
                 <span class="dropdown-carat">▾</span>
               </div>
               <span class="term-burger">☰</span>
@@ -519,40 +958,35 @@
             <div class="terminal-content-grid">
               <!-- Left Rules Engine Table -->
               <div class="rules-table-column">
-                <h3 class="engine-title">Policy control</h3>
+                <h3 class="engine-title">Active Policy Rules Matrix</h3>
                 <div class="table-scroller">
                   <table class="rules-data-table">
                     <thead>
                       <tr>
-                        <th>IF</th>
-                        <th>THEN</th>
+                        <th>IF CONDITION</th>
+                        <th>THEN ACTION</th>
                         <th class="align-right">ACTIONS</th>
                       </tr>
                     </thead>
                     <tbody>
                       <tr>
-                        <td><code>Refund amount &gt; $200</code></td>
-                        <td><span class="action-chip approval">Require approval</span></td>
+                        <td><code>Pre-auth estimate &gt; $2,500</code></td>
+                        <td><span class="action-chip approval">Require Chief Medical Sign-off</span></td>
                         <td class="action-btns"><button>✏️</button><button>🗑️</button></td>
                       </tr>
                       <tr>
-                        <td><code>Confidence &lt; 0.78</code></td>
-                        <td><span class="action-chip escalate">Escalate to human</span></td>
+                        <td><code>Bed Type = ICU / HDU</code></td>
+                        <td><span class="action-chip escalate">Escalate to Charge Nurse</span></td>
                         <td class="action-btns"><button>✏️</button><button>🗑️</button></td>
                       </tr>
                       <tr>
-                        <td><code>Plan = Enterprise</code></td>
-                        <td><span class="action-chip csm">Route to CSM</span></td>
+                        <td><code>Insurance Payer = In-Network</code></td>
+                        <td><span class="action-chip credit">Auto-verify E-TPA Portal</span></td>
                         <td class="action-btns"><button>✏️</button><button>🗑️</button></td>
                       </tr>
                       <tr>
-                        <td><code>Reason = Late delivery</code></td>
-                        <td><span class="action-chip credit">Offer credit first</span></td>
-                        <td class="action-btns"><button>✏️</button><button>🗑️</button></td>
-                      </tr>
-                      <tr>
-                        <td><code>Account is delinquent</code></td>
-                        <td><span class="action-chip pause">Pause refund, request review</span></td>
+                        <td><code>EMR Match Confidence &gt; 0.98</code></td>
+                        <td><span class="action-chip csm">Bi-directional FHIR Sync</span></td>
                         <td class="action-btns"><button>✏️</button><button>🗑️</button></td>
                       </tr>
                     </tbody>
@@ -562,9 +996,9 @@
                 <!-- Terminal Code Snippet Box -->
                 <div class="code-terminal-snippet">
                   <div class="code-lines">
-                    <code><span class="code-kw">export const</span> controlCode = {</code>
-                    <code>&nbsp;&nbsp;<span class="code-str">'nexagent policy set refunds --require-approval "amount>200" --escalate "confidence&lt;0.78"'</span>,</code>
-                    <code>&nbsp;&nbsp;<span class="code-str">'nexagent rbac enforce --rules "support,ops,cs" --audit on'</span>,</code>
+                    <code><span class="code-kw">export const</span> hmsPolicy = {</code>
+                    <code>&nbsp;&nbsp;<span class="code-str">'nexagent hms admission --patient "P-98124" --bed "ICU-04" --preauth "$3850"'</span>,</code>
+                    <code>&nbsp;&nbsp;<span class="code-str">'nexagent fhir sync --endpoint "hl7/v4" --audit mandatory'</span>,</code>
                     <code>};</code>
                   </div>
                 </div>
@@ -574,7 +1008,7 @@
               <div class="approval-card-column">
                 <div class="approval-live-widget">
                   <div class="approvals-toggle-row">
-                    <span class="app-label">APPROVALS</span>
+                    <span class="app-label">APPROVAL GATE</span>
                     <label class="switch-ui">
                       <input type="checkbox" checked id="approvals-toggle">
                       <span class="slider-ui"></span>
@@ -582,14 +1016,14 @@
                   </div>
 
                   <div class="case-detail-box">
-                    <span class="case-name">Case: late delivery</span>
+                    <span class="case-name">Patient: Cardiac Ward Admission</span>
                     <div class="case-stat-row">
-                      <span class="stat-k">REQUEST</span>
-                      <span class="stat-v">$240</span>
+                      <span class="stat-k">ESTIMATE</span>
+                      <span class="stat-v">$3,850</span>
                     </div>
                     <div class="case-stat-row">
-                      <span class="stat-k">TAGS</span>
-                      <span class="tag-pill">Event</span>
+                      <span class="stat-k">TYPE</span>
+                      <span class="tag-pill">HMS Clinical</span>
                     </div>
                     <div class="decision-btns-row">
                       <button class="btn-deny" id="btn-deny">DENY</button>
@@ -598,8 +1032,8 @@
                   </div>
 
                   <div class="rules-counter-box">
-                    <span class="counter-label">Rules set</span>
-                    <span class="counter-val">14</span>
+                    <span class="counter-label">Active Guardrails</span>
+                    <span class="counter-val">28</span>
                   </div>
                 </div>
               </div>
@@ -609,26 +1043,26 @@
           <!-- Bottom 4 Sub-Columns -->
           <div class="capabilities-subfour-row">
             <div class="cap-col">
-              <h4>PROBLEM</h4>
-              <p>Repetitive tickets and scattered tools overwhelm support ops.</p>
+              <h4>01 / PROBLEM</h4>
+              <p>Chaotic manual handoffs and scattered data create high operational overhead.</p>
             </div>
             <div class="cap-col">
-              <h4>UNDERSTAND</h4>
-              <p>Extract real-time intent, sentiment, and CRM account context.</p>
+              <h4>02 / UNDERSTAND</h4>
+              <p>Extract structured intent and synthesize full longitudinal record history.</p>
             </div>
             <div class="cap-col">
-              <h4>AI AUTOMATION</h4>
-              <p>Execute end-to-end multi-step actions with approval gates.</p>
+              <h4>03 / GOVERN</h4>
+              <p>Enforce strict compliance guardrails and mandatory supervisor sign-offs.</p>
             </div>
             <div class="cap-col">
-              <h4>RESULT</h4>
-              <p>Slash resolution time by 70%+ with 24/7 zero-backlog coverage.</p>
+              <h4>04 / EXECUTE</h4>
+              <p>Complete multi-step updates across CRM, EMR, and databases with full audit logs.</p>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- ================= 4. NUMBERS SECTION ================= -->
+      <!-- ================= 6. NUMBERS & PERFORMANCE SECTION ================= -->
       <section class="section-card-wrapper" id="numbers">
         <div class="light-stone-card framer-reveal">
           <div class="card-intro-header">
@@ -636,16 +1070,16 @@
               <div class="status-badge-pill dark-variant">
                 <div class="badge-content">
                   <span class="pulse-dot dark-dot"></span>
-                  <span class="badge-label dark-label">Numbers</span>
+                  <span class="badge-label dark-label">Performance Metrics</span>
                 </div>
                 <div class="badge-hatch-pattern dark-hatch"></div>
               </div>
             </div>
 
             <div class="card-split-title">
-              <h2 class="card-main-title">The performance<br>behind the workflows</h2>
+              <h2 class="card-main-title">The performance behind<br>deterministic execution</h2>
               <p class="card-side-desc">
-                Clear visibility into execution, automation, and throughput improvements.
+                Auditable metrics showing tangible gains in throughput, queue clearance, and human efficiency across deployed environments.
               </p>
             </div>
           </div>
@@ -655,10 +1089,10 @@
             <!-- 1. Weekly Tickets Card -->
             <div class="metric-box box-weekly framer-reveal-scale framer-delay-1">
               <div class="box-head">
-                <span class="metric-title">WEEKLY TICKETS</span>
+                <span class="metric-title">WEEKLY WORKFLOWS</span>
                 <span class="metric-glyph">❖</span>
               </div>
-              <span class="metric-sub">Helpdesk + CRM workflows</span>
+              <span class="metric-sub">Helpdesk, EMR &amp; CRM queues</span>
               <div class="metric-huge-val">1,231</div>
               <div class="bars-chart-row">
                 <div class="bar-col"><div class="bar-fill" style="height: 25%;"></div><span>SU</span></div>
@@ -674,12 +1108,12 @@
             <!-- 2. Manual Work Automated -->
             <div class="metric-box box-manual framer-reveal-scale framer-delay-2">
               <div class="box-head">
-                <span class="metric-title">MANUAL WORK</span>
+                <span class="metric-title">MANUAL WORK AUTOMATED</span>
                 <span class="metric-glyph">❖</span>
               </div>
               <div class="progress-stats-stack">
                 <div class="prog-row">
-                  <div class="prog-meta"><span>CRM updates automated</span><strong>38k</strong></div>
+                  <div class="prog-meta"><span>CRM &amp; EHR updates automated</span><strong>38k</strong></div>
                   <div class="prog-track"><div class="prog-fill" style="width: 85%;"></div></div>
                 </div>
                 <div class="prog-row">
@@ -687,17 +1121,17 @@
                   <div class="prog-track"><div class="prog-fill" style="width: 62%;"></div></div>
                 </div>
                 <div class="prog-row">
-                  <div class="prog-meta"><span>Tasks created automatically</span><strong>4.2k</strong></div>
+                  <div class="prog-meta"><span>Clinical / Support tasks routed</span><strong>4.2k</strong></div>
                   <div class="prog-track"><div class="prog-fill" style="width: 48%;"></div></div>
                 </div>
               </div>
 
               <div class="metric-split-subcard">
                 <div class="box-head">
-                  <span class="metric-title">RESOLUTION GROWTH</span>
+                  <span class="metric-title">THROUGHPUT GROWTH</span>
                   <span class="metric-glyph">❖</span>
                 </div>
-                <span class="sub-gated">Gated by approvals</span>
+                <span class="sub-gated">Gated by safety approvals</span>
                 <div class="stat-growth-accent">+65.5%</div>
                 <div class="two-month-bars">
                   <div class="m-bar-col"><div class="m-bar stone-bar" style="height: 45%;"></div><span>FEB</span></div>
@@ -712,7 +1146,7 @@
                 <span class="metric-title">OPS THROUGHPUT</span>
                 <span class="metric-glyph">❖</span>
               </div>
-              <span class="metric-sub">Monthly requests per agent</span>
+              <span class="metric-sub">Monthly throughput gain per operator</span>
               <div class="throughput-val-row">
                 <span class="metric-huge-val">139%</span>
                 <div class="dot-freq-wave">
@@ -724,16 +1158,16 @@
               <!-- Resolution Mode -->
               <div class="resolution-mode-card">
                 <div class="box-head">
-                  <span class="metric-title">RESOLUTION MODE</span>
+                  <span class="metric-title">EXECUTION BREAKDOWN</span>
                   <span class="metric-glyph">❖</span>
                 </div>
                 <div class="agent-human-split">
                   <div class="split-side">
-                    <span class="side-lbl">Agent</span>
+                    <span class="side-lbl">Autonomous</span>
                     <strong class="side-val">72%</strong>
                   </div>
                   <div class="split-side">
-                    <span class="side-lbl">Human</span>
+                    <span class="side-lbl">Human-Gated</span>
                     <strong class="side-val">28%</strong>
                   </div>
                 </div>
@@ -742,16 +1176,16 @@
               <!-- Coverage Growth -->
               <div class="coverage-growth-card">
                 <div class="box-head">
-                  <span class="metric-title">COVERAGE GROWTH</span>
+                  <span class="metric-title">COVERAGE GAIN</span>
                   <span class="metric-glyph">❖</span>
                 </div>
-                <span class="metric-sub">Processes automated</span>
+                <span class="metric-sub">Workflows operating 24/7</span>
                 <div class="stat-growth-huge">+247%</div>
                 <div class="days-heatmap-grid" id="heatmap-grid"></div>
                 <div class="heatmap-axis-labels">
-                  <span>1</span>
-                  <span>15</span>
-                  <span>30</span>
+                  <span>Day 1</span>
+                  <span>Day 15</span>
+                  <span>Day 30</span>
                 </div>
               </div>
             </div>
@@ -759,92 +1193,7 @@
         </div>
       </section>
 
-      <!-- ================= 5. FEATURES SECTION ================= -->
-      <section class="section-card-wrapper" id="features">
-        <div class="light-stone-card framer-reveal">
-          <div class="card-intro-header">
-            <div class="status-badge-container">
-              <div class="status-badge-pill dark-variant">
-                <div class="badge-content">
-                  <span class="pulse-dot dark-dot"></span>
-                  <span class="badge-label dark-label">Features</span>
-                </div>
-                <div class="badge-hatch-pattern dark-hatch"></div>
-              </div>
-            </div>
-
-            <div class="card-split-title">
-              <h2 class="card-main-title">Core systems that<br>power every workflow</h2>
-              <p class="card-side-desc">
-                Real-time performance across tickets and automation showing how NexAgent improves speed and operational consistency.
-              </p>
-            </div>
-          </div>
-
-          <!-- 3 Notched Feature Cards -->
-          <div class="features-tri-grid">
-            <!-- Feature 001 -->
-            <div class="feature-notched-card framer-reveal-scale framer-delay-1">
-              <div class="f-card-header">
-                <span class="f-card-name">Context Assembly</span>
-                <span class="f-card-num">001</span>
-              </div>
-              <div class="f-card-canvas">
-                <svg viewBox="0 0 200 160" class="f-graphic-svg">
-                  <circle cx="85" cy="70" r="42" fill="none" stroke="#253a42" stroke-width="1.4" />
-                  <circle cx="115" cy="70" r="42" fill="none" stroke="#253a42" stroke-width="1.4" />
-                  <circle cx="100" cy="100" r="42" fill="none" stroke="#253a42" stroke-width="1.4" />
-                  <path d="M100 70 A42 42 0 0 1 108 85 A42 42 0 0 1 92 85 Z" fill="#38636c" fill-opacity="0.4" stroke="#4a7d86" stroke-width="1" />
-                </svg>
-              </div>
-              <p class="f-card-desc">
-                Unify data from your helpdesk, CRM, and knowledge base into one structured operational view.
-              </p>
-            </div>
-
-            <!-- Feature 002 -->
-            <div class="feature-notched-card framer-reveal-scale framer-delay-2">
-              <div class="f-card-header">
-                <span class="f-card-name">Policy & Approvals</span>
-                <span class="f-card-num">002</span>
-              </div>
-              <div class="f-card-canvas">
-                <svg viewBox="0 0 200 160" class="f-graphic-svg">
-                  <polygon points="100,25 155,120 45,120" fill="none" stroke="#253a42" stroke-width="1.4" />
-                  <line x1="100" y1="25" x2="100" y2="120" stroke="#253a42" stroke-width="1.2" />
-                  <line x1="100" y1="25" x2="100" y2="105" stroke="#4a7d86" stroke-width="1.4" />
-                  <line x1="45" y1="120" x2="100" y2="105" stroke="#253a42" stroke-width="1" stroke-dasharray="2 2" />
-                  <line x1="155" y1="120" x2="100" y2="105" stroke="#253a42" stroke-width="1" stroke-dasharray="2 2" />
-                </svg>
-              </div>
-              <p class="f-card-desc">
-                Apply configurable rules, review sensitive actions, and keep execution aligned with internal standards.
-              </p>
-            </div>
-
-            <!-- Feature 003 -->
-            <div class="feature-notched-card framer-reveal-scale framer-delay-3">
-              <div class="f-card-header">
-                <span class="f-card-name">Action Execution</span>
-                <span class="f-card-num">003</span>
-              </div>
-              <div class="f-card-canvas">
-                <svg viewBox="0 0 200 160" class="f-graphic-svg">
-                  <circle cx="100" cy="80" r="54" fill="none" stroke="#253a42" stroke-width="1.2" />
-                  <circle cx="100" cy="80" r="38" fill="none" stroke="#253a42" stroke-width="1.3" />
-                  <circle cx="100" cy="80" r="22" fill="none" stroke="#253a42" stroke-width="1.4" />
-                  <circle cx="100" cy="80" r="8" fill="#4a7d86" />
-                </svg>
-              </div>
-              <p class="f-card-desc">
-                Trigger updates, modify records, and complete real system actions with full visibility and auditability.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- ================= 6. INTEGRATIONS SECTION ================= -->
+      <!-- ================= 7. INTEGRATIONS SECTION ================= -->
       <section class="section-card-wrapper" id="integrations">
         <div class="light-stone-card framer-reveal">
           <div class="card-intro-header">
@@ -852,16 +1201,16 @@
               <div class="status-badge-pill dark-variant">
                 <div class="badge-content">
                   <span class="pulse-dot dark-dot"></span>
-                  <span class="badge-label dark-label">Integrations</span>
+                  <span class="badge-label dark-label">Enterprise Interoperability</span>
                 </div>
                 <div class="badge-hatch-pattern dark-hatch"></div>
               </div>
             </div>
 
             <div class="card-split-title">
-              <h2 class="card-main-title">Connect AI to the tools<br>your team already uses</h2>
+              <h2 class="card-main-title">Connects seamlessly with the<br>systems you already trust</h2>
               <p class="card-side-desc">
-                Our platform integrates directly with your core infrastructure so it can retrieve data, trigger workflows and act in real time.
+                NexAgent connects natively via certified APIs and webhooks into clinical software, CRMs, helpdesks, and financial pipelines.
               </p>
             </div>
           </div>
@@ -879,11 +1228,11 @@
                 <span class="cat-radio-dot"></span>
               </button>
               <button class="int-cat-btn" data-cat="support">
-                <span>SUPPORT & HELPDESK</span>
+                <span>SUPPORT &amp; HELPDESK</span>
                 <span class="cat-radio-dot"></span>
               </button>
               <button class="int-cat-btn active" data-cat="crm">
-                <span>CRM & REVENUE</span>
+                <span>CRM &amp; CLINICAL</span>
                 <span class="cat-radio-dot active"></span>
               </button>
 
@@ -899,212 +1248,126 @@
               </div>
             </div>
 
-            <!-- Right 6 Tool Integration Cards -->
+            <!-- Right 6 Genuine Enterprise Tool Cards -->
             <div class="integrations-tool-grid">
               <div class="tool-card">
-                <div class="tool-brand-mark globe-mark">🌐 logo-ipsum</div>
-                <h4 class="tool-name">SALESPATH</h4>
-                <p class="tool-desc">Deal pipeline and account sync</p>
+                <div class="tool-brand-mark globe-mark">⚡ ZENDESK</div>
+                <h4 class="tool-name">Zendesk Enterprise</h4>
+                <p class="tool-desc">Autonomous ticket resolution, automated macro triggers, and custom field synchronization.</p>
               </div>
 
               <div class="tool-card">
-                <div class="tool-brand-mark squares-mark">■ ●● logoipsum*</div>
-                <h4 class="tool-name">HUBLINQ</h4>
-                <p class="tool-desc">Contact and lifecycle connector</p>
+                <div class="tool-brand-mark squares-mark">☁️ SALESFORCE</div>
+                <h4 class="tool-name">Salesforce Service Cloud</h4>
+                <p class="tool-desc">Two-way case updates, contact account reconciliation, and opportunity stage automation.</p>
               </div>
 
               <div class="tool-card">
-                <div class="tool-brand-mark ipsum-mark">IPSUM*</div>
-                <h4 class="tool-name">REVSTREAM</h4>
-                <p class="tool-desc">Revenue intelligence integration</p>
+                <div class="tool-brand-mark ipsum-mark">🏥 FHIR / HL7</div>
+                <h4 class="tool-name">Epic &amp; Cerner HL7</h4>
+                <p class="tool-desc">Bi-directional patient admission sync, bed status updates, and diagnostic lab result routing.</p>
               </div>
 
               <div class="tool-card">
-                <div class="tool-brand-mark spiral-mark">◎ pipestack</div>
-                <h4 class="tool-name">PIPESTACK</h4>
-                <p class="tool-desc">Opportunity and forecast bridge</p>
+                <div class="tool-brand-mark spiral-mark">🟠 HUBSPOT</div>
+                <h4 class="tool-name">HubSpot CRM</h4>
+                <p class="tool-desc">Lifecycle stage updating, automated ticket pipeline management, and contact enrichment.</p>
               </div>
 
               <div class="tool-card">
-                <div class="tool-brand-mark looo-mark">LOOO</div>
-                <h4 class="tool-name">LEDGERKEY</h4>
-                <p class="tool-desc">Billing and subscription context</p>
+                <div class="tool-brand-mark looo-mark">⚙️ JIRA</div>
+                <h4 class="tool-name">Jira Service Desk</h4>
+                <p class="tool-desc">Engineering escalation routing, automated bug issue filing, and cross-team notification.</p>
               </div>
 
               <div class="tool-card">
-                <div class="tool-brand-mark bars-mark">//// dealvault</div>
-                <h4 class="tool-name">DEALVAULT</h4>
-                <p class="tool-desc">Contract and renewal tracking knowledge indexing</p>
+                <div class="tool-brand-mark bars-mark">💳 STRIPE</div>
+                <h4 class="tool-name">Stripe Payments</h4>
+                <p class="tool-desc">Policy-governed refund disbursements, disputed charge analysis, and billing record sync.</p>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- ================= 7. FOUNDERS SECTION ================= -->
-      <section class="section-card-wrapper" id="testimonials">
+      <!-- ================= 8. EQUAL CO-FOUNDERS SECTION ================= -->
+      <section class="section-card-wrapper" id="founders">
         <div class="light-stone-card framer-reveal">
           <div class="card-intro-header">
             <div class="status-badge-container">
               <div class="status-badge-pill dark-variant">
                 <div class="badge-content">
                   <span class="pulse-dot dark-dot"></span>
-                  <span class="badge-label dark-label">Founders</span>
+                  <span class="badge-label dark-label">Company Leadership</span>
                 </div>
                 <div class="badge-hatch-pattern dark-hatch"></div>
               </div>
             </div>
 
             <div class="card-split-title">
-              <h2 class="card-main-title">Leadership & Vision<br>behind NexAgent</h2>
+              <h2 class="card-main-title">Two founders.<br>One operating vision.</h2>
               <p class="card-side-desc">
-                Building an autonomous AI operations system with precision, transparency, and enterprise-grade execution.
+                NexAgent is built by two equal co-founders combining systems architecture, engineering, operational scale, and strategic execution to build intelligent systems for modern businesses.
               </p>
             </div>
           </div>
 
-          <!-- Dual Founder Layout: Left Image | Center Divided (Top: Left Person, Bottom: Right Person) | Right Image -->
-          <div class="founders-spotlight-card">
-            <!-- Left Column: Image 1 - Manthan Kachhadiya -->
-            <div class="founder-image-col founder-left" data-founder="manthan">
-              <span class="corner-crosshair top-left">┌</span>
-              <span class="corner-crosshair top-right">┐</span>
-              <span class="corner-crosshair bottom-left">└</span>
-              <span class="corner-crosshair bottom-right">┘</span>
-              <div class="founder-image-wrap">
-                <img src="./assets/founder_manthan.jpg" alt="Manthan Kachhadiya, Founder" class="founder-portrait-img">
+          <!-- Two Equal Founder Cards Side-by-Side (Equal Prominence, Equal Size, Equal Authority) -->
+          <div class="founders-equal-grid">
+            <!-- Founder 1: Manthan Kachhadiya -->
+            <div class="founder-equal-card framer-reveal-scale framer-delay-1" data-founder="manthan">
+              <div class="founder-equal-header">
+                <div class="founder-avatar-box">
+                  <img src="./assets/founder_manthan.jpg" alt="Manthan Kachhadiya, Co-Founder">
+                </div>
+                <div class="founder-header-info">
+                  <span class="founder-title-badge">CO-FOUNDER</span>
+                  <h3 class="founder-equal-name">MANTHAN KACHHADIYA</h3>
+                  <span class="founder-domain-tag">Systems Architecture · AI Engineering · Infrastructure</span>
+                </div>
               </div>
-              <div class="founder-image-overlay">
-                <span class="founder-overlay-tag">01 / ARCHITECTURE</span>
+
+              <blockquote class="founder-quote-body">
+                “We built NexAgent on a foundational principle: autonomous systems must be deterministic, auditable, and resilient. Our engineering architecture guarantees that every model decision and API action operates within verified policy boundaries with zero hallucination.”
+              </blockquote>
+
+              <div class="founder-footer-bar">
+                <span class="founder-badge-pill-equal">
+                  <span class="pulse-dot-cyan"></span> Active Node · Systems &amp; Engineering
+                </span>
+                <span style="font-family: var(--font-mono); color: #3fa8b8; font-weight: 600;">01 / ARCHITECTURE</span>
               </div>
             </div>
 
-            <!-- In-Between Column: Divided into Top Part (Left Person) and Bottom Part (Right Person) -->
-            <div class="founders-center-col">
-              <!-- Top Part: For Left Side Person (Manthan Kachhadiya) -->
-              <div class="founder-story-block founder-block-top" data-founder="manthan">
-                <div class="founder-meta-header">
-                  <div class="founder-status-indicator">
-                    <span class="pulse-dot-cyan"></span>
-                    <span class="founder-tag">SYSTEMS & ARCHITECTURE</span>
-                  </div>
-                  <span class="founder-index-num">01</span>
+            <!-- Founder 2: Savani Vraj -->
+            <div class="founder-equal-card framer-reveal-scale framer-delay-2" data-founder="vraj">
+              <div class="founder-equal-header">
+                <div class="founder-avatar-box">
+                  <img src="./assets/founder_vraj.jpg" alt="Savani Vraj, Co-Founder">
                 </div>
-
-                <blockquote class="founder-quote">
-                  “We started NexAgent with a singular conviction: support teams shouldn't drown in repetitive tickets. True automation isn't about replacing humans — it's about giving them intelligent systems that execute with precision, confidence, and total control.”
-                </blockquote>
-
-                <div class="founder-identity-bar">
-                  <div class="identity-info">
-                    <h3 class="founder-name">MANTHAN KACHHADIYA</h3>
-                    <span class="founder-title">FOUNDER</span>
-                  </div>
+                <div class="founder-header-info">
+                  <span class="founder-title-badge">CO-FOUNDER</span>
+                  <h3 class="founder-equal-name">SAVANI VRAJ</h3>
+                  <span class="founder-domain-tag">Operations · Product Scale · Enterprise Strategy</span>
                 </div>
               </div>
 
-              <div class="founder-divider-line"></div>
+              <blockquote class="founder-quote-body">
+                “Real enterprise impact happens when intelligent systems solve core operational bottlenecks at scale. Whether orchestrating hospital queues or high-volume enterprise workflows, our focus is delivering reliable, zero-friction execution for modern organizations.”
+              </blockquote>
 
-              <!-- Bottom Part: For Right Side Person (Savani Vraj) -->
-              <div class="founder-story-block founder-block-bottom" data-founder="vraj">
-                <div class="founder-meta-header">
-                  <div class="founder-status-indicator">
-                    <span class="pulse-dot-cyan"></span>
-                    <span class="founder-tag">OPERATIONS & SCALE</span>
-                  </div>
-                  <span class="founder-index-num">02</span>
-                </div>
-
-                <blockquote class="founder-quote">
-                  “Building an autonomous operations layer means reliability is non-negotiable. Every workflow, every API call, and every decision NexAgent makes is designed for enterprise grade predictability and real-time execution.”
-                </blockquote>
-
-                <div class="founder-identity-bar">
-                  <div class="identity-info">
-                    <h3 class="founder-name">SAVANI VRAJ</h3>
-                    <span class="founder-title">FOUNDER</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Right Column: Image 2 - Savani Vraj -->
-            <div class="founder-image-col founder-right" data-founder="vraj">
-              <span class="corner-crosshair top-left">┌</span>
-              <span class="corner-crosshair top-right">┐</span>
-              <span class="corner-crosshair bottom-left">└</span>
-              <span class="corner-crosshair bottom-right">┘</span>
-              <div class="founder-image-wrap">
-                <img src="./assets/founder_vraj.jpg" alt="Savani Vraj, Founder" class="founder-portrait-img">
-              </div>
-              <div class="founder-image-overlay">
-                <span class="founder-overlay-tag">02 / OPERATIONS</span>
+              <div class="founder-footer-bar">
+                <span class="founder-badge-pill-equal">
+                  <span class="pulse-dot-cyan"></span> Active Node · Scale &amp; Strategy
+                </span>
+                <span style="font-family: var(--font-mono); color: #3fa8b8; font-weight: 600;">02 / OPERATIONS</span>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- ================= 9. BLOG / INSIGHTS SECTION ================= -->
-      <section class="section-card-wrapper" id="insights">
-        <div class="light-stone-card framer-reveal">
-          <div class="card-intro-header">
-            <div class="status-badge-container">
-              <div class="status-badge-pill dark-variant">
-                <div class="badge-content">
-                  <span class="pulse-dot dark-dot"></span>
-                  <span class="badge-label dark-label">Blog</span>
-                </div>
-                <div class="badge-hatch-pattern dark-hatch"></div>
-              </div>
-            </div>
-
-            <div class="card-split-title">
-              <h2 class="card-main-title">Articles, notes, updates,<br>and latest case studies</h2>
-              <p class="card-side-desc">
-                Insights on support operations, automation design, and the systems behind scalable execution.
-              </p>
-            </div>
-          </div>
-
-          <div class="blog-articles-grid">
-            <article class="article-card framer-reveal-scale framer-delay-1">
-              <div class="article-thumb-box">
-                <img src="./assets/blog_thumb_1.jpg" alt="Pyramid wireframe" class="article-thumb-img">
-              </div>
-              <h3 class="article-title">Why Ticket Routing Still Fails (And What to Do Instead)</h3>
-              <div class="article-footer">
-                <span class="article-tag">Updates</span>
-                <span class="article-date">Apr 8, 2026</span>
-              </div>
-            </article>
-
-            <article class="article-card framer-reveal-scale framer-delay-2">
-              <div class="article-thumb-box">
-                <img src="./assets/blog_thumb_2.jpg" alt="Bowl wireframe" class="article-thumb-img">
-              </div>
-              <h3 class="article-title">Introducing the Action Layer: From Ticket to Done in One Step</h3>
-              <div class="article-footer">
-                <span class="article-tag">Updates</span>
-                <span class="article-date">Mar 15, 2026</span>
-              </div>
-            </article>
-
-            <article class="article-card framer-reveal-scale framer-delay-3">
-              <div class="article-thumb-box">
-                <img src="./assets/blog_thumb_3.jpg" alt="Hex nut wireframe" class="article-thumb-img">
-              </div>
-              <h3 class="article-title">The Hidden Cost of Context Switching in Support Teams</h3>
-              <div class="article-footer">
-                <span class="article-tag">Updates</span>
-                <span class="article-date">Feb 28, 2026</span>
-              </div>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <!-- ================= 10. FAQ SECTION ================= -->
+      <!-- ================= 9. ENTERPRISE FAQ SECTION ================= -->
       <section class="section-card-wrapper" id="faq">
         <div class="light-stone-card framer-reveal">
           <div class="card-intro-header">
@@ -1112,7 +1375,7 @@
               <div class="status-badge-pill dark-variant">
                 <div class="badge-content">
                   <span class="pulse-dot dark-dot"></span>
-                  <span class="badge-label dark-label">FAQ</span>
+                  <span class="badge-label dark-label">Enterprise FAQ</span>
                 </div>
                 <div class="badge-hatch-pattern dark-hatch"></div>
               </div>
@@ -1120,74 +1383,77 @@
 
             <div class="card-split-title">
               <h2 class="card-main-title">Frequently asked<br>questions</h2>
+              <p class="card-side-desc">
+                Everything you need to know about architecture, safety guardrails, compliance standards, and onboarding timelines.
+              </p>
             </div>
           </div>
 
           <div class="faq-layout-split">
             <div class="faq-contact-box">
-              <h4 class="still-q-title">STILL HAVE QUESTIONS?<br>WE'RE HERE TO HELP</h4>
-              <p class="still-q-desc">If you handle complex workflows or need custom integrations, our team can help.</p>
-              <button class="btn-contact-us">CONTACT US</button>
+              <h4 class="still-q-title">EXPLORE CUSTOM DEPLOYMENT WITH OUR FOUNDERS</h4>
+              <p class="still-q-desc">Have bespoke integration requirements, on-premise constraints, or clinical queue workflows? Schedule a direct architecture consultation.</p>
+              <button class="btn-contact-us open-strategy-btn">BOOK A STRATEGY CALL</button>
             </div>
 
             <div class="faq-accordion-group">
               <div class="faq-item active">
                 <div class="faq-question-row">
-                  <span class="q-title">Do I need to train the AI myself?</span>
+                  <span class="q-title">What makes NexAgent different from typical chatbots and deflection tools?</span>
                   <span class="q-icon">×</span>
                 </div>
                 <div class="faq-answer-body">
-                  <p>No, NexAgent learns from your existing knowledge base, past tickets, and CRM data. It gets smarter over time based on agent corrections and resolved outcomes.</p>
+                  <p>NexAgent is not a conversational chatbot; it is an autonomous operational execution layer. While chatbots only chat with users, NexAgent reads, analyzes, and executes verified mutations directly in your CRM, helpdesk, or hospital management database under strict policy rules.</p>
                 </div>
               </div>
 
               <div class="faq-item">
                 <div class="faq-question-row">
-                  <span class="q-title">What integrations do you support?</span>
+                  <span class="q-title">How does NexAgent eliminate AI hallucination and prevent unauthorized actions?</span>
                   <span class="q-icon">+</span>
                 </div>
                 <div class="faq-answer-body">
-                  <p>We support all major customer service tools including Zendesk, Salesforce, HubSpot, Intercom, Jira, Slack, and custom webhooks/REST APIs.</p>
+                  <p>All automated actions are governed by our deterministic Policy Governor. Model responses are grounded exclusively in your verified knowledge base and CRM data. Actions exceeding defined financial or clinical thresholds require mandatory human-in-the-loop approval before executing.</p>
                 </div>
               </div>
 
               <div class="faq-item">
                 <div class="faq-question-row">
-                  <span class="q-title">Can I control what NexAgent automates?</span>
+                  <span class="q-title">What is NexAgent's current focus between Enterprise Ops and Healthcare HMS?</span>
                   <span class="q-icon">+</span>
                 </div>
                 <div class="faq-answer-body">
-                  <p>Yes. You can enforce granular rule guardrails, set strict confidence thresholds, and mandate human-in-the-loop approvals for sensitive operations like refunds or account closures.</p>
+                  <p>Both products are powered by our core deterministic engine. NexAgent Operations Layer is in full commercial production for enterprise support and CRM workflows. NexAgent Healthcare &amp; HMS is our major vertical focus, addressing hospital queue bottlenecks, OPD/IPD flows, and insurance pre-authorization validation.</p>
                 </div>
               </div>
 
               <div class="faq-item">
                 <div class="faq-question-row">
-                  <span class="q-title">Is my data safe?</span>
+                  <span class="q-title">What is the roadmap status for Plexus / Imuna AI?</span>
                   <span class="q-icon">+</span>
                 </div>
                 <div class="faq-answer-body">
-                  <p>NexAgent is SOC 2 Type II certified, GDPR compliant, and ISO 27001 audited. Your customer data is encrypted in transit and at rest, and never used to train public LLMs.</p>
+                  <p>Plexus / Imuna AI is our next-generation high-dimensional clinical intelligence context engine. It is currently under active development by our engineering team, with private enterprise beta deployments launching in Q4 2026.</p>
                 </div>
               </div>
 
               <div class="faq-item">
                 <div class="faq-question-row">
-                  <span class="q-title">How long does setup take?</span>
+                  <span class="q-title">Where is client data processed, and is NexAgent compliant with security standards?</span>
                   <span class="q-icon">+</span>
                 </div>
                 <div class="faq-answer-body">
-                  <p>Standard setup takes less than 15 minutes with our one-click OAuth integrations. Custom enterprise pipelines usually deploy within 2-3 business days.</p>
+                  <p>NexAgent is HIPAA-ready, SOC 2 Type II compliant, and ISO 27001 audited. Client data is encrypted in transit (TLS 1.3) and at rest (AES-256). We support data residency in India and international cloud regions, ensuring complete compliance with global privacy regulations.</p>
                 </div>
               </div>
 
               <div class="faq-item">
                 <div class="faq-question-row">
-                  <span class="q-title">What does NexAgent actually do?</span>
+                  <span class="q-title">How long does an enterprise deployment typically take?</span>
                   <span class="q-icon">+</span>
                 </div>
                 <div class="faq-answer-body">
-                  <p>NexAgent reads incoming support tickets, understands customer intent, retrieves related records from your CRM, checks policies, and either resolves the issue autonomously or drafts actions for your approval.</p>
+                  <p>Standard helpdesk and CRM connections deploy in under 30 minutes via certified OAuth connectors. Custom enterprise pipelines and Hospital Information System (HIS) integrations typically take 2-3 weeks including sandbox policy testing and verification.</p>
                 </div>
               </div>
             </div>
@@ -1195,7 +1461,7 @@
         </div>
       </section>
 
-      <!-- ================= 11. PRE-FOOTER CTA SECTION ================= -->
+      <!-- ================= 10. PRE-FOOTER CTA SECTION ================= -->
       <section class="prefooter-cta-section" id="prefooter">
         <div class="prefooter-grid framer-reveal">
           <div class="prefooter-left-cta">
@@ -1203,23 +1469,23 @@
               <div class="status-badge-pill">
                 <div class="badge-content">
                   <span class="pulse-dot"></span>
-                  <span class="badge-label">Ready to ship support ops</span>
+                  <span class="badge-label">Scale Your Operations Today</span>
                 </div>
                 <div class="badge-hatch-pattern"></div>
               </div>
             </div>
 
             <h2 class="prefooter-headline">
-              Resolve tickets.<br>Trigger actions.
+              Eliminate backlogs.<br>Maintain total control.
             </h2>
 
             <p class="prefooter-subheadline">
-              Connect your stack, set guardrails, and let NexAgent handle repetitive work while your team stays in control.
+              Partner with NexAgent to deploy autonomous, deterministic workflows across your hospital queues, customer helpdesks, and enterprise CRM pipelines.
             </p>
 
-            <a href="#capabilities" class="btn-hero-stone">
-              <span>GET STARTED</span>
-            </a>
+            <button class="btn-hero-stone open-strategy-btn">
+              <span>BOOK A STRATEGY CALL</span>
+            </button>
           </div>
 
           <div class="prefooter-right-side">
@@ -1234,29 +1500,29 @@
 
             <div class="footer-links-columns">
               <div class="links-col">
-                <span class="col-heading">PAGES</span>
-                <a href="#home">Homepage</a>
-                <a href="#overview">About</a>
-                <a href="#insights">Updates</a>
-                <a href="#capabilities">Waitlist</a>
-                <a href="#insights">Blog</a>
-                <a href="#home">404</a>
+                <span class="col-heading">NAVIGATION</span>
+                <a href="#home">Home</a>
+                <a href="#solutions">Solutions</a>
+                <a href="#products">Product Suite</a>
+                <a href="#industries">Industries</a>
+                <a href="#technology">Technology</a>
+                <a href="#founders">Founders</a>
               </div>
               <div class="links-col">
-                <span class="col-heading">SOCIAL</span>
-                <a href="https://t.me" target="_blank" rel="noopener">Telegram</a>
-                <a href="https://youtube.com" target="_blank" rel="noopener">Youtube</a>
-                <a href="https://linkedin.com" target="_blank" rel="noopener">Linkedin</a>
-                <a href="https://discord.com" target="_blank" rel="noopener">Discord</a>
-                <a href="https://github.com" target="_blank" rel="noopener">Github</a>
-                <a href="https://x.com" target="_blank" rel="noopener">X</a>
+                <span class="col-heading">COMPLIANCE &amp; LEGAL</span>
+                <a href="#home">HIPAA Compliance</a>
+                <a href="#home">SOC 2 Type II</a>
+                <a href="#home">ISO 27001 Security</a>
+                <a href="#home">Privacy Policy</a>
+                <a href="#home">Terms of Service</a>
+                <a href="https://github.com/manthankachhadiyaa/NA" target="_blank" rel="noopener">GitHub Repository</a>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- ================= 12. GIANT BRAND FOOTER BANNER ================= -->
+      <!-- ================= 11. GIANT BRAND FOOTER BANNER ================= -->
       <footer class="giant-brand-footer-banner framer-reveal">
         <div class="brand-top-stats-row">
           <div class="brand-icon-slot">
@@ -1268,16 +1534,16 @@
           <div class="brand-stats-group">
             <div class="stat-unit">
               <strong class="unit-val">ACTIVE</strong>
-              <span class="unit-lbl">Agent Status</span>
+              <span class="unit-lbl">Global Nodes</span>
             </div>
             <div class="stat-unit">
               <strong class="unit-val">12,745,012</strong>
-              <span class="unit-lbl">Tickets Solved</span>
+              <span class="unit-lbl">Workflows Executed</span>
             </div>
           </div>
 
           <div class="brand-statement-text">
-            <p>NexAgent is an AI operator for Support and Customer Ops. It resolves tickets, runs workflows, and keeps your CRM in sync, automatically, with full control.</p>
+            <p>NexAgent is an autonomous operations platform for enterprise support and healthcare systems. Built in India, operating globally with enterprise-grade reliability and human-in-the-loop certainty.</p>
           </div>
         </div>
 
@@ -1287,17 +1553,96 @@
         </div>
       </footer>
 
-      <!-- ================= 13. SUB-FOOTER LEGAL BAR ================= -->
+      <!-- ================= 12. SUB-FOOTER LEGAL BAR ================= -->
       <div class="subfooter-legal-bar">
-        <span class="copyright-text">© NexAgent AI, 2026</span>
+        <span class="copyright-text">© NexAgent AI, 2026. Founded by Manthan Kachhadiya &amp; Savani Vraj. All rights reserved.</span>
         <div class="dots-spacer-bar"></div>
         <div class="legal-links">
-          <span>All rights reserved</span>
-          <a href="#home">Terms of use</a>
+          <span>Enterprise Reliability</span>
+          <a href="#home">Terms of Use</a>
           <a href="#home">Privacy Policy</a>
+          <a href="#home">Security Overview</a>
         </div>
       </div>
     </main>
+  </div>
+
+  <!-- ==========================================================================
+       13. INTERACTIVE STRATEGY CONSULTATION MODAL
+       ========================================================================== -->
+  <div class="strategy-modal-backdrop" id="strategy-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="strategy-modal-card">
+      <div class="modal-header-band">
+        <button class="modal-close-btn" id="close-strategy-modal" aria-label="Close Modal">✕</button>
+        <span class="modal-badge">Direct Founder Consultation</span>
+        <h3 class="modal-title" id="modal-title">Book a Strategy Call</h3>
+        <p class="modal-subtitle">Speak directly with co-founders Manthan Kachhadiya &amp; Savani Vraj about automating your operational bottlenecks.</p>
+      </div>
+
+      <div class="modal-body-content">
+        <!-- Form View -->
+        <div id="modal-form-view">
+          <form id="strategy-consultation-form">
+            <div class="modal-form-grid">
+              <div>
+                <label class="modal-label" for="strat-name">Full Name *</label>
+                <input class="modal-input" type="text" id="strat-name" name="name" placeholder="e.g. Elena Rostova" required>
+              </div>
+
+              <div>
+                <label class="modal-label" for="strat-email">Work Email *</label>
+                <input class="modal-input" type="email" id="strat-email" name="email" placeholder="elena@company.com" required>
+              </div>
+
+              <div class="modal-field-full">
+                <label class="modal-label" for="strat-org">Organization / Hospital Name *</label>
+                <input class="modal-input" type="text" id="strat-org" name="organization" placeholder="e.g. Apex Health Systems" required>
+              </div>
+
+              <div>
+                <label class="modal-label" for="strat-industry">Primary Industry *</label>
+                <select class="modal-select" id="strat-industry" name="industry" required>
+                  <option value="healthcare">Healthcare &amp; Hospital Systems</option>
+                  <option value="b2b">B2B &amp; Enterprise Services</option>
+                  <option value="hospitality">Hospitality &amp; Guest Ops</option>
+                  <option value="retail">Retail &amp; Commerce</option>
+                  <option value="fintech">Financial Technology</option>
+                  <option value="other">Other High-Volume Operations</option>
+                </select>
+              </div>
+
+              <div>
+                <label class="modal-label" for="strat-volume">Estimated Volume *</label>
+                <select class="modal-select" id="strat-volume" name="volume">
+                  <option value="5k">&lt; 5,000 monthly requests</option>
+                  <option value="25k">5,000 - 25,000 monthly requests</option>
+                  <option value="100k">25,000 - 100,000 monthly requests</option>
+                  <option value="100k+">100,000+ monthly requests</option>
+                </select>
+              </div>
+
+              <div class="modal-field-full">
+                <label class="modal-label" for="strat-goal">Core Operational Bottleneck</label>
+                <textarea class="modal-textarea" id="strat-goal" name="goal" rows="2" placeholder="Describe the workflows, queues, or tickets you want to automate..."></textarea>
+              </div>
+            </div>
+
+            <button type="submit" class="modal-submit-btn">SCHEDULE STRATEGY SESSION →</button>
+            <p class="modal-guarantee-note">🔒 Confidential NDA guaranteed · Direct session with Co-Founders</p>
+          </form>
+        </div>
+
+        <!-- Success Feedback View -->
+        <div id="modal-success-view" class="modal-success-card">
+          <div class="modal-success-icon">✓</div>
+          <h4 class="modal-success-title">Strategy Call Requested!</h4>
+          <p class="modal-success-desc">
+            Thank you, <strong id="confirm-attendee-name">Partner</strong>. Our co-founders will review the operational profile for <strong id="confirm-org-name">your organization</strong> and send an invitation with private briefing materials within 4 business hours.
+          </p>
+          <button type="button" class="modal-submit-btn" onclick="document.getElementById('strategy-modal').classList.remove('open')" style="max-width: 220px; margin: 0 auto; display: block;">CLOSE WINDOW</button>
+        </div>
+      </div>
+    </div>
   </div>
 
   <script type="module" src="./main.js"></script>
