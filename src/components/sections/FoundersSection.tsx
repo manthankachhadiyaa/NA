@@ -56,7 +56,7 @@ export default function FoundersSection() {
             <div>
               <div className="relative w-full h-[360px] sm:h-[400px] bg-[#0c1015]">
                 <Image
-                  src="/assets/founder_manthan.png"
+                  src="/assets/founder_manthan.webp"
                   alt="Manthan Kachhadiya - Co-Founder, Technology & AI"
                   fill
                   className="object-cover object-[center_20%]"
@@ -110,7 +110,7 @@ export default function FoundersSection() {
             <div>
               <div className="relative w-full h-[360px] sm:h-[400px] bg-[#0c1015]">
                 <Image
-                  src="/assets/founder_vraj.png"
+                  src="/assets/founder_vraj.webp"
                   alt="Savani Vraj - Co-Founder, Product & Business"
                   fill
                   className="object-cover object-[center_20%]"
