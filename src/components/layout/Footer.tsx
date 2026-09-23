@@ -1,0 +1,236 @@
+'use client';
+
+import React from 'react';
+import Link from 'next/link';
+import Image from 'next/image';
+import { motion } from 'motion/react';
+import { ArrowRight, ShieldCheck, MapPin, Mail, Github } from 'lucide-react';
+import Button from '@/components/ui/Button';
+import { fadeUpVariants, viewportConfig } from '@/lib/motion';
+
+interface FooterProps {
+  onOpenStrategyCall?: () => void;
+}
+
+export default function Footer({ onOpenStrategyCall }: FooterProps) {
+  return (
+    <footer className="w-full bg-[#0f1117] text-[#94a3b8] border-t border-white/[0.06] pt-20 pb-10 overflow-hidden relative">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        {/* 1. Pre-Footer Action Banner */}
+        <motion.div
+          variants={fadeUpVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={viewportConfig}
+          className="pb-16 border-b border-white/[0.08] flex flex-col lg:flex-row items-start lg:items-center justify-between gap-8"
+        >
+          <div className="max-w-2xl space-y-2">
+            <div className="text-xs font-mono uppercase tracking-widest text-[#2b9aaa] font-bold">
+              Ready for Operational Transformation?
+            </div>
+            <h3 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white tracking-tight leading-tight">
+              Eliminate operational drag with deterministic AI.
+            </h3>
+            <p className="text-sm sm:text-base text-[#94a3b8] leading-relaxed">
+              Schedule an executive architecture session with co-founders Manthan Kachhadiya and Savani Vraj to inspect your manual bottlenecks.
+            </p>
+          </div>
+
+          <div className="flex flex-wrap items-center gap-3 shrink-0">
+            {onOpenStrategyCall && (
+              <button
+                onClick={onOpenStrategyCall}
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white text-[#0f1117] font-bold text-sm hover:bg-[#f1f5f9] transition-all shadow-md hover:shadow-lg hover:-translate-y-0.5"
+              >
+                Request Live Demo
+                <ArrowRight className="w-4 h-4" />
+              </button>
+            )}
+            <Link
+              href="/solutions/workflow-automation"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white/[0.06] text-white font-semibold text-sm border border-white/[0.12] hover:bg-white/[0.10] transition-all"
+            >
+              Explore Solutions
+            </Link>
+          </div>
+        </motion.div>
+
+        {/* 2. Main Multi-Column Footer Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-10 py-16 border-b border-white/[0.08]">
+          {/* Brand Statement (Span 4) */}
+          <div className="sm:col-span-2 lg:col-span-4 space-y-4">
+            <div className="flex items-center gap-3">
+              <Image
+                src="/assets/nexagent_logo.png"
+                alt="NexAgent Infra Logo"
+                width={32}
+                height={32}
+                className="object-contain"
+              />
+              <div className="flex items-baseline gap-1.5">
+                <span className="font-sans font-bold text-xl text-white tracking-tight">
+                  NexAgent
+                </span>
+                <span className="text-[10px] font-mono uppercase tracking-widest text-[#2b9aaa] font-semibold">
+                  INFRA
+                </span>
+              </div>
+            </div>
+            <p className="text-sm text-[#94a3b8] leading-relaxed max-w-sm">
+              Agentic cloud infrastructure and deterministic AI software for hospitals, hotels, and enterprise operations. Built to eliminate operational friction with one unified platform customized to your requirements.
+            </p>
+            <div className="text-xs font-mono text-[#64748b] space-y-1 pt-1">
+              <div>✦ Founded 2026 · Operating globally from India</div>
+              <div>✦ Cloud-native WebAssembly policy architecture</div>
+            </div>
+          </div>
+
+          {/* Column 1: Products (Span 2) */}
+          <div className="lg:col-span-2 space-y-3">
+            <h4 className="text-xs font-mono uppercase tracking-widest text-white font-semibold">
+              Products
+            </h4>
+            <ul className="space-y-2 text-sm">
+              <li>
+                <Link href="/products/hms" className="hover:text-white transition-colors">
+                  NexAgent HMS
+                </Link>
+              </li>
+              <li>
+                <Link href="/products/hospitality" className="hover:text-white transition-colors">
+                  Hospitality OS (Hotel)
+                </Link>
+              </li>
+              <li>
+                <Link href="/solutions/workflow-automation" className="hover:text-white transition-colors">
+                  Enterprise Core
+                </Link>
+              </li>
+              <li>
+                <Link href="/technology" className="hover:text-white transition-colors">
+                  Capacity Intelligence
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* Column 2: Solutions (Span 2) */}
+          <div className="lg:col-span-2 space-y-3">
+            <h4 className="text-xs font-mono uppercase tracking-widest text-white font-semibold">
+              Solutions
+            </h4>
+            <ul className="space-y-2 text-sm">
+              <li>
+                <Link href="/solutions/workflow-automation" className="hover:text-white transition-colors">
+                  Workflow Engine
+                </Link>
+              </li>
+              <li>
+                <Link href="/industries/healthcare" className="hover:text-white transition-colors">
+                  Healthcare Operations
+                </Link>
+              </li>
+              <li>
+                <Link href="/#solutions" className="hover:text-white transition-colors">
+                  Operating Pipeline
+                </Link>
+              </li>
+              <li>
+                <Link href="/technology" className="hover:text-white transition-colors">
+                  Core Architecture
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* Column 3: Company (Span 2) */}
+          <div className="lg:col-span-2 space-y-3">
+            <h4 className="text-xs font-mono uppercase tracking-widest text-white font-semibold">
+              Company
+            </h4>
+            <ul className="space-y-2 text-sm">
+              <li>
+                <Link href="/about" className="hover:text-white transition-colors">
+                  About Us
+                </Link>
+              </li>
+              <li>
+                <Link href="/about#founders" className="hover:text-white transition-colors">
+                  Co-Founders
+                </Link>
+              </li>
+              <li>
+                <Link href="/technology" className="hover:text-white transition-colors">
+                  7-Layer Stack
+                </Link>
+              </li>
+              <li>
+                <a
+                  href="https://github.com/manthankachhadiyaa/NA"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-white transition-colors inline-flex items-center gap-1.5"
+                >
+                  <Github className="w-3.5 h-3.5" />
+                  <span>GitHub</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          {/* Column 4: Operations & Contact (Span 2) */}
+          <div className="lg:col-span-2 space-y-3">
+            <h4 className="text-xs font-mono uppercase tracking-widest text-white font-semibold">
+              Operations
+            </h4>
+            <ul className="space-y-2 text-xs text-[#94a3b8]">
+              <li className="flex items-center gap-1.5">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#2b9aaa] shrink-0" />
+                <span>Global Cloud-First</span>
+              </li>
+              <li className="flex items-center gap-1.5">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#10b981] shrink-0" />
+                <span>Operating Globally from India</span>
+              </li>
+              <li className="flex items-center gap-1.5">
+                <Mail className="w-3 h-3 text-[#2b9aaa] shrink-0" />
+                <a href="mailto:founders@nexagent.ai" className="hover:text-white transition-colors truncate">
+                  founders@nexagent.ai
+                </a>
+              </li>
+              <li className="text-[11px] font-mono text-[#64748b] pt-1">
+                ✦ 24/7 Cloud Availability
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        {/* 3. Bottom Legal Bar */}
+        <div className="pt-8 pb-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-[#64748b]">
+          <div>
+            &copy; {new Date().getFullYear()} NexAgent Infra. Built by Co-Founders Manthan Kachhadiya &amp; Savani Vraj. All rights reserved.
+          </div>
+          <div className="flex items-center gap-6">
+            <Link href="/about" className="hover:text-white transition-colors">
+              Privacy &amp; HIPAA
+            </Link>
+            <Link href="/technology" className="hover:text-white transition-colors">
+              Security
+            </Link>
+            <div className="flex items-center gap-1.5 text-[#2b9aaa]">
+              <ShieldCheck className="w-3.5 h-3.5" />
+              <span>100% Policy-Gated</span>
+            </div>
+          </div>
+        </div>
+
+        {/* 4. Large Closing Brand Mark */}
+        <div className="pt-6 select-none pointer-events-none text-center overflow-hidden">
+          <span className="text-[3.5rem] sm:text-[6rem] md:text-[8rem] lg:text-[10rem] font-extrabold tracking-tighter text-white/[0.025] leading-none block uppercase font-sans">
+            NexAgent Infra
+          </span>
+        </div>
+      </div>
+    </footer>
+  );
+}

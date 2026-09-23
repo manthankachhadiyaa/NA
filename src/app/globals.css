@@ -1,0 +1,242 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Design System: NEXAGENT — Clean White Enterprise */
+  --bg-canvas: #ffffff;
+  --bg-subtle: #f8f9fa;
+  --bg-surface: #f1f3f5;
+  --bg-elevated: #ffffff;
+  --bg-hover: #edf2f7;
+
+  --border-subtle: rgba(0, 0, 0, 0.07);
+  --border-medium: rgba(0, 0, 0, 0.12);
+  --border-active: rgba(63, 168, 184, 0.50);
+
+  --accent-cyan: #2b9aaa;
+  --accent-cyan-bright: #3fb9cc;
+  --accent-blue: #2563eb;
+  --accent-purple: #7c3aed;
+
+  --text-primary: #0f1117;
+  --text-secondary: #4a5568;
+  --text-muted: #718096;
+  --text-disabled: #a0aec0;
+
+  --header-h: 72px;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  color-scheme: light;
+}
+
+/* Lenis smooth scrolling */
+html.lenis, html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
+
+body {
+  width: 100%;
+  min-height: 100vh;
+  background-color: var(--bg-canvas);
+  color: var(--text-secondary);
+  font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+/* Subtle Architectural Background Grid — Light Mode */
+.bg-grid-lines {
+  background-size: 64px 64px;
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.035) 1px, transparent 1px),
+                    linear-gradient(to bottom, rgba(0, 0, 0, 0.035) 1px, transparent 1px);
+}
+
+.bg-grid-dots {
+  background-size: 32px 32px;
+  background-image: radial-gradient(circle, rgba(0, 0, 0, 0.07) 1px, transparent 1px);
+}
+
+/* Eyebrow Label Pill — Light Theme */
+.eyebrow-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 5px 14px;
+  background: rgba(43, 154, 170, 0.07);
+  border: 1px solid rgba(43, 154, 170, 0.20);
+  border-radius: 9999px;
+  font-size: 0.72rem;
+  font-family: var(--font-mono), monospace;
+  font-weight: 600;
+  color: var(--accent-cyan);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+/* Status Badge Pill — Light Theme */
+.status-badge-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  background: rgba(43, 154, 170, 0.07);
+  border: 1px solid rgba(43, 154, 170, 0.20);
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-family: var(--font-mono), monospace;
+  font-weight: 600;
+  color: var(--accent-cyan);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+/* Pulse Dot */
+.pulse-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent-cyan);
+  box-shadow: 0 0 0 0 rgba(43, 154, 170, 0.5);
+  animation: pulseDot 2s infinite cubic-bezier(0.4, 0, 0.6, 1);
+  display: inline-block;
+  flex-shrink: 0;
+}
+
+@keyframes pulseDot {
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(43, 154, 170, 0.5);
+  }
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 6px rgba(43, 154, 170, 0);
+  }
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(43, 154, 170, 0);
+  }
+}
+
+/* Button Primitives — Light Theme */
+.btn-pill-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 22px;
+  background-color: #0f1117;
+  color: #ffffff;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  border-radius: 9999px;
+  letter-spacing: 0.02em;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+}
+
+.btn-pill-primary:hover {
+  background-color: #1a2030;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.20);
+}
+
+.btn-pill-primary:active {
+  transform: translateY(0);
+}
+
+.btn-pill-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 22px;
+  background-color: #ffffff;
+  color: #0f1117;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  border: 1px solid rgba(0, 0, 0, 0.14);
+  border-radius: 9999px;
+  letter-spacing: 0.02em;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-pill-secondary:hover {
+  background-color: #f8f9fa;
+  border-color: rgba(0, 0, 0, 0.20);
+  transform: translateY(-1px);
+}
+
+.btn-pill-secondary:active {
+  transform: translateY(0);
+}
+
+/* Custom Scrollbar — Light Theme */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f3f5;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Fade-in animation for modal */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.2s ease-out;
+}
+
+/* Performance & Low-Latency Rendering Containment (modern-web-guidance) */
+.content-visibility-auto {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 700px;
+}
+
+@supports not (content-visibility: auto) {
+  .content-visibility-auto {
+    contain: layout style paint;
+  }
+}
+
+/* GPU Acceleration Helpers for 60/120fps smooth animations */
+.gpu-accelerated {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
