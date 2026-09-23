@@ -49,7 +49,7 @@ const products: ProductItem[] = [
     category: 'HEALTHCARE INFRASTRUCTURE',
     name: 'NexAgent HMS (Hospital OS)',
     status: 'AVAILABLE',
-    statusColor: 'text-green-700 bg-green-50 border-green-200',
+    statusColor: 'text-zinc-900 bg-zinc-100 border-zinc-300',
     description:
       'Complete hospital operating system far beyond basic clinic EMRs. Orchestrates outpatient intake queues, automated bed turnover dispatch, EMR/EHR, digital pharmacy formulary, and TPA insurance billing with 100% doctor-in-the-loop safety.',
     outcome: '35 min average bed turnaround & ABDM/NABH compliance ready',
@@ -89,7 +89,7 @@ const products: ProductItem[] = [
     category: 'HOSPITALITY MANAGEMENT',
     name: 'NexAgent Hospitality OS',
     status: 'AVAILABLE',
-    statusColor: 'text-green-700 bg-green-50 border-green-200',
+    statusColor: 'text-zinc-900 bg-zinc-100 border-zinc-300',
     description:
       'Entirely AI-powered cloud property management system (PMS). Features algorithmic dynamic room pricing, 24/7 autonomous guest concierge (WhatsApp/web/voice), mobile self check-in/out, automated room turnover dispatch, and 2-way OTA synchronization.',
     outcome: '28% RevPAR increase & 0 min reception queue wait times',
@@ -129,7 +129,7 @@ const products: ProductItem[] = [
     category: 'ENTERPRISE AUTOMATION',
     name: 'Enterprise Operations Core',
     status: 'AVAILABLE',
-    statusColor: 'text-green-700 bg-green-50 border-green-200',
+    statusColor: 'text-zinc-900 bg-zinc-100 border-zinc-300',
     description:
       'One unified, comprehensive solution that includes everything out-of-the-box, customized directly to your organization’s exact operational workflows and compliance boundaries.',
     outcome: '82% reduction in cross-tool administrative handoff lag',
@@ -164,7 +164,7 @@ const products: ProductItem[] = [
     category: 'CAPACITY INTELLIGENCE',
     name: 'Predictive Capacity & Flow Network',
     status: 'ENTERPRISE READY',
-    statusColor: 'text-[#2b9aaa] bg-[#2b9aaa]/10 border-[#2b9aaa]/25',
+    statusColor: 'text-white bg-zinc-900 border-zinc-900',
     description:
       'Forecasts hospital ward capacity bottlenecks, nurse-to-patient ratios, and hotel occupancy surges 24 to 48 hours in advance, enabling leadership to open surge resources proactively.',
     outcome: 'Proactive capacity planning & shift balancing',
@@ -202,7 +202,7 @@ export default function HmsShowcase({ onOpenStrategyCall }: HmsShowcaseProps) {
   };
 
   return (
-    <section id="products" className="py-24 bg-[#f8f9fa] border-t border-black/[0.06] relative overflow-hidden content-visibility-auto">
+    <section id="products" className="py-24 bg-white border-t border-zinc-200 relative overflow-hidden content-visibility-auto">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
         <motion.div
@@ -213,15 +213,15 @@ export default function HmsShowcase({ onOpenStrategyCall }: HmsShowcaseProps) {
           className="max-w-3xl mb-16 space-y-4"
         >
           <motion.div variants={fadeUpVariants}>
-            <Eyebrow pulseColor="cyan">Product Portfolio</Eyebrow>
+            <Eyebrow pulseColor="black">Product Portfolio</Eyebrow>
           </motion.div>
           <motion.h2
             variants={fadeUpVariants}
-            className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#0f1117] tracking-tight"
+            className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-zinc-950 tracking-tight"
           >
             Software systems built for real operations.
           </motion.h2>
-          <motion.p variants={fadeUpVariants} className="text-base text-[#4a5568]">
+          <motion.p variants={fadeUpVariants} className="text-base text-zinc-600">
             Every NexAgent Infra product is engineered around one standard: measurable operational throughput with zero ungrounded actions. Clearly delineated by deployment readiness.
           </motion.p>
         </motion.div>
@@ -237,14 +237,14 @@ export default function HmsShowcase({ onOpenStrategyCall }: HmsShowcaseProps) {
               <motion.div
                 key={prod.id}
                 variants={fadeUpVariants}
-                className={`rounded-3xl bg-white border border-black/[0.08] hover:border-[#2b9aaa]/30 hover:shadow-md p-8 sm:p-10 transition-all flex flex-col justify-between group ${
+                className={`rounded-3xl bg-zinc-50 border border-zinc-200 hover:border-black hover:shadow-xl hover:shadow-black/5 p-8 sm:p-10 transition-all flex flex-col justify-between group ${
                   isFeatured ? 'lg:col-span-12 xl:col-span-7' : idx === 1 ? 'lg:col-span-12 xl:col-span-5' : 'lg:col-span-6'
                 }`}
               >
                 <div className="space-y-6">
                   {/* Category & Status */}
                   <div className="flex items-center justify-between gap-4 flex-wrap">
-                    <span className="text-[11px] font-mono uppercase tracking-widest text-[#2b9aaa] font-semibold">
+                    <span className="text-[11px] font-mono uppercase tracking-widest text-zinc-500 font-semibold">
                       {prod.category}
                     </span>
                     <span
@@ -256,14 +256,14 @@ export default function HmsShowcase({ onOpenStrategyCall }: HmsShowcaseProps) {
 
                   {/* Title & Icon */}
                   <div className="flex items-start gap-4">
-                    <div className="p-3 rounded-2xl bg-[#2b9aaa]/08 border border-[#2b9aaa]/15 text-[#2b9aaa] group-hover:scale-110 transition-transform shrink-0 bg-[#f0fafb]">
+                    <div className="p-3.5 rounded-2xl bg-white border border-zinc-200 text-zinc-900 group-hover:bg-black group-hover:text-white transition-colors shrink-0 shadow-sm">
                       <Icon className="w-6 h-6" />
                     </div>
                     <div>
-                      <h3 className="text-xl sm:text-2xl font-bold text-[#0f1117] tracking-tight">
+                      <h3 className="text-xl sm:text-2xl font-bold text-zinc-950 tracking-tight">
                         {prod.name}
                       </h3>
-                      <p className="text-sm text-[#4a5568] leading-relaxed mt-2">
+                      <p className="text-sm text-zinc-600 leading-relaxed mt-2">
                         {prod.description}
                       </p>
                     </div>
@@ -274,9 +274,9 @@ export default function HmsShowcase({ onOpenStrategyCall }: HmsShowcaseProps) {
                     {prod.features.map((feat, fIdx) => (
                       <div
                         key={fIdx}
-                        className="flex items-center gap-2.5 text-xs text-[#4a5568]"
+                        className="flex items-center gap-2.5 text-xs text-zinc-700"
                       >
-                        <CheckCircle2 className="w-3.5 h-3.5 text-[#2b9aaa] shrink-0" />
+                        <CheckCircle2 className="w-3.5 h-3.5 text-zinc-900 shrink-0" />
                         <span>{feat}</span>
                       </div>
                     ))}
@@ -286,14 +286,14 @@ export default function HmsShowcase({ onOpenStrategyCall }: HmsShowcaseProps) {
                   <div className="pt-2">
                     <button
                       onClick={() => toggleProductExpand(prod.id)}
-                      className="w-full py-2.5 px-4 rounded-xl bg-[#f8f9fa] hover:bg-[#edf2f7] border border-black/[0.06] text-xs font-semibold text-[#0f1117] flex items-center justify-between transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[#2b9aaa]/40"
+                      className="w-full py-2.5 px-4 rounded-xl bg-white hover:bg-zinc-100 border border-zinc-200 text-xs font-semibold text-zinc-900 flex items-center justify-between transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-black"
                     >
                       <span className="flex items-center gap-2">
-                        <Layers className="w-3.5 h-3.5 text-[#2b9aaa]" />
+                        <Layers className="w-3.5 h-3.5 text-zinc-900" />
                         <span>{isExpanded ? 'Hide Inner Architecture Modules' : 'Inspect Inner Architecture & Sub-Modules'}</span>
                       </span>
                       <motion.div animate={{ rotate: isExpanded ? 180 : 0 }} transition={{ duration: 0.2 }}>
-                        <ChevronDown className="w-4 h-4 text-[#718096]" />
+                        <ChevronDown className="w-4 h-4 text-zinc-500" />
                       </motion.div>
                     </button>
 
@@ -312,19 +312,19 @@ export default function HmsShowcase({ onOpenStrategyCall }: HmsShowcaseProps) {
                             {prod.subModules.map((sub, sIdx) => (
                               <div
                                 key={sIdx}
-                                className="p-3.5 rounded-xl bg-[#f8f9fa] border border-black/[0.06] space-y-1.5"
+                                className="p-3.5 rounded-xl bg-white border border-zinc-200 space-y-1.5"
                               >
                                 <div className="flex items-center justify-between">
-                                  <h6 className="text-xs font-bold text-[#0f1117] flex items-center gap-1.5">
-                                    <Cpu className="w-3 h-3 text-[#2b9aaa]" />
+                                  <h6 className="text-xs font-bold text-zinc-900 flex items-center gap-1.5">
+                                    <Cpu className="w-3 h-3 text-zinc-900" />
                                     <span>{sub.title}</span>
                                   </h6>
                                 </div>
-                                <p className="text-[11px] text-[#4a5568] leading-relaxed">
+                                <p className="text-[11px] text-zinc-600 leading-relaxed">
                                   {sub.detail}
                                 </p>
-                                <div className="text-[10px] font-mono text-[#718096] flex items-center gap-1 pt-1 border-t border-black/[0.04]">
-                                  <ShieldCheck className="w-3 h-3 text-[#2b9aaa]" />
+                                <div className="text-[10px] font-mono text-zinc-500 flex items-center gap-1 pt-1 border-t border-zinc-100">
+                                  <ShieldCheck className="w-3 h-3 text-zinc-900" />
                                   <span>Gate: {sub.governance}</span>
                                 </div>
                               </div>
@@ -337,12 +337,12 @@ export default function HmsShowcase({ onOpenStrategyCall }: HmsShowcaseProps) {
                 </div>
 
                 {/* Bottom Bar: Outcome & Link */}
-                <div className="pt-6 mt-6 border-t border-black/[0.06] flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                <div className="pt-6 mt-6 border-t border-zinc-200 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
                   <div>
-                    <span className="text-[10px] font-mono uppercase tracking-wider text-[#94a3b8] block">
+                    <span className="text-[10px] font-mono uppercase tracking-wider text-zinc-400 block">
                       Operational Outcome
                     </span>
-                    <span className="text-xs sm:text-sm font-semibold text-[#0f1117]">
+                    <span className="text-xs sm:text-sm font-semibold text-zinc-900">
                       {prod.outcome}
                     </span>
                   </div>
@@ -350,14 +350,14 @@ export default function HmsShowcase({ onOpenStrategyCall }: HmsShowcaseProps) {
                   <div className="flex items-center gap-3">
                     <button
                       onClick={onOpenStrategyCall}
-                      className="text-xs font-bold uppercase tracking-wider text-[#0f1117] hover:text-[#2b9aaa] transition-colors"
+                      className="text-xs font-bold uppercase tracking-wider text-zinc-900 hover:text-zinc-500 transition-colors"
                     >
                       Request Sandbox
                     </button>
-                    <span className="text-[#cbd5e1]">·</span>
+                    <span className="text-zinc-300">·</span>
                     <Link
                       href={prod.href}
-                      className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-[#2b9aaa] hover:text-[#0f1117] transition-colors"
+                      className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-zinc-900 hover:text-zinc-600 transition-colors"
                     >
                       <span>Full Specs</span>
                       <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />

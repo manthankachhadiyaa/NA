@@ -56,8 +56,8 @@ export default function SidebarToc() {
         visible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-4 pointer-events-none'
       }`}
     >
-      <div className="bg-white/95 backdrop-blur-md border border-black/[0.08] rounded-2xl p-4 shadow-lg w-44">
-        <div className="text-[10px] font-mono uppercase tracking-widest text-[#718096] mb-3 px-2 font-bold">
+      <div className="bg-white/95 backdrop-blur-md border border-zinc-200 rounded-2xl p-4 shadow-xl shadow-black/5 w-44">
+        <div className="text-[10px] font-mono uppercase tracking-widest text-zinc-400 mb-3 px-2 font-bold">
           Navigation
         </div>
         <nav className="space-y-1">
@@ -69,11 +69,11 @@ export default function SidebarToc() {
                 href={`#${item.id}`}
                 className={`flex items-center gap-2 px-2 py-1.5 rounded-lg text-xs font-medium transition-all duration-200 ${
                   isActive
-                    ? 'bg-[#0f1117] text-white font-semibold shadow-sm'
-                    : 'text-[#4a5568] hover:text-[#0f1117] hover:bg-black/[0.04]'
+                    ? 'bg-black text-white font-semibold shadow-sm'
+                    : 'text-zinc-600 hover:text-black hover:bg-zinc-100'
                 }`}
               >
-                <span className={`font-mono text-[10px] font-bold ${isActive ? 'text-[#2b9aaa]' : 'text-[#718096]'}`}>
+                <span className={`font-mono text-[10px] font-bold ${isActive ? 'text-zinc-400' : 'text-zinc-400'}`}>
                   {item.num}
                 </span>
                 <span className="truncate">{item.label}</span>

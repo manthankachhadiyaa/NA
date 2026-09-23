@@ -911,9 +911,13 @@ const industryWorkflowData: IndustryConfig[] = [
 
 interface ChooseYourSetupProps {
   onOpenStrategyCall: () => void;
+  isStandalonePage?: boolean;
 }
 
-export default function ChooseYourSetup({ onOpenStrategyCall }: ChooseYourSetupProps) {
+export default function ChooseYourSetup({
+  onOpenStrategyCall,
+  isStandalonePage = false,
+}: ChooseYourSetupProps) {
   // Funnel State
   const [selectedIndustryId, setSelectedIndustryId] = useState<string>('healthcare');
   const [selectedProductId, setSelectedProductId] = useState<string>('hms');
@@ -991,10 +995,9 @@ export default function ChooseYourSetup({ onOpenStrategyCall }: ChooseYourSetupP
     });
   };
 
-  return (
-    <section id="setup" className="py-24 bg-white border-t border-black/[0.08] relative content-visibility-auto">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-16">
-        {/* Section Header */}
+  const content = (
+    <div className={`space-y-12 ${isStandalonePage ? '' : 'max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10'}`}>
+      {!isStandalonePage && (
         <motion.div
           variants={staggerContainerVariants}
           initial="hidden"
@@ -1003,36 +1006,37 @@ export default function ChooseYourSetup({ onOpenStrategyCall }: ChooseYourSetupP
           className="text-center max-w-3xl mx-auto space-y-4"
         >
           <motion.div variants={fadeUpVariants}>
-            <Eyebrow pulseColor="cyan">Progressive Architecture Configurator</Eyebrow>
+            <Eyebrow>Progressive Architecture Configurator</Eyebrow>
           </motion.div>
           <motion.h2
             variants={fadeUpVariants}
-            className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#0f1117] tracking-tight leading-[1.12]"
+            className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#09090b] tracking-tight leading-[1.12]"
           >
             Find Your Tailored Operational Architecture.
           </motion.h2>
-          <motion.p variants={fadeUpVariants} className="text-sm sm:text-base text-[#718096]">
+          <motion.p variants={fadeUpVariants} className="text-sm sm:text-base text-[#71717a]">
             Follow the 4-step progressive pipeline: Select your industry ➔ choose your core product ➔ customize facility &amp; departments ➔ inspect your dynamically synthesized architecture recommendation.
           </motion.p>
         </motion.div>
+      )}
 
-        {/* ========================================================== */}
-        {/* STEP 1: INDUSTRY WE WORK WITH */}
-        {/* ========================================================== */}
-        <div className="space-y-4">
-          <div className="flex items-center justify-between">
-            <div className="flex items-center gap-2.5">
-              <span className="w-6 h-6 rounded-full bg-[#0f1117] text-white text-xs font-mono font-bold flex items-center justify-center">
-                1
-              </span>
-              <h3 className="text-sm sm:text-base font-bold text-[#0f1117] uppercase tracking-wider font-mono">
-                Industry We Work With
-              </h3>
-            </div>
-            <span className="text-xs font-mono text-[#2b9aaa] font-semibold hidden sm:inline">
-              Active: {currentIndustry.name}
+      {/* ========================================================== */}
+      {/* STEP 1: INDUSTRY WE WORK WITH */}
+      {/* ========================================================== */}
+      <div className="space-y-4">
+        <div className="flex items-center justify-between">
+          <div className="flex items-center gap-2.5">
+            <span className="w-6 h-6 rounded-full bg-[#09090b] text-white text-xs font-mono font-bold flex items-center justify-center">
+              1
             </span>
+            <h3 className="text-sm sm:text-base font-bold text-[#09090b] uppercase tracking-wider font-mono">
+              Industry We Work With
+            </h3>
           </div>
+          <span className="text-xs font-mono text-[#09090b] font-semibold hidden sm:inline">
+            Active: {currentIndustry.name}
+          </span>
+        </div>
 
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
             {industryWorkflowData.map((ind) => {
@@ -1043,33 +1047,33 @@ export default function ChooseYourSetup({ onOpenStrategyCall }: ChooseYourSetupP
                 <button
                   key={ind.id}
                   onClick={() => handleSelectIndustry(ind.id)}
-                  className={`p-4 rounded-2xl border text-left transition-all duration-150 flex flex-col justify-between focus:outline-none focus-visible:ring-2 focus-visible:ring-[#2b9aaa]/40 ${
+                  className={`p-4 rounded-2xl border text-left transition-all duration-150 flex flex-col justify-between focus:outline-none focus-visible:ring-2 focus-visible:ring-black/40 ${
                     isSelected
-                      ? 'bg-white border-[#2b9aaa] ring-2 ring-[#2b9aaa]/25 shadow-md scale-[1.02]'
-                      : 'bg-[#f8f9fa] border-black/[0.06] hover:bg-white hover:border-black/15'
+                      ? 'bg-white border-black ring-1 ring-black shadow-md scale-[1.02]'
+                      : 'bg-[#fafafa] border-black/[0.08] hover:bg-white hover:border-black/20'
                   }`}
                 >
                   <div className="space-y-3">
                     <div
                       className={`p-2.5 rounded-xl w-fit transition-colors ${
                         isSelected
-                          ? 'bg-[#2b9aaa]/15 text-[#2b9aaa]'
-                          : 'bg-black/[0.04] text-[#718096]'
+                          ? 'bg-black text-white'
+                          : 'bg-black/[0.04] text-[#71717a]'
                       }`}
                     >
                       <Icon className="w-5 h-5" />
                     </div>
                     <div>
-                      <h4 className="text-xs sm:text-sm font-bold text-[#0f1117] line-clamp-1">
+                      <h4 className="text-xs sm:text-sm font-bold text-[#09090b] line-clamp-1">
                         {ind.shortName}
                       </h4>
-                      <p className="text-[10px] text-[#718096] line-clamp-2 mt-0.5">
+                      <p className="text-[10px] text-[#71717a] line-clamp-2 mt-0.5">
                         {ind.tagline}
                       </p>
                     </div>
                   </div>
                   {isSelected && (
-                    <div className="pt-2 mt-2 border-t border-[#2b9aaa]/20 flex items-center gap-1 text-[10px] font-mono text-[#2b9aaa] font-bold">
+                    <div className="pt-2 mt-2 border-t border-black/10 flex items-center gap-1 text-[10px] font-mono text-[#09090b] font-bold">
                       <Check className="w-3 h-3 stroke-[3]" />
                       <span>Active</span>
                     </div>
@@ -1086,14 +1090,14 @@ export default function ChooseYourSetup({ onOpenStrategyCall }: ChooseYourSetupP
         <div className="space-y-4 pt-4 border-t border-black/[0.06]">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-2.5">
-              <span className="w-6 h-6 rounded-full bg-[#0f1117] text-white text-xs font-mono font-bold flex items-center justify-center">
+              <span className="w-6 h-6 rounded-full bg-[#09090b] text-white text-xs font-mono font-bold flex items-center justify-center">
                 2
               </span>
-              <h3 className="text-sm sm:text-base font-bold text-[#0f1117] uppercase tracking-wider font-mono">
+              <h3 className="text-sm sm:text-base font-bold text-[#09090b] uppercase tracking-wider font-mono">
                 Engineered Products for {currentIndustry.shortName}
               </h3>
             </div>
-            <span className="text-xs font-mono text-[#718096]">
+            <span className="text-xs font-mono text-[#71717a]">
               {currentIndustry.products.length} {currentIndustry.products.length === 1 ? 'System' : 'Systems'} Available
             </span>
           </div>
@@ -1107,18 +1111,18 @@ export default function ChooseYourSetup({ onOpenStrategyCall }: ChooseYourSetupP
                 <button
                   key={prod.id}
                   onClick={() => handleSelectProduct(prod.id)}
-                  className={`p-6 rounded-2xl border text-left transition-all duration-150 flex flex-col justify-between group focus:outline-none focus-visible:ring-2 focus-visible:ring-[#2b9aaa]/40 ${
+                  className={`p-6 rounded-2xl border text-left transition-all duration-150 flex flex-col justify-between group focus:outline-none focus-visible:ring-2 focus-visible:ring-black/40 ${
                     isSelected
-                      ? 'bg-white border-[#2b9aaa] ring-2 ring-[#2b9aaa]/25 shadow-lg'
-                      : 'bg-[#f8f9fa] border-black/[0.06] hover:bg-white hover:border-black/15'
+                      ? 'bg-white border-black ring-1 ring-black shadow-lg'
+                      : 'bg-[#fafafa] border-black/[0.08] hover:bg-white hover:border-black/20'
                   }`}
                 >
                   <div className="space-y-3">
                     <div className="flex items-center justify-between">
-                      <span className="text-[10px] font-mono uppercase tracking-wider text-[#2b9aaa] font-bold">
+                      <span className="text-[10px] font-mono uppercase tracking-wider text-[#71717a] font-bold">
                         {prod.category}
                       </span>
-                      <span className="text-[9px] font-mono px-2 py-0.5 rounded-full uppercase tracking-wider font-bold bg-[#2ecc71]/10 text-[#2ecc71] border border-[#2ecc71]/20">
+                      <span className="text-[9px] font-mono px-2 py-0.5 rounded-full uppercase tracking-wider font-bold bg-black/[0.05] text-[#09090b] border border-black/10">
                         {prod.badge}
                       </span>
                     </div>
@@ -1127,26 +1131,26 @@ export default function ChooseYourSetup({ onOpenStrategyCall }: ChooseYourSetupP
                       <div
                         className={`p-2.5 rounded-xl transition-colors shrink-0 ${
                           isSelected
-                            ? 'bg-[#2b9aaa]/15 text-[#2b9aaa]'
-                            : 'bg-black/[0.04] text-[#718096]'
+                            ? 'bg-black text-white'
+                            : 'bg-black/[0.04] text-[#71717a]'
                         }`}
                       >
                         <Icon className="w-5 h-5" />
                       </div>
                       <div>
-                        <h4 className="text-base font-bold text-[#0f1117]">{prod.name}</h4>
-                        <p className="text-xs text-[#718096] leading-relaxed mt-1">
+                        <h4 className="text-base font-bold text-[#09090b]">{prod.name}</h4>
+                        <p className="text-xs text-[#71717a] leading-relaxed mt-1">
                           {prod.description}
                         </p>
                       </div>
                     </div>
                   </div>
 
-                  <div className="pt-4 mt-4 border-t border-black/[0.06] flex items-center justify-between text-xs font-semibold text-[#4a5568]">
+                  <div className="pt-4 mt-4 border-t border-black/[0.06] flex items-center justify-between text-xs font-semibold text-[#3f3f46]">
                     <span>{isSelected ? '✓ Active Core Product' : 'Select Core Product'}</span>
                     <ArrowRight
                       className={`w-4 h-4 transition-transform ${
-                        isSelected ? 'text-[#2b9aaa] translate-x-1' : 'text-[#94a3b8]'
+                        isSelected ? 'text-[#09090b] translate-x-1' : 'text-[#a1a1aa]'
                       }`}
                     />
                   </div>
@@ -1159,18 +1163,18 @@ export default function ChooseYourSetup({ onOpenStrategyCall }: ChooseYourSetupP
         {/* ========================================================== */}
         {/* STEP 3: CUSTOMISE SETUP (FACILITY & DEPARTMENTS) */}
         {/* ========================================================== */}
-        <div className="p-8 sm:p-10 rounded-3xl bg-[#f8f9fa] border border-black/[0.08] shadow-sm space-y-8">
+        <div className="p-8 sm:p-10 rounded-3xl bg-[#fafafa] border border-black/[0.08] shadow-xs space-y-8">
           <div className="space-y-4">
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-2.5">
-                <span className="w-6 h-6 rounded-full bg-[#0f1117] text-white text-xs font-mono font-bold flex items-center justify-center">
+                <span className="w-6 h-6 rounded-full bg-[#09090b] text-white text-xs font-mono font-bold flex items-center justify-center">
                   3
                 </span>
-                <h3 className="text-sm sm:text-base font-bold text-[#0f1117] uppercase tracking-wider font-mono">
+                <h3 className="text-sm sm:text-base font-bold text-[#09090b] uppercase tracking-wider font-mono">
                   Customise Setup: Choose Facility &amp; Departments
                 </h3>
               </div>
-              <span className="text-xs font-mono text-[#2b9aaa] font-bold">
+              <span className="text-xs font-mono text-[#09090b] font-bold">
                 {currentSetup.name}
               </span>
             </div>
@@ -1187,28 +1191,28 @@ export default function ChooseYourSetup({ onOpenStrategyCall }: ChooseYourSetupP
                     onClick={() => handleSelectSetup(setup.id)}
                     className={`p-4 rounded-xl border text-left transition-all duration-150 flex items-center justify-between ${
                       isSelected
-                        ? 'bg-white border-[#2b9aaa] ring-2 ring-[#2b9aaa]/25 shadow-sm'
-                        : 'bg-white/60 border-black/[0.06] hover:bg-white'
+                        ? 'bg-white border-black ring-1 ring-black shadow-sm'
+                        : 'bg-white/60 border-black/[0.08] hover:bg-white'
                     }`}
                   >
                     <div className="flex items-center gap-3">
                       <div
                         className={`p-2 rounded-lg ${
-                          isSelected ? 'bg-[#2b9aaa]/15 text-[#2b9aaa]' : 'bg-black/[0.04] text-[#718096]'
+                          isSelected ? 'bg-black text-white' : 'bg-black/[0.04] text-[#71717a]'
                         }`}
                       >
                         <SIcon className="w-4 h-4" />
                       </div>
                       <div>
-                        <span className="text-xs sm:text-sm font-bold text-[#0f1117] block">
+                        <span className="text-xs sm:text-sm font-bold text-[#09090b] block">
                           {setup.name}
                         </span>
-                        <span className="text-[10px] text-[#718096] line-clamp-1">
+                        <span className="text-[10px] text-[#71717a] line-clamp-1">
                           {setup.subtext}
                         </span>
                       </div>
                     </div>
-                    {isSelected && <Check className="w-4 h-4 text-[#2b9aaa] shrink-0 stroke-[3]" />}
+                    {isSelected && <Check className="w-4 h-4 text-[#09090b] shrink-0 stroke-[3]" />}
                   </button>
                 );
               })}
@@ -1218,10 +1222,10 @@ export default function ChooseYourSetup({ onOpenStrategyCall }: ChooseYourSetupP
           {/* Department Multi-Select Chips */}
           <div className="pt-4 border-t border-black/[0.06] space-y-4">
             <div className="text-center sm:text-left space-y-1">
-              <h4 className="text-sm font-bold text-[#0f1117]">
+              <h4 className="text-sm font-bold text-[#09090b]">
                 What operational departments do you manage in your {currentSetup.name}?
               </h4>
-              <p className="text-xs text-[#718096]">
+              <p className="text-xs text-[#71717a]">
                 Click to toggle operational areas. The architecture blueprint below dynamically re-synthesizes in real time:
               </p>
             </div>
@@ -1236,14 +1240,14 @@ export default function ChooseYourSetup({ onOpenStrategyCall }: ChooseYourSetupP
                     onClick={() => toggleDepartment(dept.name)}
                     className={`px-3.5 py-2 rounded-full text-xs font-semibold tracking-wide transition-all duration-150 flex items-center gap-1.5 min-h-[38px] ${
                       isSelected
-                        ? 'bg-[#0f1117] text-white font-bold shadow-sm scale-[1.02] border border-[#0f1117]'
-                        : 'bg-white text-[#4a5568] hover:text-[#0f1117] border border-black/[0.08]'
+                        ? 'bg-[#09090b] text-white font-bold shadow-sm scale-[1.02] border border-[#09090b]'
+                        : 'bg-white text-[#3f3f46] hover:text-[#09090b] border border-black/[0.08] hover:border-black/20'
                     }`}
                   >
-                    {isSelected && <Check className="w-3 h-3 text-[#2b9aaa] stroke-[3]" />}
+                    {isSelected && <Check className="w-3 h-3 text-white stroke-[3]" />}
                     <span>{dept.name}</span>
                     {isSelected && (
-                      <span className="text-[10px] text-[#2b9aaa] ml-0.5 font-mono">
+                      <span className="text-[10px] text-zinc-300 ml-0.5 font-mono">
                         active
                       </span>
                     )}
@@ -1257,49 +1261,49 @@ export default function ChooseYourSetup({ onOpenStrategyCall }: ChooseYourSetupP
         {/* ========================================================== */}
         {/* STEP 4: DYNAMIC TAILORED ARCHITECTURE RECOMMENDATION */}
         {/* ========================================================== */}
-        <div className="p-8 sm:p-10 lg:p-12 rounded-3xl bg-white border border-[#2b9aaa]/40 shadow-xl space-y-8 ring-1 ring-[#2b9aaa]/20">
+        <div className="p-8 sm:p-10 lg:p-12 rounded-3xl bg-white border border-black/15 shadow-xl space-y-8 ring-1 ring-black/5">
           {/* Header: Identity of Tailored Solution */}
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-black/[0.08] pb-6">
             <div className="space-y-2">
               <div className="flex items-center gap-2.5">
-                <span className="w-6 h-6 rounded-full bg-[#2b9aaa] text-white text-xs font-mono font-bold flex items-center justify-center">
+                <span className="w-6 h-6 rounded-full bg-[#09090b] text-white text-xs font-mono font-bold flex items-center justify-center">
                   4
                 </span>
-                <span className="text-xs font-mono uppercase tracking-widest text-[#2b9aaa] font-bold">
+                <span className="text-xs font-mono uppercase tracking-widest text-[#09090b] font-bold">
                   Tailored Solution Architecture Blueprint
                 </span>
               </div>
-              <h3 className="text-2xl sm:text-3xl font-extrabold text-[#0f1117] tracking-tight">
+              <h3 className="text-2xl sm:text-3xl font-extrabold text-[#09090b] tracking-tight">
                 Customized {currentProduct.name} for {currentSetup.name}
               </h3>
-              <p className="text-xs sm:text-sm text-[#718096]">
+              <p className="text-xs sm:text-sm text-[#71717a]">
                 Configured for {activeDepartmentSpecs.length} Active {activeDepartmentSpecs.length === 1 ? 'Area' : 'Areas'}:{' '}
-                <span className="font-semibold text-[#0f1117]">
+                <span className="font-semibold text-[#09090b]">
                   {activeDepartmentSpecs.map((d) => d.name).join(', ')}
                 </span>
               </p>
             </div>
 
-            <div className="p-4 rounded-2xl bg-[#f0fafb] border border-[#2b9aaa]/20 self-start sm:self-auto shrink-0">
-              <span className="text-[10px] font-mono uppercase tracking-wider text-[#2b9aaa] font-bold block">
+            <div className="p-4 rounded-2xl bg-[#fafafa] border border-black/[0.08] self-start sm:self-auto shrink-0">
+              <span className="text-[10px] font-mono uppercase tracking-wider text-[#71717a] font-bold block">
                 Target Operational Impact
               </span>
-              <span className="text-xs sm:text-sm font-bold text-[#0f1117]">
+              <span className="text-xs sm:text-sm font-bold text-[#09090b]">
                 {activeDepartmentSpecs[0]?.impact || 'Deterministic Operational Throughput'}
               </span>
             </div>
           </div>
 
           {/* Dynamic Operational Drag & Problem Solved */}
-          <div className="p-5 rounded-2xl bg-[#f8f9fa] border border-black/[0.06] space-y-2">
-            <div className="text-[11px] font-mono uppercase tracking-wider text-[#2b9aaa] font-bold flex items-center gap-2">
+          <div className="p-5 rounded-2xl bg-[#fafafa] border border-black/[0.06] space-y-2">
+            <div className="text-[11px] font-mono uppercase tracking-wider text-[#09090b] font-bold flex items-center gap-2">
               <Sparkles className="w-3.5 h-3.5" />
               <span>Operational Friction Eliminated Across Your Selected Areas</span>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-3 pt-1">
               {activeDepartmentSpecs.slice(0, 4).map((dept) => (
-                <div key={dept.name} className="text-xs text-[#4a5568] flex items-start gap-2">
-                  <span className="text-[#2b9aaa] font-bold shrink-0">[{dept.name}]:</span>
+                <div key={dept.name} className="text-xs text-[#3f3f46] flex items-start gap-2">
+                  <span className="text-[#09090b] font-bold shrink-0">[{dept.name}]:</span>
                   <span>{dept.problem}</span>
                 </div>
               ))}
@@ -1308,23 +1312,23 @@ export default function ChooseYourSetup({ onOpenStrategyCall }: ChooseYourSetupP
 
           {/* Dynamic 4-Tier Blueprint Matrix (Changes with Selected Departments) */}
           <div className="space-y-3">
-            <span className="text-xs font-mono uppercase tracking-wider text-[#718096] font-bold block">
+            <span className="text-xs font-mono uppercase tracking-wider text-[#71717a] font-bold block">
               Dynamic Deterministic Execution Matrix ({activeDepartmentSpecs.length} Configured Departments)
             </span>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
               {/* Tier 1: Ingestion Layer (Dynamic) */}
               <div className="p-5 rounded-2xl bg-white border border-black/[0.08] shadow-xs space-y-2.5">
-                <div className="text-[10px] font-mono uppercase tracking-wider text-[#2b9aaa] font-bold flex items-center gap-1.5">
-                  <Layers className="w-3.5 h-3.5" />
+                <div className="text-[10px] font-mono uppercase tracking-wider text-[#09090b] font-bold flex items-center gap-1.5">
+                  <Layers className="w-3.5 h-3.5 text-[#09090b]" />
                   <span>1. Ingestion Feeds</span>
                 </div>
                 <div className="space-y-2">
                   {activeDepartmentSpecs.map((dept) => (
-                    <div key={dept.name} className="text-xs text-[#4a5568] space-y-0.5">
-                      <span className="text-[10px] font-mono text-[#94a3b8] block">{dept.name}</span>
+                    <div key={dept.name} className="text-xs text-[#3f3f46] space-y-0.5">
+                      <span className="text-[10px] font-mono text-[#71717a] block">{dept.name}</span>
                       <div className="flex items-center gap-1.5">
-                        <span className="w-1.5 h-1.5 rounded-full bg-[#2b9aaa] shrink-0" />
+                        <span className="w-1.5 h-1.5 rounded-full bg-[#09090b] shrink-0" />
                         <span className="line-clamp-2">{dept.ingestion}</span>
                       </div>
                     </div>
@@ -1334,16 +1338,16 @@ export default function ChooseYourSetup({ onOpenStrategyCall }: ChooseYourSetupP
 
               {/* Tier 2: Policy Rules (Dynamic) */}
               <div className="p-5 rounded-2xl bg-white border border-black/[0.08] shadow-xs space-y-2.5">
-                <div className="text-[10px] font-mono uppercase tracking-wider text-[#2b9aaa] font-bold flex items-center gap-1.5">
-                  <Cpu className="w-3.5 h-3.5" />
+                <div className="text-[10px] font-mono uppercase tracking-wider text-[#09090b] font-bold flex items-center gap-1.5">
+                  <Cpu className="w-3.5 h-3.5 text-[#09090b]" />
                   <span>2. Deterministic Policies</span>
                 </div>
                 <div className="space-y-2">
                   {activeDepartmentSpecs.map((dept) => (
-                    <div key={dept.name} className="text-xs text-[#4a5568] space-y-0.5">
-                      <span className="text-[10px] font-mono text-[#94a3b8] block">{dept.name}</span>
+                    <div key={dept.name} className="text-xs text-[#3f3f46] space-y-0.5">
+                      <span className="text-[10px] font-mono text-[#71717a] block">{dept.name}</span>
                       <div className="flex items-center gap-1.5">
-                        <span className="w-1.5 h-1.5 rounded-full bg-[#2b9aaa] shrink-0" />
+                        <span className="w-1.5 h-1.5 rounded-full bg-[#09090b] shrink-0" />
                         <span className="line-clamp-2">{dept.policy}</span>
                       </div>
                     </div>
@@ -1353,16 +1357,16 @@ export default function ChooseYourSetup({ onOpenStrategyCall }: ChooseYourSetupP
 
               {/* Tier 3: Autonomous Actions (Dynamic) */}
               <div className="p-5 rounded-2xl bg-white border border-black/[0.08] shadow-xs space-y-2.5">
-                <div className="text-[10px] font-mono uppercase tracking-wider text-[#2b9aaa] font-bold flex items-center gap-1.5">
-                  <Zap className="w-3.5 h-3.5" />
+                <div className="text-[10px] font-mono uppercase tracking-wider text-[#09090b] font-bold flex items-center gap-1.5">
+                  <Zap className="w-3.5 h-3.5 text-[#09090b]" />
                   <span>3. Autonomous Actions</span>
                 </div>
                 <div className="space-y-2">
                   {activeDepartmentSpecs.map((dept) => (
-                    <div key={dept.name} className="text-xs text-[#4a5568] space-y-0.5">
-                      <span className="text-[10px] font-mono text-[#94a3b8] block">{dept.name}</span>
+                    <div key={dept.name} className="text-xs text-[#3f3f46] space-y-0.5">
+                      <span className="text-[10px] font-mono text-[#71717a] block">{dept.name}</span>
                       <div className="flex items-center gap-1.5">
-                        <span className="w-1.5 h-1.5 rounded-full bg-[#2b9aaa] shrink-0" />
+                        <span className="w-1.5 h-1.5 rounded-full bg-[#09090b] shrink-0" />
                         <span className="line-clamp-2">{dept.action}</span>
                       </div>
                     </div>
@@ -1371,20 +1375,20 @@ export default function ChooseYourSetup({ onOpenStrategyCall }: ChooseYourSetupP
               </div>
 
               {/* Tier 4: Human Governance Gate (Dynamic) */}
-              <div className="p-5 rounded-2xl bg-[#0f1117] text-white shadow-xs space-y-2.5">
-                <div className="text-[10px] font-mono uppercase tracking-wider text-[#2b9aaa] font-bold flex items-center gap-1.5">
-                  <ShieldCheck className="w-3.5 h-3.5" />
+              <div className="p-5 rounded-2xl bg-[#09090b] text-white shadow-xs space-y-2.5">
+                <div className="text-[10px] font-mono uppercase tracking-wider text-white font-bold flex items-center gap-1.5">
+                  <ShieldCheck className="w-3.5 h-3.5 text-white" />
                   <span>4. Mandatory Human Gate</span>
                 </div>
                 <div className="space-y-2">
                   {activeDepartmentSpecs.map((dept) => (
-                    <div key={dept.name} className="text-xs text-[#cbd5e1] space-y-0.5 border-b border-white/[0.08] pb-1.5 last:border-0 last:pb-0">
-                      <span className="text-[10px] font-mono text-[#94a3b8] block">{dept.name}</span>
+                    <div key={dept.name} className="text-xs text-[#d4d4d8] space-y-0.5 border-b border-white/[0.08] pb-1.5 last:border-0 last:pb-0">
+                      <span className="text-[10px] font-mono text-[#a1a1aa] block">{dept.name}</span>
                       <span className="line-clamp-2">{dept.gate}</span>
                     </div>
                   ))}
                 </div>
-                <span className="text-[10px] font-mono text-[#94a3b8] block pt-1 border-t border-white/10">
+                <span className="text-[10px] font-mono text-[#a1a1aa] block pt-1 border-t border-white/10">
                   Zero autonomous bypass.
                 </span>
               </div>
@@ -1394,11 +1398,11 @@ export default function ChooseYourSetup({ onOpenStrategyCall }: ChooseYourSetupP
           {/* Interactive Deep-Dive Module Drawers (Downward Expandable on User Click) */}
           <div className="pt-4 border-t border-black/[0.08] space-y-3">
             <div className="flex items-center justify-between">
-              <span className="text-xs font-mono uppercase tracking-wider text-[#0f1117] font-bold flex items-center gap-1.5">
-                <Compass className="w-3.5 h-3.5 text-[#2b9aaa]" />
+              <span className="text-xs font-mono uppercase tracking-wider text-[#09090b] font-bold flex items-center gap-1.5">
+                <Compass className="w-3.5 h-3.5 text-[#09090b]" />
                 <span>Department Operational Deep-Dives (Click to Expand Down)</span>
               </span>
-              <span className="text-xs text-[#718096]">
+              <span className="text-xs text-[#71717a]">
                 {activeDepartmentSpecs.length} Configured
               </span>
             </div>
@@ -1412,29 +1416,29 @@ export default function ChooseYourSetup({ onOpenStrategyCall }: ChooseYourSetupP
                     key={dept.name}
                     className={`rounded-2xl border transition-all duration-150 overflow-hidden bg-white ${
                       isExpanded
-                        ? 'border-[#2b9aaa]/40 shadow-sm ring-1 ring-[#2b9aaa]/15'
+                        ? 'border-black ring-1 ring-black shadow-sm'
                         : 'border-black/[0.08] hover:border-black/20'
                     }`}
                   >
                     <button
                       onClick={() => setExpandedDepartmentName(isExpanded ? null : dept.name)}
-                      className="w-full p-4 text-left flex items-center justify-between gap-4 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#2b9aaa]/40"
+                      className="w-full p-4 text-left flex items-center justify-between gap-4 focus:outline-none focus-visible:ring-2 focus-visible:ring-black/40"
                     >
                       <div className="flex items-center gap-3">
-                        <span className="text-xs font-mono font-bold text-[#2b9aaa] bg-[#2b9aaa]/10 px-2.5 py-0.5 rounded-full">
+                        <span className="text-xs font-mono font-bold text-[#09090b] bg-black/[0.05] border border-black/10 px-2.5 py-0.5 rounded-full">
                           {dept.name}
                         </span>
-                        <span className="text-xs font-bold text-[#0f1117] hidden sm:inline">
+                        <span className="text-xs font-bold text-[#09090b] hidden sm:inline">
                           {dept.impact}
                         </span>
                       </div>
 
                       <div className="flex items-center gap-2">
-                        <span className="text-[11px] font-semibold text-[#718096]">
+                        <span className="text-[11px] font-semibold text-[#71717a]">
                           {isExpanded ? 'Collapse' : 'Expand Down'}
                         </span>
                         <ChevronDown
-                          className={`w-4 h-4 text-[#718096] transition-transform duration-150 ${
+                          className={`w-4 h-4 text-[#71717a] transition-transform duration-150 ${
                             isExpanded ? 'rotate-180' : ''
                           }`}
                         />
@@ -1442,28 +1446,28 @@ export default function ChooseYourSetup({ onOpenStrategyCall }: ChooseYourSetupP
                     </button>
 
                     {isExpanded && (
-                      <div className="px-5 pb-5 pt-1 border-t border-black/[0.06] bg-[#fafbfc] space-y-3">
-                        <p className="text-xs text-[#4a5568] leading-relaxed">
+                      <div className="px-5 pb-5 pt-1 border-t border-black/[0.06] bg-[#fafafa] space-y-3">
+                        <p className="text-xs text-[#3f3f46] leading-relaxed">
                           <strong>Friction Solved:</strong> {dept.problem}
                         </p>
-                        <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5 text-xs text-[#4a5568]">
+                        <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5 text-xs text-[#3f3f46]">
                           <div className="p-3 rounded-xl bg-white border border-black/[0.06] space-y-1">
-                            <span className="text-[10px] font-mono text-[#718096] uppercase font-bold block">
+                            <span className="text-[10px] font-mono text-[#71717a] uppercase font-bold block">
                               Ingestion Protocol
                             </span>
                             <span>{dept.ingestion}</span>
                           </div>
                           <div className="p-3 rounded-xl bg-white border border-black/[0.06] space-y-1">
-                            <span className="text-[10px] font-mono text-[#718096] uppercase font-bold block">
+                            <span className="text-[10px] font-mono text-[#71717a] uppercase font-bold block">
                               Automated Action
                             </span>
                             <span>{dept.action}</span>
                           </div>
-                          <div className="p-3 rounded-xl bg-[#0f1117] text-white space-y-1">
-                            <span className="text-[10px] font-mono text-[#2b9aaa] uppercase font-bold block">
+                          <div className="p-3 rounded-xl bg-[#09090b] text-white space-y-1">
+                            <span className="text-[10px] font-mono text-[#a1a1aa] uppercase font-bold block">
                               Human Sign-Off Gate
                             </span>
-                            <span className="text-[#cbd5e1]">{dept.gate}</span>
+                            <span className="text-[#d4d4d8]">{dept.gate}</span>
                           </div>
                         </div>
                       </div>
@@ -1476,7 +1480,7 @@ export default function ChooseYourSetup({ onOpenStrategyCall }: ChooseYourSetupP
 
           {/* Bottom Consultation CTA */}
           <div className="pt-6 border-t border-black/[0.08] flex flex-col sm:flex-row items-center justify-between gap-4">
-            <div className="text-xs text-[#718096]">
+            <div className="text-xs text-[#71717a]">
               Ready to review this tailored architecture with founders <strong>Manthan Kachhadiya</strong> &amp; <strong>Savani Vraj</strong>?
             </div>
 
@@ -1492,6 +1496,15 @@ export default function ChooseYourSetup({ onOpenStrategyCall }: ChooseYourSetupP
           </div>
         </div>
       </div>
+  );
+
+  if (isStandalonePage) {
+    return content;
+  }
+
+  return (
+    <section id="setup" className="py-24 bg-white border-t border-black/[0.08] relative content-visibility-auto">
+      {content}
     </section>
   );
 }

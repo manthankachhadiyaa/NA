@@ -171,7 +171,7 @@ export default function Navbar({ onOpenStrategyCall, activePath = '/' }: NavbarP
             <span className="font-sans font-bold text-xl tracking-tight text-[#0f1117]">
               NexAgent
             </span>
-            <span className="text-[10px] font-mono uppercase tracking-widest text-[#2b9aaa] font-semibold">
+            <span className="text-[10px] font-mono uppercase tracking-widest text-zinc-500 font-semibold">
               INFRA
             </span>
           </div>
@@ -188,14 +188,14 @@ export default function Navbar({ onOpenStrategyCall, activePath = '/' }: NavbarP
               onMouseEnter={() => setActiveDropdown('products')}
               className={`px-3.5 py-2 text-xs font-semibold uppercase tracking-wider transition-colors rounded-full flex items-center gap-1.5 focus:outline-none focus-visible:ring-2 focus-visible:ring-black/20 ${
                 activeDropdown === 'products'
-                  ? 'text-[#0f1117] bg-black/[0.06]'
-                  : 'text-[#4a5568] hover:text-[#0f1117] hover:bg-black/[0.04]'
+                  ? 'text-zinc-950 bg-black/[0.06]'
+                  : 'text-zinc-600 hover:text-zinc-950 hover:bg-black/[0.04]'
               }`}
             >
               <span>Products</span>
               <ChevronDown
                 className={`w-3.5 h-3.5 transition-transform duration-200 ${
-                  activeDropdown === 'products' ? 'rotate-180 text-[#2b9aaa]' : ''
+                  activeDropdown === 'products' ? 'rotate-180 text-zinc-950' : ''
                 }`}
               />
             </button>
@@ -214,7 +214,7 @@ export default function Navbar({ onOpenStrategyCall, activePath = '/' }: NavbarP
                   <div className="text-[10px] font-mono uppercase tracking-widest text-[#94a3b8] px-3 pb-2 border-b border-black/[0.06] mb-2">
                     Core Product Portfolio
                   </div>
-                  <div className="grid grid-cols-2 gap-2">
+                    <div className="grid grid-cols-2 gap-2">
                     {productMenu.items.map((item) => {
                       const Icon = item.icon;
                       return (
@@ -222,22 +222,22 @@ export default function Navbar({ onOpenStrategyCall, activePath = '/' }: NavbarP
                           key={item.title}
                           href={item.href}
                           onClick={() => setActiveDropdown(null)}
-                          className="p-3 rounded-xl hover:bg-black/[0.03] transition-colors group block border border-transparent hover:border-black/[0.06]"
+                          className="p-3 rounded-xl hover:bg-black/[0.04] transition-colors group block border border-transparent hover:border-black/[0.08]"
                         >
                           <div className="flex items-center justify-between mb-1.5">
                             <div className="flex items-center gap-2">
-                              <Icon className="w-4 h-4 text-[#2b9aaa] group-hover:scale-110 transition-transform" />
-                              <span className="text-xs font-bold text-[#0f1117] group-hover:text-[#2b9aaa] transition-colors">
+                              <Icon className="w-4 h-4 text-[#09090b] group-hover:scale-110 transition-transform" />
+                              <span className="text-xs font-bold text-[#09090b] transition-colors">
                                 {item.title}
                               </span>
                             </div>
                             {item.badge && (
-                              <span className="text-[9px] font-mono px-1.5 py-0.5 rounded bg-black/[0.05] text-[#718096] uppercase font-semibold">
+                              <span className="text-[9px] font-mono px-1.5 py-0.5 rounded bg-black/[0.05] text-[#71717a] uppercase font-semibold">
                                 {item.badge}
                               </span>
                             )}
                           </div>
-                          <p className="text-[11px] text-[#718096] line-clamp-2 leading-relaxed">
+                          <p className="text-[11px] text-[#71717a] line-clamp-2 leading-relaxed">
                             {item.description}
                           </p>
                         </Link>
@@ -258,14 +258,14 @@ export default function Navbar({ onOpenStrategyCall, activePath = '/' }: NavbarP
               onMouseEnter={() => setActiveDropdown('solutions')}
               className={`px-3.5 py-2 text-xs font-semibold uppercase tracking-wider transition-colors rounded-full flex items-center gap-1.5 focus:outline-none focus-visible:ring-2 focus-visible:ring-black/20 ${
                 activeDropdown === 'solutions'
-                  ? 'text-[#0f1117] bg-black/[0.06]'
-                  : 'text-[#4a5568] hover:text-[#0f1117] hover:bg-black/[0.04]'
+                  ? 'text-[#09090b] bg-black/[0.06]'
+                  : 'text-[#52525b] hover:text-[#09090b] hover:bg-black/[0.04]'
               }`}
             >
               <span>Solutions</span>
               <ChevronDown
                 className={`w-3.5 h-3.5 transition-transform duration-200 ${
-                  activeDropdown === 'solutions' ? 'rotate-180 text-[#2b9aaa]' : ''
+                  activeDropdown === 'solutions' ? 'rotate-180 text-[#09090b]' : ''
                 }`}
               />
             </button>
@@ -281,7 +281,7 @@ export default function Navbar({ onOpenStrategyCall, activePath = '/' }: NavbarP
                   onMouseLeave={() => setActiveDropdown(null)}
                   className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-[540px] bg-white border border-black/[0.08] rounded-2xl p-4 shadow-[0_8px_30px_rgba(0,0,0,0.12)] backdrop-blur-xl z-50"
                 >
-                  <div className="text-[10px] font-mono uppercase tracking-widest text-[#94a3b8] px-3 pb-2 border-b border-black/[0.06] mb-2">
+                  <div className="text-[10px] font-mono uppercase tracking-widest text-[#71717a] px-3 pb-2 border-b border-black/[0.06] mb-2">
                     Industry &amp; Enterprise Solutions
                   </div>
                   <div className="grid grid-cols-2 gap-2">
@@ -292,15 +292,15 @@ export default function Navbar({ onOpenStrategyCall, activePath = '/' }: NavbarP
                           key={item.title}
                           href={item.href}
                           onClick={() => setActiveDropdown(null)}
-                          className="p-3 rounded-xl hover:bg-black/[0.03] transition-colors group block border border-transparent hover:border-black/[0.06]"
+                          className="p-3 rounded-xl hover:bg-black/[0.04] transition-colors group block border border-transparent hover:border-black/[0.08]"
                         >
                           <div className="flex items-center gap-2 mb-1.5">
-                            <Icon className="w-4 h-4 text-[#2b9aaa] group-hover:scale-110 transition-transform" />
-                            <span className="text-xs font-bold text-[#0f1117] group-hover:text-[#2b9aaa] transition-colors">
+                            <Icon className="w-4 h-4 text-[#09090b] group-hover:scale-110 transition-transform" />
+                            <span className="text-xs font-bold text-[#09090b] transition-colors">
                               {item.title}
                             </span>
                           </div>
-                          <p className="text-[11px] text-[#718096] line-clamp-2 leading-relaxed">
+                          <p className="text-[11px] text-[#71717a] line-clamp-2 leading-relaxed">
                             {item.description}
                           </p>
                         </Link>
@@ -312,14 +312,30 @@ export default function Navbar({ onOpenStrategyCall, activePath = '/' }: NavbarP
             </AnimatePresence>
           </div>
 
+          {/* Dedicated Solution Architect Link */}
+          <Link
+            href="/setup"
+            onClick={() => setActiveDropdown(null)}
+            className={`px-3.5 py-2 text-xs font-semibold uppercase tracking-wider transition-colors rounded-full flex items-center gap-1.5 ${
+              activePath === '/setup'
+                ? 'text-[#09090b] font-bold bg-black/[0.06]'
+                : 'text-[#52525b] hover:text-[#09090b] hover:bg-black/[0.04]'
+            }`}
+          >
+            <span>Architect</span>
+            <span className="text-[9px] font-mono px-1.5 py-0.5 rounded bg-black text-white uppercase font-bold">
+              New
+            </span>
+          </Link>
+
           {/* Direct Links */}
           <Link
             href="/technology"
             onClick={() => setActiveDropdown(null)}
             className={`px-3.5 py-2 text-xs font-semibold uppercase tracking-wider transition-colors rounded-full ${
               activePath === '/technology'
-                ? 'text-[#0f1117] font-bold bg-black/[0.06]'
-                : 'text-[#4a5568] hover:text-[#0f1117] hover:bg-black/[0.04]'
+                ? 'text-[#09090b] font-bold bg-black/[0.06]'
+                : 'text-[#52525b] hover:text-[#09090b] hover:bg-black/[0.04]'
             }`}
           >
             Technology
@@ -330,8 +346,8 @@ export default function Navbar({ onOpenStrategyCall, activePath = '/' }: NavbarP
             onClick={() => setActiveDropdown(null)}
             className={`px-3.5 py-2 text-xs font-semibold uppercase tracking-wider transition-colors rounded-full ${
               activePath === '/about'
-                ? 'text-[#0f1117] font-bold bg-black/[0.06]'
-                : 'text-[#4a5568] hover:text-[#0f1117] hover:bg-black/[0.04]'
+                ? 'text-[#09090b] font-bold bg-black/[0.06]'
+                : 'text-[#52525b] hover:text-[#09090b] hover:bg-black/[0.04]'
             }`}
           >
             Company
@@ -379,23 +395,23 @@ export default function Navbar({ onOpenStrategyCall, activePath = '/' }: NavbarP
                     mobileExpandedGroup === 'products' ? null : 'products'
                   )
                 }
-                className="w-full flex items-center justify-between py-3 text-sm font-bold text-[#0f1117] min-h-[44px]"
+                className="w-full flex items-center justify-between py-3 text-sm font-bold text-[#09090b] min-h-[44px]"
               >
                 <span>Products</span>
                 <ChevronDown
                   className={`w-4 h-4 transition-transform ${
-                    mobileExpandedGroup === 'products' ? 'rotate-180 text-[#2b9aaa]' : 'text-[#718096]'
+                    mobileExpandedGroup === 'products' ? 'rotate-180 text-[#09090b]' : 'text-[#71717a]'
                   }`}
                 />
               </button>
               {mobileExpandedGroup === 'products' && (
-                <div className="pl-3 py-2 space-y-2 border-l-2 border-[#2b9aaa]/30">
+                <div className="pl-3 py-2 space-y-2 border-l-2 border-black/20">
                   {productMenu.items.map((item) => (
                     <Link
                       key={item.title}
                       href={item.href}
                       onClick={() => setMobileMenuOpen(false)}
-                      className="block py-2 text-sm text-[#4a5568] hover:text-[#0f1117] min-h-[40px] flex items-center font-medium"
+                      className="block py-2 text-sm text-[#52525b] hover:text-[#09090b] min-h-[40px] flex items-center font-medium"
                     >
                       {item.title}
                     </Link>
@@ -412,23 +428,23 @@ export default function Navbar({ onOpenStrategyCall, activePath = '/' }: NavbarP
                     mobileExpandedGroup === 'solutions' ? null : 'solutions'
                   )
                 }
-                className="w-full flex items-center justify-between py-3 text-sm font-bold text-[#0f1117] min-h-[44px]"
+                className="w-full flex items-center justify-between py-3 text-sm font-bold text-[#09090b] min-h-[44px]"
               >
                 <span>Solutions</span>
                 <ChevronDown
                   className={`w-4 h-4 transition-transform ${
-                    mobileExpandedGroup === 'solutions' ? 'rotate-180 text-[#2b9aaa]' : 'text-[#718096]'
+                    mobileExpandedGroup === 'solutions' ? 'rotate-180 text-[#09090b]' : 'text-[#71717a]'
                   }`}
                 />
               </button>
               {mobileExpandedGroup === 'solutions' && (
-                <div className="pl-3 py-2 space-y-2 border-l-2 border-[#2b9aaa]/30">
+                <div className="pl-3 py-2 space-y-2 border-l-2 border-black/20">
                   {solutionsMenu.items.map((item) => (
                     <Link
                       key={item.title}
                       href={item.href}
                       onClick={() => setMobileMenuOpen(false)}
-                      className="block py-2 text-sm text-[#4a5568] hover:text-[#0f1117] min-h-[40px] flex items-center font-medium"
+                      className="block py-2 text-sm text-[#52525b] hover:text-[#09090b] min-h-[40px] flex items-center font-medium"
                     >
                       {item.title}
                     </Link>
@@ -437,11 +453,23 @@ export default function Navbar({ onOpenStrategyCall, activePath = '/' }: NavbarP
               )}
             </div>
 
+            {/* Dedicated Solution Architect Link in Mobile */}
+            <Link
+              href="/setup"
+              onClick={() => setMobileMenuOpen(false)}
+              className="flex items-center justify-between py-3 text-sm font-bold text-[#09090b] border-b border-black/[0.06] min-h-[44px]"
+            >
+              <span>Solution Architect</span>
+              <span className="text-[9px] font-mono px-2 py-0.5 rounded bg-black text-white uppercase font-bold">
+                Interactive
+              </span>
+            </Link>
+
             {/* Direct Mobile Links */}
             <Link
               href="/technology"
               onClick={() => setMobileMenuOpen(false)}
-              className="block py-3 text-sm font-bold text-[#0f1117] border-b border-black/[0.06] min-h-[44px] flex items-center"
+              className="block py-3 text-sm font-bold text-[#09090b] border-b border-black/[0.06] min-h-[44px] flex items-center"
             >
               Technology
             </Link>
@@ -449,7 +477,7 @@ export default function Navbar({ onOpenStrategyCall, activePath = '/' }: NavbarP
             <Link
               href="/about"
               onClick={() => setMobileMenuOpen(false)}
-              className="block py-3 text-sm font-bold text-[#0f1117] border-b border-black/[0.06] min-h-[44px] flex items-center"
+              className="block py-3 text-sm font-bold text-[#09090b] border-b border-black/[0.06] min-h-[44px] flex items-center"
             >
               Company
             </Link>

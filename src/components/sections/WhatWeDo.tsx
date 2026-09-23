@@ -45,23 +45,23 @@ export default function WhatWeDo() {
         >
           {/* Left: Large Editorial Statement */}
           <motion.div variants={fadeUpVariants} className="lg:col-span-5 space-y-6">
-            <Eyebrow pulseColor="cyan">The Architectural Thesis</Eyebrow>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#0f1117] tracking-tight leading-[1.12]">
+            <Eyebrow>The Architectural Thesis</Eyebrow>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#09090b] tracking-tight leading-[1.12]">
               Automated operations engineered for high-stakes environments where error is not an option.
             </h2>
-            <p className="text-sm sm:text-base text-[#718096] leading-relaxed">
-              Superficial AI chatbots fail in real businesses because they lack determinism, auditability, and system integration. NexAgent Infra was built from the ground up to operate as active infrastructure—not a conversational toy.
+            <p className="text-sm sm:text-base text-[#71717a] leading-relaxed">
+              Superficial AI chatbots fail in real businesses because they lack determinism, auditability, and system integration. NexAgent was built from the ground up to operate as active infrastructure—not a conversational toy.
             </p>
           </motion.div>
 
           {/* Right: Architecture & Pillars Narrative */}
           <motion.div variants={fadeUpVariants} className="lg:col-span-7 space-y-8">
-            <div className="p-8 rounded-3xl bg-white border border-black/[0.08] space-y-4">
-              <h3 className="text-xl font-bold text-[#0f1117] tracking-tight">
+            <div className="p-8 rounded-3xl bg-[#fafafa] border border-black/[0.08] space-y-4">
+              <h3 className="text-xl font-bold text-[#09090b] tracking-tight">
                 From passive databases to active operational execution.
               </h3>
-              <p className="text-sm text-[#718096] leading-relaxed">
-                Hospitals and enterprises lose thousands of hours to administrative friction: copying records between EMRs, chasing doctor sign-offs, and reconciling invoices across disconnected software. NexAgent Infra connects your existing software tools into a single coordinated pipeline, completing manual hand-offs in seconds while keeping leadership in complete cryptographic control.
+              <p className="text-sm text-[#71717a] leading-relaxed">
+                Hospitals and enterprises lose thousands of hours to administrative friction: copying records between EMRs, chasing doctor sign-offs, and reconciling invoices across disconnected software. NexAgent connects your existing software tools into a single coordinated pipeline, completing manual hand-offs in seconds while keeping leadership in complete cryptographic control.
               </p>
             </div>
 
@@ -70,13 +70,13 @@ export default function WhatWeDo() {
               {pillars.map((p) => (
                 <div
                   key={p.num}
-                  className="p-6 rounded-2xl bg-[#f8f9fa] border border-black/[0.06] hover:border-black/15 transition-colors space-y-2 group"
+                  className="p-6 rounded-2xl bg-white border border-black/[0.08] hover:border-black/25 transition-colors space-y-2 group shadow-xs"
                 >
-                  <div className="text-xs font-mono font-bold text-[#2b9aaa] group-hover:text-[#0f1117] transition-colors">
+                  <div className="text-xs font-mono font-bold text-[#09090b] group-hover:text-black transition-colors">
                     {p.num} // ARCHITECTURE
                   </div>
-                  <h4 className="text-base font-bold text-[#0f1117]">{p.title}</h4>
-                  <p className="text-xs text-[#94a3b8] leading-relaxed">{p.desc}</p>
+                  <h4 className="text-base font-bold text-[#09090b]">{p.title}</h4>
+                  <p className="text-xs text-[#71717a] leading-relaxed">{p.desc}</p>
                 </div>
               ))}
             </div>

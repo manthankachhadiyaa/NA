@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
+import Link from 'next/link';
 import { motion } from 'motion/react';
 import { ChevronDown, Plus, ArrowRight, ShieldCheck, Cpu, Layers } from 'lucide-react';
 import TotemAnimation from './TotemAnimation';
@@ -91,18 +92,18 @@ export default function HeroSection({ onOpenStrategyCall }: HeroSectionProps) {
           <div className="lg:col-span-7 space-y-6">
             {/* Category Eyebrow Pill */}
             <motion.div variants={fadeUpVariants}>
-              <Eyebrow pulseColor="cyan">
-                Agentic Cloud Infrastructure · Built for Healthcare, Hospitality &amp; Enterprise
+              <Eyebrow>
+                Deterministic Cloud Infrastructure · Healthcare &amp; Enterprise
               </Eyebrow>
             </motion.div>
 
             {/* Headline */}
             <motion.h1
               variants={fadeUpVariants}
-              className="text-3xl sm:text-5xl lg:text-6xl xl:text-7xl font-extrabold text-[#0f1117] tracking-tight leading-[1.08]"
+              className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-extrabold text-[#09090b] tracking-tight leading-[1.08]"
             >
               Operations.{' '}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#0f1117] via-[#2b9aaa] to-[#1a6b7a]">
+              <span className="text-[#09090b] underline decoration-black/20 underline-offset-8">
                 Reinvented.
               </span>
             </motion.h1>
@@ -110,36 +111,34 @@ export default function HeroSection({ onOpenStrategyCall }: HeroSectionProps) {
             {/* Supporting Statement */}
             <motion.p
               variants={fadeUpVariants}
-              className="text-sm sm:text-base md:text-lg text-[#4a5568] max-w-2xl leading-relaxed"
+              className="text-sm sm:text-base md:text-lg text-[#52525b] max-w-2xl leading-relaxed"
             >
               NexAgent builds deterministic AI operating systems that power real business operations—from complete Hospital Management Systems (HMS) and AI-driven Hospitality platforms to cross-enterprise workflow synchronization, with mandatory human-in-the-loop governance.
             </motion.p>
 
             {/* CTAs */}
             <motion.div variants={fadeUpVariants} className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5 pt-2">
+              <Link
+                href="/setup"
+                className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-[#09090b] text-white text-xs sm:text-sm font-bold uppercase tracking-wider hover:bg-zinc-800 transition-all shadow-md group"
+              >
+                <span>Launch Solution Architect</span>
+                <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+              </Link>
               <Button
-                variant="primary"
+                variant="secondary"
                 size="md"
-                showArrow
                 onClick={onOpenStrategyCall}
                 className="w-full sm:w-auto justify-center"
               >
                 Request Live Demo
-              </Button>
-              <Button
-                variant="secondary"
-                size="md"
-                href="#products"
-                className="w-full sm:w-auto justify-center"
-              >
-                Explore Products ↓
               </Button>
             </motion.div>
 
             {/* Technical Metadata Bar */}
             <motion.div
               variants={fadeUpVariants}
-              className="text-xs font-mono text-[#94a3b8] flex flex-wrap items-center gap-x-4 gap-y-1 pt-1"
+              className="text-xs font-mono text-[#71717a] flex flex-wrap items-center gap-x-4 gap-y-1 pt-1"
             >
               <span>✦ Founded 2026</span>
               <span>✦ Operating Globally from India</span>
@@ -153,51 +152,51 @@ export default function HeroSection({ onOpenStrategyCall }: HeroSectionProps) {
                 return (
                   <div
                     key={layer.id}
-                    className={`rounded-2xl border transition-all duration-200 overflow-hidden ${
+                    className={`rounded-2xl border transition-all duration-150 overflow-hidden ${
                       isActive
-                        ? 'bg-white border-[#2b9aaa]/30 shadow-[0_4px_20px_rgba(43,154,170,0.10)]'
-                        : 'bg-[#f8f9fa] border-black/[0.07] hover:bg-white hover:border-black/[0.12]'
+                        ? 'bg-white border-black ring-1 ring-black/10 shadow-sm'
+                        : 'bg-[#fafafa] border-black/[0.08] hover:bg-white hover:border-black/20'
                     }`}
                   >
                     <button
                       onClick={() => setActiveLayer(layer.id)}
-                      className="w-full flex items-center justify-between px-5 py-4 text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-[#2b9aaa]/40 min-h-[44px]"
+                      className="w-full flex items-center justify-between px-5 py-4 text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-black/40 min-h-[44px]"
                     >
                       <div className="flex items-center gap-3.5">
                         <span
                           className={`font-mono text-xs font-bold ${
-                            isActive ? 'text-[#2b9aaa]' : 'text-[#94a3b8]'
+                            isActive ? 'text-[#09090b]' : 'text-[#71717a]'
                           }`}
                         >
                           {layer.idx}
                         </span>
                         <div>
-                          <span className={`font-bold text-sm sm:text-base block ${isActive ? 'text-[#0f1117]' : 'text-[#2d3748]'}`}>
+                          <span className={`font-bold text-sm sm:text-base block ${isActive ? 'text-[#09090b]' : 'text-[#3f3f46]'}`}>
                             {layer.name}
                           </span>
                           {!isActive && (
-                            <span className="text-xs text-[#718096] block line-clamp-1">
+                            <span className="text-xs text-[#71717a] block line-clamp-1">
                               {layer.description}
                             </span>
                           )}
                         </div>
                       </div>
                       <ChevronDown
-                        className={`w-4 h-4 text-[#718096] transition-transform duration-300 shrink-0 ${
-                          isActive ? 'rotate-180 text-[#2b9aaa]' : ''
+                        className={`w-4 h-4 text-[#71717a] transition-transform duration-200 shrink-0 ${
+                          isActive ? 'rotate-180 text-[#09090b]' : ''
                         }`}
                       />
                     </button>
 
                     {isActive && (
-                      <div className="px-5 pb-5 pt-1 border-t border-[#2b9aaa]/10 space-y-2.5">
-                        <p className="text-xs sm:text-sm text-[#4a5568] font-medium leading-relaxed">
+                      <div className="px-5 pb-5 pt-1 border-t border-black/[0.06] space-y-2.5">
+                        <p className="text-xs sm:text-sm text-[#3f3f46] font-medium leading-relaxed">
                           {layer.description}
                         </p>
-                        <ul className="space-y-1.5 text-xs text-[#718096]">
+                        <ul className="space-y-1.5 text-xs text-[#71717a]">
                           {layer.features.map((feature, idx) => (
                             <li key={idx} className="flex items-start gap-2">
-                              <Plus className="w-3.5 h-3.5 text-[#2b9aaa] mt-0.5 shrink-0" />
+                              <Plus className="w-3.5 h-3.5 text-[#09090b] mt-0.5 shrink-0" />
                               <span>{feature}</span>
                             </li>
                           ))}

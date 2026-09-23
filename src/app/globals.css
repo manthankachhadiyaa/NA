@@ -3,28 +3,35 @@
 @tailwind utilities;
 
 :root {
-  /* Design System: NEXAGENT — Clean White Enterprise */
+  /* Design System: NEXAGENT — High-Precision Monochrome (Black & White Unicorn) */
   --bg-canvas: #ffffff;
-  --bg-subtle: #f8f9fa;
-  --bg-surface: #f1f3f5;
+  --bg-subtle: #fafafa;
+  --bg-surface: #f4f4f5;
   --bg-elevated: #ffffff;
-  --bg-hover: #edf2f7;
+  --bg-hover: #f4f4f5;
+  --bg-dark: #09090b;
 
-  --border-subtle: rgba(0, 0, 0, 0.07);
-  --border-medium: rgba(0, 0, 0, 0.12);
-  --border-active: rgba(63, 168, 184, 0.50);
+  --border-subtle: rgba(0, 0, 0, 0.08);
+  --border-medium: rgba(0, 0, 0, 0.16);
+  --border-active: rgba(0, 0, 0, 0.90);
+  --border-dark: rgba(255, 255, 255, 0.12);
 
-  --accent-cyan: #2b9aaa;
-  --accent-cyan-bright: #3fb9cc;
-  --accent-blue: #2563eb;
-  --accent-purple: #7c3aed;
+  --accent-black: #09090b;
+  --accent-white: #ffffff;
+  --accent-zinc: #71717a;
 
-  --text-primary: #0f1117;
-  --text-secondary: #4a5568;
-  --text-muted: #718096;
-  --text-disabled: #a0aec0;
+  /* Backward compatible aliases mapped to monochrome */
+  --accent-cyan: #09090b;
+  --accent-cyan-bright: #27272a;
+  --accent-blue: #09090b;
+  --accent-purple: #09090b;
 
-  --header-h: 72px;
+  --text-primary: #09090b;
+  --text-secondary: #3f3f46;
+  --text-muted: #71717a;
+  --text-disabled: #a1a1aa;
+
+  --header-h: 68px;
 }
 
 *, *::before, *::after {
@@ -68,7 +75,7 @@ body {
   overflow-x: hidden;
 }
 
-/* Subtle Architectural Background Grid — Light Mode */
+/* Subtle Architectural Background Grid — Pure Monochrome Light */
 .bg-grid-lines {
   background-size: 64px 64px;
   background-image: linear-gradient(to right, rgba(0, 0, 0, 0.035) 1px, transparent 1px),
@@ -77,50 +84,50 @@ body {
 
 .bg-grid-dots {
   background-size: 32px 32px;
-  background-image: radial-gradient(circle, rgba(0, 0, 0, 0.07) 1px, transparent 1px);
+  background-image: radial-gradient(circle, rgba(0, 0, 0, 0.08) 1px, transparent 1px);
 }
 
-/* Eyebrow Label Pill — Light Theme */
+/* Eyebrow Label Pill — Pure Monochrome */
 .eyebrow-pill {
   display: inline-flex;
   align-items: center;
   gap: 8px;
   padding: 5px 14px;
-  background: rgba(43, 154, 170, 0.07);
-  border: 1px solid rgba(43, 154, 170, 0.20);
+  background: rgba(0, 0, 0, 0.04);
+  border: 1px solid rgba(0, 0, 0, 0.12);
   border-radius: 9999px;
   font-size: 0.72rem;
   font-family: var(--font-mono), monospace;
   font-weight: 600;
-  color: var(--accent-cyan);
+  color: #09090b;
   text-transform: uppercase;
   letter-spacing: 0.06em;
 }
 
-/* Status Badge Pill — Light Theme */
+/* Status Badge Pill — Pure Monochrome */
 .status-badge-pill {
   display: inline-flex;
   align-items: center;
   gap: 8px;
   padding: 6px 14px;
-  background: rgba(43, 154, 170, 0.07);
-  border: 1px solid rgba(43, 154, 170, 0.20);
+  background: rgba(0, 0, 0, 0.04);
+  border: 1px solid rgba(0, 0, 0, 0.12);
   border-radius: 9999px;
   font-size: 0.75rem;
   font-family: var(--font-mono), monospace;
   font-weight: 600;
-  color: var(--accent-cyan);
+  color: #09090b;
   letter-spacing: 0.04em;
   text-transform: uppercase;
 }
 
-/* Pulse Dot */
+/* Pulse Dot — Monochrome */
 .pulse-dot {
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background: var(--accent-cyan);
-  box-shadow: 0 0 0 0 rgba(43, 154, 170, 0.5);
+  background: #09090b;
+  box-shadow: 0 0 0 0 rgba(9, 9, 11, 0.4);
   animation: pulseDot 2s infinite cubic-bezier(0.4, 0, 0.6, 1);
   display: inline-block;
   flex-shrink: 0;
@@ -129,15 +136,15 @@ body {
 @keyframes pulseDot {
   0% {
     transform: scale(0.95);
-    box-shadow: 0 0 0 0 rgba(43, 154, 170, 0.5);
+    box-shadow: 0 0 0 0 rgba(9, 9, 11, 0.4);
   }
   70% {
     transform: scale(1);
-    box-shadow: 0 0 0 6px rgba(43, 154, 170, 0);
+    box-shadow: 0 0 0 6px rgba(9, 9, 11, 0);
   }
   100% {
     transform: scale(0.95);
-    box-shadow: 0 0 0 0 rgba(43, 154, 170, 0);
+    box-shadow: 0 0 0 0 rgba(9, 9, 11, 0);
   }
 }
 

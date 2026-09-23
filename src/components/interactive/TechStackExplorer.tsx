@@ -121,14 +121,14 @@ export default function TechStackExplorer() {
                   onClick={() => setSelectedLayer(idx)}
                   className={`w-full text-left p-3.5 rounded-xl border transition-all duration-200 flex items-center justify-between ${
                     isSelected
-                      ? 'bg-white text-[#0f1117] border-[#2b9aaa] shadow-md ring-2 ring-[#2b9aaa]/20'
-                      : 'bg-white text-[#4a5568] border-black/5 hover:bg-[#f8f9fa] hover:border-black/10'
+                      ? 'bg-zinc-50 text-zinc-950 border-black shadow-sm ring-1 ring-black'
+                      : 'bg-white text-zinc-600 border-zinc-200 hover:bg-zinc-50 hover:border-zinc-300'
                   }`}
                 >
                   <div className="flex items-center gap-3">
                     <div
                       className={`p-2 rounded-lg transition-colors ${
-                        isSelected ? 'bg-[#2b9aaa]/15 text-[#2b9aaa]' : 'bg-black/5 text-[#788494]'
+                        isSelected ? 'bg-black text-white' : 'bg-zinc-100 text-zinc-700'
                       }`}
                     >
                       <LayerIcon className="w-4 h-4" />
@@ -136,19 +136,19 @@ export default function TechStackExplorer() {
                     <div>
                       <span
                         className={`text-[10px] font-mono uppercase tracking-wider block font-bold ${
-                          isSelected ? 'text-[#2b9aaa]' : 'text-[#788494]'
+                          isSelected ? 'text-zinc-950' : 'text-zinc-400'
                         }`}
                       >
                         {layer.level}
                       </span>
-                      <span className={`text-sm font-bold ${isSelected ? 'text-[#0f1117]' : 'text-[#2d3748]'}`}>
+                      <span className={`text-sm font-bold ${isSelected ? 'text-zinc-950' : 'text-zinc-700'}`}>
                         {layer.name}
                       </span>
                     </div>
                   </div>
                   <span
                     className={`text-xs font-mono px-2 py-0.5 rounded font-medium ${
-                      isSelected ? 'bg-[#2b9aaa]/10 text-[#2b9aaa]' : 'bg-black/5 text-[#788494]'
+                      isSelected ? 'bg-black text-white' : 'bg-zinc-100 text-zinc-600'
                     }`}
                   >
                     {layer.latency}
@@ -159,45 +159,45 @@ export default function TechStackExplorer() {
           </div>
 
           {/* Layer Deep-Dive Card (Right) */}
-          <div className="lg:col-span-6 bg-white rounded-2xl border border-black/10 p-8 shadow-sm space-y-6">
-            <div className="flex items-center gap-4 border-b border-black/5 pb-6">
-              <div className="p-3.5 rounded-xl bg-[#2b9aaa]/15 text-[#2b9aaa]">
+          <div className="lg:col-span-6 bg-white rounded-2xl border border-zinc-200 p-8 shadow-sm space-y-6">
+            <div className="flex items-center gap-4 border-b border-zinc-200 pb-6">
+              <div className="p-3.5 rounded-xl bg-black text-white">
                 <IconComponent className="w-8 h-8" />
               </div>
               <div>
-                <span className="text-xs font-mono uppercase tracking-widest text-[#2b9aaa] font-bold">
+                <span className="text-xs font-mono uppercase tracking-widest text-zinc-400 font-bold">
                   {activeLayer.level} · {activeLayer.tagline}
                 </span>
-                <h3 className="text-2xl font-extrabold text-[#0f1117] mt-0.5">
+                <h3 className="text-2xl font-extrabold text-zinc-950 mt-0.5">
                   {activeLayer.name}
                 </h3>
               </div>
             </div>
 
-            <p className="text-sm text-[#4a5568] leading-relaxed">
+            <p className="text-sm text-zinc-600 leading-relaxed">
               {activeLayer.description}
             </p>
 
             <div className="space-y-4 pt-2">
-              <div className="p-4 rounded-xl bg-[#f8f9fa] border border-black/5">
-                <div className="text-[11px] font-mono uppercase tracking-wider text-[#2b9aaa] font-bold mb-1">
+              <div className="p-4 rounded-xl bg-zinc-50 border border-zinc-200">
+                <div className="text-[11px] font-mono uppercase tracking-wider text-zinc-400 font-bold mb-1">
                   Security &amp; Determinism Guarantee
                 </div>
-                <div className="text-xs sm:text-sm text-[#0f1117] font-medium">
+                <div className="text-xs sm:text-sm text-zinc-950 font-medium">
                   {activeLayer.guarantee}
                 </div>
               </div>
 
-              <div className="p-4 rounded-xl bg-[#0f1117] text-white flex items-center justify-between">
+              <div className="p-4 rounded-xl bg-black text-white flex items-center justify-between border border-zinc-800">
                 <div>
-                  <div className="text-[10px] font-mono uppercase tracking-wider text-[#2b9aaa] font-bold">
+                  <div className="text-[10px] font-mono uppercase tracking-wider text-zinc-400 font-bold">
                     Target Execution Budget
                   </div>
                   <div className="text-base font-bold text-white mt-0.5">
                     {activeLayer.latency} latency ceiling
                   </div>
                 </div>
-                <span className="text-xs font-mono text-[#cbd5e1] bg-white/10 px-2.5 py-1 rounded-md">
+                <span className="text-xs font-mono text-zinc-300 bg-zinc-800 px-2.5 py-1 rounded-md">
                   P99 Performance
                 </span>
               </div>

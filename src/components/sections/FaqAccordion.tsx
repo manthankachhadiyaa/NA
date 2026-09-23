@@ -97,20 +97,20 @@ export default function FaqAccordion() {
                 variants={fadeUpVariants}
                 className={`rounded-xl border overflow-hidden transition-all duration-200 ${
                   isOpen
-                    ? 'bg-white border-[#2b9aaa]/25 shadow-sm'
-                    : 'bg-white border-black/[0.08]'
+                    ? 'bg-zinc-50 border-zinc-900 shadow-sm'
+                    : 'bg-white border-zinc-200 hover:border-zinc-300'
                 }`}
               >
                 <button
                   onClick={() => toggle(faq.id)}
-                  className="w-full text-left px-6 py-5 flex items-center justify-between gap-4 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#2b9aaa]/30 min-h-[60px]"
+                  className="w-full text-left px-6 py-5 flex items-center justify-between gap-4 focus:outline-none focus-visible:ring-2 focus-visible:ring-black min-h-[60px]"
                 >
-                  <span className={`text-sm sm:text-base font-bold ${isOpen ? 'text-[#0f1117]' : 'text-[#2d3748]'}`}>
+                  <span className={`text-sm sm:text-base font-bold ${isOpen ? 'text-zinc-950' : 'text-zinc-700'}`}>
                     {faq.question}
                   </span>
                   <ChevronDown
-                    className={`w-4 h-4 text-[#718096] transition-transform duration-300 shrink-0 ${
-                      isOpen ? 'rotate-180 text-[#2b9aaa]' : ''
+                    className={`w-4 h-4 text-zinc-500 transition-transform duration-300 shrink-0 ${
+                      isOpen ? 'rotate-180 text-zinc-950' : ''
                     }`}
                   />
                 </button>
@@ -121,7 +121,7 @@ export default function FaqAccordion() {
                       animate={{ opacity: 1, height: 'auto' }}
                       exit={{ opacity: 0, height: 0 }}
                       transition={transitionPresets.fast}
-                      className="px-6 pb-5 pt-1 text-sm text-[#4a5568] leading-relaxed border-t border-black/[0.06]"
+                      className="px-6 pb-5 pt-1 text-sm text-zinc-600 leading-relaxed border-t border-zinc-200"
                     >
                       {faq.answer}
                     </motion.div>

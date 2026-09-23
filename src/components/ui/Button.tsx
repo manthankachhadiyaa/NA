@@ -37,11 +37,11 @@ export default function Button({
 
   const variantClasses = {
     primary:
-      'bg-[#0f1117] text-white font-bold shadow-[0_2px_12px_rgba(0,0,0,0.15)] hover:bg-[#1a2030] hover:shadow-[0_4px_20px_rgba(0,0,0,0.20)] active:scale-[0.98]',
+      'bg-[#09090b] text-white font-bold shadow-[0_2px_12px_rgba(0,0,0,0.15)] hover:bg-zinc-800 hover:shadow-[0_4px_20px_rgba(0,0,0,0.20)] active:scale-[0.98]',
     secondary:
-      'bg-white text-[#0f1117] font-semibold border border-black/[0.14] hover:bg-[#f8f9fa] hover:border-black/[0.20] active:scale-[0.98]',
+      'bg-white text-[#09090b] font-semibold border border-black/[0.14] hover:bg-[#fafafa] hover:border-black/[0.25] active:scale-[0.98]',
     ghost:
-      'bg-transparent text-[#4a5568] hover:text-[#0f1117] font-semibold hover:bg-black/[0.04]',
+      'bg-transparent text-[#52525b] hover:text-[#09090b] font-semibold hover:bg-black/[0.04]',
   };
 
   const baseClasses = cn(
@@ -59,7 +59,7 @@ export default function Button({
         <ArrowRight
           className={cn(
             'w-4 h-4 transition-transform duration-200 group-hover:translate-x-1',
-            variant === 'primary' ? 'text-white' : 'text-[#2b9aaa]'
+            variant === 'primary' ? 'text-white' : 'text-[#09090b]'
           )}
         />
       )}

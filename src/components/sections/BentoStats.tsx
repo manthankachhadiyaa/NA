@@ -50,14 +50,14 @@ const metrics: MetricItem[] = [
 
 export default function BentoStats() {
   return (
-    <section id="metrics" className="py-14 bg-[#0f1117] relative content-visibility-auto">
+    <section id="metrics" className="py-14 bg-black border-y border-zinc-800 relative content-visibility-auto">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           variants={staggerContainerVariants}
           initial="hidden"
           whileInView="visible"
           viewport={viewportConfig}
-          className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 lg:gap-0 divide-y md:divide-y-0 lg:divide-x divide-white/[0.08]"
+          className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 lg:gap-0 divide-y md:divide-y-0 lg:divide-x divide-zinc-800"
         >
           {metrics.map((item, idx) => (
             <motion.div
@@ -70,10 +70,10 @@ export default function BentoStats() {
               <div className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight">
                 {item.value}
               </div>
-              <div className="text-[11px] font-mono uppercase tracking-wider text-[#2b9aaa] font-semibold">
+              <div className="text-[11px] font-mono uppercase tracking-wider text-zinc-400 font-semibold">
                 {item.label}
               </div>
-              <div className="text-xs text-[#94a3b8] leading-relaxed">
+              <div className="text-xs text-zinc-500 leading-relaxed">
                 {item.explanation}
               </div>
             </motion.div>

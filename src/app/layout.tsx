@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { Plus_Jakarta_Sans, IBM_Plex_Mono, Playfair_Display } from 'next/font/google';
+import { Plus_Jakarta_Sans, IBM_Plex_Mono } from 'next/font/google';
 import './globals.css';
 import SmoothScrollProvider from '@/components/providers/SmoothScrollProvider';
 
@@ -15,13 +15,6 @@ const mono = IBM_Plex_Mono({
   variable: '--font-mono',
   display: 'swap',
   weight: ['400', '500', '600'],
-});
-
-const serif = Playfair_Display({
-  subsets: ['latin'],
-  variable: '--font-serif',
-  display: 'swap',
-  weight: ['500', '700', '900'],
 });
 
 export const metadata: Metadata = {
@@ -177,14 +170,14 @@ export default function RootLayout({
   };
 
   return (
-    <html lang="en" className={`${jakarta.variable} ${mono.variable} ${serif.variable}`}>
+    <html lang="en" className={`${jakarta.variable} ${mono.variable}`}>
       <head>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className="font-sans antialiased bg-white text-[#4a5568] selection:bg-[#3fa8b8] selection:text-white min-h-screen">
+      <body className="font-sans antialiased bg-white text-[#3f3f46] selection:bg-black selection:text-white min-h-screen">
         <SmoothScrollProvider>
           {children}
         </SmoothScrollProvider>

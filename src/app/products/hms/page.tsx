@@ -77,7 +77,7 @@ export default function HmsProductPage() {
   ];
 
   return (
-    <div className="min-h-screen flex flex-col bg-white text-[#4a5568]">
+    <div className="min-h-screen flex flex-col bg-white text-zinc-600">
       <Navbar onOpenStrategyCall={() => setModalOpen(true)} activePath="/products/hms" />
 
       <main className="flex-1 w-full max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-20 space-y-20">
@@ -88,18 +88,18 @@ export default function HmsProductPage() {
             <span>Enterprise Healthcare Operating System</span>
           </div>
 
-          <h1 className="text-4xl sm:text-6xl font-extrabold text-[#0f1117] tracking-tight leading-[1.12]">
+          <h1 className="text-4xl sm:text-6xl font-extrabold text-zinc-950 tracking-tight leading-[1.12]">
             NexAgent HMS: Beyond Basic EMRs. The Complete Hospital Operating System.
           </h1>
 
-          <p className="text-lg sm:text-xl text-[#2d3748] font-medium max-w-3xl leading-relaxed">
+          <p className="text-lg sm:text-xl text-zinc-700 font-medium max-w-3xl leading-relaxed">
             Eliminate operational drag across your clinical network. Orchestrate outpatient triage queues, automate bed turnover dispatch, pre-compile discharge packets, and streamline TPA claims with deterministic AI and zero hallucination risk.
           </p>
 
           <div className="flex flex-wrap items-center gap-4 pt-2">
             <button
               onClick={() => setModalOpen(true)}
-              className="px-6 py-3.5 text-xs sm:text-sm font-bold uppercase tracking-wider text-white bg-[#152e3a] hover:bg-[#1e4557] rounded-xl shadow-md transition-all flex items-center gap-2 group"
+              className="px-6 py-3.5 text-xs sm:text-sm font-bold uppercase tracking-wider text-white bg-black hover:bg-zinc-800 rounded-xl shadow-md transition-all flex items-center gap-2 group"
             >
               <span>Request Hospital Pilot Access</span>
               <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
@@ -109,54 +109,54 @@ export default function HmsProductPage() {
 
         {/* Key Metrics Strip */}
         <section className="grid grid-cols-1 sm:grid-cols-3 gap-6">
-          <div className="p-6 rounded-2xl bg-[#f8f9fa] border border-black/10">
-            <div className="text-3xl font-extrabold text-[#0f1117] mb-2">35 min</div>
-            <h3 className="text-sm font-bold text-[#2d3748] mb-1">Average Bed Turnover</h3>
-            <p className="text-xs text-[#718096]">Automated environmental services dispatch upon electronic doctor discharge order.</p>
+          <div className="p-6 rounded-2xl bg-zinc-50 border border-zinc-200">
+            <div className="text-3xl font-extrabold text-zinc-950 mb-2">35 min</div>
+            <h3 className="text-sm font-bold text-zinc-900 mb-1">Average Bed Turnover</h3>
+            <p className="text-xs text-zinc-500">Automated environmental services dispatch upon electronic doctor discharge order.</p>
           </div>
 
-          <div className="p-6 rounded-2xl bg-[#f8f9fa] border border-black/10">
-            <div className="text-3xl font-extrabold text-[#0f1117] mb-2">42%</div>
-            <h3 className="text-sm font-bold text-[#2d3748] mb-1">Queue Delay Reduction</h3>
-            <p className="text-xs text-[#718096]">Intelligent ESI acuity triage balances outpatient loads across consultation rooms.</p>
+          <div className="p-6 rounded-2xl bg-zinc-50 border border-zinc-200">
+            <div className="text-3xl font-extrabold text-zinc-950 mb-2">42%</div>
+            <h3 className="text-sm font-bold text-zinc-900 mb-1">Queue Delay Reduction</h3>
+            <p className="text-xs text-zinc-500">Intelligent ESI acuity triage balances outpatient loads across consultation rooms.</p>
           </div>
 
-          <div className="p-6 rounded-2xl bg-[#f8f9fa] border border-black/10">
-            <div className="text-3xl font-extrabold text-[#0f1117] mb-2">100%</div>
-            <h3 className="text-sm font-bold text-[#2d3748] mb-1">Doctor-in-the-Loop Governance</h3>
-            <p className="text-xs text-[#718096]">Zero autonomous execution on prescriptions, diagnoses, or discharge orders.</p>
+          <div className="p-6 rounded-2xl bg-zinc-50 border border-zinc-200">
+            <div className="text-3xl font-extrabold text-zinc-950 mb-2">100%</div>
+            <h3 className="text-sm font-bold text-zinc-900 mb-1">Doctor-in-the-Loop Governance</h3>
+            <p className="text-xs text-zinc-500">Zero autonomous execution on prescriptions, diagnoses, or discharge orders.</p>
           </div>
         </section>
 
         {/* Comparison: Why NexAgent Surpasses Conventional HMS */}
-        <section className="space-y-6 border-t border-black/10 pt-12">
+        <section className="space-y-6 border-t border-zinc-200 pt-12">
           <div className="max-w-2xl space-y-2">
-            <span className="font-mono text-xs font-bold text-[#2b9aaa] uppercase tracking-wider">
+            <span className="font-mono text-xs font-bold text-zinc-500 uppercase tracking-wider">
               System Comparison
             </span>
-            <h2 className="text-2xl sm:text-3xl font-extrabold text-[#0f1117]">
+            <h2 className="text-2xl sm:text-3xl font-extrabold text-zinc-950">
               Why NexAgent HMS is engineered beyond standard software.
             </h2>
-            <p className="text-sm text-[#4a5568]">
+            <p className="text-sm text-zinc-600">
               Conventional point solutions and clinic tools focus on passive practitioner record-keeping. NexAgent delivers a unified, high-throughput operating system for acute healthcare facilities.
             </p>
           </div>
 
-          <div className="overflow-x-auto rounded-2xl border border-black/10 shadow-sm">
+          <div className="overflow-x-auto rounded-2xl border border-zinc-200 shadow-sm">
             <table className="w-full text-left text-xs border-collapse">
               <thead>
-                <tr className="bg-[#f8f9fa] border-b border-black/10">
-                  <th className="p-4 font-bold text-[#0f1117] uppercase tracking-wider font-mono">Dimension</th>
-                  <th className="p-4 font-bold text-[#718096] uppercase tracking-wider font-mono">Conventional Hospital Software</th>
-                  <th className="p-4 font-bold text-[#2b9aaa] uppercase tracking-wider font-mono bg-[#f0fafb]">NexAgent HMS (Hospital OS)</th>
+                <tr className="bg-zinc-50 border-b border-zinc-200">
+                  <th className="p-4 font-bold text-zinc-950 uppercase tracking-wider font-mono">Dimension</th>
+                  <th className="p-4 font-bold text-zinc-500 uppercase tracking-wider font-mono">Conventional Hospital Software</th>
+                  <th className="p-4 font-bold text-white uppercase tracking-wider font-mono bg-black">NexAgent HMS (Hospital OS)</th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-black/[0.06]">
+              <tbody className="divide-y divide-zinc-200">
                 {comparisonPoints.map((row, idx) => (
-                  <tr key={idx} className="hover:bg-black/[0.02] transition-colors">
-                    <td className="p-4 font-bold text-[#0f1117] whitespace-nowrap">{row.dimension}</td>
-                    <td className="p-4 text-[#718096]">{row.conventional}</td>
-                    <td className="p-4 text-[#0f1117] font-medium bg-[#f0fafb]/50">{row.nexagent}</td>
+                  <tr key={idx} className="hover:bg-zinc-50/60 transition-colors">
+                    <td className="p-4 font-bold text-zinc-950 whitespace-nowrap">{row.dimension}</td>
+                    <td className="p-4 text-zinc-500">{row.conventional}</td>
+                    <td className="p-4 text-zinc-950 font-medium bg-zinc-50">{row.nexagent}</td>
                   </tr>
                 ))}
               </tbody>
@@ -165,12 +165,12 @@ export default function HmsProductPage() {
         </section>
 
         {/* Core Capabilities */}
-        <section className="space-y-8 border-t border-black/10 pt-12">
+        <section className="space-y-8 border-t border-zinc-200 pt-12">
           <div className="max-w-2xl space-y-2">
-            <span className="font-mono text-xs font-bold text-[#2b9aaa] uppercase tracking-wider">
+            <span className="font-mono text-xs font-bold text-zinc-500 uppercase tracking-wider">
               Clinical Modules
             </span>
-            <h2 className="text-2xl sm:text-3xl font-extrabold text-[#0f1117]">
+            <h2 className="text-2xl sm:text-3xl font-extrabold text-zinc-950">
               Purpose-built for acute hospital operations.
             </h2>
           </div>
@@ -179,60 +179,60 @@ export default function HmsProductPage() {
             {clinicalCapabilities.map((cap, idx) => (
               <div
                 key={idx}
-                className="p-6 rounded-2xl bg-white border border-black/10 shadow-sm space-y-3"
+                className="p-6 rounded-2xl bg-white border border-zinc-200 shadow-sm space-y-3"
               >
                 <div className="flex items-center gap-3">
-                  <div className="p-2 rounded-lg bg-[#2b9aaa]/10 text-[#2d3748]">
-                    <CheckCircle2 className="w-5 h-5 text-[#2b9aaa]" />
+                  <div className="p-2 rounded-lg bg-zinc-100 text-zinc-900">
+                    <CheckCircle2 className="w-5 h-5 text-zinc-900" />
                   </div>
-                  <h3 className="text-base font-bold text-[#0f1117]">{cap.title}</h3>
+                  <h3 className="text-base font-bold text-zinc-950">{cap.title}</h3>
                 </div>
-                <p className="text-sm text-[#4a5568] leading-relaxed pl-10">{cap.desc}</p>
+                <p className="text-sm text-zinc-600 leading-relaxed pl-10">{cap.desc}</p>
               </div>
             ))}
           </div>
         </section>
 
         {/* Compliance & Standards */}
-        <section className="p-8 rounded-2xl bg-[#0f1117] text-white space-y-6">
+        <section className="p-8 rounded-2xl bg-black text-white space-y-6 border border-zinc-800">
           <div className="max-w-xl space-y-2">
-            <span className="font-mono text-xs font-bold text-[#2b9aaa] uppercase tracking-wider">
+            <span className="font-mono text-xs font-bold text-zinc-400 uppercase tracking-wider">
               Security &amp; Regulatory Standards
             </span>
             <h3 className="text-2xl font-extrabold">Enterprise Clinical Compliance</h3>
-            <p className="text-sm text-[#94a3b8]">
+            <p className="text-sm text-zinc-400">
               Designed to integrate seamlessly into existing hospital IT infrastructures without compromising data security or regulatory standing.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-4 border-t border-white/10 text-xs font-mono">
-            <div className="p-4 rounded-xl bg-white/5 border border-white/10">
-              <span className="text-[#2b9aaa] font-bold block mb-1">HL7 / FHIR</span>
-              <span className="text-[#cbd5e1]">Native protocol ingestion from Epic, Cerner, and legacy hospital EMRs.</span>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-4 border-t border-zinc-800 text-xs font-mono">
+            <div className="p-4 rounded-xl bg-zinc-900 border border-zinc-800">
+              <span className="text-white font-bold block mb-1">HL7 / FHIR</span>
+              <span className="text-zinc-400">Native protocol ingestion from Epic, Cerner, and legacy hospital EMRs.</span>
             </div>
-            <div className="p-4 rounded-xl bg-white/5 border border-white/10">
-              <span className="text-[#2b9aaa] font-bold block mb-1">ABDM &amp; NABH Ready</span>
-              <span className="text-[#cbd5e1]">ABHA generation, M1/M2/M3 compliance &amp; immutable audit ledger logging.</span>
+            <div className="p-4 rounded-xl bg-zinc-900 border border-zinc-800">
+              <span className="text-white font-bold block mb-1">ABDM &amp; NABH Ready</span>
+              <span className="text-zinc-400">ABHA generation, M1/M2/M3 compliance &amp; immutable audit ledger logging.</span>
             </div>
-            <div className="p-4 rounded-xl bg-white/5 border border-white/10">
-              <span className="text-[#2b9aaa] font-bold block mb-1">Zero Hallucination</span>
-              <span className="text-[#cbd5e1]">Hardcoded WebAssembly policy checks prevent clinical limit breaches.</span>
+            <div className="p-4 rounded-xl bg-zinc-900 border border-zinc-800">
+              <span className="text-white font-bold block mb-1">Zero Hallucination</span>
+              <span className="text-zinc-400">Hardcoded WebAssembly policy checks prevent clinical limit breaches.</span>
             </div>
           </div>
         </section>
 
         {/* CTA */}
-        <section className="p-8 sm:p-12 rounded-2xl bg-white border border-black/10 shadow-sm text-center space-y-5">
-          <h3 className="text-2xl sm:text-3xl font-extrabold text-[#0f1117]">
+        <section className="p-8 sm:p-12 rounded-2xl bg-zinc-50 border border-zinc-200 shadow-sm text-center space-y-5">
+          <h3 className="text-2xl sm:text-3xl font-extrabold text-zinc-950">
             Deploy NexAgent HMS in your hospital network.
           </h3>
-          <p className="text-sm text-[#4a5568] max-w-xl mx-auto">
+          <p className="text-sm text-zinc-600 max-w-xl mx-auto">
             Schedule a live demo with founders Manthan Kachhadiya and Savani Vraj to review queue metrics and test bed turnover workflows in a pilot sandbox.
           </p>
           <div className="pt-2">
             <button
               onClick={() => setModalOpen(true)}
-              className="px-6 py-3.5 text-xs font-bold uppercase tracking-wider text-white bg-[#152e3a] hover:bg-[#1e4557] rounded-xl transition-all shadow-md"
+              className="px-6 py-3.5 text-xs font-bold uppercase tracking-wider text-white bg-black hover:bg-zinc-800 rounded-xl transition-all shadow-md"
             >
               Request Live HMS Demo &amp; Sandbox Access
             </button>

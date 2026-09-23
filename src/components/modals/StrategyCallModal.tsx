@@ -47,30 +47,30 @@ export default function StrategyCallModal({ isOpen, onClose }: StrategyCallModal
   };
 
   const inputClasses =
-    'w-full px-3.5 py-2.5 rounded-lg bg-[#f8f9fa] border border-black/[0.10] text-sm text-[#0f1117] focus:outline-none focus:border-[#2b9aaa] focus:ring-1 focus:ring-[#2b9aaa]/20 transition-all placeholder:text-[#a0aec0]';
+    'w-full px-3.5 py-2.5 rounded-lg bg-zinc-50 border border-zinc-200 text-sm text-zinc-900 focus:outline-none focus:border-black focus:ring-1 focus:ring-black/20 transition-all placeholder:text-zinc-400';
 
   return (
     <div
-      className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm animate-fadeIn"
+      className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm animate-fadeIn"
       onClick={(e) => { if (e.target === e.currentTarget) onClose(); }}
     >
-      <div className="relative w-full max-w-lg bg-white rounded-2xl border border-black/[0.08] shadow-2xl p-6 sm:p-8 overflow-hidden max-h-[90vh] overflow-y-auto">
+      <div className="relative w-full max-w-lg bg-white rounded-2xl border border-zinc-200 shadow-2xl p-6 sm:p-8 overflow-hidden max-h-[90vh] overflow-y-auto">
         {/* Close Button */}
         <button
           onClick={onClose}
           aria-label="Close modal"
-          className="absolute top-5 right-5 p-1.5 rounded-lg text-[#718096] hover:text-[#0f1117] hover:bg-black/[0.05] transition-colors"
+          className="absolute top-5 right-5 p-1.5 rounded-lg text-zinc-400 hover:text-zinc-900 hover:bg-zinc-100 transition-colors"
         >
           <X className="w-5 h-5" />
         </button>
 
         {isSuccess ? (
           <div className="text-center py-8 space-y-4">
-            <div className="w-12 h-12 rounded-full bg-green-50 text-green-600 flex items-center justify-center mx-auto">
+            <div className="w-12 h-12 rounded-full bg-zinc-100 text-zinc-900 flex items-center justify-center mx-auto border border-zinc-200">
               <CheckCircle2 className="w-7 h-7" />
             </div>
-            <h3 className="text-2xl font-extrabold text-[#0f1117]">Demo &amp; Sandbox Request Received</h3>
-            <p className="text-sm text-[#4a5568] max-w-xs mx-auto">
+            <h3 className="text-2xl font-extrabold text-zinc-950">Demo &amp; Sandbox Request Received</h3>
+            <p className="text-sm text-zinc-600 max-w-xs mx-auto">
               Thank you, {formData.name || 'there'}. Our systems engineering team will review your operational environment, prepare sandbox credentials, and reach out within 24 hours.
             </p>
             <button
@@ -78,7 +78,7 @@ export default function StrategyCallModal({ isOpen, onClose }: StrategyCallModal
                 setIsSuccess(false);
                 onClose();
               }}
-              className="mt-4 px-6 py-2.5 text-xs font-bold uppercase tracking-wider text-white bg-[#0f1117] hover:bg-[#1a2030] rounded-lg transition-colors"
+              className="mt-4 px-6 py-2.5 text-xs font-bold uppercase tracking-wider text-white bg-black hover:bg-zinc-800 rounded-lg transition-colors"
             >
               Close
             </button>
@@ -90,17 +90,17 @@ export default function StrategyCallModal({ isOpen, onClose }: StrategyCallModal
                 <span className="pulse-dot" />
                 <span>Interactive Pilot &amp; Live Sandbox</span>
               </div>
-              <h3 className="text-2xl font-extrabold text-[#0f1117] tracking-tight">
+              <h3 className="text-2xl font-extrabold text-zinc-950 tracking-tight">
                 Request a Live Demo &amp; Sandbox Access
               </h3>
-              <p className="text-xs text-[#4a5568] mt-1">
+              <p className="text-xs text-zinc-600 mt-1">
                 Experience NexAgent's unified core platform in action. Tailored to your exact operational workflows.
               </p>
             </div>
 
             <form onSubmit={handleSubmit} className="space-y-4">
               <div>
-                <label className="block text-xs font-semibold text-[#0f1117] mb-1">
+                <label className="block text-xs font-semibold text-zinc-900 mb-1">
                   Full Name *
                 </label>
                 <input
@@ -114,7 +114,7 @@ export default function StrategyCallModal({ isOpen, onClose }: StrategyCallModal
               </div>
 
               <div>
-                <label className="block text-xs font-semibold text-[#0f1117] mb-1">
+                <label className="block text-xs font-semibold text-zinc-900 mb-1">
                   Work / Clinical Email *
                 </label>
                 <input
@@ -129,7 +129,7 @@ export default function StrategyCallModal({ isOpen, onClose }: StrategyCallModal
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-xs font-semibold text-[#0f1117] mb-1">
+                  <label className="block text-xs font-semibold text-zinc-900 mb-1">
                     Organization
                   </label>
                   <input
@@ -142,7 +142,7 @@ export default function StrategyCallModal({ isOpen, onClose }: StrategyCallModal
                 </div>
 
                 <div>
-                  <label className="block text-xs font-semibold text-[#0f1117] mb-1">
+                  <label className="block text-xs font-semibold text-zinc-900 mb-1">
                     Product of Interest
                   </label>
                   <select
@@ -159,7 +159,7 @@ export default function StrategyCallModal({ isOpen, onClose }: StrategyCallModal
               </div>
 
               <div>
-                <label className="block text-xs font-semibold text-[#0f1117] mb-1">
+                <label className="block text-xs font-semibold text-zinc-900 mb-1">
                   Operational Bottlenecks / Environment Details
                 </label>
                 <textarea
@@ -174,7 +174,7 @@ export default function StrategyCallModal({ isOpen, onClose }: StrategyCallModal
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full flex items-center justify-center gap-2 px-4 py-3.5 text-xs font-bold uppercase tracking-wider text-white bg-[#0f1117] hover:bg-[#1a2030] active:scale-[0.99] disabled:opacity-60 rounded-xl shadow-md transition-all min-h-[48px]"
+                className="w-full flex items-center justify-center gap-2 px-4 py-3.5 text-xs font-bold uppercase tracking-wider text-white bg-black hover:bg-zinc-800 active:scale-[0.99] disabled:opacity-60 rounded-xl shadow-md transition-all min-h-[48px]"
               >
                 <span>{isSubmitting ? 'Configuring Access...' : 'Request Live Demo & Sandbox Access'}</span>
                 <ArrowRight className="w-3.5 h-3.5" />

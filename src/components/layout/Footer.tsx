@@ -14,7 +14,7 @@ interface FooterProps {
 
 export default function Footer({ onOpenStrategyCall }: FooterProps) {
   return (
-    <footer className="w-full bg-[#0f1117] text-[#94a3b8] border-t border-white/[0.06] pt-20 pb-10 overflow-hidden relative">
+    <footer className="w-full bg-[#09090b] text-[#71717a] border-t border-white/[0.08] pt-20 pb-10 overflow-hidden relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* 1. Pre-Footer Action Banner */}
         <motion.div
@@ -25,13 +25,13 @@ export default function Footer({ onOpenStrategyCall }: FooterProps) {
           className="pb-16 border-b border-white/[0.08] flex flex-col lg:flex-row items-start lg:items-center justify-between gap-8"
         >
           <div className="max-w-2xl space-y-2">
-            <div className="text-xs font-mono uppercase tracking-widest text-[#2b9aaa] font-bold">
+            <div className="text-xs font-mono uppercase tracking-widest text-zinc-400 font-bold">
               Ready for Operational Transformation?
             </div>
             <h3 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white tracking-tight leading-tight">
               Eliminate operational drag with deterministic AI.
             </h3>
-            <p className="text-sm sm:text-base text-[#94a3b8] leading-relaxed">
+            <p className="text-sm sm:text-base text-zinc-400 leading-relaxed">
               Schedule an executive architecture session with co-founders Manthan Kachhadiya and Savani Vraj to inspect your manual bottlenecks.
             </p>
           </div>
@@ -40,17 +40,17 @@ export default function Footer({ onOpenStrategyCall }: FooterProps) {
             {onOpenStrategyCall && (
               <button
                 onClick={onOpenStrategyCall}
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white text-[#0f1117] font-bold text-sm hover:bg-[#f1f5f9] transition-all shadow-md hover:shadow-lg hover:-translate-y-0.5"
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white text-[#09090b] font-bold text-sm hover:bg-zinc-200 transition-all shadow-md hover:shadow-lg hover:-translate-y-0.5"
               >
                 Request Live Demo
                 <ArrowRight className="w-4 h-4" />
               </button>
             )}
             <Link
-              href="/solutions/workflow-automation"
+              href="/setup"
               className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white/[0.06] text-white font-semibold text-sm border border-white/[0.12] hover:bg-white/[0.10] transition-all"
             >
-              Explore Solutions
+              Solution Architect
             </Link>
           </div>
         </motion.div>
@@ -71,15 +71,15 @@ export default function Footer({ onOpenStrategyCall }: FooterProps) {
                 <span className="font-sans font-bold text-xl text-white tracking-tight">
                   NexAgent
                 </span>
-                <span className="text-[10px] font-mono uppercase tracking-widest text-[#2b9aaa] font-semibold">
+                <span className="text-[10px] font-mono uppercase tracking-widest text-zinc-400 font-semibold">
                   INFRA
                 </span>
               </div>
             </div>
-            <p className="text-sm text-[#94a3b8] leading-relaxed max-w-sm">
+            <p className="text-sm text-[#71717a] leading-relaxed max-w-sm">
               Agentic cloud infrastructure and deterministic AI software for hospitals, hotels, and enterprise operations. Built to eliminate operational friction with one unified platform customized to your requirements.
             </p>
-            <div className="text-xs font-mono text-[#64748b] space-y-1 pt-1">
+            <div className="text-xs font-mono text-[#71717a] space-y-1 pt-1">
               <div>✦ Founded 2026 · Operating globally from India</div>
               <div>✦ Cloud-native WebAssembly policy architecture</div>
             </div>
@@ -121,6 +121,12 @@ export default function Footer({ onOpenStrategyCall }: FooterProps) {
             </h4>
             <ul className="space-y-2 text-sm">
               <li>
+                <Link href="/setup" className="text-white font-semibold flex items-center gap-1.5 hover:underline">
+                  <span>Solution Architect</span>
+                  <span className="text-[9px] font-mono px-1 py-0.2 rounded bg-white text-black font-bold">New</span>
+                </Link>
+              </li>
+              <li>
                 <Link href="/solutions/workflow-automation" className="hover:text-white transition-colors">
                   Workflow Engine
                 </Link>
@@ -128,11 +134,6 @@ export default function Footer({ onOpenStrategyCall }: FooterProps) {
               <li>
                 <Link href="/industries/healthcare" className="hover:text-white transition-colors">
                   Healthcare Operations
-                </Link>
-              </li>
-              <li>
-                <Link href="/#solutions" className="hover:text-white transition-colors">
-                  Operating Pipeline
                 </Link>
               </li>
               <li>
@@ -183,17 +184,17 @@ export default function Footer({ onOpenStrategyCall }: FooterProps) {
             <h4 className="text-xs font-mono uppercase tracking-widest text-white font-semibold">
               Operations
             </h4>
-            <ul className="space-y-2 text-xs text-[#94a3b8]">
+            <ul className="space-y-2 text-xs text-[#71717a]">
               <li className="flex items-center gap-1.5">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#2b9aaa] shrink-0" />
+                <span className="w-1.5 h-1.5 rounded-full bg-white shrink-0" />
                 <span>Global Cloud-First</span>
               </li>
               <li className="flex items-center gap-1.5">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#10b981] shrink-0" />
+                <span className="w-1.5 h-1.5 rounded-full bg-zinc-400 shrink-0" />
                 <span>Operating Globally from India</span>
               </li>
               <li className="flex items-center gap-1.5">
-                <Mail className="w-3 h-3 text-[#2b9aaa] shrink-0" />
+                <Mail className="w-3 h-3 text-white shrink-0" />
                 <a href="mailto:founders@nexagent.ai" className="hover:text-white transition-colors truncate">
                   founders@nexagent.ai
                 </a>
@@ -217,7 +218,7 @@ export default function Footer({ onOpenStrategyCall }: FooterProps) {
             <Link href="/technology" className="hover:text-white transition-colors">
               Security
             </Link>
-            <div className="flex items-center gap-1.5 text-[#2b9aaa]">
+            <div className="flex items-center gap-1.5 text-zinc-400">
               <ShieldCheck className="w-3.5 h-3.5" />
               <span>100% Policy-Gated</span>
             </div>

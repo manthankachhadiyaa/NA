@@ -114,15 +114,15 @@ export default function FeatureComparison() {
           className="text-center max-w-3xl mx-auto mb-16 space-y-4"
         >
           <motion.div variants={fadeUpVariants}>
-            <Eyebrow pulseColor="cyan">Competitive Differentiators</Eyebrow>
+            <Eyebrow pulseColor="black">Competitive Differentiators</Eyebrow>
           </motion.div>
           <motion.h2
             variants={fadeUpVariants}
-            className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#0f1117] tracking-tight"
+            className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-zinc-950 tracking-tight"
           >
             Traditional Operations vs NexAgent Infra
           </motion.h2>
-          <motion.p variants={fadeUpVariants} className="text-base text-[#718096]">
+          <motion.p variants={fadeUpVariants} className="text-base text-zinc-600">
             Discover why modern hospitals, healthcare networks, and enterprise teams choose NexAgent Infra for deterministic, audited execution.
           </motion.p>
         </motion.div>
@@ -141,18 +141,18 @@ export default function FeatureComparison() {
               <motion.div
                 key={h.id}
                 variants={fadeUpVariants}
-                className="p-6 rounded-2xl bg-white border border-black/[0.08] flex flex-col justify-between space-y-4 group hover:border-[#2b9aaa]/30 transition-colors"
+                className="p-6 rounded-2xl bg-white border border-zinc-200 flex flex-col justify-between space-y-4 group hover:border-black transition-colors"
               >
                 <div className="flex items-center justify-between">
-                  <div className="p-2 rounded-xl bg-black/[0.04] text-[#2b9aaa]">
+                  <div className="p-2 rounded-xl bg-zinc-100 text-zinc-900 group-hover:bg-black group-hover:text-white transition-colors">
                     <Icon className="w-5 h-5" />
                   </div>
                 </div>
                 <div>
-                  <div className="text-3xl sm:text-4xl font-extrabold text-[#0f1117] tracking-tight">
+                  <div className="text-3xl sm:text-4xl font-extrabold text-zinc-950 tracking-tight">
                     {h.metric}
                   </div>
-                  <div className="text-xs font-mono uppercase tracking-wider text-[#718096] mt-1 font-semibold">
+                  <div className="text-xs font-mono uppercase tracking-wider text-zinc-500 mt-1 font-semibold">
                     {h.label}
                   </div>
                 </div>
@@ -162,61 +162,61 @@ export default function FeatureComparison() {
         </motion.div>
 
         {/* Feature Comparison Table */}
-        <div className="rounded-3xl bg-white border border-black/[0.08] overflow-hidden shadow-sm">
+        <div className="rounded-3xl bg-white border border-zinc-200 overflow-hidden shadow-sm">
           <div className="overflow-x-auto">
             <table className="w-full text-left border-collapse min-w-[640px]">
               <thead>
-                <tr className="border-b border-black/[0.08] bg-[#f8f9fa]">
-                  <th className="py-5 px-6 sm:px-8 text-xs font-mono uppercase tracking-wider text-[#718096] font-semibold w-1/2">
+                <tr className="border-b border-zinc-200 bg-zinc-50">
+                  <th className="py-5 px-6 sm:px-8 text-xs font-mono uppercase tracking-wider text-zinc-500 font-semibold w-1/2">
                     Core Capability / Architecture
                   </th>
-                  <th className="py-5 px-6 sm:px-8 text-xs font-mono uppercase tracking-wider text-[#0f1117] font-bold w-1/4 bg-[#2b9aaa]/10 border-x border-[#2b9aaa]/20">
+                  <th className="py-5 px-6 sm:px-8 text-xs font-mono uppercase tracking-wider text-white font-bold w-1/4 bg-black border-x border-zinc-800">
                     <div className="flex items-center gap-2">
-                      <span className="w-2 h-2 rounded-full bg-[#2b9aaa] inline-block" />
+                      <span className="w-2 h-2 rounded-full bg-white inline-block" />
                       <span>NexAgent Infra</span>
                     </div>
                   </th>
-                  <th className="py-5 px-6 sm:px-8 text-xs font-mono uppercase tracking-wider text-[#718096] font-semibold w-1/4">
+                  <th className="py-5 px-6 sm:px-8 text-xs font-mono uppercase tracking-wider text-zinc-500 font-semibold w-1/4">
                     Legacy / Traditional HIMS
                   </th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-black/[0.06] text-sm">
+              <tbody className="divide-y divide-zinc-200 text-sm">
                 {comparisonFeatures.map((row, idx) => (
                   <tr
                     key={idx}
-                    className="hover:bg-black/[0.02] transition-colors"
+                    className="hover:bg-zinc-50/60 transition-colors"
                   >
-                    <td className="py-4 px-6 sm:px-8 text-[#0f1117] font-medium">
+                    <td className="py-4 px-6 sm:px-8 text-zinc-900 font-medium">
                       <div>{row.feature}</div>
                       {row.note && (
-                        <div className="text-xs text-[#718096] font-normal mt-0.5">
+                        <div className="text-xs text-zinc-500 font-normal mt-0.5">
                           {row.note}
                         </div>
                       )}
                     </td>
-                    <td className="py-4 px-6 sm:px-8 bg-[#2b9aaa]/[0.03] border-x border-[#2b9aaa]/20 text-center sm:text-left">
+                    <td className="py-4 px-6 sm:px-8 bg-zinc-50/80 border-x border-zinc-200 text-center sm:text-left">
                       {row.nexagent ? (
-                        <div className="inline-flex items-center gap-1.5 text-xs font-bold text-[#2ecc71]">
-                          <Check className="w-4 h-4 text-[#2ecc71] stroke-[3]" />
+                        <div className="inline-flex items-center gap-1.5 text-xs font-bold text-zinc-950">
+                          <Check className="w-4 h-4 text-zinc-950 stroke-[2.5]" />
                           <span className="hidden sm:inline">Included</span>
                         </div>
                       ) : (
-                        <div className="inline-flex items-center gap-1.5 text-xs text-[#718096]">
-                          <X className="w-4 h-4 text-[#718096]" />
+                        <div className="inline-flex items-center gap-1.5 text-xs text-zinc-400">
+                          <X className="w-4 h-4 text-zinc-400" />
                           <span className="hidden sm:inline">None</span>
                         </div>
                       )}
                     </td>
                     <td className="py-4 px-6 sm:px-8 text-center sm:text-left">
                       {row.traditional ? (
-                        <div className="inline-flex items-center gap-1.5 text-xs font-medium text-[#4a5568]">
-                          <Check className="w-4 h-4 text-[#718096]" />
+                        <div className="inline-flex items-center gap-1.5 text-xs font-medium text-zinc-600">
+                          <Check className="w-4 h-4 text-zinc-400" />
                           <span className="hidden sm:inline">Manual Only</span>
                         </div>
                       ) : (
-                        <div className="inline-flex items-center gap-1.5 text-xs text-[#ef4444]">
-                          <X className="w-4 h-4 text-[#ef4444]" />
+                        <div className="inline-flex items-center gap-1.5 text-xs text-zinc-400">
+                          <X className="w-4 h-4 text-zinc-400" />
                           <span className="hidden sm:inline">Not Supported</span>
                         </div>
                       )}

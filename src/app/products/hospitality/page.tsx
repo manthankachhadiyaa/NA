@@ -55,7 +55,7 @@ export default function HospitalityProductPage() {
   ];
 
   return (
-    <div className="min-h-screen flex flex-col bg-white text-[#4a5568]">
+    <div className="min-h-screen flex flex-col bg-white text-zinc-600">
       <Navbar onOpenStrategyCall={() => setModalOpen(true)} activePath="/products/hospitality" />
 
       <main className="flex-1 w-full max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-20 space-y-20">
@@ -66,18 +66,18 @@ export default function HospitalityProductPage() {
             <span>AI-Powered Hospitality Operating System</span>
           </div>
 
-          <h1 className="text-4xl sm:text-6xl font-extrabold text-[#0f1117] tracking-tight leading-[1.12]">
+          <h1 className="text-4xl sm:text-6xl font-extrabold text-zinc-950 tracking-tight leading-[1.12]">
             NexAgent Hospitality OS: The Entirely AI-Powered Hotel Management System.
           </h1>
 
-          <p className="text-lg sm:text-xl text-[#2d3748] font-medium max-w-3xl leading-relaxed">
+          <p className="text-lg sm:text-xl text-zinc-700 font-medium max-w-3xl leading-relaxed">
             Transform hotel operations from fragmented manual handoffs into an autonomous, high-revenue ecosystem. Maximize RevPAR with algorithmic dynamic pricing, delight guests with 24/7 autonomous concierge workflows, and automate room turnover dispatch.
           </p>
 
           <div className="flex flex-wrap items-center gap-4 pt-2">
             <button
               onClick={() => setModalOpen(true)}
-              className="px-6 py-3.5 text-xs sm:text-sm font-bold uppercase tracking-wider text-white bg-[#152e3a] hover:bg-[#1e4557] rounded-xl shadow-md transition-all flex items-center gap-2 group"
+              className="px-6 py-3.5 text-xs sm:text-sm font-bold uppercase tracking-wider text-white bg-black hover:bg-zinc-800 rounded-xl shadow-md transition-all flex items-center gap-2 group"
             >
               <span>Request Live Hospitality Demo &amp; Sandbox</span>
               <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
@@ -87,32 +87,32 @@ export default function HospitalityProductPage() {
 
         {/* Operational Proof Points */}
         <section className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div className="bg-white rounded-2xl border border-black/10 p-6 shadow-sm">
-            <div className="text-3xl font-extrabold text-[#0f1117] mb-2">+28%</div>
-            <h3 className="text-sm font-bold text-[#2d3748] mb-1">RevPAR Maximization</h3>
-            <p className="text-xs text-[#718096]">Algorithmic dynamic room pricing driven by real-time booking pace and local market demand.</p>
+          <div className="bg-zinc-50 rounded-2xl border border-zinc-200 p-6 shadow-sm">
+            <div className="text-3xl font-extrabold text-zinc-950 mb-2">+28%</div>
+            <h3 className="text-sm font-bold text-zinc-900 mb-1">RevPAR Maximization</h3>
+            <p className="text-xs text-zinc-500">Algorithmic dynamic room pricing driven by real-time booking pace and local market demand.</p>
           </div>
 
-          <div className="bg-white rounded-2xl border border-black/10 p-6 shadow-sm">
-            <div className="text-3xl font-extrabold text-[#0f1117] mb-2">0 min</div>
-            <h3 className="text-sm font-bold text-[#2d3748] mb-1">Reception Queue Wait Time</h3>
-            <p className="text-xs text-[#718096]">Automated mobile check-in, WhatsApp concierge, and digital room key generation.</p>
+          <div className="bg-zinc-50 rounded-2xl border border-zinc-200 p-6 shadow-sm">
+            <div className="text-3xl font-extrabold text-zinc-950 mb-2">0 min</div>
+            <h3 className="text-sm font-bold text-zinc-900 mb-1">Reception Queue Wait Time</h3>
+            <p className="text-xs text-zinc-500">Automated mobile check-in, WhatsApp concierge, and digital room key generation.</p>
           </div>
 
-          <div className="bg-white rounded-2xl border border-black/10 p-6 shadow-sm">
-            <div className="text-3xl font-extrabold text-[#0f1117] mb-2">22 min</div>
-            <h3 className="text-sm font-bold text-[#2d3748] mb-1">Average Room Turnover</h3>
-            <p className="text-xs text-[#718096]">Automated housekeeping dispatch triggered upon checkout with smart priority routing.</p>
+          <div className="bg-zinc-50 rounded-2xl border border-zinc-200 p-6 shadow-sm">
+            <div className="text-3xl font-extrabold text-zinc-950 mb-2">22 min</div>
+            <h3 className="text-sm font-bold text-zinc-900 mb-1">Average Room Turnover</h3>
+            <p className="text-xs text-zinc-500">Automated housekeeping dispatch triggered upon checkout with smart priority routing.</p>
           </div>
         </section>
 
         {/* Core Capabilities */}
-        <section className="space-y-8 border-t border-black/10 pt-12">
+        <section className="space-y-8 border-t border-zinc-200 pt-12">
           <div className="max-w-2xl space-y-2">
-            <span className="font-mono text-xs font-bold text-[#2b9aaa] uppercase tracking-wider">
+            <span className="font-mono text-xs font-bold text-zinc-500 uppercase tracking-wider">
               Autonomous Modules
             </span>
-            <h2 className="text-2xl sm:text-3xl font-extrabold text-[#0f1117]">
+            <h2 className="text-2xl sm:text-3xl font-extrabold text-zinc-950">
               Engineered for luxury resorts, boutique hotels &amp; enterprise chains.
             </h2>
           </div>
@@ -123,15 +123,15 @@ export default function HospitalityProductPage() {
               return (
                 <div
                   key={idx}
-                  className="p-6 rounded-2xl bg-white border border-black/10 shadow-sm space-y-3"
+                  className="p-6 rounded-2xl bg-white border border-zinc-200 shadow-sm space-y-3"
                 >
                   <div className="flex items-center gap-3">
-                    <div className="p-2.5 rounded-xl bg-[#2b9aaa]/10 text-[#2b9aaa]">
+                    <div className="p-2.5 rounded-xl bg-zinc-100 text-zinc-900">
                       <Icon className="w-5 h-5" />
                     </div>
-                    <h3 className="text-base font-bold text-[#0f1117]">{cap.title}</h3>
+                    <h3 className="text-base font-bold text-zinc-950">{cap.title}</h3>
                   </div>
-                  <p className="text-sm text-[#4a5568] leading-relaxed pl-12">{cap.desc}</p>
+                  <p className="text-sm text-zinc-600 leading-relaxed pl-12">{cap.desc}</p>
                 </div>
               );
             })}
@@ -139,45 +139,45 @@ export default function HospitalityProductPage() {
         </section>
 
         {/* Integration & Architecture */}
-        <section className="p-8 rounded-2xl bg-[#0f1117] text-white space-y-6">
+        <section className="p-8 rounded-2xl bg-black text-white space-y-6 border border-zinc-800">
           <div className="max-w-xl space-y-2">
-            <span className="font-mono text-xs font-bold text-[#2b9aaa] uppercase tracking-wider">
+            <span className="font-mono text-xs font-bold text-zinc-400 uppercase tracking-wider">
               Integration &amp; Architecture
             </span>
             <h3 className="text-2xl font-extrabold">Enterprise Hospitality Infrastructure</h3>
-            <p className="text-sm text-[#94a3b8]">
+            <p className="text-sm text-zinc-400">
               Seamlessly integrates with your existing locks, payment gateways, channel managers, and accounting systems.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-4 border-t border-white/10 text-xs font-mono">
-            <div className="p-4 rounded-xl bg-white/5 border border-white/10">
-              <span className="text-[#2b9aaa] font-bold block mb-1">2-Way OTA Sync</span>
-              <span className="text-[#cbd5e1]">Direct certified integration with Booking.com, Expedia, Agoda, and Airbnb.</span>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-4 border-t border-zinc-800 text-xs font-mono">
+            <div className="p-4 rounded-xl bg-zinc-900 border border-zinc-800">
+              <span className="text-white font-bold block mb-1">2-Way OTA Sync</span>
+              <span className="text-zinc-400">Direct certified integration with Booking.com, Expedia, Agoda, and Airbnb.</span>
             </div>
-            <div className="p-4 rounded-xl bg-white/5 border border-white/10">
-              <span className="text-[#2b9aaa] font-bold block mb-1">Smart Locks &amp; IoT</span>
-              <span className="text-[#cbd5e1]">Native support for Assa Abloy, Salto, Dormakaba, and smart room thermostats.</span>
+            <div className="p-4 rounded-xl bg-zinc-900 border border-zinc-800">
+              <span className="text-white font-bold block mb-1">Smart Locks &amp; IoT</span>
+              <span className="text-zinc-400">Native support for Assa Abloy, Salto, Dormakaba, and smart room thermostats.</span>
             </div>
-            <div className="p-4 rounded-xl bg-white/5 border border-white/10">
-              <span className="text-[#2b9aaa] font-bold block mb-1">PCI-DSS Level 1</span>
-              <span className="text-[#cbd5e1]">End-to-end tokenized payment processing and automated guest folio reconciliation.</span>
+            <div className="p-4 rounded-xl bg-zinc-900 border border-zinc-800">
+              <span className="text-white font-bold block mb-1">PCI-DSS Level 1</span>
+              <span className="text-zinc-400">End-to-end tokenized payment processing and automated guest folio reconciliation.</span>
             </div>
           </div>
         </section>
 
         {/* CTA */}
-        <section className="p-8 sm:p-12 rounded-2xl bg-white border border-black/10 shadow-sm text-center space-y-5">
-          <h3 className="text-2xl sm:text-3xl font-extrabold text-[#0f1117]">
+        <section className="p-8 sm:p-12 rounded-2xl bg-zinc-50 border border-zinc-200 shadow-sm text-center space-y-5">
+          <h3 className="text-2xl sm:text-3xl font-extrabold text-zinc-950">
             Deploy NexAgent Hospitality OS in your property.
           </h3>
-          <p className="text-sm text-[#4a5568] max-w-xl mx-auto">
+          <p className="text-sm text-zinc-600 max-w-xl mx-auto">
             Schedule a live demo and test-drive our AI concierge, dynamic pricing engine, and housekeeping dispatch in a pilot sandbox.
           </p>
           <div className="pt-2">
             <button
               onClick={() => setModalOpen(true)}
-              className="px-6 py-3.5 text-xs font-bold uppercase tracking-wider text-white bg-[#152e3a] hover:bg-[#1e4557] rounded-xl transition-all shadow-md"
+              className="px-6 py-3.5 text-xs font-bold uppercase tracking-wider text-white bg-black hover:bg-zinc-800 rounded-xl transition-all shadow-md"
             >
               Request Live Demo &amp; Sandbox Access
             </button>
