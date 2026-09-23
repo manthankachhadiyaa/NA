@@ -135,6 +135,44 @@ export default function RootLayout({
           priceCurrency: 'USD',
         },
       },
+      {
+        '@type': 'FAQPage',
+        '@id': 'https://nawebsite-seven.vercel.app/#faq',
+        mainEntity: [
+          {
+            '@type': 'Question',
+            name: 'How does NexAgent prevent AI hallucinations in healthcare and enterprise operations?',
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: 'NexAgent utilizes a deterministic 7-layer architecture. Incoming requests are normalized into strict JSON schemas, and every proposed action must satisfy hardcoded WebAssembly policy rules and clinical boundaries before execution. High-stakes actions cannot execute without human cryptographic sign-off.',
+            },
+          },
+          {
+            '@type': 'Question',
+            name: 'What is the difference between NexAgent HMS and legacy hospital management software?',
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: 'Legacy HMS software acts as passive databases requiring hospital staff to manually type, update, and search for records. NexAgent HMS is active operational software: it orchestrates clinical triage queues, automatically dispatches housekeeping upon patient discharge, and prepares pre-compiled clinical discharge summaries for physician review.',
+            },
+          },
+          {
+            '@type': 'Question',
+            name: 'How does the human-in-the-loop approval mechanism work?',
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: 'Whenever an automated action exceeds a pre-configured risk threshold (e.g., patient discharge authorization, medication changes, or financial transactions over $5,000), execution is intercepted. The supervisor or physician receives a concise approval notification with all historical context and signs off with one click.',
+            },
+          },
+          {
+            '@type': 'Question',
+            name: 'What technical integrations does NexAgent support out of the box?',
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: 'NexAgent connects with HL7/FHIR healthcare standards, major EMR systems (Epic, Cerner), enterprise CRMs (Salesforce, HubSpot, Zoho), ERP systems (SAP, NetSuite), and modern communication protocols (Slack, WhatsApp Business, Webhooks, Kafka).',
+            },
+          },
+        ],
+      },
     ],
   };
 

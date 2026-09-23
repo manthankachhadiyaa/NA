@@ -1,16 +1,19 @@
 'use client';
 
-import React from 'react';
+import React, { useState } from 'react';
 import Link from 'next/link';
-import { motion } from 'motion/react';
+import { motion, AnimatePresence } from 'motion/react';
 import {
   Stethoscope,
   Hotel,
   Zap,
   Clock,
-  Network,
   ArrowRight,
   CheckCircle2,
+  ChevronDown,
+  Layers,
+  ShieldCheck,
+  Cpu,
 } from 'lucide-react';
 import Eyebrow from '@/components/ui/Eyebrow';
 import {
@@ -19,6 +22,12 @@ import {
   viewportConfig,
   transitionPresets,
 } from '@/lib/motion';
+
+interface ProductSubModule {
+  title: string;
+  detail: string;
+  governance: string;
+}
 
 interface ProductItem {
   id: string;
@@ -31,6 +40,7 @@ interface ProductItem {
   icon: React.ElementType;
   href: string;
   features: string[];
+  subModules: ProductSubModule[];
 }
 
 const products: ProductItem[] = [
@@ -51,6 +61,28 @@ const products: ProductItem[] = [
       'Pre-compiled discharge summaries for 1-click MD sign-off',
       'Full ABDM (M1, M2, M3) & NABH digital audit compliance',
     ],
+    subModules: [
+      {
+        title: 'Emergency Severity Index (ESI) Triage Router',
+        detail: 'Scores incoming patient vital telemetry and routes emergency cases directly to resuscitation bays.',
+        governance: 'Triage Nursing Officer validation on high-acuity assignments',
+      },
+      {
+        title: 'Autonomous Bed Turnover & Environmental Dispatch',
+        detail: 'Detects electronic discharge orders and dispatches cleaning tasks to housekeeping terminals with photo verification.',
+        governance: 'Sanitation Supervisor inspection approval before bed release',
+      },
+      {
+        title: 'ABDM Health Information Gateway (M1, M2, M3)',
+        detail: 'Directly creates ABHA IDs, links health records, and facilitates consent-driven electronic record exchange.',
+        governance: 'Patient consent verification via secure OTP gateway',
+      },
+      {
+        title: 'TPA Cashless Pre-Authorization Claims Engine',
+        detail: 'Compiles itemized bills, lab diagnostics, and operative notes into insurance claims packages.',
+        governance: 'Medical Billing Superintendent final authorization before claim upload',
+      },
+    ],
   },
   {
     id: 'hospitality',
@@ -68,6 +100,28 @@ const products: ProductItem[] = [
       '24/7 autonomous guest concierge over WhatsApp & voice',
       'Real-time room turnover automation triggered upon guest checkout',
       'Instant 2-way OTA synchronization (Booking, Expedia, Airbnb)',
+    ],
+    subModules: [
+      {
+        title: 'Algorithmic RevPAR Dynamic Rate Optimizer',
+        detail: 'Calculates dynamic room tariffs by analyzing competitor ADR, booking velocity, and city event calendars.',
+        governance: 'Revenue Manager override authorization for special discount limits',
+      },
+      {
+        title: '24/7 WhatsApp Guest Concierge & Digital Room Key',
+        detail: 'Sends encrypted digital door keys, handles room service orders, and coordinates luggage transfers automatically.',
+        governance: 'Duty Manager verification for complimentary upgrades and billing adjustments',
+      },
+      {
+        title: 'Housekeeping Turnover Roster & Minibar Dispatch',
+        detail: 'Prioritizes cleaning schedules based on incoming VIP check-in times and logs minibar consumption to guest folios.',
+        governance: 'Executive Housekeeper inspection sign-off before room status toggles clean',
+      },
+      {
+        title: 'Bidirectional OTA Channel Manager',
+        detail: 'Synchronizes rates, availability, and inventory across 15+ travel portals with zero double-booking latency.',
+        governance: 'System locks channel sync during inventory reconciliation audits',
+      },
     ],
   },
   {
@@ -87,6 +141,23 @@ const products: ProductItem[] = [
       'In-memory PII/PHI tokenization before reasoning occurs',
       'Cryptographic human-in-the-loop approval gates',
     ],
+    subModules: [
+      {
+        title: 'Two-Phase Commit Transactional Write Engine',
+        detail: 'Executes synchronized state writes across CRM, ERP, and SQL databases with atomic rollback support.',
+        governance: 'Database Administrator approval on schema migration triggers',
+      },
+      {
+        title: 'In-Memory PII/PHI Tokenization Proxy',
+        detail: 'Redacts sensitive identity and financial fields in memory before payloads enter reasoning pipelines.',
+        governance: 'Chief Information Security Officer access policy compliance',
+      },
+      {
+        title: 'Deterministic WebAssembly Policy Gatekeeper',
+        detail: 'Enforces hardcoded enterprise compliance and financial thresholds with zero hallucination bypass.',
+        governance: 'Executive Supervisor digital signature required to release paused transactions',
+      },
+    ],
   },
   {
     id: 'predictive-flow',
@@ -104,6 +175,18 @@ const products: ProductItem[] = [
       'Automated shift-swap and staffing recommendation engine',
       'Decentralized cross-facility resource ledger and telemetry',
     ],
+    subModules: [
+      {
+        title: 'Admission Surge & Occupancy Predictor',
+        detail: 'Predicts high-occupancy surges 48 hours in advance using historical trends and localized weather/event models.',
+        governance: 'Chief Medical Officer / General Manager surge protocol declaration',
+      },
+      {
+        title: 'Automated Shift-Swap & Staff Balancer',
+        detail: 'Recommends optimal nurse-to-patient and front-desk staffing allocations to eliminate overtime overhead.',
+        governance: 'Department Nursing Head approval on shift assignments',
+      },
+    ],
   },
 ];
 
@@ -112,6 +195,12 @@ interface HmsShowcaseProps {
 }
 
 export default function HmsShowcase({ onOpenStrategyCall }: HmsShowcaseProps) {
+  const [expandedProductId, setExpandedProductId] = useState<string | null>(null);
+
+  const toggleProductExpand = (id: string) => {
+    setExpandedProductId((prev) => (prev === id ? null : id));
+  };
+
   return (
     <section id="products" className="py-24 bg-[#f8f9fa] border-t border-black/[0.06] relative overflow-hidden content-visibility-auto">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -142,12 +231,12 @@ export default function HmsShowcase({ onOpenStrategyCall }: HmsShowcaseProps) {
           {products.map((prod, idx) => {
             const Icon = prod.icon;
             const isFeatured = idx === 0;
+            const isExpanded = expandedProductId === prod.id;
 
             return (
               <motion.div
                 key={prod.id}
                 variants={fadeUpVariants}
-                whileHover={{ y: -4, transition: transitionPresets.fast }}
                 className={`rounded-3xl bg-white border border-black/[0.08] hover:border-[#2b9aaa]/30 hover:shadow-md p-8 sm:p-10 transition-all flex flex-col justify-between group ${
                   isFeatured ? 'lg:col-span-12 xl:col-span-7' : idx === 1 ? 'lg:col-span-12 xl:col-span-5' : 'lg:col-span-6'
                 }`}
@@ -192,10 +281,63 @@ export default function HmsShowcase({ onOpenStrategyCall }: HmsShowcaseProps) {
                       </div>
                     ))}
                   </div>
+
+                  {/* Collapsible Inner Modules Button */}
+                  <div className="pt-2">
+                    <button
+                      onClick={() => toggleProductExpand(prod.id)}
+                      className="w-full py-2.5 px-4 rounded-xl bg-[#f8f9fa] hover:bg-[#edf2f7] border border-black/[0.06] text-xs font-semibold text-[#0f1117] flex items-center justify-between transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[#2b9aaa]/40"
+                    >
+                      <span className="flex items-center gap-2">
+                        <Layers className="w-3.5 h-3.5 text-[#2b9aaa]" />
+                        <span>{isExpanded ? 'Hide Inner Architecture Modules' : 'Inspect Inner Architecture & Sub-Modules'}</span>
+                      </span>
+                      <motion.div animate={{ rotate: isExpanded ? 180 : 0 }} transition={{ duration: 0.2 }}>
+                        <ChevronDown className="w-4 h-4 text-[#718096]" />
+                      </motion.div>
+                    </button>
+
+                    {/* Downward Expandable Module Drawer */}
+                    <AnimatePresence initial={false}>
+                      {isExpanded && (
+                        <motion.div
+                          key="product-submodules"
+                          initial={{ height: 0, opacity: 0 }}
+                          animate={{ height: 'auto', opacity: 1 }}
+                          exit={{ height: 0, opacity: 0 }}
+                          transition={{ duration: 0.28, ease: [0.16, 1, 0.3, 1] }}
+                          className="overflow-hidden"
+                        >
+                          <div className="pt-3 space-y-2.5">
+                            {prod.subModules.map((sub, sIdx) => (
+                              <div
+                                key={sIdx}
+                                className="p-3.5 rounded-xl bg-[#f8f9fa] border border-black/[0.06] space-y-1.5"
+                              >
+                                <div className="flex items-center justify-between">
+                                  <h6 className="text-xs font-bold text-[#0f1117] flex items-center gap-1.5">
+                                    <Cpu className="w-3 h-3 text-[#2b9aaa]" />
+                                    <span>{sub.title}</span>
+                                  </h6>
+                                </div>
+                                <p className="text-[11px] text-[#4a5568] leading-relaxed">
+                                  {sub.detail}
+                                </p>
+                                <div className="text-[10px] font-mono text-[#718096] flex items-center gap-1 pt-1 border-t border-black/[0.04]">
+                                  <ShieldCheck className="w-3 h-3 text-[#2b9aaa]" />
+                                  <span>Gate: {sub.governance}</span>
+                                </div>
+                              </div>
+                            ))}
+                          </div>
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
+                  </div>
                 </div>
 
                 {/* Bottom Bar: Outcome & Link */}
-                <div className="pt-8 mt-8 border-t border-black/[0.06] flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                <div className="pt-6 mt-6 border-t border-black/[0.06] flex flex-col sm:flex-row sm:items-center justify-between gap-4">
                   <div>
                     <span className="text-[10px] font-mono uppercase tracking-wider text-[#94a3b8] block">
                       Operational Outcome
@@ -205,13 +347,22 @@ export default function HmsShowcase({ onOpenStrategyCall }: HmsShowcaseProps) {
                     </span>
                   </div>
 
-                  <Link
-                    href={prod.href}
-                    className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#2b9aaa] hover:text-[#0f1117] transition-colors self-start sm:self-auto"
-                  >
-                    <span>Inspect System</span>
-                    <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />
-                  </Link>
+                  <div className="flex items-center gap-3">
+                    <button
+                      onClick={onOpenStrategyCall}
+                      className="text-xs font-bold uppercase tracking-wider text-[#0f1117] hover:text-[#2b9aaa] transition-colors"
+                    >
+                      Request Sandbox
+                    </button>
+                    <span className="text-[#cbd5e1]">·</span>
+                    <Link
+                      href={prod.href}
+                      className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-[#2b9aaa] hover:text-[#0f1117] transition-colors"
+                    >
+                      <span>Full Specs</span>
+                      <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />
+                    </Link>
+                  </div>
                 </div>
               </motion.div>
             );
