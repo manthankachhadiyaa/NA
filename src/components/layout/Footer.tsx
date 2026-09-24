@@ -32,7 +32,7 @@ export default function Footer({ onOpenStrategyCall }: FooterProps) {
               Eliminate operational drag with deterministic AI.
             </h3>
             <p className="text-sm sm:text-base text-zinc-400 leading-relaxed">
-              Schedule an executive architecture session with co-founders Manthan Kachhadiya and Savani Vraj to inspect your manual bottlenecks.
+              Schedule an executive architecture session with founders Manthan Kachhadiya and Vraj Savani to inspect your manual bottlenecks.
             </p>
           </div>
 
@@ -157,7 +157,7 @@ export default function Footer({ onOpenStrategyCall }: FooterProps) {
               </li>
               <li>
                 <Link href="/about#founders" className="hover:text-white transition-colors">
-                  Co-Founders
+                  Founders
                 </Link>
               </li>
               <li>
@@ -208,8 +208,8 @@ export default function Footer({ onOpenStrategyCall }: FooterProps) {
 
         {/* 3. Bottom Legal Bar */}
         <div className="pt-8 pb-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-[#64748b]">
-          <div>
-            &copy; {new Date().getFullYear()} NexAgent Infra. Built by Co-Founders Manthan Kachhadiya &amp; Savani Vraj. All rights reserved.
+          <div suppressHydrationWarning>
+            &copy; {new Date().getFullYear()} NexAgent Infra. Built by Founders Manthan Kachhadiya &amp; Vraj Savani. All rights reserved.
           </div>
           <div className="flex items-center gap-6">
             <Link href="/about" className="hover:text-white transition-colors">
@@ -225,12 +225,43 @@ export default function Footer({ onOpenStrategyCall }: FooterProps) {
           </div>
         </div>
 
-        {/* 4. Large Closing Brand Mark */}
-        <div className="pt-6 select-none pointer-events-none text-center overflow-hidden">
-          <span className="text-[3.5rem] sm:text-[6rem] md:text-[8rem] lg:text-[10rem] font-extrabold tracking-tighter text-white/[0.025] leading-none block uppercase font-sans">
-            NexAgent Infra
-          </span>
-        </div>
+        {/* 4. Large Closing Brand Mark — editorial serif shimmer */}
+        <motion.div
+          initial={{ opacity: 0, y: 60 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
+          className="mt-8 select-none pointer-events-none flex justify-center w-full overflow-hidden"
+        >
+          {/* Container tightly hugs NexAgent; w-[30%] child perfectly covers 'ent' */}
+          <div className="relative inline-flex flex-col items-end">
+            <span
+              className="footer-brand-shimmer block leading-[0.85] pt-8 sm:pt-10
+                text-[3.8rem] sm:text-[7.5rem] md:text-[10rem] lg:text-[13rem] xl:text-[15.5rem]
+                font-serif tracking-tighter"
+            >
+              NexAgent
+            </span>
+            {/* INFRA — exactly spans the width of 'ent' with perfect sweet-spot spacing */}
+            <div className="w-[30%] flex justify-between items-center mt-0.5 sm:mt-1 md:mt-1.5 lg:mt-2 pb-6">
+              <span className="footer-brand-shimmer font-mono font-black text-[1.1rem] sm:text-[1.8rem] md:text-[2.5rem] lg:text-[3.2rem] xl:text-[3.8rem] leading-none">
+                I
+              </span>
+              <span className="footer-brand-shimmer font-mono font-black text-[1.1rem] sm:text-[1.8rem] md:text-[2.5rem] lg:text-[3.2rem] xl:text-[3.8rem] leading-none">
+                N
+              </span>
+              <span className="footer-brand-shimmer font-mono font-black text-[1.1rem] sm:text-[1.8rem] md:text-[2.5rem] lg:text-[3.2rem] xl:text-[3.8rem] leading-none">
+                F
+              </span>
+              <span className="footer-brand-shimmer font-mono font-black text-[1.1rem] sm:text-[1.8rem] md:text-[2.5rem] lg:text-[3.2rem] xl:text-[3.8rem] leading-none">
+                R
+              </span>
+              <span className="footer-brand-shimmer font-mono font-black text-[1.1rem] sm:text-[1.8rem] md:text-[2.5rem] lg:text-[3.2rem] xl:text-[3.8rem] leading-none">
+                A
+              </span>
+            </div>
+          </div>
+        </motion.div>
       </div>
     </footer>
   );

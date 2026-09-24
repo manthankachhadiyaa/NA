@@ -3,14 +3,14 @@ import type { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'About NexAgent | Leadership, Architecture & Engineering Mission',
   description:
-    'Meet NexAgent co-founders Manthan Kachhadiya and Savani Vraj. Learn how our engineering-first team builds deterministic AI systems for healthcare and enterprise operations.',
+    'Meet NexAgent founders Manthan Kachhadiya and Vraj Savani. Learn how our engineering-first team builds deterministic AI systems for healthcare and enterprise operations.',
   alternates: {
     canonical: 'https://nawebsite-seven.vercel.app/about',
   },
   openGraph: {
     title: 'About NexAgent | Leadership, Architecture & Engineering Mission',
     description:
-      'Meet co-founders Manthan Kachhadiya (AI Systems) and Savani Vraj (Operations). Building deterministic AI operating systems with human-in-the-loop governance.',
+      'Meet founders Manthan Kachhadiya (AI Systems) and Vraj Savani (Operations). Building deterministic AI operating systems with human-in-the-loop governance.',
     url: 'https://nawebsite-seven.vercel.app/about',
     type: 'profile',
     images: [
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
         url: 'https://nawebsite-seven.vercel.app/assets/nexagent_logo.png',
         width: 800,
         height: 600,
-        alt: 'NexAgent Co-Founders - Manthan Kachhadiya and Savani Vraj',
+        alt: 'NexAgent Founders - Manthan Kachhadiya and Vraj Savani',
       },
     ],
   },
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'About NexAgent | Leadership & Engineering Mission',
     description:
-      'Meet co-founders Manthan Kachhadiya and Savani Vraj. Building deterministic AI systems that participate in real enterprise operations.',
+      'Meet founders Manthan Kachhadiya and Vraj Savani. Building deterministic AI systems that participate in real enterprise operations.',
     images: ['https://nawebsite-seven.vercel.app/assets/nexagent_logo.png'],
   },
 };

@@ -120,19 +120,17 @@ export default function HeroSection({ onOpenStrategyCall }: HeroSectionProps) {
             <motion.div variants={fadeUpVariants} className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5 pt-2">
               <Link
                 href="/setup"
-                className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-[#09090b] text-white text-xs sm:text-sm font-bold uppercase tracking-wider hover:bg-zinc-800 transition-all shadow-md group"
+                className="btn-architect"
               >
                 <span>Launch Solution Architect</span>
-                <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+                <ArrowRight className="w-4 h-4" />
               </Link>
-              <Button
-                variant="secondary"
-                size="md"
+              <button
                 onClick={onOpenStrategyCall}
-                className="w-full sm:w-auto justify-center"
+                className="btn-demo-glow"
               >
-                Request Live Demo
-              </Button>
+                <span>Request Live Demo</span>
+              </button>
             </motion.div>
 
             {/* Technical Metadata Bar */}

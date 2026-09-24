@@ -227,7 +227,7 @@ export default function HmsProductPage() {
             Deploy NexAgent HMS in your hospital network.
           </h3>
           <p className="text-sm text-zinc-600 max-w-xl mx-auto">
-            Schedule a live demo with founders Manthan Kachhadiya and Savani Vraj to review queue metrics and test bed turnover workflows in a pilot sandbox.
+            Schedule a live demo with founders Manthan Kachhadiya and Vraj Savani to review queue metrics and test bed turnover workflows in a pilot sandbox.
           </p>
           <div className="pt-2">
             <button

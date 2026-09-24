@@ -356,15 +356,16 @@ export default function Navbar({ onOpenStrategyCall, activePath = '/' }: NavbarP
 
         {/* Right: Primary Call to Action */}
         <div className="flex items-center gap-3">
-          <Button
-            variant="primary"
-            size="sm"
-            showArrow
+          <button
             onClick={onOpenStrategyCall}
-            className="hidden sm:inline-flex"
+            className="btn hidden sm:inline-flex"
+            aria-label="Request Live Demo"
           >
-            Request Live Demo
-          </Button>
+            <span className="relative z-10">Request Live Demo</span>
+            <span className="animation">
+              <ArrowRight className="w-3.5 h-3.5 text-white relative z-10" />
+            </span>
+          </button>
 
           {/* Mobile Menu Button */}
           <button
@@ -484,18 +485,19 @@ export default function Navbar({ onOpenStrategyCall, activePath = '/' }: NavbarP
 
             {/* Mobile CTA */}
             <div className="pt-3">
-              <Button
-                variant="primary"
-                size="md"
-                showArrow
+              <button
                 onClick={() => {
                   setMobileMenuOpen(false);
                   onOpenStrategyCall();
                 }}
-                className="w-full py-3.5"
+                className="btn w-full"
+                aria-label="Request Live Demo"
               >
-                Request Live Demo
-              </Button>
+                <span className="relative z-10">Request Live Demo</span>
+                <span className="animation">
+                  <ArrowRight className="w-3.5 h-3.5 text-white relative z-10" />
+                </span>
+              </button>
             </div>
           </motion.div>
         )}

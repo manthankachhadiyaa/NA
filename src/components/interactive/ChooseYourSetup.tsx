@@ -1481,7 +1481,7 @@ export default function ChooseYourSetup({
           {/* Bottom Consultation CTA */}
           <div className="pt-6 border-t border-black/[0.08] flex flex-col sm:flex-row items-center justify-between gap-4">
             <div className="text-xs text-[#71717a]">
-              Ready to review this tailored architecture with founders <strong>Manthan Kachhadiya</strong> &amp; <strong>Savani Vraj</strong>?
+              Ready to review this tailored architecture with founders <strong>Manthan Kachhadiya</strong> &amp; <strong>Vraj Savani</strong>?
             </div>
 
             <Button

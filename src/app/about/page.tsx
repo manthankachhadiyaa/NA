@@ -173,7 +173,7 @@ export default function AboutPage() {
               </h2>
             </div>
             <p className="text-base text-zinc-600">
-              NexAgent is built by two equal co-founders with equal equity, equal decision-making authority, and complementary domains of responsibility.
+              NexAgent is built by two equal founders with equal equity, equal decision-making authority, and complementary domains of responsibility.
             </p>
           </div>
 
@@ -184,7 +184,7 @@ export default function AboutPage() {
                 <div className="relative w-full h-[360px] sm:h-[400px] bg-zinc-900">
                   <Image
                     src="/assets/founder_manthan.webp"
-                    alt="Manthan Kachhadiya - Co-Founder"
+                    alt="Manthan Kachhadiya - Founder & CEO"
                     fill
                     className="object-cover object-[center_20%]"
                     sizes="(max-width: 768px) 100vw, 50vw"
@@ -196,11 +196,11 @@ export default function AboutPage() {
                 <div className="p-6 sm:p-8 space-y-4">
                   <div>
                     <div className="inline-flex items-center px-2.5 py-0.5 rounded text-[10px] font-mono uppercase tracking-widest text-zinc-900 bg-zinc-100 border border-zinc-300 font-bold mb-2">
-                      Co-Founder
+                      Founder &amp; CEO
                     </div>
                     <h3 className="text-2xl font-extrabold text-zinc-950 tracking-tight">Manthan Kachhadiya</h3>
                     <p className="text-xs text-zinc-500 font-mono font-semibold mt-1">
-                      Technology &amp; AI · Systems Architecture · Engineering
+                      CEO · Technology &amp; AI · Systems Architecture · Engineering
                     </p>
                   </div>
 
@@ -213,19 +213,41 @@ export default function AboutPage() {
                 </div>
               </div>
 
-              <div className="px-6 sm:px-8 pb-6 pt-3 border-t border-zinc-200 flex items-center gap-2 text-xs font-mono text-zinc-500">
-                <Code2 className="w-4 h-4 text-zinc-900" />
-                <span className="font-medium text-zinc-700">Domain: Technology &amp; AI</span>
+              <div className="px-6 sm:px-8 pb-6 pt-3 border-t border-zinc-200 flex flex-wrap items-center justify-between gap-3 text-xs font-mono text-zinc-500">
+                <div className="flex items-center gap-2">
+                  <Code2 className="w-4 h-4 text-zinc-900" />
+                  <span className="font-medium text-zinc-700">Domain: Technology &amp; AI</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <a
+                    href="https://www.linkedin.com/in/manthankachhadiyaa/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-zinc-600 hover:text-black font-semibold transition-colors inline-flex items-center gap-1"
+                  >
+                    <span>LinkedIn</span>
+                    <span className="text-[10px]">↗</span>
+                  </a>
+                  <a
+                    href="https://www.instagram.com/manthankachhadiyaa"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-zinc-600 hover:text-black font-semibold transition-colors inline-flex items-center gap-1"
+                  >
+                    <span>Instagram</span>
+                    <span className="text-[10px]">↗</span>
+                  </a>
+                </div>
               </div>
             </div>
 
-            {/* Savani Vraj */}
+            {/* Vraj Savani */}
             <div className="bg-white rounded-2xl border border-zinc-200 overflow-hidden shadow-sm hover:border-black hover:shadow-xl transition-all duration-300 flex flex-col justify-between">
               <div>
                 <div className="relative w-full h-[360px] sm:h-[400px] bg-zinc-900">
                   <Image
                     src="/assets/founder_vraj.webp"
-                    alt="Savani Vraj - Co-Founder"
+                    alt="Vraj Savani - Founder & COO"
                     fill
                     className="object-cover object-[center_20%]"
                     sizes="(max-width: 768px) 100vw, 50vw"
@@ -237,11 +259,11 @@ export default function AboutPage() {
                 <div className="p-6 sm:p-8 space-y-4">
                   <div>
                     <div className="inline-flex items-center px-2.5 py-0.5 rounded text-[10px] font-mono uppercase tracking-widest text-zinc-900 bg-zinc-100 border border-zinc-300 font-bold mb-2">
-                      Co-Founder
+                      Founder &amp; COO
                     </div>
-                    <h3 className="text-2xl font-extrabold text-zinc-950 tracking-tight">Savani Vraj</h3>
+                    <h3 className="text-2xl font-extrabold text-zinc-950 tracking-tight">Vraj Savani</h3>
                     <p className="text-xs text-zinc-500 font-mono font-semibold mt-1">
-                      Product &amp; Business · Operations · Strategy
+                      COO · Product &amp; Business · Operations · Strategy
                     </p>
                   </div>
 
@@ -254,9 +276,20 @@ export default function AboutPage() {
                 </div>
               </div>
 
-              <div className="px-6 sm:px-8 pb-6 pt-3 border-t border-zinc-200 flex items-center gap-2 text-xs font-mono text-zinc-500">
-                <LineChart className="w-4 h-4 text-zinc-900" />
-                <span className="font-medium text-zinc-700">Domain: Product &amp; Business</span>
+              <div className="px-6 sm:px-8 pb-6 pt-3 border-t border-zinc-200 flex flex-wrap items-center justify-between gap-3 text-xs font-mono text-zinc-500">
+                <div className="flex items-center gap-2">
+                  <LineChart className="w-4 h-4 text-zinc-900" />
+                  <span className="font-medium text-zinc-700">Domain: Product &amp; Business</span>
+                </div>
+                <a
+                  href="https://www.linkedin.com/in/vraj-savani-7973a834a/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-zinc-600 hover:text-black font-semibold transition-colors inline-flex items-center gap-1"
+                >
+                  <span>LinkedIn</span>
+                  <span className="text-[10px]">↗</span>
+                </a>
               </div>
             </div>
           </div>
@@ -299,7 +332,7 @@ export default function AboutPage() {
             Ready to build intelligent operations with us?
           </h2>
           <p className="text-sm sm:text-base text-zinc-400 max-w-xl mx-auto">
-            Schedule an architecture discovery call directly with co-founders Manthan Kachhadiya and Savani Vraj to discuss your operational workflows.
+            Schedule an architecture discovery call directly with founders Manthan Kachhadiya and Vraj Savani to discuss your operational workflows.
           </p>
           <div className="pt-2">
             <button

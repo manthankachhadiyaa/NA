@@ -16,7 +16,7 @@ export default function HomePage() {
   const [modalOpen, setModalOpen] = useState(false);
 
   return (
-    <div className="min-h-screen flex flex-col bg-white text-[#3f3f46] overflow-x-hidden">
+    <div className="min-h-screen flex flex-col bg-white text-[#3f3f46] overflow-x-hidden" suppressHydrationWarning>
       {/* Top Standard Navigation */}
       <Navbar onOpenStrategyCall={() => setModalOpen(true)} activePath="/" />
 
@@ -37,7 +37,7 @@ export default function HomePage() {
         {/* 5. Measurable Outcomes & Bento Stats */}
         <BentoStats />
 
-        {/* 6. Co-Founders Presentation: Manthan Kachhadiya & Savani Vraj */}
+        {/* 6. Founders Presentation: Manthan Kachhadiya & Vraj Savani */}
         <FoundersSection />
 
         {/* 7. Executive Operational FAQ */}
@@ -56,7 +56,7 @@ export default function HomePage() {
             </h2>
 
             <p className="text-sm sm:text-base text-zinc-400 max-w-2xl mx-auto leading-relaxed">
-              Request a live product demonstration and sandbox access with co-founders Manthan Kachhadiya and Savani Vraj to test NexAgent in your operational environment.
+              Request a live product demonstration and sandbox access with founders Manthan Kachhadiya and Vraj Savani to test NexAgent in your operational environment.
             </p>
 
             <div className="pt-4 flex flex-wrap justify-center gap-4">

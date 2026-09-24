@@ -61,7 +61,7 @@ export default function ConfiguratorTeaser({ onOpenStrategyCall }: ConfiguratorT
               </div>
               <div className="flex items-center gap-3 text-xs sm:text-sm text-zinc-300">
                 <CheckCircle2 className="w-4 h-4 text-white shrink-0" />
-                <span>Direct pilot onboarding with co-founders Manthan Kachhadiya &amp; Savani Vraj</span>
+                <span>Direct pilot onboarding with founders Manthan Kachhadiya &amp; Vraj Savani</span>
               </div>
             </motion.div>
 
