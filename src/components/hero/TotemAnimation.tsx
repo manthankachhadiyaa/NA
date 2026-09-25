@@ -58,9 +58,10 @@ export default function TotemAnimation({ activeLayer, onSelectLayer }: TotemAnim
       aria-label="Interactive 3D Isometric Architecture Cube"
     >
 
-      {/* Floating Wrapper */}
+      {/* Floating & Rotating Wrapper */}
       <div className="iso-wrapper">
-        <div className="iso-container">
+        <div className="rotating-element">
+          <div className="iso-container">
           {/* Cube Layer 1 (Center) */}
           <div className="cube">
             <div style={{ '--x': -1, '--y': 0 } as React.CSSProperties}>
@@ -117,6 +118,7 @@ export default function TotemAnimation({ activeLayer, onSelectLayer }: TotemAnim
               <span onClick={() => handleCubeClick(26)} style={{ '--i': 1 } as React.CSSProperties} />
             </div>
           </div>
+        </div>
         </div>
       </div>
     </div>
