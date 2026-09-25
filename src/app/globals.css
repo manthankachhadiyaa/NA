@@ -543,22 +543,32 @@ body {
   justify-content: center;
 }
 
-/* ── Rotating 3D Element Animation (8s infinite rotation) ── */
+/* ── 3D Multi-Axis Rotation (Slow 20s Orbit) ── */
 .rotating-element {
-  animation: rotateElement 8s linear infinite;
+  animation: rotateElement3D 20s linear infinite;
   display: flex;
   align-items: center;
   justify-content: center;
   transform-origin: 0px 85px;
   margin-top: -85px;
+  transform-style: preserve-3d;
 }
 
-@keyframes rotateElement {
+@keyframes rotateElement3D {
   0% {
-    transform: rotate(0deg);
+    transform: rotateX(16deg) rotateY(-18deg) rotateZ(0deg);
+  }
+  25% {
+    transform: rotateX(-12deg) rotateY(18deg) rotateZ(90deg);
+  }
+  50% {
+    transform: rotateX(18deg) rotateY(12deg) rotateZ(180deg);
+  }
+  75% {
+    transform: rotateX(-14deg) rotateY(-20deg) rotateZ(270deg);
   }
   100% {
-    transform: rotate(360deg);
+    transform: rotateX(16deg) rotateY(-18deg) rotateZ(360deg);
   }
 }
 

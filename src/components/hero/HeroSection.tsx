@@ -144,7 +144,7 @@ export default function HeroSection({ onOpenStrategyCall }: HeroSectionProps) {
             </motion.div>
 
             {/* Interactive 4-Layer Operational Pipeline Accordion */}
-            <motion.div variants={fadeUpVariants} className="pt-4 space-y-2.5">
+            <div className="pt-4 space-y-2.5">
               {operationalLayers.map((layer) => {
                 const isActive = activeLayer === layer.id;
                 return (
@@ -204,16 +204,13 @@ export default function HeroSection({ onOpenStrategyCall }: HeroSectionProps) {
                   </div>
                 );
               })}
-            </motion.div>
+            </div>
           </div>
 
           {/* Right Column: 3D Totem Visual */}
-          <motion.div
-            variants={fadeUpVariants}
-            className="lg:col-span-5 flex items-center justify-center relative"
-          >
+          <div className="lg:col-span-5 flex items-center justify-center relative">
             <TotemAnimation activeLayer={activeLayer} onSelectLayer={setActiveLayer} />
-          </motion.div>
+          </div>
         </motion.div>
       </div>
     </section>
