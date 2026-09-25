@@ -543,9 +543,9 @@ body {
   justify-content: center;
 }
 
-/* ── 3D Multi-Axis Rotation (Slow 20s Orbit) ── */
+/* ── True 3D Multi-Directional Gyroscopic Orbit (24s Slow & Hypnotic) ── */
 .rotating-element {
-  animation: rotateElement3D 20s linear infinite;
+  animation: rotateElement3D 24s ease-in-out infinite;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -556,19 +556,28 @@ body {
 
 @keyframes rotateElement3D {
   0% {
-    transform: rotateX(16deg) rotateY(-18deg) rotateZ(0deg);
+    transform: perspective(1200px) rotateX(0deg) rotateY(0deg) rotateZ(0deg);
   }
-  25% {
-    transform: rotateX(-12deg) rotateY(18deg) rotateZ(90deg);
+  15% {
+    transform: perspective(1200px) rotateX(22deg) rotateY(-26deg) rotateZ(10deg);
   }
-  50% {
-    transform: rotateX(18deg) rotateY(12deg) rotateZ(180deg);
+  30% {
+    transform: perspective(1200px) rotateX(8deg) rotateY(-34deg) rotateZ(-12deg);
+  }
+  45% {
+    transform: perspective(1200px) rotateX(-20deg) rotateY(-18deg) rotateZ(-16deg);
+  }
+  60% {
+    transform: perspective(1200px) rotateX(-24deg) rotateY(22deg) rotateZ(12deg);
   }
   75% {
-    transform: rotateX(-14deg) rotateY(-20deg) rotateZ(270deg);
+    transform: perspective(1200px) rotateX(-6deg) rotateY(32deg) rotateZ(18deg);
+  }
+  90% {
+    transform: perspective(1200px) rotateX(20deg) rotateY(24deg) rotateZ(-10deg);
   }
   100% {
-    transform: rotateX(16deg) rotateY(-18deg) rotateZ(360deg);
+    transform: perspective(1200px) rotateX(0deg) rotateY(0deg) rotateZ(0deg);
   }
 }
 
