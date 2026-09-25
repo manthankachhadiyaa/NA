@@ -43,7 +43,7 @@ const CUBES = [
   { id: 26, x: 1, y: 1, z: 1, layer: 'control' },
 ];
 
-const SPACING = 58;
+const SPACING = 78;
 
 export default function TotemAnimation({ activeLayer, onSelectLayer }: TotemAnimationProps) {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -94,12 +94,11 @@ export default function TotemAnimation({ activeLayer, onSelectLayer }: TotemAnim
           {/* Continuous 3D Rotation Matrix */}
           <div className="matrix-3d">
             {CUBES.map((cube) => {
-              const isActive = activeLayer === cube.layer;
               return (
                 <div
                   key={cube.id}
                   onClick={() => onSelectLayer && onSelectLayer(cube.layer)}
-                  className={`cube-3d-unit ${isActive ? 'active' : ''}`}
+                  className="cube-3d-unit"
                   style={{
                     transform: `translate3d(${cube.x * SPACING}px, ${cube.y * SPACING}px, ${cube.z * SPACING}px)`,
                   }}
