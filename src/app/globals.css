@@ -543,51 +543,7 @@ body {
   justify-content: center;
 }
 
-/* ── True 3D Cube Architecture Matrix ── */
-.container-3d {
-  position: relative;
-  perspective: 1200px;
-  transform-style: preserve-3d;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.matrix-3d {
-  position: relative;
-  width: 0;
-  height: 0;
-  transform-style: preserve-3d;
-  animation: rotate3D 16s linear infinite;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-@keyframes rotate3D {
-  0% {
-    transform: rotateX(15deg) rotateY(0deg);
-  }
-  100% {
-    transform: rotateX(15deg) rotateY(360deg);
-  }
-}
-
-.cube-3d-unit {
-  position: absolute;
-  width: 56px;
-  height: 56px;
-  transform-style: preserve-3d;
-  margin: -28px 0 0 -28px;
-  cursor: pointer;
-  transition: transform 0.25s ease;
-}
-
-.cube-3d-unit:hover {
-  transform: scale3d(1.12, 1.12, 1.12);
-}
-
-/* From Uiverse.io by csemszepp - Color Animation */
+/* From Uiverse.io by csemszepp */ 
 @keyframes animate {
   0% {
     filter: hue-rotate(0deg);
@@ -597,40 +553,93 @@ body {
   }
 }
 
-.uiverse-color-anim {
+.uiverse-cube-container,
+.container {
+  position: relative;
+  top: -80px;
+  transform: skewY(-20deg);
   animation: animate 5s linear infinite;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
-.cube-face {
+.uiverse-cube-container .cube,
+.container .cube {
+  position: relative;
+  z-index: 2;
+}
+
+.uiverse-cube-container .cube:nth-child(2),
+.container .cube:nth-child(2) {
+  z-index: 1;
+  translate: -60px -60px;
+}
+
+.uiverse-cube-container .cube:nth-child(3),
+.container .cube:nth-child(3) {
+  z-index: 3;
+  translate: 60px 60px;
+}
+
+.uiverse-cube-container .cube div,
+.container .cube div {
   position: absolute;
-  width: 56px;
-  height: 56px;
-  border: 1.5px solid rgba(0, 0, 0, 0.12);
-  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  translate: calc(-70px * var(--x)) calc(-60px * var(--y));
+}
+
+.uiverse-cube-container .cube div span,
+.container .cube div span {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  background: #dcdcdc;
+  z-index: calc(1 * var(--i));
   transition: 1.5s;
-  backface-visibility: hidden;
+  cursor: pointer;
 }
 
-.cube-face.front  { transform: translateZ(28px); background: #e2e2e2; }
-.cube-face.back   { transform: rotateY(180deg) translateZ(28px); background: #c8c8c8; }
-.cube-face.right  { transform: rotateY(90deg) translateZ(28px); background: #d2d2d2; }
-.cube-face.left   { transform: rotateY(-90deg) translateZ(28px); background: #f2f2f2; }
-.cube-face.top    { transform: rotateX(90deg) translateZ(28px); background: #ffffff; }
-.cube-face.bottom { transform: rotateX(-90deg) translateZ(28px); background: #bebebe; }
-
-/* Interactive Hover: Soft, elegant luminescence */
-.cube-3d-unit:hover {
-  transform: scale3d(1.08, 1.08, 1.08);
-}
-
-.cube-3d-unit:hover .cube-face {
+.uiverse-cube-container .cube div span:hover,
+.container .cube div span:hover {
   transition: 0s;
-  background: rgba(239, 65, 73, 0.4) !important;
-  border-color: rgba(239, 65, 73, 0.6) !important;
-  box-shadow: 0 0 16px rgba(239, 65, 73, 0.3);
+  background: #ef4149;
+  filter: drop-shadow(0 0 30px #ef4149);
+}
+
+.uiverse-cube-container .cube div span:hover:before,
+.container .cube div span:hover:before,
+.uiverse-cube-container .cube div span:hover:after,
+.container .cube div span:hover:after {
+  transition: 0s;
+  background: #ef4149;
+}
+
+.uiverse-cube-container .cube div span:before,
+.container .cube div span:before {
+  content: "";
+  position: absolute;
+  left: -40px;
+  width: 40px;
+  height: 100%;
+  background: #fff;
+  transform-origin: right;
+  transform: skewY(45deg);
+  transition: 1.5s;
+}
+
+.uiverse-cube-container .cube div span:after,
+.container .cube div span:after {
+  content: "";
+  position: absolute;
+  top: -40px;
+  left: 0px;
+  width: 100%;
+  height: 40px;
+  background: #f2f2f2;
+  transform-origin: bottom;
+  transform: skewX(45deg);
+  transition: 1.5s;
 }
 
 
