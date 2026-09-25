@@ -587,13 +587,52 @@ body {
   transform: scale3d(1.12, 1.12, 1.12);
 }
 
+/* Continuous Rainbow Hue Cycle Animation */
+@keyframes rainbowGlow {
+  0% {
+    background-color: #ef4149;
+    border-color: #ef4149;
+    box-shadow: 0 0 35px rgba(239, 65, 73, 0.75);
+  }
+  17% {
+    background-color: #f97316;
+    border-color: #f97316;
+    box-shadow: 0 0 35px rgba(249, 115, 22, 0.75);
+  }
+  33% {
+    background-color: #eab308;
+    border-color: #eab308;
+    box-shadow: 0 0 35px rgba(234, 179, 8, 0.75);
+  }
+  50% {
+    background-color: #10b981;
+    border-color: #10b981;
+    box-shadow: 0 0 35px rgba(16, 185, 129, 0.75);
+  }
+  67% {
+    background-color: #06b6d4;
+    border-color: #06b6d4;
+    box-shadow: 0 0 35px rgba(6, 182, 212, 0.75);
+  }
+  83% {
+    background-color: #8b5cf6;
+    border-color: #8b5cf6;
+    box-shadow: 0 0 35px rgba(139, 92, 246, 0.75);
+  }
+  100% {
+    background-color: #ef4149;
+    border-color: #ef4149;
+    box-shadow: 0 0 35px rgba(239, 65, 73, 0.75);
+  }
+}
+
 .cube-face {
   position: absolute;
   width: 56px;
   height: 56px;
   border: 1.5px solid rgba(0, 0, 0, 0.12);
   box-sizing: border-box;
-  transition: background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+  transition: background 1.2s ease, border-color 1.2s ease, box-shadow 1.2s ease;
   backface-visibility: hidden;
 }
 
@@ -604,9 +643,22 @@ body {
 .cube-face.top    { transform: rotateX(90deg) translateZ(28px); background: #ffffff; }
 .cube-face.bottom { transform: rotateX(-90deg) translateZ(28px); background: #bebebe; }
 
-.cube-3d-unit:hover .cube-face {
-  background: #ef4149 !important;
-  border-color: #ef4149 !important;
-  box-shadow: 0 0 30px rgba(239, 65, 73, 0.65);
+/* Interactive Hover: Instant transition to cycling rainbow glow */
+.cube-3d-unit:hover {
+  transform: scale3d(1.15, 1.15, 1.15);
 }
+
+.cube-3d-unit:hover .cube-face {
+  transition: 0s !important;
+  animation: rainbowGlow 6s linear infinite !important;
+  animation-delay: var(--cube-delay, 0s) !important;
+}
+
+/* Ambient Beacon: Core nodes softly cycle colors as the matrix rotates */
+.cube-3d-unit.beacon-pulse .cube-face {
+  animation: rainbowGlow 8s linear infinite;
+  animation-delay: var(--cube-delay, 0s);
+  opacity: 0.95;
+}
+
 
