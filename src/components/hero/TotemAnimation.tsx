@@ -89,32 +89,34 @@ export default function TotemAnimation({ activeLayer, onSelectLayer }: TotemAnim
     >
       {/* Gentle Floating Levitation */}
       <div className="iso-wrapper">
-        {/* True 3D Container with 1200px Perspective */}
-        <div className="container-3d">
-          {/* Continuous 3D Rotation Matrix */}
-          <div className="matrix-3d">
-            {CUBES.map((cube) => {
-              const isBeacon = cube.id === 4 || cube.id === 13 || cube.id === 22;
-              return (
-                <div
-                  key={cube.id}
-                  onClick={() => onSelectLayer && onSelectLayer(cube.layer)}
-                  className={`cube-3d-unit ${isBeacon ? 'beacon-pulse' : ''}`}
-                  style={{
-                    transform: `translate3d(${cube.x * SPACING}px, ${cube.y * SPACING}px, ${cube.z * SPACING}px)`,
-                    ['--cube-delay' as any]: `${(cube.id * -0.24).toFixed(2)}s`,
-                  }}
-                  title={`Operational Layer: ${cube.layer}`}
-                >
-                  <div className="cube-face front" />
-                  <div className="cube-face back" />
-                  <div className="cube-face right" />
-                  <div className="cube-face left" />
-                  <div className="cube-face top" />
-                  <div className="cube-face bottom" />
-                </div>
-              );
-            })}
+        {/* Continuous Hue-Rotate Animation from Uiverse.io */}
+        <div className="uiverse-color-anim">
+          {/* True 3D Container with 1200px Perspective */}
+          <div className="container-3d">
+            {/* Continuous 3D Rotation Matrix */}
+            <div className="matrix-3d">
+              {CUBES.map((cube) => {
+                const isBeacon = cube.id === 4 || cube.id === 13 || cube.id === 22;
+                return (
+                  <div
+                    key={cube.id}
+                    onClick={() => onSelectLayer && onSelectLayer(cube.layer)}
+                    className={`cube-3d-unit ${isBeacon ? 'beacon-pulse' : ''}`}
+                    style={{
+                      transform: `translate3d(${cube.x * SPACING}px, ${cube.y * SPACING}px, ${cube.z * SPACING}px)`,
+                    }}
+                    title={`Operational Layer: ${cube.layer}`}
+                  >
+                    <div className="cube-face front" />
+                    <div className="cube-face back" />
+                    <div className="cube-face right" />
+                    <div className="cube-face left" />
+                    <div className="cube-face top" />
+                    <div className="cube-face bottom" />
+                  </div>
+                );
+              })}
+            </div>
           </div>
         </div>
       </div>
