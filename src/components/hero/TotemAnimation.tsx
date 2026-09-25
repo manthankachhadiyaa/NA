@@ -96,12 +96,11 @@ export default function TotemAnimation({ activeLayer, onSelectLayer }: TotemAnim
             {/* Continuous 3D Rotation Matrix */}
             <div className="matrix-3d">
               {CUBES.map((cube) => {
-                const isBeacon = cube.id === 4 || cube.id === 13 || cube.id === 22;
                 return (
                   <div
                     key={cube.id}
                     onClick={() => onSelectLayer && onSelectLayer(cube.layer)}
-                    className={`cube-3d-unit ${isBeacon ? 'beacon-pulse' : ''}`}
+                    className="cube-3d-unit"
                     style={{
                       transform: `translate3d(${cube.x * SPACING}px, ${cube.y * SPACING}px, ${cube.z * SPACING}px)`,
                     }}

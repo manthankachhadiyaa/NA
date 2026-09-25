@@ -621,24 +621,16 @@ body {
 .cube-face.top    { transform: rotateX(90deg) translateZ(28px); background: #ffffff; }
 .cube-face.bottom { transform: rotateX(-90deg) translateZ(28px); background: #bebebe; }
 
-/* Interactive Hover: Exact styling from Uiverse snippet */
+/* Interactive Hover: Soft, elegant luminescence */
 .cube-3d-unit:hover {
-  transform: scale3d(1.15, 1.15, 1.15);
+  transform: scale3d(1.08, 1.08, 1.08);
 }
 
 .cube-3d-unit:hover .cube-face {
   transition: 0s;
-  background: #ef4149 !important;
-  border-color: #ef4149 !important;
-  box-shadow: 0 0 30px #ef4149;
-  filter: drop-shadow(0 0 30px #ef4149);
-}
-
-/* Ambient Beacon: Core nodes continuously cycle through the hue rotation */
-.cube-3d-unit.beacon-pulse .cube-face {
-  background: #ef4149;
-  border-color: #ef4149;
-  box-shadow: 0 0 25px #ef4149;
+  background: rgba(239, 65, 73, 0.4) !important;
+  border-color: rgba(239, 65, 73, 0.6) !important;
+  box-shadow: 0 0 16px rgba(239, 65, 73, 0.3);
 }
 
 
