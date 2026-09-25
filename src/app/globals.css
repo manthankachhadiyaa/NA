@@ -517,3 +517,109 @@ body {
   scale: 0.98;
 }
 
+/* ── 3D Isometric Cube Matrix (from Uiverse.io by csemszepp) ── */
+@keyframes cubeHueAnimate {
+  0% {
+    filter: hue-rotate(0deg);
+  }
+  100% {
+    filter: hue-rotate(360deg);
+  }
+}
+
+@keyframes cubeFloat {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-14px);
+  }
+}
+
+.iso-wrapper {
+  animation: cubeFloat 6s ease-in-out infinite;
+}
+
+.iso-container {
+  position: relative;
+  top: 20px;
+  transform: skewY(-20deg);
+  animation: cubeHueAnimate 5s linear infinite;
+}
+
+.iso-container .cube {
+  position: relative;
+  z-index: 2;
+}
+
+.iso-container .cube:nth-child(2) {
+  z-index: 1;
+  translate: -60px -60px;
+}
+
+.iso-container .cube:nth-child(3) {
+  z-index: 3;
+  translate: 60px 60px;
+}
+
+.iso-container .cube div {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  translate: calc(-70px * var(--x)) calc(-60px * var(--y));
+}
+
+.iso-container .cube div span {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  background: #dcdcdc;
+  box-shadow: -1px 1px 0 rgba(0, 0, 0, 0.04);
+  z-index: calc(1 * var(--i));
+  transition: background 1.5s, filter 1.5s, box-shadow 0.3s;
+  cursor: pointer;
+}
+
+.iso-container .cube div span:hover {
+  transition: 0s;
+  background: #ef4149 !important;
+  filter: drop-shadow(0 0 30px #ef4149) !important;
+}
+
+.iso-container .cube div span:hover:before,
+.iso-container .cube div span:hover:after {
+  transition: 0s;
+  background: #ef4149 !important;
+}
+
+.iso-container .cube div span:before {
+  content: "";
+  position: absolute;
+  left: -40px;
+  width: 40px;
+  height: 100%;
+  background: #ffffff;
+  border-left: 1px solid rgba(0, 0, 0, 0.05);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  transform-origin: right;
+  transform: skewY(45deg);
+  transition: background 1.5s;
+}
+
+.iso-container .cube div span:after {
+  content: "";
+  position: absolute;
+  top: -40px;
+  left: 0px;
+  width: 100%;
+  height: 40px;
+  background: #f2f2f2;
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+  border-left: 1px solid rgba(0, 0, 0, 0.05);
+  transform-origin: bottom;
+  transform: skewX(45deg);
+  transition: background 1.5s;
+}
+
