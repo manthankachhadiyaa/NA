@@ -18,7 +18,7 @@ const mono = IBM_Plex_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://nawebsite-seven.vercel.app'),
+  metadataBase: new URL('https://nexagent.in'),
   title: {
     default: 'NexAgent | AI-Powered Business Software & Hospital Management Systems (HMS)',
     template: '%s | NexAgent',
@@ -42,13 +42,13 @@ export const metadata: Metadata = {
   ],
   openGraph: {
     type: 'website',
-    url: 'https://nawebsite-seven.vercel.app/',
+    url: 'https://nexagent.in/',
     title: 'NexAgent | AI-Powered Business Software & Hospital Management Systems',
     description:
       'Deterministic AI systems that participate in real business operations. Automate clinical queues, bed turnover, and enterprise workflows.',
     images: [
       {
-        url: 'https://nawebsite-seven.vercel.app/assets/nexagent_logo.png',
+        url: 'https://nexagent.in/assets/nexagent_logo.png',
         width: 800,
         height: 600,
         alt: 'NexAgent Logo - Deterministic AI & Hospital Management Systems',
@@ -60,15 +60,16 @@ export const metadata: Metadata = {
     title: 'NexAgent | AI-Powered Business Software & Hospital Management Systems',
     description:
       'Deterministic AI business systems. Featuring NexAgent HMS for clinical triage and bed turnover orchestration.',
-    images: ['https://nawebsite-seven.vercel.app/assets/nexagent_logo.png'],
+    images: ['https://nexagent.in/assets/nexagent_logo.png'],
   },
   icons: {
     icon: '/assets/nexagent_logo.png',
   },
   alternates: {
-    canonical: 'https://nawebsite-seven.vercel.app/',
+    canonical: 'https://nexagent.in/',
   },
 };
+
 
 export default function RootLayout({
   children,
@@ -80,10 +81,10 @@ export default function RootLayout({
     '@graph': [
       {
         '@type': 'Organization',
-        '@id': 'https://nawebsite-seven.vercel.app/#organization',
+        '@id': 'https://nexagent.in/#organization',
         name: 'NexAgent',
-        url: 'https://nawebsite-seven.vercel.app/',
-        logo: 'https://nawebsite-seven.vercel.app/assets/nexagent_logo.png',
+        url: 'https://nexagent.in/',
+        logo: 'https://nexagent.in/assets/nexagent_logo.png',
         description:
           'NexAgent is a deterministic AI technology company building enterprise business software and hospital management systems (HMS).',
         foundingDate: '2026',
@@ -116,16 +117,16 @@ export default function RootLayout({
       },
       {
         '@type': 'WebSite',
-        '@id': 'https://nawebsite-seven.vercel.app/#website',
-        url: 'https://nawebsite-seven.vercel.app/',
+        '@id': 'https://nexagent.in/#website',
+        url: 'https://nexagent.in/',
         name: 'NexAgent',
         publisher: {
-          '@id': 'https://nawebsite-seven.vercel.app/#organization',
+          '@id': 'https://nexagent.in/#organization',
         },
       },
       {
         '@type': 'SoftwareApplication',
-        '@id': 'https://nawebsite-seven.vercel.app/#hms',
+        '@id': 'https://nexagent.in/#hms',
         name: 'NexAgent HMS',
         applicationCategory: 'HealthApplication',
         operatingSystem: 'Cloud / Web',
@@ -139,7 +140,7 @@ export default function RootLayout({
       },
       {
         '@type': 'FAQPage',
-        '@id': 'https://nawebsite-seven.vercel.app/#faq',
+        '@id': 'https://nexagent.in/#faq',
         mainEntity: [
           {
             '@type': 'Question',

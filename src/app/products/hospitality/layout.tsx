@@ -14,17 +14,17 @@ export const metadata: Metadata = {
     'NexAgent Hospitality OS',
   ],
   alternates: {
-    canonical: 'https://nawebsite-seven.vercel.app/products/hospitality',
+    canonical: 'https://nexagent.in/products/hospitality',
   },
   openGraph: {
     title: 'NexAgent Hospitality OS | AI Property Management & Dynamic Pricing',
     description:
       'Maximize RevPAR with dynamic pricing and delight guests with 24/7 autonomous WhatsApp concierge workflows.',
-    url: 'https://nawebsite-seven.vercel.app/products/hospitality',
+    url: 'https://nexagent.in/products/hospitality',
     type: 'website',
     images: [
       {
-        url: 'https://nawebsite-seven.vercel.app/assets/nexagent_logo.png',
+        url: 'https://nexagent.in/assets/nexagent_logo.png',
         width: 800,
         height: 600,
         alt: 'NexAgent Hospitality OS - AI Property Management System',
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     title: 'NexAgent Hospitality OS | AI Hotel Management System',
     description:
       'Algorithmic dynamic pricing, 24/7 autonomous concierge, and automated room turnover dispatch.',
-    images: ['https://nawebsite-seven.vercel.app/assets/nexagent_logo.png'],
+    images: ['https://nexagent.in/assets/nexagent_logo.png'],
   },
 };
 
@@ -55,19 +55,19 @@ export default function HospitalityLayout({
             '@type': 'ListItem',
             position: 1,
             name: 'Home',
-            item: 'https://nawebsite-seven.vercel.app/',
+            item: 'https://nexagent.in/',
           },
           {
             '@type': 'ListItem',
             position: 2,
             name: 'Products',
-            item: 'https://nawebsite-seven.vercel.app/#products',
+            item: 'https://nexagent.in/#products',
           },
           {
             '@type': 'ListItem',
             position: 3,
             name: 'Hospitality OS',
-            item: 'https://nawebsite-seven.vercel.app/products/hospitality',
+            item: 'https://nexagent.in/products/hospitality',
           },
         ],
       },

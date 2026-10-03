@@ -14,17 +14,17 @@ export const metadata: Metadata = {
     'NexAgent Healthcare',
   ],
   alternates: {
-    canonical: 'https://nawebsite-seven.vercel.app/industries/healthcare',
+    canonical: 'https://nexagent.in/industries/healthcare',
   },
   openGraph: {
     title: 'Healthcare Infrastructure & Hospital Network Operations | NexAgent',
     description:
       'Engineered for hospital networks where patient safety and operational throughput are paramount.',
-    url: 'https://nawebsite-seven.vercel.app/industries/healthcare',
+    url: 'https://nexagent.in/industries/healthcare',
     type: 'website',
     images: [
       {
-        url: 'https://nawebsite-seven.vercel.app/assets/nexagent_logo.png',
+        url: 'https://nexagent.in/assets/nexagent_logo.png',
         width: 800,
         height: 600,
         alt: 'NexAgent Healthcare Infrastructure',
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     title: 'Healthcare Infrastructure | NexAgent',
     description:
       'Hospital network orchestration with deterministic AI and mandatory doctor approval gates.',
-    images: ['https://nawebsite-seven.vercel.app/assets/nexagent_logo.png'],
+    images: ['https://nexagent.in/assets/nexagent_logo.png'],
   },
 };
 
@@ -53,19 +53,19 @@ export default function HealthcareIndustryLayout({
         '@type': 'ListItem',
         position: 1,
         name: 'Home',
-        item: 'https://nawebsite-seven.vercel.app/',
+        item: 'https://nexagent.in/',
       },
       {
         '@type': 'ListItem',
         position: 2,
         name: 'Industries',
-        item: 'https://nawebsite-seven.vercel.app/#industries',
+        item: 'https://nexagent.in/#industries',
       },
       {
         '@type': 'ListItem',
         position: 3,
         name: 'Healthcare',
-        item: 'https://nawebsite-seven.vercel.app/industries/healthcare',
+        item: 'https://nexagent.in/industries/healthcare',
       },
     ],
   };

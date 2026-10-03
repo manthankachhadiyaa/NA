@@ -17,4 +17,4 @@ Allow: /
 User-agent: CCBot
 Allow: /
 
-Sitemap: https://nawebsite-seven.vercel.app/sitemap.xml
+Sitemap: https://nexagent.in/sitemap.xml

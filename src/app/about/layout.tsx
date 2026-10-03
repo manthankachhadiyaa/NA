@@ -5,17 +5,17 @@ export const metadata: Metadata = {
   description:
     'Meet NexAgent founders Manthan Kachhadiya and Vraj Savani. Learn how our engineering-first team builds deterministic AI systems for healthcare and enterprise operations.',
   alternates: {
-    canonical: 'https://nawebsite-seven.vercel.app/about',
+    canonical: 'https://nexagent.in/about',
   },
   openGraph: {
     title: 'About NexAgent | Leadership, Architecture & Engineering Mission',
     description:
       'Meet founders Manthan Kachhadiya (AI Systems) and Vraj Savani (Operations). Building deterministic AI operating systems with human-in-the-loop governance.',
-    url: 'https://nawebsite-seven.vercel.app/about',
+    url: 'https://nexagent.in/about',
     type: 'profile',
     images: [
       {
-        url: 'https://nawebsite-seven.vercel.app/assets/nexagent_logo.png',
+        url: 'https://nexagent.in/assets/nexagent_logo.png',
         width: 800,
         height: 600,
         alt: 'NexAgent Founders - Manthan Kachhadiya and Vraj Savani',
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     title: 'About NexAgent | Leadership & Engineering Mission',
     description:
       'Meet founders Manthan Kachhadiya and Vraj Savani. Building deterministic AI systems that participate in real enterprise operations.',
-    images: ['https://nawebsite-seven.vercel.app/assets/nexagent_logo.png'],
+    images: ['https://nexagent.in/assets/nexagent_logo.png'],
   },
 };
 
@@ -44,13 +44,13 @@ export default function AboutLayout({
         '@type': 'ListItem',
         position: 1,
         name: 'Home',
-        item: 'https://nawebsite-seven.vercel.app/',
+        item: 'https://nexagent.in/',
       },
       {
         '@type': 'ListItem',
         position: 2,
         name: 'About',
-        item: 'https://nawebsite-seven.vercel.app/about',
+        item: 'https://nexagent.in/about',
       },
     ],
   };

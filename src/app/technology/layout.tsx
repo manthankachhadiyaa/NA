@@ -13,17 +13,17 @@ export const metadata: Metadata = {
     'NexAgent Technology',
   ],
   alternates: {
-    canonical: 'https://nawebsite-seven.vercel.app/technology',
+    canonical: 'https://nexagent.in/technology',
   },
   openGraph: {
     title: 'Technology Architecture | 7-Layer Deterministic Operational Stack | NexAgent',
     description:
       'Engineered for mission-critical operations where error is not an option. Explore our deterministic execution architecture.',
-    url: 'https://nawebsite-seven.vercel.app/technology',
+    url: 'https://nexagent.in/technology',
     type: 'website',
     images: [
       {
-        url: 'https://nawebsite-seven.vercel.app/assets/nexagent_logo.png',
+        url: 'https://nexagent.in/assets/nexagent_logo.png',
         width: 800,
         height: 600,
         alt: 'NexAgent 7-Layer Technology Architecture',
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
     title: 'Technology Architecture | NexAgent 7-Layer Stack',
     description:
       'Deterministic execution, in-memory redaction, and cryptographic auditability for enterprise operations.',
-    images: ['https://nawebsite-seven.vercel.app/assets/nexagent_logo.png'],
+    images: ['https://nexagent.in/assets/nexagent_logo.png'],
   },
 };
 
@@ -52,13 +52,13 @@ export default function TechnologyLayout({
         '@type': 'ListItem',
         position: 1,
         name: 'Home',
-        item: 'https://nawebsite-seven.vercel.app/',
+        item: 'https://nexagent.in/',
       },
       {
         '@type': 'ListItem',
         position: 2,
         name: 'Technology',
-        item: 'https://nawebsite-seven.vercel.app/technology',
+        item: 'https://nexagent.in/technology',
       },
     ],
   };

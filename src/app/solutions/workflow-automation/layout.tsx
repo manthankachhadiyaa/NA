@@ -13,17 +13,17 @@ export const metadata: Metadata = {
     'NexAgent Enterprise Core',
   ],
   alternates: {
-    canonical: 'https://nawebsite-seven.vercel.app/solutions/workflow-automation',
+    canonical: 'https://nexagent.in/solutions/workflow-automation',
   },
   openGraph: {
     title: 'Deterministic Workflow Automation | Enterprise Operations Core | NexAgent',
     description:
       'Connect your disparate software stacks into self-executing, policy-bounded operational pipelines with cryptographic audit logging.',
-    url: 'https://nawebsite-seven.vercel.app/solutions/workflow-automation',
+    url: 'https://nexagent.in/solutions/workflow-automation',
     type: 'website',
     images: [
       {
-        url: 'https://nawebsite-seven.vercel.app/assets/nexagent_logo.png',
+        url: 'https://nexagent.in/assets/nexagent_logo.png',
         width: 800,
         height: 600,
         alt: 'NexAgent Enterprise Workflow Automation',
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
     title: 'Deterministic Workflow Automation | NexAgent',
     description:
       'Policy-bounded operational pipelines connecting CRM, ERP, and databases with zero unauthorized bypass.',
-    images: ['https://nawebsite-seven.vercel.app/assets/nexagent_logo.png'],
+    images: ['https://nexagent.in/assets/nexagent_logo.png'],
   },
 };
 
@@ -52,19 +52,19 @@ export default function WorkflowAutomationLayout({
         '@type': 'ListItem',
         position: 1,
         name: 'Home',
-        item: 'https://nawebsite-seven.vercel.app/',
+        item: 'https://nexagent.in/',
       },
       {
         '@type': 'ListItem',
         position: 2,
         name: 'Solutions',
-        item: 'https://nawebsite-seven.vercel.app/#solutions',
+        item: 'https://nexagent.in/#solutions',
       },
       {
         '@type': 'ListItem',
         position: 3,
         name: 'Workflow Automation',
-        item: 'https://nawebsite-seven.vercel.app/solutions/workflow-automation',
+        item: 'https://nexagent.in/solutions/workflow-automation',
       },
     ],
   };

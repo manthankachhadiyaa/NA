@@ -1,7 +1,7 @@
 import { MetadataRoute } from 'next';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://nawebsite-seven.vercel.app';
+  const baseUrl = 'https://nexagent.in';
   const currentDate = new Date().toISOString();
 
   const routes = [

@@ -15,17 +15,17 @@ export const metadata: Metadata = {
     'NexAgent HMS',
   ],
   alternates: {
-    canonical: 'https://nawebsite-seven.vercel.app/products/hms',
+    canonical: 'https://nexagent.in/products/hms',
   },
   openGraph: {
     title: 'NexAgent HMS | Enterprise Hospital Operating System & Queue Balancer',
     description:
       'Orchestrate outpatient triage queues, automate bed turnover, pre-compile discharge packets, and streamline TPA claims with deterministic AI.',
-    url: 'https://nawebsite-seven.vercel.app/products/hms',
+    url: 'https://nexagent.in/products/hms',
     type: 'website',
     images: [
       {
-        url: 'https://nawebsite-seven.vercel.app/assets/nexagent_logo.png',
+        url: 'https://nexagent.in/assets/nexagent_logo.png',
         width: 800,
         height: 600,
         alt: 'NexAgent HMS - Hospital Operating System',
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
     title: 'NexAgent HMS | Enterprise Hospital Operating System',
     description:
       'Complete hospital operating system. Automated outpatient triage, 35-min bed turnover, and 100% doctor-in-the-loop governance.',
-    images: ['https://nawebsite-seven.vercel.app/assets/nexagent_logo.png'],
+    images: ['https://nexagent.in/assets/nexagent_logo.png'],
   },
 };
 
@@ -56,19 +56,19 @@ export default function HmsLayout({
             '@type': 'ListItem',
             position: 1,
             name: 'Home',
-            item: 'https://nawebsite-seven.vercel.app/',
+            item: 'https://nexagent.in/',
           },
           {
             '@type': 'ListItem',
             position: 2,
             name: 'Products',
-            item: 'https://nawebsite-seven.vercel.app/#products',
+            item: 'https://nexagent.in/#products',
           },
           {
             '@type': 'ListItem',
             position: 3,
             name: 'Hospital Management System (HMS)',
-            item: 'https://nawebsite-seven.vercel.app/products/hms',
+            item: 'https://nexagent.in/products/hms',
           },
         ],
       },
